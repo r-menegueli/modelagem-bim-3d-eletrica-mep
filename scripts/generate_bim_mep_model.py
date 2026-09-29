@@ -1,17 +1,27 @@
-"""
-Parametric 3D BIM / Electrical MEP Model Generator for FreeCAD / IFC
-Generates 3D Substation Equipment, MV/LV Switchgear, Transformer, QTA Panel & Overhead Cable Trays.
-Author: Rogerio Eduardo Moreira Menegueli
-"""
-BIM_ELEMENTS = [
-    {"ifc_class": "IfcTransformer", "tag": "TR-01", "spec": "500 kVA 13.8kV / 380-220V Dry-Type Transformer", "dims_mm": (1550, 980, 1750)},
-    {"ifc_class": "IfcElectricDistributionBoard", "tag": "QGBT-01", "spec": "Main LV Switchboard 1000A 380/220V Form 3B", "dims_mm": (2000, 800, 2200)},
-    {"ifc_class": "IfcElectricDistributionBoard", "tag": "QTA-01", "spec": "250 kVA Automatic Transfer Switch Panel", "dims_mm": (800, 400, 1800)},
-    {"ifc_class": "IfcElectricGenerator", "tag": "GMG-01", "spec": "250 kVA / 200 kW Soundproof Diesel Generator Skid", "dims_mm": (3600, 1350, 1950)},
-    {"ifc_class": "IfcCableCarrierSegment", "tag": "EC-01", "spec": "Perforated Overhead Cable Tray 300x100 mm Hot-Dip Galvanized", "length_m": 48.0},
-    {"ifc_class": "IfcCableCarrierSegment", "tag": "ED-01", "spec": "Heavy Galvanized Steel Conduit DN 100 (4 in) Underground Feeder", "length_m": 36.0},
+﻿import os
+import FreeCAD
+import Part
+
+out_dir = r'C:\Users\dakra\Documents\Codex\modelagem-bim-3d-eletrica-mep\models_3d'
+os.makedirs(out_dir, exist_ok=True)
+doc = FreeCAD.newDocument('Subestacao_BIM_MEP_LOD350')
+
+items = [
+    ('TR01_Transformer_500kVA_13k8_380V', 1550, 980, 1750, (0, 0, 0)),
+    ('QGBT01_Main_LV_Switchboard_1000A', 2000, 800, 2200, (2800, 0, 0)),
+    ('QTA01_ATS_Panel_250kVA', 800, 600, 2200, (5000, 0, 0)),
+    ('CCM01_Motor_Control_Center_6Col', 2400, 600, 2200, (6200, 0, 0)),
+    ('GMG01_Diesel_Generator_250kVA', 3600, 1350, 1950, (0, 3500, 0)),
+    ('EC300_Overhead_Cable_Tray_300x100', 9000, 300, 100, (0, -200, 3800)),
 ]
 
-if __name__ == "__main__":
-    for el in BIM_ELEMENTS:
-        print(f"[BIM-MEP] {el['tag']} ({el['ifc_class']}): {el['spec']}")
+for name, L, W, H, pos in items:
+    obj = doc.addObject('Part::Feature', name)
+    box = Part.makeBox(L, W, H)
+    box.Placement.Base = FreeCAD.Vector(*pos)
+    obj.Shape = box
+
+doc.recompute()
+fcstd_path = os.path.join(out_dir, 'Subestacao_QGBT_CCM_Gerador_BIM_MEP.FCStd')
+doc.saveAs(fcstd_path)
+print('SAVED_FCSTD:', fcstd_path, os.path.getsize(fcstd_path))
