@@ -1,0 +1,8 @@
+BIM_Tag,IFC_Class,LOD,Discipline,Description,Quantity,Unit
+TR-01,IfcTransformer,LOD 350,Electrical MV/LV,500 kVA 13.8kV/380-220V Dry-Type Cast Resin Transformer,1,un
+QGBT-01,IfcElectricDistributionBoard,LOD 350,Electrical LV,Main Low-Voltage Switchboard 1000A 380V 3P+N+PE,1,un
+QTA-01,IfcElectricDistributionBoard,LOD 350,Electrical Emergency,250 kVA Automatic Transfer Switch (ATS/QTA) with USCA,1,un
+GMG-01,IfcElectricGenerator,LOD 350,Power Generation,250 kVA / 200 kW Standby Diesel Generator Acoustic Canopy,1,un
+CCM-01,IfcElectricDistributionBoard,LOD 350,Industrial Automation,Compartmentalized Motor Control Center (MCC) 6 Columns,1,un
+EC-300,IfcCableCarrierSegment,LOD 350,Electrical Containment,Perforated Cable Tray 300x100mm w/ Brackets @ 1.5m,48,m
+ED-100,IfcCableCarrierSegment,LOD 350,Electrical Underground,Galvanized Steel Conduit DN100 (4 in) Feeder Bank,36,m
