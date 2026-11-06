@@ -2,7 +2,7 @@
 
 Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modelagem BIM, organização de vistas e documentação de instalações. Cada projeto é publicado em pasta própria, com modelo nativo, pranchas e escopo documentado.
 
-**Progresso: 9 de 14 projetos publicados.**
+**Progresso: 10 de 14 projetos publicados.**
 
 ## Projetos
 
@@ -17,7 +17,7 @@ Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modela
 | 07 | Supermercado e varejo | [Publicado](projetos/07-supermercado-varejo/README.md) |
 | 08 | Hotel urbano | [Publicado](projetos/08-hotel-urbano/README.md) |
 | 09 | Data center | [Publicado](projetos/09-data-center/README.md) |
-| 10 | Estacionamento coberto com recarga de veículos elétricos | Planejado |
+| 10 | Estacionamento com recarga de veículos elétricos | [Publicado](projetos/10-estacionamento-carga-eletrica/README.md) |
 | 11 | Usina fotovoltaica | Planejado |
 | 12 | Subestação e centro de controle de motores | Planejado |
 | 13 | Estação de tratamento de água | Planejado |
@@ -115,6 +115,16 @@ Centro de dados com NOC, salas de dados, UPS, baterias, elétrica, telecomunica�
 - [Projeto completo e prévias das seis folhas A3](projetos/09-data-center/README.md)
 - [Modelo Revit (.RVT)](projetos/09-data-center/revit/09-data-center.rvt)
 - [Pranchas A3 (.PDF)](projetos/09-data-center/pranchas/09-data-center.pdf)
+
+### 10 — Estacionamento com recarga de veículos elétricos
+
+Implantação com setores de vagas, circulação, acesso e pontos de recarga; um pavimento, 42 × 30 m.
+
+![Axonometria do estacionamento com recarga](projetos/10-estacionamento-carga-eletrica/pranchas/preview/BIM-01-axonometria.png)
+
+- [Projeto completo e prévias das seis folhas A3](projetos/10-estacionamento-carga-eletrica/README.md)
+- [Modelo Revit (.RVT)](projetos/10-estacionamento-carga-eletrica/revit/10-estacionamento-carga-eletrica.rvt)
+- [Pranchas A3 (.PDF)](projetos/10-estacionamento-carga-eletrica/pranchas/10-estacionamento-carga-eletrica.pdf)
 
 ## Escopo e uso
 

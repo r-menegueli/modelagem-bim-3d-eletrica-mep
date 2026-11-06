@@ -1,0 +1,6 @@
+﻿Circuito;Zona / sistema;Uso;Status
+C01;Carregamento de veiculos por setor;Conceitual;Nao dimensionado
+C02;Iluminacao de vagas e circulacao;Conceitual;Nao dimensionado
+C03;Quadros e alimentadores conceituais;Conceitual;Nao dimensionado
+C04;Controle de acesso;Conceitual;Nao dimensionado
+C05;Supervisao e comunicacao;Conceitual;Nao dimensionado
