@@ -2,7 +2,7 @@
 
 Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modelagem BIM, organização de vistas e documentação de instalações. Cada projeto é publicado em pasta própria, com modelo nativo, pranchas e escopo documentado.
 
-**Progresso: 13 de 14 projetos publicados.**
+**Progresso: 14 de 14 projetos publicados.**
 
 ## Projetos
 
@@ -21,7 +21,7 @@ Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modela
 | 11 | Usina fotovoltaica | [Publicado](projetos/11-usina-fotovoltaica/README.md) |
 | 12 | Subestação e centro de controle de motores | [Publicado](projetos/12-subestacao-e-ccm/README.md) |
 | 13 | Estação de tratamento de água | [Publicado](projetos/13-estacao-tratamento-agua/README.md) |
-| 14 | Microrrede com geração solar, baterias e gerador de apoio | Planejado |
+| 14 | Microrrede com geração solar, baterias e gerador de apoio | [Publicado](projetos/14-microrede-fv-bess-gerador/README.md) |
 
 ## Projetos publicados
 
@@ -155,6 +155,16 @@ Implantação conceitual com etapas de tratamento, reservação, bombeamento, do
 - [Projeto completo e prévias das seis folhas A3](projetos/13-estacao-tratamento-agua/README.md)
 - [Modelo Revit (.RVT)](projetos/13-estacao-tratamento-agua/revit/13-estacao-tratamento-agua.rvt)
 - [Pranchas A3 (.PDF)](projetos/13-estacao-tratamento-agua/pranchas/13-estacao-tratamento-agua.pdf)
+
+### 14 — Microrrede com geração solar, baterias e gerador de apoio
+
+Implantação de microrrede com mesas fotovoltaicas, inversor, transformador, baterias e gerador de apoio; um pavimento, 50 × 32 m.
+
+![Axonometria da microrrede](projetos/14-microrede-fv-bess-gerador/pranchas/preview/BIM-01-axonometria.png)
+
+- [Projeto completo e prévias das seis folhas A3](projetos/14-microrede-fv-bess-gerador/README.md)
+- [Modelo Revit (.RVT)](projetos/14-microrede-fv-bess-gerador/revit/14-microrede-fv-bess-gerador.rvt)
+- [Pranchas A3 (.PDF)](projetos/14-microrede-fv-bess-gerador/pranchas/14-microrede-fv-bess-gerador.pdf)
 
 ## Escopo e uso
 
