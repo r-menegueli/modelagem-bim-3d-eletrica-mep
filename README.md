@@ -2,7 +2,7 @@
 
 Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modelagem BIM, organização de vistas e documentação de instalações. Cada projeto é publicado em pasta própria, com modelo nativo, pranchas e escopo documentado.
 
-**Progresso: 7 de 14 projetos publicados.**
+**Progresso: 8 de 14 projetos publicados.**
 
 ## Projetos
 
@@ -15,7 +15,7 @@ Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modela
 | 05 | Galpão logístico | [Publicado](projetos/05-galpao-logistico/README.md) |
 | 06 | Oficina de manutenção industrial | [Publicado](projetos/06-oficina-manutencao-industrial/README.md) |
 | 07 | Supermercado e varejo | [Publicado](projetos/07-supermercado-varejo/README.md) |
-| 08 | Hotel urbano | Planejado |
+| 08 | Hotel urbano | [Publicado](projetos/08-hotel-urbano/README.md) |
 | 09 | Data center | Planejado |
 | 10 | Estacionamento coberto com recarga de veículos elétricos | Planejado |
 | 11 | Usina fotovoltaica | Planejado |
@@ -95,6 +95,16 @@ Loja com salão de vendas, caixas, hortifrúti, padaria, frios, câmaras, estoqu
 - [Projeto completo e prévias das seis folhas A3](projetos/07-supermercado-varejo/README.md)
 - [Modelo Revit (.RVT)](projetos/07-supermercado-varejo/revit/07-supermercado-varejo.rvt)
 - [Pranchas A3 (.PDF)](projetos/07-supermercado-varejo/pranchas/07-supermercado-varejo.pdf)
+
+### 08 — Hotel urbano
+
+Hotel com recepção, lobby, restaurante, cozinha, serviços, quartos, circulação e apoio; três pavimentos, 22 × 16 m.
+
+![Axonometria do hotel urbano](projetos/08-hotel-urbano/pranchas/preview/BIM-01-axonometria.png)
+
+- [Projeto completo e prévias das seis folhas A3](projetos/08-hotel-urbano/README.md)
+- [Modelo Revit (.RVT)](projetos/08-hotel-urbano/revit/08-hotel-urbano.rvt)
+- [Pranchas A3 (.PDF)](projetos/08-hotel-urbano/pranchas/08-hotel-urbano.pdf)
 
 ## Escopo e uso
 

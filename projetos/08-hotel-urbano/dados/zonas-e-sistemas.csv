@@ -1,0 +1,6 @@
+﻿Circuito;Zona / sistema;Uso;Status
+C01;Lobby e areas comuns;Conceitual;Nao dimensionado
+C02;Quartos e circulacao;Conceitual;Nao dimensionado
+C03;Cozinha e restaurante;Conceitual;Nao dimensionado
+C04;Servicos e lavanderia;Conceitual;Nao dimensionado
+C05;TI e climatizacao;Conceitual;Nao dimensionado
