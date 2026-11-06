@@ -1,0 +1,6 @@
+﻿Circuito;Zona / sistema;Uso;Status
+C01;Bombas de captacao e recalque;Conceitual;Nao dimensionado
+C02;Processo e filtragem;Conceitual;Nao dimensionado
+C03;Dosagem e sopradores;Conceitual;Nao dimensionado
+C04;Reservacao;Conceitual;Nao dimensionado
+C05;Controle e instrumentacao;Conceitual;Nao dimensionado

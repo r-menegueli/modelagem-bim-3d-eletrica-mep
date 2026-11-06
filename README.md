@@ -2,7 +2,7 @@
 
 Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modelagem BIM, organização de vistas e documentação de instalações. Cada projeto é publicado em pasta própria, com modelo nativo, pranchas e escopo documentado.
 
-**Progresso: 12 de 14 projetos publicados.**
+**Progresso: 13 de 14 projetos publicados.**
 
 ## Projetos
 
@@ -20,7 +20,7 @@ Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modela
 | 10 | Estacionamento com recarga de veículos elétricos | [Publicado](projetos/10-estacionamento-carga-eletrica/README.md) |
 | 11 | Usina fotovoltaica | [Publicado](projetos/11-usina-fotovoltaica/README.md) |
 | 12 | Subestação e centro de controle de motores | [Publicado](projetos/12-subestacao-e-ccm/README.md) |
-| 13 | Estação de tratamento de água | Planejado |
+| 13 | Estação de tratamento de água | [Publicado](projetos/13-estacao-tratamento-agua/README.md) |
 | 14 | Microrrede com geração solar, baterias e gerador de apoio | Planejado |
 
 ## Projetos publicados
@@ -145,6 +145,16 @@ Implantação esquemática de subestação, transformação, quadros, centro de 
 - [Projeto completo e prévias das seis folhas A3](projetos/12-subestacao-e-ccm/README.md)
 - [Modelo Revit (.RVT)](projetos/12-subestacao-e-ccm/revit/12-subestacao-e-ccm.rvt)
 - [Pranchas A3 (.PDF)](projetos/12-subestacao-e-ccm/pranchas/12-subestacao-e-ccm.pdf)
+
+### 13 — Estação de tratamento de água
+
+Implantação conceitual com etapas de tratamento, reservação, bombeamento, dosagem, laboratório e apoio; um pavimento, 44 × 30 m.
+
+![Axonometria da estação de tratamento](projetos/13-estacao-tratamento-agua/pranchas/preview/BIM-01-axonometria.png)
+
+- [Projeto completo e prévias das seis folhas A3](projetos/13-estacao-tratamento-agua/README.md)
+- [Modelo Revit (.RVT)](projetos/13-estacao-tratamento-agua/revit/13-estacao-tratamento-agua.rvt)
+- [Pranchas A3 (.PDF)](projetos/13-estacao-tratamento-agua/pranchas/13-estacao-tratamento-agua.pdf)
 
 ## Escopo e uso
 
