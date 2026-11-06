@@ -1,6 +1,6 @@
 # Estudo volumétrico de equipamentos elétricos em FreeCAD
 
-Este repositório contém um estudo acadêmico de arranjo espacial. O modelo nativo representa seis equipamentos e um trecho de eletrocalha por caixas simples, para visualizar posições e envelopes aproximados.
+Este repositório contém um estudo acadêmico de arranjo espacial. O modelo nativo representa cinco equipamentos e um trecho de eletrocalha por caixas simples, para visualizar posições e envelopes aproximados.
 
 ## Arquivos
 
