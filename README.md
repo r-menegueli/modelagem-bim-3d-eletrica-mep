@@ -2,7 +2,7 @@
 
 Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modelagem BIM, organização de vistas e documentação de instalações. Cada projeto é publicado em pasta própria, com modelo nativo, pranchas e escopo documentado.
 
-**Progresso: 8 de 14 projetos publicados.**
+**Progresso: 9 de 14 projetos publicados.**
 
 ## Projetos
 
@@ -16,7 +16,7 @@ Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modela
 | 06 | Oficina de manutenção industrial | [Publicado](projetos/06-oficina-manutencao-industrial/README.md) |
 | 07 | Supermercado e varejo | [Publicado](projetos/07-supermercado-varejo/README.md) |
 | 08 | Hotel urbano | [Publicado](projetos/08-hotel-urbano/README.md) |
-| 09 | Data center | Planejado |
+| 09 | Data center | [Publicado](projetos/09-data-center/README.md) |
 | 10 | Estacionamento coberto com recarga de veículos elétricos | Planejado |
 | 11 | Usina fotovoltaica | Planejado |
 | 12 | Subestação e centro de controle de motores | Planejado |
@@ -105,6 +105,16 @@ Hotel com recepção, lobby, restaurante, cozinha, serviços, quartos, circulaç
 - [Projeto completo e prévias das seis folhas A3](projetos/08-hotel-urbano/README.md)
 - [Modelo Revit (.RVT)](projetos/08-hotel-urbano/revit/08-hotel-urbano.rvt)
 - [Pranchas A3 (.PDF)](projetos/08-hotel-urbano/pranchas/08-hotel-urbano.pdf)
+
+### 09 — Data center
+
+Centro de dados com NOC, salas de dados, UPS, baterias, elétrica, telecomunicações, climatização, segurança e apoio; dois pavimentos, 32 × 22 m.
+
+![Axonometria do data center](projetos/09-data-center/pranchas/preview/BIM-01-axonometria.png)
+
+- [Projeto completo e prévias das seis folhas A3](projetos/09-data-center/README.md)
+- [Modelo Revit (.RVT)](projetos/09-data-center/revit/09-data-center.rvt)
+- [Pranchas A3 (.PDF)](projetos/09-data-center/pranchas/09-data-center.pdf)
 
 ## Escopo e uso
 

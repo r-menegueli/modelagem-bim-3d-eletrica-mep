@@ -1,0 +1,6 @@
+﻿Circuito;Zona / sistema;Uso;Status
+C01;UPS e barramentos de estudo;Conceitual;Nao dimensionado
+C02;Salas de servidores;Conceitual;Nao dimensionado
+C03;Climatizacao de precisao;Conceitual;Nao dimensionado
+C04;Telecom e seguranca;Conceitual;Nao dimensionado
+C05;Alimentacao redundante conceitual;Conceitual;Nao dimensionado
