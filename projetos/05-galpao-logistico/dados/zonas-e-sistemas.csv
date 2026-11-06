@@ -1,0 +1,6 @@
+﻿Circuito;Zona / sistema;Uso;Status
+C01;Docas e recebimento;Conceitual;Nao dimensionado
+C02;Armazenagem de alto pe-direito;Conceitual;Nao dimensionado
+C03;Separacao e expedicao;Conceitual;Nao dimensionado
+C04;Administracao e TI;Conceitual;Nao dimensionado
+C05;Recarga interna;Conceitual;Nao dimensionado

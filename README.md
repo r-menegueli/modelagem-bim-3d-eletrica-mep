@@ -2,7 +2,7 @@
 
 Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modelagem BIM, organização de vistas e documentação de instalações. Cada projeto é publicado em pasta própria, com modelo nativo, pranchas e escopo documentado.
 
-**Progresso: 4 de 14 projetos publicados.**
+**Progresso: 5 de 14 projetos publicados.**
 
 ## Projetos
 
@@ -12,7 +12,7 @@ Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modela
 | 02 | Escritório corporativo | [Publicado](projetos/02-escritorio-corporativo/README.md) |
 | 03 | Clínica de saúde | [Publicado](projetos/03-clinica-de-saude/README.md) |
 | 04 | Escola de ensino fundamental | [Publicado](projetos/04-escola-ensino-fundamental/README.md) |
-| 05 | Galpão logístico | Planejado |
+| 05 | Galpão logístico | [Publicado](projetos/05-galpao-logistico/README.md) |
 | 06 | Oficina de manutenção industrial | Planejado |
 | 07 | Supermercado e varejo | Planejado |
 | 08 | Hotel urbano | Planejado |
@@ -65,6 +65,16 @@ Escola com salas de aula, biblioteca, laboratório, administração, refeitório
 - [Projeto completo e prévias das seis folhas A3](projetos/04-escola-ensino-fundamental/README.md)
 - [Modelo Revit (.RVT)](projetos/04-escola-ensino-fundamental/revit/04-escola-ensino-fundamental.rvt)
 - [Pranchas A3 (.PDF)](projetos/04-escola-ensino-fundamental/pranchas/04-escola-ensino-fundamental.pdf)
+
+### 05 — Galpão logístico
+
+Galpão para recebimento, armazenagem, separação, expedição, docas, administração e apoio; um pavimento, 36 × 24 m.
+
+![Axonometria do galpão logístico](projetos/05-galpao-logistico/pranchas/preview/BIM-01-axonometria.png)
+
+- [Projeto completo e prévias das seis folhas A3](projetos/05-galpao-logistico/README.md)
+- [Modelo Revit (.RVT)](projetos/05-galpao-logistico/revit/05-galpao-logistico.rvt)
+- [Pranchas A3 (.PDF)](projetos/05-galpao-logistico/pranchas/05-galpao-logistico.pdf)
 
 ## Escopo e uso
 
