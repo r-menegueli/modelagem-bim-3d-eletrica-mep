@@ -6,7 +6,7 @@ Implantação de estudo com mesas fotovoltaicas, inversor, transformador, armaze
 
 ## Escopo modelado
 
-- Envelope de estudo: 60,00 × 36,00 m; 1 pavimento.
+- Área de referência: 60,00 × 36,00 m; 1 pavimento.
 - Implantação esquemática com zonas funcionais e volumes genéricos para equipamentos; não há envelope edificado.
 - Vistas de arquitetura/implantação, iluminação, força e sistemas, diagrama funcional e axonometria.
 - Pranchas em formato A3 com identificação, legendas e premissas de estudo.

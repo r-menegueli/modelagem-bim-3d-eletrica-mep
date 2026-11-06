@@ -6,7 +6,7 @@ Implantação conceitual com etapas de tratamento, reservação, bombeamento, do
 
 ## Escopo modelado
 
-- Envelope de estudo: 44,00 × 30,00 m; 1 pavimento.
+- Área de referência: 44,00 × 30,00 m; 1 pavimento.
 - Implantação esquemática com zonas funcionais e volumes genéricos para equipamentos; não há envelope edificado.
 - Vistas de arquitetura/implantação, iluminação, força e sistemas, diagrama funcional e axonometria.
 - Pranchas em formato A3 com identificação, legendas e premissas de estudo.
