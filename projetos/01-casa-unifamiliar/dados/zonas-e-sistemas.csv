@@ -1,0 +1,6 @@
+﻿Circuito;Zona / sistema;Uso;Status
+C01;Iluminacao por ambiente;Conceitual;Nao dimensionado
+C02;Tomadas de uso geral;Conceitual;Nao dimensionado
+C03;Cargas de cozinha e lavanderia;Conceitual;Nao dimensionado
+C04;Climatizacao e chuveiros;Conceitual;Nao dimensionado
+C05;Quadro residencial e alimentacao;Conceitual;Nao dimensionado
