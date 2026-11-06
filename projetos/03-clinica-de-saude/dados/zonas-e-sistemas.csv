@@ -1,0 +1,6 @@
+﻿Circuito;Zona / sistema;Uso;Status
+C01;Recepcao e espera;Conceitual;Nao dimensionado
+C02;Consultorios;Conceitual;Nao dimensionado
+C03;Exames e imagem;Conceitual;Nao dimensionado
+C04;Laboratorio e farmacia;Conceitual;Nao dimensionado
+C05;Infraestrutura e TI;Conceitual;Nao dimensionado

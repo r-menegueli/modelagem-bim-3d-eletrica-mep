@@ -2,7 +2,7 @@
 
 Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modelagem BIM, organização de vistas e documentação de instalações. Cada projeto é publicado em pasta própria, com modelo nativo, pranchas e escopo documentado.
 
-**Progresso: 2 de 14 projetos publicados.**
+**Progresso: 3 de 14 projetos publicados.**
 
 ## Projetos
 
@@ -10,7 +10,7 @@ Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modela
 |---:|---|---|
 | 01 | Casa unifamiliar | [Publicado](projetos/01-casa-unifamiliar/README.md) |
 | 02 | Escritório corporativo | [Publicado](projetos/02-escritorio-corporativo/README.md) |
-| 03 | Clínica de saúde | Planejado |
+| 03 | Clínica de saúde | [Publicado](projetos/03-clinica-de-saude/README.md) |
 | 04 | Escola de ensino fundamental | Planejado |
 | 05 | Galpão logístico | Planejado |
 | 06 | Oficina de manutenção industrial | Planejado |
@@ -45,6 +45,16 @@ Edifício conceitual de dois pavimentos, com áreas de recepção, reunião, ope
 - [Seis pranchas A3 (.PDF)](projetos/02-escritorio-corporativo/pranchas/02-escritorio-corporativo.pdf)
 - [Mapa de zonas e pontos (.CSV)](projetos/02-escritorio-corporativo/dados/zonas-e-pontos.csv)
 - [Premissas e limites do estudo](projetos/02-escritorio-corporativo/dados/premissas-do-estudo.md)
+
+### 03 — Clínica de saúde
+
+Clínica com recepção, triagem, consultórios, exames, imagem, laboratório, farmácia e apoio clínico; estudo de um pavimento, 24 × 18 m.
+
+![Axonometria da clínica de saúde](projetos/03-clinica-de-saude/pranchas/preview/BIM-01-axonometria.png)
+
+- [Projeto completo e prévias das seis folhas A3](projetos/03-clinica-de-saude/README.md)
+- [Modelo Revit (.RVT)](projetos/03-clinica-de-saude/revit/03-clinica-de-saude.rvt)
+- [Pranchas A3 (.PDF)](projetos/03-clinica-de-saude/pranchas/03-clinica-de-saude.pdf)
 
 ## Escopo e uso
 
