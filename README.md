@@ -2,7 +2,7 @@
 
 Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modelagem BIM, organização de vistas e documentação de instalações. Cada projeto é publicado em pasta própria, com modelo nativo, pranchas e escopo documentado.
 
-**Progresso: 11 de 14 projetos publicados.**
+**Progresso: 12 de 14 projetos publicados.**
 
 ## Projetos
 
@@ -19,7 +19,7 @@ Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modela
 | 09 | Data center | [Publicado](projetos/09-data-center/README.md) |
 | 10 | Estacionamento com recarga de veículos elétricos | [Publicado](projetos/10-estacionamento-carga-eletrica/README.md) |
 | 11 | Usina fotovoltaica | [Publicado](projetos/11-usina-fotovoltaica/README.md) |
-| 12 | Subestação e centro de controle de motores | Planejado |
+| 12 | Subestação e centro de controle de motores | [Publicado](projetos/12-subestacao-e-ccm/README.md) |
 | 13 | Estação de tratamento de água | Planejado |
 | 14 | Microrrede com geração solar, baterias e gerador de apoio | Planejado |
 
@@ -135,6 +135,16 @@ Implantação solar com mesas fotovoltaicas, inversor, transformador, baterias e
 - [Projeto completo e prévias das seis folhas A3](projetos/11-usina-fotovoltaica/README.md)
 - [Modelo Revit (.RVT)](projetos/11-usina-fotovoltaica/revit/11-usina-fotovoltaica.rvt)
 - [Pranchas A3 (.PDF)](projetos/11-usina-fotovoltaica/pranchas/11-usina-fotovoltaica.pdf)
+
+### 12 — Subestação e centro de controle de motores
+
+Implantação esquemática de subestação, transformação, quadros, centro de controle de motores e geração de apoio; um pavimento, 34 × 24 m.
+
+![Axonometria da subestação e CCM](projetos/12-subestacao-e-ccm/pranchas/preview/BIM-01-axonometria.png)
+
+- [Projeto completo e prévias das seis folhas A3](projetos/12-subestacao-e-ccm/README.md)
+- [Modelo Revit (.RVT)](projetos/12-subestacao-e-ccm/revit/12-subestacao-e-ccm.rvt)
+- [Pranchas A3 (.PDF)](projetos/12-subestacao-e-ccm/pranchas/12-subestacao-e-ccm.pdf)
 
 ## Escopo e uso
 

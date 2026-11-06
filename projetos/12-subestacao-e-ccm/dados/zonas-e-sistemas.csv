@@ -1,0 +1,6 @@
+﻿Circuito;Zona / sistema;Uso;Status
+C01;Entrada e protecao;Conceitual;Nao dimensionado
+C02;Transformacao;Conceitual;Nao dimensionado
+C03;CCM e motores;Conceitual;Nao dimensionado
+C04;Servicos auxiliares;Conceitual;Nao dimensionado
+C05;Controle e supervisao;Conceitual;Nao dimensionado
