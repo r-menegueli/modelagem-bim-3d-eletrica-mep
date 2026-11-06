@@ -1,0 +1,6 @@
+﻿Circuito;Zona / sistema;Uso;Status
+C01;Iluminacao geral e de tarefa;Conceitual;Nao dimensionado
+C02;Maquinas por baia;Conceitual;Nao dimensionado
+C03;Soldagem e usinagem;Conceitual;Nao dimensionado
+C04;Ar comprimido e exaustao;Conceitual;Nao dimensionado
+C05;Apoio e vestiarios;Conceitual;Nao dimensionado

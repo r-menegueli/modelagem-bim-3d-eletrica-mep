@@ -2,7 +2,7 @@
 
 Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modelagem BIM, organização de vistas e documentação de instalações. Cada projeto é publicado em pasta própria, com modelo nativo, pranchas e escopo documentado.
 
-**Progresso: 5 de 14 projetos publicados.**
+**Progresso: 6 de 14 projetos publicados.**
 
 ## Projetos
 
@@ -13,7 +13,7 @@ Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modela
 | 03 | Clínica de saúde | [Publicado](projetos/03-clinica-de-saude/README.md) |
 | 04 | Escola de ensino fundamental | [Publicado](projetos/04-escola-ensino-fundamental/README.md) |
 | 05 | Galpão logístico | [Publicado](projetos/05-galpao-logistico/README.md) |
-| 06 | Oficina de manutenção industrial | Planejado |
+| 06 | Oficina de manutenção industrial | [Publicado](projetos/06-oficina-manutencao-industrial/README.md) |
 | 07 | Supermercado e varejo | Planejado |
 | 08 | Hotel urbano | Planejado |
 | 09 | Data center | Planejado |
@@ -75,6 +75,16 @@ Galpão para recebimento, armazenagem, separação, expedição, docas, administ
 - [Projeto completo e prévias das seis folhas A3](projetos/05-galpao-logistico/README.md)
 - [Modelo Revit (.RVT)](projetos/05-galpao-logistico/revit/05-galpao-logistico.rvt)
 - [Pranchas A3 (.PDF)](projetos/05-galpao-logistico/pranchas/05-galpao-logistico.pdf)
+
+### 06 — Oficina de manutenção industrial
+
+Oficina com baias de manutenção, usinagem, soldagem, ferramentas, compressores, almoxarifado, vestiários e apoio; um pavimento, 30 × 20 m.
+
+![Axonometria da oficina industrial](projetos/06-oficina-manutencao-industrial/pranchas/preview/BIM-01-axonometria.png)
+
+- [Projeto completo e prévias das seis folhas A3](projetos/06-oficina-manutencao-industrial/README.md)
+- [Modelo Revit (.RVT)](projetos/06-oficina-manutencao-industrial/revit/06-oficina-manutencao-industrial.rvt)
+- [Pranchas A3 (.PDF)](projetos/06-oficina-manutencao-industrial/pranchas/06-oficina-manutencao-industrial.pdf)
 
 ## Escopo e uso
 
