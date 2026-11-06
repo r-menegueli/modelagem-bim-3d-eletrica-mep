@@ -1,0 +1,13 @@
+﻿Circuito;Uso;Tensao de estudo;Carga indicativa VA;Condutor / protecao
+C01;Iluminacao social e cozinha;127 V;720;Nao dimensionado
+C02;Iluminacao intima e servico;127 V;540;Nao dimensionado
+C03;Tomadas de uso geral - estar/garagem;127 V;600;Nao dimensionado
+C04;Tomadas de uso geral - dormitorios;127 V;600;Nao dimensionado
+C05;Tomadas de bancada - cozinha;127 V;1800;Nao dimensionado
+C06;Refrigerador;127 V;700;Nao dimensionado
+C07;Micro-ondas;127 V;1500;Nao dimensionado
+C08;Cooktop eletrico;220 V;5500;Nao dimensionado
+C09;Lavadora de roupas;127 V;1200;Nao dimensionado
+C10;Chuveiro - banheiro social;220 V;5500;Nao dimensionado
+C11;Chuveiro - banheiro da suite;220 V;5500;Nao dimensionado
+C12;Portao / servico;127 V;500;Nao dimensionado
