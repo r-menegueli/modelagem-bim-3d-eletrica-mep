@@ -2,7 +2,7 @@
 
 Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modelagem BIM, organização de vistas e documentação de instalações. Cada projeto é publicado em pasta própria, com modelo nativo, pranchas e escopo documentado.
 
-**Progresso: 6 de 14 projetos publicados.**
+**Progresso: 7 de 14 projetos publicados.**
 
 ## Projetos
 
@@ -14,7 +14,7 @@ Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modela
 | 04 | Escola de ensino fundamental | [Publicado](projetos/04-escola-ensino-fundamental/README.md) |
 | 05 | Galpão logístico | [Publicado](projetos/05-galpao-logistico/README.md) |
 | 06 | Oficina de manutenção industrial | [Publicado](projetos/06-oficina-manutencao-industrial/README.md) |
-| 07 | Supermercado e varejo | Planejado |
+| 07 | Supermercado e varejo | [Publicado](projetos/07-supermercado-varejo/README.md) |
 | 08 | Hotel urbano | Planejado |
 | 09 | Data center | Planejado |
 | 10 | Estacionamento coberto com recarga de veículos elétricos | Planejado |
@@ -85,6 +85,16 @@ Oficina com baias de manutenção, usinagem, soldagem, ferramentas, compressores
 - [Projeto completo e prévias das seis folhas A3](projetos/06-oficina-manutencao-industrial/README.md)
 - [Modelo Revit (.RVT)](projetos/06-oficina-manutencao-industrial/revit/06-oficina-manutencao-industrial.rvt)
 - [Pranchas A3 (.PDF)](projetos/06-oficina-manutencao-industrial/pranchas/06-oficina-manutencao-industrial.pdf)
+
+### 07 — Supermercado e varejo
+
+Loja com salão de vendas, caixas, hortifrúti, padaria, frios, câmaras, estoque, recebimento e administração; um pavimento, 32 × 22 m.
+
+![Axonometria do supermercado](projetos/07-supermercado-varejo/pranchas/preview/BIM-01-axonometria.png)
+
+- [Projeto completo e prévias das seis folhas A3](projetos/07-supermercado-varejo/README.md)
+- [Modelo Revit (.RVT)](projetos/07-supermercado-varejo/revit/07-supermercado-varejo.rvt)
+- [Pranchas A3 (.PDF)](projetos/07-supermercado-varejo/pranchas/07-supermercado-varejo.pdf)
 
 ## Escopo e uso
 

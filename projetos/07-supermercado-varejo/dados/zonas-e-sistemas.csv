@@ -1,0 +1,6 @@
+﻿Circuito;Zona / sistema;Uso;Status
+C01;Corredores de vendas e caixas;Conceitual;Nao dimensionado
+C02;Refrigeracao comercial;Conceitual;Nao dimensionado
+C03;Padaria e preparo;Conceitual;Nao dimensionado
+C04;Recebimento e estoque;Conceitual;Nao dimensionado
+C05;Administracao e TI;Conceitual;Nao dimensionado
