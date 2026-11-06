@@ -1,0 +1,6 @@
+﻿Circuito;Zona / sistema;Uso;Status
+C01;Iluminacao de salas e circulacao;Conceitual;Nao dimensionado
+C02;Tomadas de salas e biblioteca;Conceitual;Nao dimensionado
+C03;Laboratorios e audiovisual;Conceitual;Nao dimensionado
+C04;Cozinha e refeitorio;Conceitual;Nao dimensionado
+C05;TI e administracao;Conceitual;Nao dimensionado

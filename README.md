@@ -2,7 +2,7 @@
 
 Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modelagem BIM, organização de vistas e documentação de instalações. Cada projeto é publicado em pasta própria, com modelo nativo, pranchas e escopo documentado.
 
-**Progresso: 3 de 14 projetos publicados.**
+**Progresso: 4 de 14 projetos publicados.**
 
 ## Projetos
 
@@ -11,7 +11,7 @@ Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modela
 | 01 | Casa unifamiliar | [Publicado](projetos/01-casa-unifamiliar/README.md) |
 | 02 | Escritório corporativo | [Publicado](projetos/02-escritorio-corporativo/README.md) |
 | 03 | Clínica de saúde | [Publicado](projetos/03-clinica-de-saude/README.md) |
-| 04 | Escola de ensino fundamental | Planejado |
+| 04 | Escola de ensino fundamental | [Publicado](projetos/04-escola-ensino-fundamental/README.md) |
 | 05 | Galpão logístico | Planejado |
 | 06 | Oficina de manutenção industrial | Planejado |
 | 07 | Supermercado e varejo | Planejado |
@@ -55,6 +55,16 @@ Clínica com recepção, triagem, consultórios, exames, imagem, laboratório, f
 - [Projeto completo e prévias das seis folhas A3](projetos/03-clinica-de-saude/README.md)
 - [Modelo Revit (.RVT)](projetos/03-clinica-de-saude/revit/03-clinica-de-saude.rvt)
 - [Pranchas A3 (.PDF)](projetos/03-clinica-de-saude/pranchas/03-clinica-de-saude.pdf)
+
+### 04 — Escola de ensino fundamental
+
+Escola com salas de aula, biblioteca, laboratório, administração, refeitório, pátio e áreas de apoio; dois pavimentos, 30 × 18 m.
+
+![Axonometria da escola](projetos/04-escola-ensino-fundamental/pranchas/preview/BIM-01-axonometria.png)
+
+- [Projeto completo e prévias das seis folhas A3](projetos/04-escola-ensino-fundamental/README.md)
+- [Modelo Revit (.RVT)](projetos/04-escola-ensino-fundamental/revit/04-escola-ensino-fundamental.rvt)
+- [Pranchas A3 (.PDF)](projetos/04-escola-ensino-fundamental/pranchas/04-escola-ensino-fundamental.pdf)
 
 ## Escopo e uso
 
