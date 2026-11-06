@@ -1,0 +1,6 @@
+﻿Circuito;Zona / sistema;Uso;Status
+C01;Mesas de modulos fotovoltaicos;Conceitual;Nao dimensionado
+C02;Inversores por setor;Conceitual;Nao dimensionado
+C03;Transformacao e interface de rede;Conceitual;Nao dimensionado
+C04;Controle e monitoramento;Conceitual;Nao dimensionado
+C05;Aterramento a desenvolver;Conceitual;Nao dimensionado

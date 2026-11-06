@@ -2,7 +2,7 @@
 
 Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modelagem BIM, organização de vistas e documentação de instalações. Cada projeto é publicado em pasta própria, com modelo nativo, pranchas e escopo documentado.
 
-**Progresso: 10 de 14 projetos publicados.**
+**Progresso: 11 de 14 projetos publicados.**
 
 ## Projetos
 
@@ -18,7 +18,7 @@ Coleção de estudos independentes em Autodesk Revit 2027 para demonstrar modela
 | 08 | Hotel urbano | [Publicado](projetos/08-hotel-urbano/README.md) |
 | 09 | Data center | [Publicado](projetos/09-data-center/README.md) |
 | 10 | Estacionamento com recarga de veículos elétricos | [Publicado](projetos/10-estacionamento-carga-eletrica/README.md) |
-| 11 | Usina fotovoltaica | Planejado |
+| 11 | Usina fotovoltaica | [Publicado](projetos/11-usina-fotovoltaica/README.md) |
 | 12 | Subestação e centro de controle de motores | Planejado |
 | 13 | Estação de tratamento de água | Planejado |
 | 14 | Microrrede com geração solar, baterias e gerador de apoio | Planejado |
@@ -125,6 +125,16 @@ Implantação com setores de vagas, circulação, acesso e pontos de recarga; um
 - [Projeto completo e prévias das seis folhas A3](projetos/10-estacionamento-carga-eletrica/README.md)
 - [Modelo Revit (.RVT)](projetos/10-estacionamento-carga-eletrica/revit/10-estacionamento-carga-eletrica.rvt)
 - [Pranchas A3 (.PDF)](projetos/10-estacionamento-carga-eletrica/pranchas/10-estacionamento-carga-eletrica.pdf)
+
+### 11 — Usina fotovoltaica
+
+Implantação solar com mesas fotovoltaicas, inversor, transformador, baterias e gerador de apoio; um pavimento, 60 × 36 m.
+
+![Axonometria da usina fotovoltaica](projetos/11-usina-fotovoltaica/pranchas/preview/BIM-01-axonometria.png)
+
+- [Projeto completo e prévias das seis folhas A3](projetos/11-usina-fotovoltaica/README.md)
+- [Modelo Revit (.RVT)](projetos/11-usina-fotovoltaica/revit/11-usina-fotovoltaica.rvt)
+- [Pranchas A3 (.PDF)](projetos/11-usina-fotovoltaica/pranchas/11-usina-fotovoltaica.pdf)
 
 ## Escopo e uso
 
