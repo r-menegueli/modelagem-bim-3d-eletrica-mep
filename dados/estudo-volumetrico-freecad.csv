@@ -1,0 +1,7 @@
+Tag,Objeto_FreeCAD,Dimensoes_mm,Quantidade,Unidade,Volume_caixa_m3,Observacao
+TR-01,TR01_Transformer_500kVA_13k8_380V,1550x980x1750,1,un,2.658,Caixa de referência
+QGBT-01,QGBT01_Main_LV_Switchboard_1000A,2000x800x2200,1,un,3.520,Caixa de referência
+QTA-01,QTA01_ATS_Panel_250kVA,800x600x2200,1,un,1.056,Caixa de referência
+CCM-01,CCM01_Motor_Control_Center_6Col,2400x600x2200,1,un,3.168,Caixa de referência
+GMG-01,GMG01_Diesel_Generator_250kVA,3600x1350x1950,1,un,9.477,Caixa de referência
+EC-300,EC300_Overhead_Cable_Tray_300x100,9000x300x100,1,un,0.270,Caixa de referência

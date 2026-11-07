@@ -2,7 +2,7 @@
 
 ![Painel com vistas axonométricas dos 14 projetos](docs/preview_board.png)
 
-Este repositório reúne os **14 projetos originais** e o Projeto 19, um estudo BIM conceitual de subestação GIS no Revit 2027. São **15 projetos no total** nesta etapa. Os 14 projetos originais têm seis pranchas A3 cada. A revisão R8 do Projeto 19 foi gerada no Revit, com modelo, 21 pranchas A3, oito vistas 3D, imagens PNG, cálculos e auditoria rastreável. O estudo permanece parcial e não atende a LOD 300 ou a projeto executivo.
+Este repositório reúne os **14 projetos originais** e o Projeto 19, um estudo BIM conceitual de subestação GIS no Revit 2027. São **15 projetos no total** nesta etapa. Os 14 projetos originais têm seis pranchas A3 cada. A revisão R8 do Projeto 19 foi gerada no Revit, com modelo, PDF de 21 páginas A3, oito vistas 3D, PNGs, cálculos e auditoria rastreável. O estudo permanece parcial e não atende a LOD 300 ou a projeto executivo.
 
 ## Projetos
 
@@ -26,7 +26,7 @@ Este repositório reúne os **14 projetos originais** e o Projeto 19, um estudo 
 
 ## Conteúdo das pranchas
 
-Nos projetos originais, cada PDF apresenta a planta principal, os pontos esquemáticos de iluminação e força/dados, um diagrama funcional e uma vista axonométrica. O Projeto 19 possui 21 folhas A3 e oito vistas 3D na revisão R8. As [imagens PNG](projetos/19-subestacao-gis/pranchas/reconstrucao-r8/README.md) foram exportadas do PDF para consulta e preparação de uma proposta, que não foi publicada no LinkedIn.
+Nos projetos originais, cada PDF apresenta a planta principal, os pontos esquemáticos de iluminação e força/dados, um diagrama funcional e uma vista axonométrica. O Projeto 19 possui 21 páginas A3 e oito vistas 3D na revisão R8. As [imagens PNG](projetos/19-subestacao-gis/pranchas/reconstrucao-r8/README.md) foram exportadas do PDF para consulta e preparação de uma proposta, que não foi publicada no LinkedIn.
 
 ## Escopo e limites
 
@@ -38,6 +38,12 @@ O R8 foi gerado no Autodesk Revit 2027.3 por add-in C# da Revit API compilado co
 
 O RVT tem 8,33 MB; o PDF, 2,31 MB; cada família RFA tem menos de 0,5 MB. Nenhum arquivo R8 chega ao aviso de 50 MiB ou ao limite rígido de 100 MiB do GitHub, então eles foram mantidos no Git comum. O Git LFS não foi necessário; ele usa cotas de armazenamento e transferência. [Limites de arquivo do GitHub](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github) · [Cotas de Git LFS](https://docs.github.com/en/billing/concepts/product-billing/git-lfs)
 
-## Estudo complementar
+## Estudo volumétrico complementar em FreeCAD
 
-O repositório também preserva um estudo volumétrico independente em FreeCAD: [modelo nativo](models_3d/Subestacao_QGBT_CCM_Gerador_BIM_MEP.FCStd).
+O estudo separado representa cinco equipamentos e uma bandeja de cabos como caixas geométricas de referência.
+
+- [Modelo nativo (.FCStd)](models_3d/Subestacao_QGBT_CCM_Gerador_BIM_MEP.FCStd)
+- [Tabela de volumes de referência (.CSV)](dados/estudo-volumetrico-freecad.csv)
+- [Script gerador](scripts/generate_bim_mep_model.py)
+
+Os volumes correspondem às caixas simplificadas. Não constituem um modelo BIM coordenado, um quantitativo de obra ou um modelo LOD350.
