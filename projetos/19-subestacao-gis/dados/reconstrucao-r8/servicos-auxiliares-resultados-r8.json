@@ -1,0 +1,369 @@
+{
+  "project": "Subestacao GIS 138/13,8 kV - estudo demonstrativo",
+  "revision": "R8",
+  "date": "2026-11-07",
+  "status": "ESTIMATIVA_DE_ESTUDO - nao usar para especificacao ou compra",
+  "inputs": {
+    "project": "Subestacao GIS 138/13,8 kV - estudo demonstrativo",
+    "revision": "R8",
+    "date": "2026-11-07",
+    "status": "ESTIMATIVA_DE_ESTUDO - nao usar para especificacao ou compra",
+    "ac_system": {
+      "voltage_v_line_to_line_assumed": 380.0,
+      "power_factor_assumed": 0.9,
+      "installed_transformer_candidate_kva": 100.0,
+      "utilization_limit_assumed": 0.8,
+      "loads": [
+        {
+          "id": "AUX-AC-01",
+          "description": "HVAC de salas técnicas",
+          "quantity": 2,
+          "unit_power_kw_assumed": 25.0,
+          "demand_factor_assumed": 0.7,
+          "basis": "Estimativa de estudo; carga térmica e datasheets pendentes"
+        },
+        {
+          "id": "AUX-AC-02",
+          "description": "Iluminação interna",
+          "quantity": 1302,
+          "unit_power_kw_assumed": 0.007,
+          "demand_factor_assumed": 0.8,
+          "basis": "Área construída estimada 1302 m² x 7 W/m²; projeto luminotécnico pendente"
+        },
+        {
+          "id": "AUX-AC-03",
+          "description": "Iluminação de emergência",
+          "quantity": 1302,
+          "unit_power_kw_assumed": 0.0015,
+          "demand_factor_assumed": 0.5,
+          "basis": "Área construída estimada 1302 m² x 1,5 W/m²; autonomia e fotometria pendentes"
+        },
+        {
+          "id": "AUX-AC-04",
+          "description": "Iluminação externa e vias",
+          "quantity": 2800,
+          "unit_power_kw_assumed": 0.0005,
+          "demand_factor_assumed": 0.8,
+          "basis": "Área de pátio iluminada estimada 2800 m² x 0,5 W/m²; estudo fotométrico pendente"
+        },
+        {
+          "id": "AUX-AC-05",
+          "description": "Ventilação e exaustão",
+          "quantity": 4,
+          "unit_power_kw_assumed": 2.2,
+          "demand_factor_assumed": 0.5,
+          "basis": "Potência unitária e simultaneidade assumidas; levantamento térmico pendente"
+        },
+        {
+          "id": "AUX-AC-06",
+          "description": "Painéis de proteção e controle",
+          "quantity": 11,
+          "unit_power_kw_assumed": 0.15,
+          "demand_factor_assumed": 1.0,
+          "basis": "Potência unitária assumida; listas de cargas dos IEDs pendentes"
+        },
+        {
+          "id": "AUX-AC-07",
+          "description": "Telecomunicações e supervisão",
+          "quantity": 1,
+          "unit_power_kw_assumed": 2.0,
+          "demand_factor_assumed": 1.0,
+          "basis": "Carga concentrada assumida; arquitetura e datasheets pendentes"
+        },
+        {
+          "id": "AUX-AC-08",
+          "description": "Carregador do sistema 125 Vcc",
+          "quantity": 1,
+          "unit_power_kw_assumed": 5.0,
+          "demand_factor_assumed": 0.8,
+          "basis": "Candidato derivado da estimativa de recuperação da bateria; topologia e fabricante pendentes"
+        },
+        {
+          "id": "AUX-AC-09",
+          "description": "Carga crítica alimentada por UPS",
+          "quantity": 1,
+          "unit_power_kw_assumed": 1.5,
+          "demand_factor_assumed": 1.0,
+          "basis": "Estimativa de estudo; lista crítica e datasheets pendentes"
+        }
+      ]
+    },
+    "dc_system": {
+      "nominal_voltage_v_assumed": 125.0,
+      "continuous_load_kw_assumed": 1.2,
+      "autonomy_h_assumed": 8.0,
+      "trip_coil_current_a_assumed": 20.0,
+      "trip_duration_s_assumed": 10.0,
+      "emergency_operations_assumed": 5,
+      "design_margin_factor_assumed": 1.25,
+      "aging_factor_assumed": 1.25,
+      "temperature_factor_assumed": 1.1,
+      "depth_of_discharge_assumed": 0.8,
+      "discharge_efficiency_assumed": 0.85,
+      "charger_recovery_h_assumed": 8.0,
+      "basis": "Perfil de missão provisório; tensões, sequência de manobra, temperatura, envelhecimento e baterias reais pendentes"
+    },
+    "ups_system": {
+      "critical_load_kw_assumed": 1.5,
+      "power_factor_assumed": 0.8,
+      "autonomy_h_assumed": 1.0,
+      "design_margin_factor_assumed": 1.25,
+      "depth_of_discharge_assumed": 0.8,
+      "discharge_efficiency_assumed": 0.85,
+      "aging_factor_assumed": 1.25,
+      "temperature_factor_assumed": 1.1,
+      "candidate_ups_rating_kva": 3.0,
+      "basis": "Candidato de estudo; cargas críticas, barramento CC, arquitetura, autonomia e catálogo pendentes"
+    },
+    "limitations": [
+      "Todas as potências, fatores de demanda, FP, tensões auxiliares e autonomias são premissas explícitas, não dados medidos.",
+      "Não há levantamento de cargas, cálculo térmico, projeto luminotécnico, estudo de seletividade CA ou dados de fabricante.",
+      "Os valores resultantes não demonstram atendimento a requisitos normativos, da concessionária ou de segurança.",
+      "Revisar a base com lista de cargas aprovada, sequência de manobras e condições ambientais antes de selecionar equipamento."
+    ]
+  },
+  "calculations": [
+    {
+      "calc_id": "AUX-AC-01",
+      "quantity": "HVAC de salas técnicas",
+      "inputs": "quantidade=2; P_unit=25 kW; fator_demanda=0.7",
+      "method": "P_demanda=quantidade*P_unit*fator_demanda",
+      "result": 35.0,
+      "unit": "kW",
+      "source_or_assumption": "Estimativa de estudo; carga térmica e datasheets pendentes",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "AUX-AC-02",
+      "quantity": "Iluminação interna",
+      "inputs": "quantidade=1302; P_unit=0.007 kW; fator_demanda=0.8",
+      "method": "P_demanda=quantidade*P_unit*fator_demanda",
+      "result": 7.291200000000001,
+      "unit": "kW",
+      "source_or_assumption": "Área construída estimada 1302 m² x 7 W/m²; projeto luminotécnico pendente",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "AUX-AC-03",
+      "quantity": "Iluminação de emergência",
+      "inputs": "quantidade=1302; P_unit=0.0015 kW; fator_demanda=0.5",
+      "method": "P_demanda=quantidade*P_unit*fator_demanda",
+      "result": 0.9765,
+      "unit": "kW",
+      "source_or_assumption": "Área construída estimada 1302 m² x 1,5 W/m²; autonomia e fotometria pendentes",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "AUX-AC-04",
+      "quantity": "Iluminação externa e vias",
+      "inputs": "quantidade=2800; P_unit=0.0005 kW; fator_demanda=0.8",
+      "method": "P_demanda=quantidade*P_unit*fator_demanda",
+      "result": 1.12,
+      "unit": "kW",
+      "source_or_assumption": "Área de pátio iluminada estimada 2800 m² x 0,5 W/m²; estudo fotométrico pendente",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "AUX-AC-05",
+      "quantity": "Ventilação e exaustão",
+      "inputs": "quantidade=4; P_unit=2.2 kW; fator_demanda=0.5",
+      "method": "P_demanda=quantidade*P_unit*fator_demanda",
+      "result": 4.4,
+      "unit": "kW",
+      "source_or_assumption": "Potência unitária e simultaneidade assumidas; levantamento térmico pendente",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "AUX-AC-06",
+      "quantity": "Painéis de proteção e controle",
+      "inputs": "quantidade=11; P_unit=0.15 kW; fator_demanda=1",
+      "method": "P_demanda=quantidade*P_unit*fator_demanda",
+      "result": 1.65,
+      "unit": "kW",
+      "source_or_assumption": "Potência unitária assumida; listas de cargas dos IEDs pendentes",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "AUX-AC-07",
+      "quantity": "Telecomunicações e supervisão",
+      "inputs": "quantidade=1; P_unit=2 kW; fator_demanda=1",
+      "method": "P_demanda=quantidade*P_unit*fator_demanda",
+      "result": 2.0,
+      "unit": "kW",
+      "source_or_assumption": "Carga concentrada assumida; arquitetura e datasheets pendentes",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "AUX-AC-08",
+      "quantity": "Carregador do sistema 125 Vcc",
+      "inputs": "quantidade=1; P_unit=5 kW; fator_demanda=0.8",
+      "method": "P_demanda=quantidade*P_unit*fator_demanda",
+      "result": 4.0,
+      "unit": "kW",
+      "source_or_assumption": "Candidato derivado da estimativa de recuperação da bateria; topologia e fabricante pendentes",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "AUX-AC-09",
+      "quantity": "Carga crítica alimentada por UPS",
+      "inputs": "quantidade=1; P_unit=1.5 kW; fator_demanda=1",
+      "method": "P_demanda=quantidade*P_unit*fator_demanda",
+      "result": 1.5,
+      "unit": "kW",
+      "source_or_assumption": "Estimativa de estudo; lista crítica e datasheets pendentes",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "AUX-AC-10",
+      "quantity": "Potência conectada CA estimada",
+      "inputs": "soma das cargas conectadas=81.417000 kW",
+      "method": "soma(quantidade*P_unit)",
+      "result": 81.41700000000002,
+      "unit": "kW",
+      "source_or_assumption": "Entradas em servicos-auxiliares-r8.json",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "AUX-AC-11",
+      "quantity": "Demanda ativa CA estimada",
+      "inputs": "cargas=9; fatores de demanda por linha",
+      "method": "soma(quantidade*P_unit*fator_demanda)",
+      "result": 57.9377,
+      "unit": "kW",
+      "source_or_assumption": "Estimativa; lista de cargas e simultaneidade reais pendentes",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "AUX-AC-12",
+      "quantity": "Demanda aparente CA estimada",
+      "inputs": "P=57.937700 kW; FP=0.9",
+      "method": "S=P/FP",
+      "result": 64.37522222222222,
+      "unit": "kVA",
+      "source_or_assumption": "FP e cargas assumidos; estudo de cargas pendente",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "AUX-AC-13",
+      "quantity": "Corrente trifásica CA estimada",
+      "inputs": "S=64.375222 kVA; VLL=380 V",
+      "method": "I=S/(sqrt(3)*VLL)",
+      "result": 97.80803126089995,
+      "unit": "A",
+      "source_or_assumption": "Tensão auxiliar de 380 V assumida; confirmar arquitetura real",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "AUX-AC-14",
+      "quantity": "Utilização do candidato de transformador auxiliar",
+      "inputs": "S=64.375222 kVA; candidato=100 kVA",
+      "method": "S_demanda/S_candidato*100",
+      "result": 64.37522222222222,
+      "unit": "%",
+      "source_or_assumption": "100 kVA é candidato ilustrativo, sem especificação",
+      "status": "CANDIDATE_CHECK_ONLY"
+    },
+    {
+      "calc_id": "DC-01",
+      "quantity": "Carga contínua equivalente da bateria",
+      "inputs": "P=1.2 kW; autonomia=8 h; V=125 V",
+      "method": "Ah=P*1000*h/V",
+      "result": 76.8,
+      "unit": "Ah",
+      "source_or_assumption": "Perfil de missão provisório; tensões, sequência de manobra, temperatura, envelhecimento e baterias reais pendentes",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "DC-02",
+      "quantity": "Energia equivalente de operações de emergência",
+      "inputs": "I=20 A; t=10 s; operações=5",
+      "method": "Ah=I*t*n/3600",
+      "result": 0.2777777777777778,
+      "unit": "Ah",
+      "source_or_assumption": "Corrente, duração e número de operações assumidos",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "DC-03",
+      "quantity": "Capacidade corrigida requerida para bateria 125 Vcc",
+      "inputs": "Ah_base=77.077778; fatores combinados=2.527574",
+      "method": "Ah_corrigido=(Ah_contínuo+Ah_manobras)*margem*envelhecimento*temperatura/(DoD*eficiência)",
+      "result": 194.81975081699346,
+      "unit": "Ah",
+      "source_or_assumption": "Não inclui curva de descarga, perfil de cargas ou catálogo de célula",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "DC-04",
+      "quantity": "Capacidade nominal candidata da bateria",
+      "inputs": "requerida=194.819751 Ah; arredondamento de estudo para 10 Ah",
+      "method": "arredondar para cima ao próximo múltiplo de 10 Ah",
+      "result": 200.0,
+      "unit": "Ah",
+      "source_or_assumption": "Valor de capacidade não seleciona química, tensão final ou fabricante",
+      "status": "CANDIDATE_CHECK_ONLY"
+    },
+    {
+      "calc_id": "DC-05",
+      "quantity": "Corrente de carregador candidata para recuperação",
+      "inputs": "carga contínua=9.600000 A; recarga=25.000000 A; recuperação=8 h",
+      "method": "I_charger=I_contínua+Ah_candidato/tempo_recuperação",
+      "result": 34.6,
+      "unit": "A",
+      "source_or_assumption": "Sem perfil de carga, curva de carga ou redundância especificados",
+      "status": "CANDIDATE_CHECK_ONLY"
+    },
+    {
+      "calc_id": "DC-06",
+      "quantity": "Potência CC de saída para o carregador candidato",
+      "inputs": "V=125 V; I=34.600000 A",
+      "method": "P=V*I",
+      "result": 4.325,
+      "unit": "kW",
+      "source_or_assumption": "Potência de saída CC; rendimento de CA e seleção de equipamento pendentes",
+      "status": "CANDIDATE_CHECK_ONLY"
+    },
+    {
+      "calc_id": "UPS-01",
+      "quantity": "Demanda aparente da carga crítica UPS",
+      "inputs": "P=1.5 kW; FP=0.8",
+      "method": "S=P/FP",
+      "result": 1.875,
+      "unit": "kVA",
+      "source_or_assumption": "Candidato de estudo; cargas críticas, barramento CC, arquitetura, autonomia e catálogo pendentes",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "UPS-02",
+      "quantity": "Utilização do candidato UPS",
+      "inputs": "S=1.875000 kVA; candidato=3 kVA",
+      "method": "S_demanda/S_candidato*100",
+      "result": 62.5,
+      "unit": "%",
+      "source_or_assumption": "Candidato de 3 kVA sem catálogo ou fator de crista verificado",
+      "status": "CANDIDATE_CHECK_ONLY"
+    },
+    {
+      "calc_id": "UPS-03",
+      "quantity": "Energia nominal mínima preliminar da bateria UPS",
+      "inputs": "P=1.5 kW; autonomia=1 h; fatores explícitos",
+      "method": "E=P*h*margem*envelhecimento*temperatura/(DoD*eficiência)",
+      "result": 3.7913602941176467,
+      "unit": "kWh",
+      "source_or_assumption": "Energia apenas; tensão CC, curvas, eficiência por carga e catálogo pendentes",
+      "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS"
+    }
+  ],
+  "quality_checks": {
+    "ac_candidate_below_assumed_utilization_limit": true,
+    "dc_candidate_capacity_covers_calculated_study_capacity": true,
+    "charger_candidate_power_covers_calculated_dc_demand": true,
+    "ups_candidate_rating_covers_study_apparent_load": true
+  },
+  "limitations": [
+    "Todas as potências, fatores de demanda, FP, tensões auxiliares e autonomias são premissas explícitas, não dados medidos.",
+    "Não há levantamento de cargas, cálculo térmico, projeto luminotécnico, estudo de seletividade CA ou dados de fabricante.",
+    "Os valores resultantes não demonstram atendimento a requisitos normativos, da concessionária ou de segurança.",
+    "Revisar a base com lista de cargas aprovada, sequência de manobras e condições ambientais antes de selecionar equipamento."
+  ]
+}

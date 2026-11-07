@@ -1,0 +1,15 @@
+{
+  "project": "19 - Subestação de alta tensão GIS",
+  "date": "2026-11-07",
+  "primary_voltage_kv": 138.0,
+  "secondary_voltage_kv": 13.8,
+  "active_load_mw": 32.0,
+  "load_power_factor": 0.95,
+  "critical_active_load_mw": 18.0,
+  "transformer_count": 2,
+  "transformer_rating_mva": 25.0,
+  "transformer_impedance_pu": 0.08,
+  "target_power_factor": 0.98,
+  "frequency_hz": 60.0,
+  "basis": "Premissas de estudo para o portfólio; sem dados de concessionária, fabricante ou levantamento de campo."
+}

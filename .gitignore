@@ -1,3 +1,17 @@
 ﻿__pycache__/
 *.pyc
 
+**/obj/
+**/bin/
+**/*.000*.rvt
+scripts/revit-addin/revit-batch.log
+scripts/revit-addin/last-build.log
+scripts/revit-addin/staging-build/
+scripts/revit-addin/staging-build-*/
+scripts/revit-addin/staging-build-*.log
+scripts/revit-addin/scripts/
+scripts/scripts/
+/tmp/
+projetos/19-subestacao-gis/familias/*.rfa
+projetos/19-subestacao-gis/**/reconstrucao-r[0-7]/
+projetos/19-subestacao-gis/dados/servicos-auxiliares-r[1-7].json

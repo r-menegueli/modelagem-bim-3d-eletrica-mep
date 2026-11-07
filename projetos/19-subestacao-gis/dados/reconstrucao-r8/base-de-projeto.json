@@ -1,0 +1,137 @@
+{
+  "project": "19 - Subestação GIS",
+  "revision": 8,
+  "date": "2026-11-07",
+  "status": "PREMISSA DE ESTUDO - NAO E PROJETO EXECUTIVO",
+  "system": {
+    "nominal_voltage_kv": [
+      138.0,
+      13.8
+    ],
+    "frequency_hz": 60.0,
+    "source_line_incomers": 2,
+    "high_voltage_equipment_class_kv": 145.0,
+    "high_voltage_bus": "Double bus with one bus coupler",
+    "medium_voltage_bus": "Split buses A/B with normally open tie",
+    "parallel_transformers_normal": false
+  },
+  "transformers": {
+    "count": 2,
+    "rating_mva_each": 40.0,
+    "nominal_impedance_pu_each_assumed": 0.1,
+    "insulating_fluid_assumption": "Mineral oil; confirm transformer construction",
+    "impedance_status": "PROVISIONAL_ASSUMPTION - replace with nameplate/vendor data"
+  },
+  "load_scenarios": {
+    "normal_active_mw_assumed": 56.0,
+    "power_factor_assumed": 0.95,
+    "target_power_factor_for_sensitivity": 0.98,
+    "critical_active_mw_assumed": 32.0,
+    "noncritical_active_mw_shed_in_n_minus_one": 24.0,
+    "allocation_by_section_mw": {
+      "section_A": {
+        "critical": 16.0,
+        "noncritical": 12.0
+      },
+      "section_B": {
+        "critical": 16.0,
+        "noncritical": 12.0
+      }
+    },
+    "feeders": [
+      {
+        "tag": "A-F01",
+        "section": "A",
+        "active_mw": 6.0,
+        "critical": true
+      },
+      {
+        "tag": "A-F02",
+        "section": "A",
+        "active_mw": 6.0,
+        "critical": true
+      },
+      {
+        "tag": "A-F03",
+        "section": "A",
+        "active_mw": 4.0,
+        "critical": true
+      },
+      {
+        "tag": "A-F04",
+        "section": "A",
+        "active_mw": 6.0,
+        "critical": false
+      },
+      {
+        "tag": "A-F05",
+        "section": "A",
+        "active_mw": 6.0,
+        "critical": false
+      },
+      {
+        "tag": "B-F01",
+        "section": "B",
+        "active_mw": 6.0,
+        "critical": true
+      },
+      {
+        "tag": "B-F02",
+        "section": "B",
+        "active_mw": 6.0,
+        "critical": true
+      },
+      {
+        "tag": "B-F03",
+        "section": "B",
+        "active_mw": 4.0,
+        "critical": true
+      },
+      {
+        "tag": "B-F04",
+        "section": "B",
+        "active_mw": 6.0,
+        "critical": false
+      },
+      {
+        "tag": "B-F05",
+        "section": "B",
+        "active_mw": 6.0,
+        "critical": false
+      }
+    ],
+    "feeder_positions_assumed": 10,
+    "load_profile_status": "ILLUSTRATIVE - no metering or client load list supplied"
+  },
+  "protection": {
+    "settings_status": "NOT_CALCULATED - source and equipment data required",
+    "candidate_functions": [
+      "21",
+      "25",
+      "27",
+      "49",
+      "50",
+      "50BF",
+      "50N",
+      "51",
+      "51N",
+      "59",
+      "63",
+      "64REF",
+      "67",
+      "81",
+      "86",
+      "87B",
+      "87L",
+      "87T"
+    ]
+  },
+  "equipment_data": {
+    "manufacturer_selected": false,
+    "geometry_status": "ESTIMATED until model-specific official outline drawings are obtained",
+    "network_short_circuit_available": false,
+    "soil_resistivity_available": false,
+    "auxiliary_load_and_battery_mission_available": false
+  },
+  "input_file": "base-de-projeto-r7.json"
+}

@@ -1,0 +1,21 @@
+﻿grupo;grandeza;valor;unidade/observação
+normal_load;apparent_mva;33.68421052631579;ver chave
+normal_load;reactive_mvar;10.517891365723612;ver chave
+normal_load;current_primary_ka;0.14092455083194527;ver chave
+normal_load;current_secondary_ka;1.4092455083194526;ver chave
+normal_load;installed_transformer_capacity_mva;50.0;ver chave
+normal_load;transformer_loading_pct;67.36842105263158;ver chave
+transformer_ratings;primary_current_each_ka;0.10459244007058438;ver chave
+transformer_ratings;secondary_current_each_ka;1.0459244007058437;ver chave
+n_minus_one;critical_apparent_mva;18.947368421052634;ver chave
+n_minus_one;critical_reactive_mvar;5.9163138932195425;ver chave
+n_minus_one;critical_current_secondary_ka;0.7927005984296922;ver chave
+n_minus_one;one_transformer_critical_loading_pct;75.78947368421053;ver chave
+n_minus_one;one_transformer_full_load_pct;134.73684210526315;ver chave
+n_minus_one;critical_load_within_nameplate;True;booleano
+n_minus_one;full_load_within_nameplate;False;booleano
+power_factor_correction;target_power_factor;0.98;ver chave
+power_factor_correction;estimated_compensation_mvar;4.02001422543549;ver chave
+secondary_fault_estimate;transformer_only_one_unit_ka;13.074055008823047;ver chave
+secondary_fault_estimate;transformer_only_parallel_units_ka;26.148110017646093;ver chave
+secondary_fault_estimate;method;"Isc = In/Zpu; primary source assumed ideal; transformer impedance only";texto

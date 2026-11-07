@@ -1,0 +1,611 @@
+{
+  "status": "GENERATED_FROM_OPEN_REVIT_DOCUMENT",
+  "revit_document": "19-subestacao-gis-r9",
+  "elements": 169,
+  "electrical_equipment": 45,
+  "generic_model_families": 124,
+  "walls": 21,
+  "floors": 7,
+  "direct_shapes": 84,
+  "geometric_route_elements": 84,
+  "geometric_routes": [
+    {
+      "element_id": 357332,
+      "mark": "GIS-BUSA-ENCLOSURE",
+      "comments": "Continuous outer GIS bus enclosure A; internal conductor and switching contacts are not modeled. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357333,
+      "mark": "GIS-BUSB-ENCLOSURE",
+      "comments": "Continuous outer GIS bus enclosure B; internal conductor and switching contacts are not modeled. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357334,
+      "mark": "GIS-L01-89A-STUB",
+      "comments": "Geometric casing route from bus A module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357335,
+      "mark": "GIS-L01-89B-STUB",
+      "comments": "Geometric casing route from bus B module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357336,
+      "mark": "GIS-T01-89A-STUB",
+      "comments": "Geometric casing route from bus A module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357337,
+      "mark": "GIS-T01-89B-STUB",
+      "comments": "Geometric casing route from bus B module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357338,
+      "mark": "GIS-BC01-89A-STUB",
+      "comments": "Geometric casing route from bus A module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357339,
+      "mark": "GIS-BC01-89B-STUB",
+      "comments": "Geometric casing route from bus B module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357340,
+      "mark": "GIS-T02-89A-STUB",
+      "comments": "Geometric casing route from bus A module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357341,
+      "mark": "GIS-T02-89B-STUB",
+      "comments": "Geometric casing route from bus B module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357342,
+      "mark": "GIS-L02-89A-STUB",
+      "comments": "Geometric casing route from bus A module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357343,
+      "mark": "GIS-L02-89B-STUB",
+      "comments": "Geometric casing route from bus B module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357344,
+      "mark": "GIS-TR01-HV-PH-A-SEG-01",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357345,
+      "mark": "GIS-TR01-HV-PH-A-SEG-02",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357346,
+      "mark": "GIS-TR01-HV-PH-A-SEG-03",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357347,
+      "mark": "GIS-TR01-HV-PH-A-SEG-04",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357348,
+      "mark": "GIS-TR01-HV-PH-A-SEG-05",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357349,
+      "mark": "GIS-TR02-HV-PH-A-SEG-01",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357350,
+      "mark": "GIS-TR02-HV-PH-A-SEG-02",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357351,
+      "mark": "GIS-TR02-HV-PH-A-SEG-03",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357352,
+      "mark": "GIS-TR02-HV-PH-A-SEG-04",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357353,
+      "mark": "GIS-TR02-HV-PH-A-SEG-05",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357354,
+      "mark": "TR01-MV-PH-A-SEG-01",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357355,
+      "mark": "TR01-MV-PH-A-SEG-02",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357356,
+      "mark": "TR01-MV-PH-A-SEG-03",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357357,
+      "mark": "TR01-MV-PH-A-SEG-04",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357358,
+      "mark": "TR01-MV-PH-A-SEG-05",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357359,
+      "mark": "TR01-MV-PH-A-SEG-06",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357360,
+      "mark": "TR01-MV-PH-A-SEG-07",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357361,
+      "mark": "TR02-MV-PH-A-SEG-01",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357362,
+      "mark": "TR02-MV-PH-A-SEG-02",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357363,
+      "mark": "TR02-MV-PH-A-SEG-03",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357364,
+      "mark": "TR02-MV-PH-A-SEG-04",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357365,
+      "mark": "TR02-MV-PH-A-SEG-05",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357366,
+      "mark": "TR02-MV-PH-A-SEG-06",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357367,
+      "mark": "TR02-MV-PH-A-SEG-07",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357368,
+      "mark": "GIS-TR01-HV-PH-B-SEG-01",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357369,
+      "mark": "GIS-TR01-HV-PH-B-SEG-02",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357370,
+      "mark": "GIS-TR01-HV-PH-B-SEG-03",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357371,
+      "mark": "GIS-TR01-HV-PH-B-SEG-04",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357372,
+      "mark": "GIS-TR01-HV-PH-B-SEG-05",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357373,
+      "mark": "GIS-TR02-HV-PH-B-SEG-01",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357374,
+      "mark": "GIS-TR02-HV-PH-B-SEG-02",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357375,
+      "mark": "GIS-TR02-HV-PH-B-SEG-03",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357376,
+      "mark": "GIS-TR02-HV-PH-B-SEG-04",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357377,
+      "mark": "GIS-TR02-HV-PH-B-SEG-05",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357378,
+      "mark": "TR01-MV-PH-B-SEG-01",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357379,
+      "mark": "TR01-MV-PH-B-SEG-02",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357380,
+      "mark": "TR01-MV-PH-B-SEG-03",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357381,
+      "mark": "TR01-MV-PH-B-SEG-04",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357382,
+      "mark": "TR01-MV-PH-B-SEG-05",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357383,
+      "mark": "TR01-MV-PH-B-SEG-06",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357384,
+      "mark": "TR01-MV-PH-B-SEG-07",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357385,
+      "mark": "TR02-MV-PH-B-SEG-01",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357386,
+      "mark": "TR02-MV-PH-B-SEG-02",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357387,
+      "mark": "TR02-MV-PH-B-SEG-03",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357388,
+      "mark": "TR02-MV-PH-B-SEG-04",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357389,
+      "mark": "TR02-MV-PH-B-SEG-05",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357390,
+      "mark": "TR02-MV-PH-B-SEG-06",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357391,
+      "mark": "TR02-MV-PH-B-SEG-07",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357392,
+      "mark": "GIS-TR01-HV-PH-C-SEG-01",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357393,
+      "mark": "GIS-TR01-HV-PH-C-SEG-02",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357394,
+      "mark": "GIS-TR01-HV-PH-C-SEG-03",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357395,
+      "mark": "GIS-TR01-HV-PH-C-SEG-04",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357396,
+      "mark": "GIS-TR01-HV-PH-C-SEG-05",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357397,
+      "mark": "GIS-TR02-HV-PH-C-SEG-01",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357398,
+      "mark": "GIS-TR02-HV-PH-C-SEG-02",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357399,
+      "mark": "GIS-TR02-HV-PH-C-SEG-03",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357400,
+      "mark": "GIS-TR02-HV-PH-C-SEG-04",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357401,
+      "mark": "GIS-TR02-HV-PH-C-SEG-05",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357402,
+      "mark": "TR01-MV-PH-C-SEG-01",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357403,
+      "mark": "TR01-MV-PH-C-SEG-02",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357404,
+      "mark": "TR01-MV-PH-C-SEG-03",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357405,
+      "mark": "TR01-MV-PH-C-SEG-04",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357406,
+      "mark": "TR01-MV-PH-C-SEG-05",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357407,
+      "mark": "TR01-MV-PH-C-SEG-06",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357408,
+      "mark": "TR01-MV-PH-C-SEG-07",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357409,
+      "mark": "TR02-MV-PH-C-SEG-01",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357410,
+      "mark": "TR02-MV-PH-C-SEG-02",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357411,
+      "mark": "TR02-MV-PH-C-SEG-03",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357412,
+      "mark": "TR02-MV-PH-C-SEG-04",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357413,
+      "mark": "TR02-MV-PH-C-SEG-05",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357414,
+      "mark": "TR02-MV-PH-C-SEG-06",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357415,
+      "mark": "TR02-MV-PH-C-SEG-07",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    }
+  ],
+  "model_curves": 175,
+  "cable_trays": 8,
+  "cable_tray_connectors": 16,
+  "cable_tray_connected_connectors": 8,
+  "cable_tray_elements": [
+    {
+      "element_id": 357563,
+      "mark": "LEITO-CTRL-SEG-01",
+      "connector_count": 2,
+      "connected_connector_count": 0,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 357564,
+      "mark": "LEITO-GIS-SEG-01",
+      "connector_count": 2,
+      "connected_connector_count": 0,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 357565,
+      "mark": "LEITO-MV-A-SEG-01",
+      "connector_count": 2,
+      "connected_connector_count": 1,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 357566,
+      "mark": "LEITO-MV-A-SEG-02",
+      "connector_count": 2,
+      "connected_connector_count": 2,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 357567,
+      "mark": "LEITO-MV-A-SEG-03",
+      "connector_count": 2,
+      "connected_connector_count": 1,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 357568,
+      "mark": "LEITO-MV-B-SEG-01",
+      "connector_count": 2,
+      "connected_connector_count": 1,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 357569,
+      "mark": "LEITO-MV-B-SEG-02",
+      "connector_count": 2,
+      "connected_connector_count": 2,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 357570,
+      "mark": "LEITO-MV-B-SEG-03",
+      "connector_count": 2,
+      "connected_connector_count": 1,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    }
+  ],
+  "sheets": 14,
+  "views_3d": 4,
+  "mep_connectors": 3,
+  "mep_connectors_isconnected_true": 2,
+  "mep_connectors_without_physical_status": 1,
+  "mep_connector_details": [
+    {
+      "element_id": 357508,
+      "mark": "QAC-01",
+      "connector_id": "50000",
+      "domain": "DomainUndefined",
+      "connector_type": "Logical",
+      "is_connected": false,
+      "external_allrefs": 1,
+      "allrefs": [
+        "357515:Logical:DomainUndefined"
+      ]
+    },
+    {
+      "element_id": 357508,
+      "mark": "QAC-01",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "is_connected": true,
+      "external_allrefs": 1,
+      "allrefs": [
+        "357709:End:DomainElectrical"
+      ]
+    },
+    {
+      "element_id": 357510,
+      "mark": "UPS-01",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "is_connected": true,
+      "external_allrefs": 2,
+      "allrefs": [
+        "357709:End:DomainElectrical",
+        "357515:Logical:DomainUndefined"
+      ]
+    }
+  ],
+  "electrical_systems": 1,
+  "electrical_system_terminal_elements": 1,
+  "electrical_system_details": [
+    {
+      "revit_element_id": 357515,
+      "system_id": "AUX-UPS-01",
+      "revit_class": "ElectricalSystem",
+      "terminal_elements": [
+        {
+          "element_id": 357510,
+          "mark": "UPS-01"
+        }
+      ],
+      "wire_2d_view_specific_confirmed": true,
+      "three_dimensional_cable_modeled": false,
+      "selected_panel": "QAC-01",
+      "classification": "ELECTRICAL_SYSTEM_AND_VIEW_SPECIFIC_2D_WIRE"
+    }
+  ],
+  "electrical_wire_2d_elements": 1,
+  "electrical_wire_2d_connectors": 2,
+  "electrical_wire_2d_connected_connectors": 2,
+  "electrical_wire_2d_details": [
+    {
+      "element_id": 357709,
+      "mark": "AUX-UPS-01-WIRE",
+      "owner_view_id": 357699,
+      "owner_view": "E-06 - Servicos auxiliares e controle R9",
+      "wiring_type": "Chamfer",
+      "vertex_count": 4,
+      "connector_count": 2,
+      "connected_connector_count": 2,
+      "external_allrefs": [
+        "357508:QAC-01",
+        "357510:UPS-01"
+      ],
+      "comments": "Fio eletrico nativo Revit 2D, visivel somente no plano E-06 e conectado aos conectores QAC-01/UPS-01. Representacao grafica de circuito auxiliar; nao e cabo 3D, nao dimensiona condutor e nao prova origem/alimentacao completa."
+    }
+  ],
+  "electrical_equipment_without_mep_connectors": 43,
+  "instances_missing_required_identity_metadata": 0,
+  "document_warnings": [],
+  "family_type_counts": {
+    "GIS_AuxiliaryPanelAC | AUX_PANEL_380VAC_STUDY": 1,
+    "GIS_AuxiliaryPanelDC | AUX_PANEL_125VDC_STUDY": 1,
+    "GIS_BatteryRack | BATTERY_RACK_125VDC_STUDY": 1,
+    "GIS_BayFrame | GIS_SUPPORT_STUDY": 5,
+    "GIS_BuildingRoof_Control | ROOF_CONTROL_22M_EST": 1,
+    "GIS_BuildingRoof_GIS | ROOF_GIS_31M_EST": 1,
+    "GIS_BuildingRoof_MV | ROOF_MV_23M_EST": 1,
+    "GIS_BusModule | GIS_BUS_145KV_STUDY": 10,
+    "GIS_CableTrench | CABLE_TRENCH_STUDY": 47,
+    "GIS_CircuitBreaker | GIS_CB_145KV_STUDY": 5,
+    "GIS_CurrentTransformer | GIS_CT_145KV_STUDY": 4,
+    "GIS_Disconnector | GIS_DS_145KV_STUDY": 10,
+    "GIS_EarthingSwitch | GIS_ES_145KV_STUDY": 5,
+    "GIS_MV_BusCoupler | MV_TIE_17K5_STUDY": 1,
+    "GIS_MV_Cubicle | MV_17K5_2KA_STUDY": 14,
+    "GIS_MVBusModule | MV_BUS_17K5_STUDY": 2,
+    "GIS_OilContainment | OIL_CONTAINMENT_STUDY": 2,
+    "GIS_ProtectionPanel | PROTECTION_PANEL_125VDC_STUDY": 11,
+    "GIS_Termination | GIS_TERMINATION_145KV_STUDY": 2,
+    "GIS_Transformer_Base | TR_BASE_STUDY": 2,
+    "GIS_Transformer_BushingHV | TR_BUSHING_HV_STUDY": 6,
+    "GIS_Transformer_BushingMV | TR_BUSHING_MV_STUDY": 6,
+    "GIS_Transformer_Conservator | TR_CONSERVATOR_STUDY": 2,
+    "GIS_Transformer_Fan | TR_FAN_STUDY": 12,
+    "GIS_Transformer_Radiator | TR_RADIATOR_STUDY": 12,
+    "GIS_Transformer_Tank | TR_40MVA_STUDY": 2,
+    "GIS_UPS_Cabinet | UPS_STUDY": 1,
+    "GIS_VoltageTransformer | GIS_VT_145KV_STUDY": 2
+  }
+}
