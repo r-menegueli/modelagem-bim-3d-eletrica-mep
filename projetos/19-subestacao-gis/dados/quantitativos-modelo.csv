@@ -1,0 +1,56 @@
+﻿element_id;categoria_revit;marca;comentarios
+328686;Equipamento elétrico;GIS-LB-01;Bay de linha 138 kV - disjuntor e seccionadoras conceituais, envelope conceitual, sem fabricante ou conectores.
+328688;Equipamento elétrico;GIS-TR-01;Bay de transformador TR-01 - 138 kV, envelope conceitual, sem fabricante ou conectores.
+328690;Equipamento elétrico;GIS-BC-01;Bay de acoplamento de barras A/B - 138 kV, envelope conceitual, sem fabricante ou conectores.
+328692;Equipamento elétrico;GIS-TR-02;Bay de transformador TR-02 - 138 kV, envelope conceitual, sem fabricante ou conectores.
+328694;Equipamento elétrico;GIS-LB-02;Bay de linha / reserva 138 kV - uso a confirmar, envelope conceitual, sem fabricante ou conectores.
+328698;Equipamento elétrico;MV-CUB-A01;Cubiculo 13,8 kV - alimentador A01, corrente e capacidade interruptiva nao selecionadas.
+328699;Equipamento elétrico;MV-CUB-A02;Cubiculo 13,8 kV - alimentador / acoplamento de estudo, sem especificacao de fabricante.
+328700;Equipamento elétrico;MV-CUB-A03;Cubiculo 13,8 kV - alimentador / acoplamento de estudo, sem especificacao de fabricante.
+328701;Equipamento elétrico;MV-CUB-A04;Cubiculo 13,8 kV - alimentador / acoplamento de estudo, sem especificacao de fabricante.
+328702;Equipamento elétrico;MV-CUB-A05;Cubiculo 13,8 kV - alimentador / acoplamento de estudo, sem especificacao de fabricante.
+328703;Equipamento elétrico;MV-CUB-A06;Cubiculo 13,8 kV - alimentador / acoplamento de estudo, sem especificacao de fabricante.
+328704;Equipamento elétrico;MV-CUB-A07;Cubiculo 13,8 kV - alimentador / acoplamento de estudo, sem especificacao de fabricante.
+328707;Equipamento elétrico;TR-01;Transformador TR-01: 25 MVA, 138/13,8 kV, Z=8% assumida, envelope sem dados de fabricante.
+328708;Equipamento elétrico;TR-02;Transformador TR-02: 25 MVA, 138/13,8 kV, Z=8% assumida, envelope sem dados de fabricante.
+328727;Equipamento elétrico;IED-LINE-01;Painel de protecao / automacao, arquitetura conceitual sem fabricante, ajustes ou configuracao de rede.
+328728;Equipamento elétrico;IED-BUS-01;Painel de protecao / automacao, arquitetura conceitual sem fabricante, ajustes ou configuracao de rede.
+328729;Equipamento elétrico;IED-TR-01;Painel de protecao / automacao, arquitetura conceitual sem fabricante, ajustes ou configuracao de rede.
+328730;Equipamento elétrico;IED-TR-02;Painel de protecao / automacao, arquitetura conceitual sem fabricante, ajustes ou configuracao de rede.
+328731;Equipamento elétrico;HMI-SCADA-01;Painel de protecao / automacao, arquitetura conceitual sem fabricante, ajustes ou configuracao de rede.
+328732;Equipamento elétrico;GW-IEC61850-01;Painel de protecao / automacao, arquitetura conceitual sem fabricante, ajustes ou configuracao de rede.
+328733;Equipamento elétrico;AUX-CA-01;Quadro de servicos auxiliares CA, potencia e alimentacao a definir.
+328734;Equipamento elétrico;AUX-CC-01;Banco / quadro CC conceitual, tensao, capacidade e autonomia pendentes.
+328735;Equipamento elétrico;UPS-01;UPS de controle conceitual, potencia e autonomia nao dimensionadas.
+328684;Modelos genéricos;GIS-ROOM-01;Edificacao GIS aberta no modelo para leitura interna, paredes nativas Revit, sem roof ou arquitetura executiva.
+328685;Modelos genéricos;CTRL-ROOM-01;Casa de controle, volume de piso conceitual.
+328687;Modelos genéricos;GIS-LB-01-BUS;Barramento encapsulado conceitual, geometria indicativa.
+328689;Modelos genéricos;GIS-TR-01-BUS;Barramento encapsulado conceitual, geometria indicativa.
+328691;Modelos genéricos;GIS-BC-01-BUS;Barramento encapsulado conceitual, geometria indicativa.
+328693;Modelos genéricos;GIS-TR-02-BUS;Barramento encapsulado conceitual, geometria indicativa.
+328695;Modelos genéricos;GIS-LB-02-BUS;Barramento encapsulado conceitual, geometria indicativa.
+328696;Modelos genéricos;GIS-BUS-A;Barramento 138 kV A, secao esquematica, sem dimensionamento eletrodinamico.
+328697;Modelos genéricos;GIS-BUS-B;Barramento 138 kV B, secao esquematica, sem dimensionamento eletrodinamico.
+328705;Modelos genéricos;MV-BUS-A;Barramento 13,8 kV A, estudo funcional.
+328706;Modelos genéricos;MV-BUS-B;Barramento 13,8 kV B, estudo funcional.
+328709;Modelos genéricos;TR-01-RAD-01;Radiador conceitual do transformador, dimensoes e perdas nao informadas.
+328710;Modelos genéricos;TR-01-RAD-02;Radiador conceitual do transformador, dimensoes e perdas nao informadas.
+328711;Modelos genéricos;TR-01-RAD-03;Radiador conceitual do transformador, dimensoes e perdas nao informadas.
+328712;Modelos genéricos;TR-01-RAD-04;Radiador conceitual do transformador, dimensoes e perdas nao informadas.
+328713;Modelos genéricos;TR-01-RAD-05;Radiador conceitual do transformador, dimensoes e perdas nao informadas.
+328714;Modelos genéricos;TR-01-BUSH-01;Bucha representativa, classe de isolamento nao definida.
+328715;Modelos genéricos;TR-01-BUSH-02;Bucha representativa, classe de isolamento nao definida.
+328716;Modelos genéricos;TR-01-BUSH-03;Bucha representativa, classe de isolamento nao definida.
+328717;Modelos genéricos;TR-01-PAD;Base de concreto conceitual do transformador.
+328718;Modelos genéricos;TR-02-RAD-01;Radiador conceitual do transformador, dimensoes e perdas nao informadas.
+328719;Modelos genéricos;TR-02-RAD-02;Radiador conceitual do transformador, dimensoes e perdas nao informadas.
+328720;Modelos genéricos;TR-02-RAD-03;Radiador conceitual do transformador, dimensoes e perdas nao informadas.
+328721;Modelos genéricos;TR-02-RAD-04;Radiador conceitual do transformador, dimensoes e perdas nao informadas.
+328722;Modelos genéricos;TR-02-RAD-05;Radiador conceitual do transformador, dimensoes e perdas nao informadas.
+328723;Modelos genéricos;TR-02-BUSH-01;Bucha representativa, classe de isolamento nao definida.
+328724;Modelos genéricos;TR-02-BUSH-02;Bucha representativa, classe de isolamento nao definida.
+328725;Modelos genéricos;TR-02-BUSH-03;Bucha representativa, classe de isolamento nao definida.
+328726;Modelos genéricos;TR-02-PAD;Base de concreto conceitual do transformador.
+328736;Modelos genéricos;TRN-HV-01;Canaleta/caminho de cabos entre edificio GIS e patio de transformadores, sem ocupacao ou separacao calculada.
+328737;Modelos genéricos;TRN-CTRL-01;Canaleta conceitual de controle e protecao.
+328738;Modelos genéricos;YARD-AREA-01;Area de patio e afastamentos esquematicos, distancias eletricas e acessos nao verificados.

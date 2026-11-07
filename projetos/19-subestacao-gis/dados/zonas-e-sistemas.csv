@@ -1,0 +1,8 @@
+﻿Sistema;Conteudo;Estado
+GIS 138 kV;Cinco bays conceituais e barras A/B;geometria nativa Revit sem conectores
+Transformacao;2 x 25 MVA 138/13,8 kV Z=8% assumida;envelope conceitual com parametros em comentarios
+Cubiculos 13,8 kV;Sete cubiculos de referencia;sem selecao de fabricante ou capacidade interruptiva
+Protecao e controle;IEDs, HMI, gateway e comunicacao;diagrama funcional sem ajustes
+Servicos auxiliares;CA, CC e UPS conceituais;sem potencia ou autonomia dimensionada
+Canaletas;Envelopes de rota de cabos;sem cabos, ocupacao ou separacao calculados
+Aterramento;Pendente de dados de solo e estudo especifico;nao dimensionado

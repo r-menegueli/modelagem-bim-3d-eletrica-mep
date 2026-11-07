@@ -1,3 +1,8 @@
 ﻿__pycache__/
 *.pyc
 
+**/obj/
+**/bin/
+**/*.000*.rvt
+scripts/revit-addin/revit-batch.log
+scripts/revit-addin/last-build.log

@@ -2,7 +2,7 @@
 
 ![Painel com vistas axonométricas dos 14 projetos](docs/preview_board.png)
 
-Este repositório reúne **14 projetos independentes** desenvolvidos no Revit 2027 para demonstrar modelagem espacial, organização de documentação e representação elétrica conceitual. Cada projeto tem um modelo nativo RVT e um conjunto de seis pranchas A3 em PDF.
+Este repositório reúne os **14 projetos originais** e o Projeto 19, uma subestação GIS conceitual desenvolvida e reaberta no Revit 2027. São **15 projetos no total** nesta etapa. Os 14 projetos originais têm seis pranchas A3 cada; o Projeto 19 inclui oito pranchas, modelo nativo RVT, prévias PNG e cálculos preliminares reproduzíveis.
 
 ## Projetos
 
@@ -22,14 +22,15 @@ Este repositório reúne **14 projetos independentes** desenvolvidos no Revit 20
 | 12 | [Subestação e centro de controle de motores](projetos/12-subestacao-e-ccm/README.md) | [PDF](projetos/12-subestacao-e-ccm/pranchas/12-subestacao-e-ccm.pdf) | [RVT](projetos/12-subestacao-e-ccm/revit/12-subestacao-e-ccm.rvt) |
 | 13 | [Estação de tratamento de água](projetos/13-estacao-tratamento-agua/README.md) | [PDF](projetos/13-estacao-tratamento-agua/pranchas/13-estacao-tratamento-agua.pdf) | [RVT](projetos/13-estacao-tratamento-agua/revit/13-estacao-tratamento-agua.rvt) |
 | 14 | [Microrrede solar com BESS e gerador](projetos/14-microrede-fv-bess-gerador/README.md) | [PDF](projetos/14-microrede-fv-bess-gerador/pranchas/14-microrede-fv-bess-gerador.pdf) | [RVT](projetos/14-microrede-fv-bess-gerador/revit/14-microrede-fv-bess-gerador.rvt) |
+| 19 | [Subestação de alta tensão GIS](projetos/19-subestacao-gis/README.md) | [PDF — oito pranchas](projetos/19-subestacao-gis/pranchas/19-subestacao-gis.pdf) | [RVT](projetos/19-subestacao-gis/revit/19-subestacao-gis.rvt) |
 
 ## Conteúdo das pranchas
 
-Cada PDF apresenta a planta principal, a leitura do programa, os pontos esquemáticos de iluminação e de força/dados, um diagrama funcional e uma vista axonométrica com critérios do modelo.
+Nos projetos originais, cada PDF apresenta a planta principal, os pontos esquemáticos de iluminação e força/dados, um diagrama funcional e uma vista axonométrica. O Projeto 19 acrescenta implantação, zonas e equipamentos, iluminação, força e sistemas, unifilar, proteção e controle, cálculos e axonometria.
 
 ## Escopo e limites
 
-Os modelos e diagramas são estudos conceituais para portfólio. Os pontos elétricos aparecem como anotações 2D e não formam circuitos MEP conectados. Não há dimensionamento de cargas, cabos ou proteções, verificação normativa, coordenação multidisciplinar, detecção de interferências ou validação executiva. Os arquivos não devem ser usados para obra, compra, aprovação ou instalação.
+Os modelos e diagramas são estudos conceituais para portfólio e não devem ser usados para obra, compra, aprovação ou instalação. Nos 14 projetos originais, os pontos elétricos são anotações 2D e não formam circuitos MEP conectados. No Projeto 19, paredes são elementos nativos do Revit e equipamentos são DirectShapes conceituais, sem famílias paramétricas de fabricante, conectores ou circuitos funcionais. Seus cálculos são estimativas preliminares com premissas e limites documentados; não constituem dimensionamento executivo, verificação normativa, coordenação multidisciplinar ou detecção de interferências.
 
 ## Estudo complementar
 

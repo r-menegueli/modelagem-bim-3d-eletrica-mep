@@ -1,0 +1,60 @@
+{
+  "project": "19 - Subestação de alta tensão GIS",
+  "calculation_date": "2026-11-07",
+  "status": "ESTUDO PRELIMINAR COM PREMISSAS",
+  "inputs": {
+    "project": "19 - Subestação de alta tensão GIS",
+    "date": "2026-11-07",
+    "primary_voltage_kv": 138.0,
+    "secondary_voltage_kv": 13.8,
+    "active_load_mw": 32.0,
+    "load_power_factor": 0.95,
+    "critical_active_load_mw": 18.0,
+    "transformer_count": 2,
+    "transformer_rating_mva": 25.0,
+    "transformer_impedance_pu": 0.08,
+    "target_power_factor": 0.98,
+    "frequency_hz": 60.0,
+    "basis": "Premissas de estudo para o portfólio; sem dados de concessionária, fabricante ou levantamento de campo."
+  },
+  "results": {
+    "normal_load": {
+      "apparent_mva": 33.68421052631579,
+      "reactive_mvar": 10.517891365723612,
+      "current_primary_ka": 0.14092455083194527,
+      "current_secondary_ka": 1.4092455083194526,
+      "installed_transformer_capacity_mva": 50.0,
+      "transformer_loading_pct": 67.36842105263158
+    },
+    "transformer_ratings": {
+      "primary_current_each_ka": 0.10459244007058438,
+      "secondary_current_each_ka": 1.0459244007058437
+    },
+    "n_minus_one": {
+      "critical_apparent_mva": 18.947368421052634,
+      "critical_reactive_mvar": 5.9163138932195425,
+      "critical_current_secondary_ka": 0.7927005984296922,
+      "one_transformer_critical_loading_pct": 75.78947368421053,
+      "one_transformer_full_load_pct": 134.73684210526315,
+      "critical_load_within_nameplate": true,
+      "full_load_within_nameplate": false
+    },
+    "power_factor_correction": {
+      "target_power_factor": 0.98,
+      "estimated_compensation_mvar": 4.02001422543549
+    },
+    "secondary_fault_estimate": {
+      "transformer_only_one_unit_ka": 13.074055008823047,
+      "transformer_only_parallel_units_ka": 26.148110017646093,
+      "method": "Isc = In/Zpu; primary source assumed ideal; transformer impedance only"
+    }
+  },
+  "not_calculated": [
+    "curto-circuito em 138 kV e impedância equivalente da rede",
+    "curto-circuito completo em 13,8 kV com rede, motores e cabos",
+    "X/R, componente assimétrica, capacidade de interrupção e coordenação de proteção",
+    "perdas e elevação térmica dos transformadores (sem dados de fabricante)",
+    "queda de tensão, cabos, aterramento, toque/passo e malha de terra",
+    "perfil de carga, energia mensal e contingência de duração definida"
+  ]
+}
