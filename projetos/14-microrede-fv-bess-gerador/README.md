@@ -16,7 +16,7 @@ Estudo de microrrede com mesas fotovoltaicas, inversor, transformador, sistema d
 | Folha | Conteúdo | Prévia PNG |
 |---|---|---|
 | A-01 | Planta arquitetônica / implantação | [Abrir prévia](pranchas/preview/A-01-arquitetura.png) |
-| A-02 | Zonas e equipamentos no pavimento de acesso / zonas e equipamentos | [Abrir prévia](pranchas/preview/A-02-pavimento-superior.png) |
+| A-02 | Setorização da microrrede e dos equipamentos | [Abrir prévia](pranchas/preview/A-02-layout-microrrede.png) |
 | E-01 | Iluminação esquemática | [Abrir prévia](pranchas/preview/E-01-iluminacao.png) |
 | E-02 | Força e sistemas esquemáticos | [Abrir prévia](pranchas/preview/E-02-forca-sistemas.png) |
 | E-03 | Diagrama funcional | [Abrir prévia](pranchas/preview/E-03-diagrama-funcional.png) |

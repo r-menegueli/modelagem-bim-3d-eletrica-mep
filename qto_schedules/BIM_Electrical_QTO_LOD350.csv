@@ -1,7 +1,0 @@
-Tag,FreeCAD_Object,Envelope_mm,Quantity,Unit,Box_Volume_m3,Status
-TR-01,TR01_Transformer_500kVA_13k8_380V,1550x980x1750,1,ea,2.658,placeholder box
-QGBT-01,QGBT01_Main_LV_Switchboard_1000A,2000x800x2200,1,ea,3.520,placeholder box
-QTA-01,QTA01_ATS_Panel_250kVA,800x600x2200,1,ea,1.056,placeholder box
-CCM-01,CCM01_Motor_Control_Center_6Col,2400x600x2200,1,ea,3.168,placeholder box
-GMG-01,GMG01_Diesel_Generator_250kVA,3600x1350x1950,1,ea,9.477,placeholder box
-EC-300,EC300_Overhead_Cable_Tray_300x100,9000x300x100,1,ea,0.270,placeholder box

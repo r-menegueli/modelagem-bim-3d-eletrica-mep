@@ -16,7 +16,7 @@ Estudo de implantação com setores de vagas, circulação, acessos, controle e 
 | Folha | Conteúdo | Prévia PNG |
 |---|---|---|
 | A-01 | Planta de implantação | [Abrir prévia](pranchas/preview/A-01-arquitetura.png) |
-| A-02 | Zonas e equipamentos no pavimento de acesso | [Abrir prévia](pranchas/preview/A-02-pavimento-superior.png) |
+| A-02 | Setorização das vagas e pontos de recarga | [Abrir prévia](pranchas/preview/A-02-vagas-recarga.png) |
 | E-01 | Iluminação esquemática | [Abrir prévia](pranchas/preview/E-01-iluminacao.png) |
 | E-02 | Força e sistemas esquemáticos | [Abrir prévia](pranchas/preview/E-02-forca-sistemas.png) |
 | E-03 | Diagrama funcional | [Abrir prévia](pranchas/preview/E-03-diagrama-funcional.png) |

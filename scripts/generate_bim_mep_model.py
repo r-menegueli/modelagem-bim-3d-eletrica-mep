@@ -19,7 +19,7 @@ except NameError:
     ROOT = Path.cwd()
 
 MODEL_DIR = ROOT / "models_3d"
-SCHEDULE = ROOT / "qto_schedules" / "BIM_Electrical_QTO_LOD350.csv"
+SCHEDULE = ROOT / "dados" / "estudo-volumetrico-freecad.csv
 MODEL_PATH = MODEL_DIR / "Subestacao_QGBT_CCM_Gerador_BIM_MEP.FCStd"
 
 ITEMS = (
@@ -37,12 +37,12 @@ def write_schedule():
     with SCHEDULE.open("w", encoding="utf-8", newline="") as stream:
         writer = csv.writer(stream)
         writer.writerow(
-            ("Tag", "FreeCAD_Object", "Envelope_mm", "Quantity", "Unit", "Box_Volume_m3", "Status")
+            ("Tag", "Objeto_FreeCAD", "Dimensoes_mm", "Quantidade", "Unidade", "Volume_caixa_m3", "Observacao")
         )
         for tag, name, length, width, height, _position in ITEMS:
             volume = length * width * height / 1_000_000_000
             writer.writerow(
-                (tag, name, f"{length}x{width}x{height}", 1, "ea", f"{volume:.3f}", "placeholder box")
+                (tag, name, f"{length}x{width}x{height}", 1, "un", f"{volume:.3f}", "Caixa de referência")
             )
 
 

@@ -31,6 +31,12 @@ Cada PDF apresenta a planta principal, a leitura do programa, os pontos esquemá
 
 Os modelos e diagramas são estudos conceituais para portfólio. Os pontos elétricos aparecem como anotações 2D e não formam circuitos MEP conectados. Não há dimensionamento de cargas, cabos ou proteções, verificação normativa, coordenação multidisciplinar, detecção de interferências ou validação executiva. Os arquivos não devem ser usados para obra, compra, aprovação ou instalação.
 
-## Estudo complementar
+## Estudo volumétrico complementar em FreeCAD
 
-O repositório também preserva um estudo volumétrico independente em FreeCAD: [modelo nativo](models_3d/Subestacao_QGBT_CCM_Gerador_BIM_MEP.FCStd).
+O estudo separado representa cinco equipamentos e uma bandeja de cabos como caixas geométricas de referência.
+
+- [Modelo nativo (.FCStd)](models_3d/Subestacao_QGBT_CCM_Gerador_BIM_MEP.FCStd)
+- [Tabela de volumes de referência (.CSV)](dados/estudo-volumetrico-freecad.csv)
+- [Script gerador](scripts/generate_bim_mep_model.py)
+
+Os volumes correspondem às caixas simplificadas. Não constituem um modelo BIM coordenado, um quantitativo de obra ou um modelo LOD350.
