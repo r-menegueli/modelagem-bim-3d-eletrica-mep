@@ -1,0 +1,366 @@
+{
+  "project": "19 - Subestacao GIS 138/13,8 kV",
+  "revision": "R11",
+  "status": "ESTUDO_DE_SENSIBILIDADE - NAO_E_DIMENSIONAMENTO_EXECUTIVO",
+  "preserved_r8_calculation_ids": [
+    "BP-01",
+    "BP-02",
+    "BP-03",
+    "BP-04",
+    "BP-05",
+    "BP-06",
+    "BP-07",
+    "BP-08",
+    "BP-09",
+    "BP-10",
+    "BP-11",
+    "BP-12",
+    "BP-13",
+    "BP-14",
+    "BP-15",
+    "FDR-A-F01",
+    "FDR-A-F02",
+    "FDR-A-F03",
+    "FDR-A-F04",
+    "FDR-A-F05",
+    "FDR-B-F01",
+    "FDR-B-F02",
+    "FDR-B-F03",
+    "FDR-B-F04",
+    "FDR-B-F05"
+  ],
+  "inputs": {
+    "project": "19 - Subestacao GIS 138/13,8 kV",
+    "revision": "R11",
+    "date": "2026-11-07",
+    "status": "ESTUDO_DE_SENSIBILIDADE - NAO_E_DIMENSIONAMENTO_EXECUTIVO",
+    "medium_voltage_kv": 13.8,
+    "power_factor_assumed": 0.95,
+    "feeder_active_power_mw_scenarios": [
+      4.0,
+      6.0
+    ],
+    "route_length_km_scenarios": [
+      0.1,
+      0.25,
+      0.5
+    ],
+    "candidate_cable": {
+      "manufacturer": "Nexans",
+      "reference": "EPR105-PVC 8,7/15 kV 1x240 mm2",
+      "conductor_material": "copper, 100% IACS per product page",
+      "conductor_area_mm2": 240,
+      "outer_diameter_mm": 33.5,
+      "maximum_continuous_conductor_temperature_c_reference": 105,
+      "copper_resistivity_ohm_mm2_per_m_assumed_20c": 0.017241,
+      "temperature_coefficient_per_c_assumed": 0.00393,
+      "conductor_temperature_c_assumed": 105,
+      "reactance_ohm_per_km_assumed": 0.1,
+      "references": [
+        "https://www.nexans.com.br/pt/products/Transmission.and.Distribution/Insulated.Copper-Aluminium-CablesForMediumVoltage/Nexans-EPR105-PVC/Nexans-EPR37761/product~ID540477955~.html"
+      ],
+      "status": "CANDIDATE_REFERENCE_ONLY_AMPACITY_NOT_CHECKED"
+    },
+    "short_circuit_sensitivity": {
+      "transformer_base_mva": 40,
+      "transformer_z_pu_assumed": 0.1,
+      "source_short_circuit_mva_assumed": [
+        500,
+        1000,
+        5000
+      ],
+      "source_impedance_model": "source short-circuit MVA converted to pu; source R neglected; transformer Z treated as X",
+      "operating_cases": [
+        "one transformer in service",
+        "two identical transformers in parallel with 13.8 kV tie closed"
+      ]
+    },
+    "limitations": [
+      "Cable ampacity is not calculated: installation method, grouping, mutual heating, ambient/soil conditions, tray fill, screen bonding and correction factors are missing.",
+      "Cable resistance is calculated from 100% IACS copper resistivity; reactance is an explicit 0.1 ohm/km assumption, not a value supplied by Nexans for this installation.",
+      "The cable candidate is a scenario, not a selected conductor or proof that one 240 mm2 cable per phase is adequate for the feeder current.",
+      "Source short-circuit strengths are sensitivities because the utility source equivalent and X/R are unavailable.",
+      "Transformer impedance remains the provisional R8 value of 10%; use actual nameplate/test impedance and tolerances for design.",
+      "The short-circuit calculations neglect source and transformer resistance, motor contribution, converter contribution, asymmetry, decay, grounding path and protection clearing time.",
+      "No breaker interrupting rating, protection setting, selectivity, conductor short-circuit withstand or construction suitability is established."
+    ]
+  },
+  "cable_sensitivities": [
+    {
+      "calc_id": "CAB-04MW-100M",
+      "active_power_mw": 4.0,
+      "current_a": 176.1556885399316,
+      "length_km": 0.1,
+      "candidate_conductor_mm2": 240.0,
+      "conductor_r_at_assumed_temperature_ohm_km": 0.09583481687499999,
+      "reactance_ohm_km_assumed": 0.1,
+      "voltage_drop_v": 3.7305283302285885,
+      "voltage_drop_percent": 0.027032813987163687,
+      "three_phase_copper_loss_kw": 0.8921500755503657,
+      "status": "SENSITIVITY_ONLY_AMPACITY_AND_INSTALLATION_UNCHECKED"
+    },
+    {
+      "calc_id": "CAB-04MW-250M",
+      "active_power_mw": 4.0,
+      "current_a": 176.1556885399316,
+      "length_km": 0.25,
+      "candidate_conductor_mm2": 240.0,
+      "conductor_r_at_assumed_temperature_ohm_km": 0.09583481687499999,
+      "reactance_ohm_km_assumed": 0.1,
+      "voltage_drop_v": 9.326320825571472,
+      "voltage_drop_percent": 0.06758203496790922,
+      "three_phase_copper_loss_kw": 2.2303751888759145,
+      "status": "SENSITIVITY_ONLY_AMPACITY_AND_INSTALLATION_UNCHECKED"
+    },
+    {
+      "calc_id": "CAB-04MW-500M",
+      "active_power_mw": 4.0,
+      "current_a": 176.1556885399316,
+      "length_km": 0.5,
+      "candidate_conductor_mm2": 240.0,
+      "conductor_r_at_assumed_temperature_ohm_km": 0.09583481687499999,
+      "reactance_ohm_km_assumed": 0.1,
+      "voltage_drop_v": 18.652641651142943,
+      "voltage_drop_percent": 0.13516406993581845,
+      "three_phase_copper_loss_kw": 4.460750377751829,
+      "status": "SENSITIVITY_ONLY_AMPACITY_AND_INSTALLATION_UNCHECKED"
+    },
+    {
+      "calc_id": "CAB-06MW-100M",
+      "active_power_mw": 6.0,
+      "current_a": 264.2335328098974,
+      "length_km": 0.1,
+      "candidate_conductor_mm2": 240.0,
+      "conductor_r_at_assumed_temperature_ohm_km": 0.09583481687499999,
+      "reactance_ohm_km_assumed": 0.1,
+      "voltage_drop_v": 5.5957924953428835,
+      "voltage_drop_percent": 0.04054922098074553,
+      "three_phase_copper_loss_kw": 2.0073376699883227,
+      "status": "SENSITIVITY_ONLY_AMPACITY_AND_INSTALLATION_UNCHECKED"
+    },
+    {
+      "calc_id": "CAB-06MW-250M",
+      "active_power_mw": 6.0,
+      "current_a": 264.2335328098974,
+      "length_km": 0.25,
+      "candidate_conductor_mm2": 240.0,
+      "conductor_r_at_assumed_temperature_ohm_km": 0.09583481687499999,
+      "reactance_ohm_km_assumed": 0.1,
+      "voltage_drop_v": 13.989481238357207,
+      "voltage_drop_percent": 0.10137305245186382,
+      "three_phase_copper_loss_kw": 5.0183441749708075,
+      "status": "SENSITIVITY_ONLY_AMPACITY_AND_INSTALLATION_UNCHECKED"
+    },
+    {
+      "calc_id": "CAB-06MW-500M",
+      "active_power_mw": 6.0,
+      "current_a": 264.2335328098974,
+      "length_km": 0.5,
+      "candidate_conductor_mm2": 240.0,
+      "conductor_r_at_assumed_temperature_ohm_km": 0.09583481687499999,
+      "reactance_ohm_km_assumed": 0.1,
+      "voltage_drop_v": 27.978962476714415,
+      "voltage_drop_percent": 0.20274610490372763,
+      "three_phase_copper_loss_kw": 10.036688349941615,
+      "status": "SENSITIVITY_ONLY_AMPACITY_AND_INSTALLATION_UNCHECKED"
+    }
+  ],
+  "short_circuit_sensitivities": [
+    {
+      "calc_id": "SC-0500MVA-1TR-100M",
+      "source_short_circuit_mva_assumed": 500.0,
+      "transformers_in_parallel_assumed": 1,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.1,
+      "bus_fault_current_ka_symmetric_rms": 9.297105784051944,
+      "remote_fault_current_ka_symmetric_rms": 9.18930886192713,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    },
+    {
+      "calc_id": "SC-0500MVA-1TR-250M",
+      "source_short_circuit_mva_assumed": 500.0,
+      "transformers_in_parallel_assumed": 1,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.25,
+      "bus_fault_current_ka_symmetric_rms": 9.297105784051944,
+      "remote_fault_current_ka_symmetric_rms": 9.030245217692938,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    },
+    {
+      "calc_id": "SC-0500MVA-1TR-500M",
+      "source_short_circuit_mva_assumed": 500.0,
+      "transformers_in_parallel_assumed": 1,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.5,
+      "bus_fault_current_ka_symmetric_rms": 9.297105784051944,
+      "remote_fault_current_ka_symmetric_rms": 8.772340713996307,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    },
+    {
+      "calc_id": "SC-0500MVA-2TR-100M",
+      "source_short_circuit_mva_assumed": 500.0,
+      "transformers_in_parallel_assumed": 2,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.1,
+      "bus_fault_current_ka_symmetric_rms": 12.872915700995,
+      "remote_fault_current_ka_symmetric_rms": 12.666765617538426,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    },
+    {
+      "calc_id": "SC-0500MVA-2TR-250M",
+      "source_short_circuit_mva_assumed": 500.0,
+      "transformers_in_parallel_assumed": 2,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.25,
+      "bus_fault_current_ka_symmetric_rms": 12.872915700995,
+      "remote_fault_current_ka_symmetric_rms": 12.364580827423953,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    },
+    {
+      "calc_id": "SC-0500MVA-2TR-500M",
+      "source_short_circuit_mva_assumed": 500.0,
+      "transformers_in_parallel_assumed": 2,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.5,
+      "bus_fault_current_ka_symmetric_rms": 12.872915700995,
+      "remote_fault_current_ka_symmetric_rms": 11.880272227788637,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    },
+    {
+      "calc_id": "SC-1000MVA-1TR-100M",
+      "source_short_circuit_mva_assumed": 1000.0,
+      "transformers_in_parallel_assumed": 1,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.1,
+      "bus_fault_current_ka_symmetric_rms": 11.9534217223525,
+      "remote_fault_current_ka_symmetric_rms": 11.77555571666952,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    },
+    {
+      "calc_id": "SC-1000MVA-1TR-250M",
+      "source_short_circuit_mva_assumed": 1000.0,
+      "transformers_in_parallel_assumed": 1,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.25,
+      "bus_fault_current_ka_symmetric_rms": 11.9534217223525,
+      "remote_fault_current_ka_symmetric_rms": 11.514382877602554,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    },
+    {
+      "calc_id": "SC-1000MVA-1TR-500M",
+      "source_short_circuit_mva_assumed": 1000.0,
+      "transformers_in_parallel_assumed": 1,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.5,
+      "bus_fault_current_ka_symmetric_rms": 11.9534217223525,
+      "remote_fault_current_ka_symmetric_rms": 11.09453471067622,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    },
+    {
+      "calc_id": "SC-1000MVA-2TR-100M",
+      "source_short_circuit_mva_assumed": 1000.0,
+      "transformers_in_parallel_assumed": 2,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.1,
+      "bus_fault_current_ka_symmetric_rms": 18.594211568103887,
+      "remote_fault_current_ka_symmetric_rms": 18.165822475724497,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    },
+    {
+      "calc_id": "SC-1000MVA-2TR-250M",
+      "source_short_circuit_mva_assumed": 1000.0,
+      "transformers_in_parallel_assumed": 2,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.25,
+      "bus_fault_current_ka_symmetric_rms": 18.594211568103887,
+      "remote_fault_current_ka_symmetric_rms": 17.544681427992614,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    },
+    {
+      "calc_id": "SC-1000MVA-2TR-500M",
+      "source_short_circuit_mva_assumed": 1000.0,
+      "transformers_in_parallel_assumed": 2,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.5,
+      "bus_fault_current_ka_symmetric_rms": 18.594211568103887,
+      "remote_fault_current_ka_symmetric_rms": 16.56833070321811,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    },
+    {
+      "calc_id": "SC-5000MVA-1TR-100M",
+      "source_short_circuit_mva_assumed": 5000.0,
+      "transformers_in_parallel_assumed": 1,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.1,
+      "bus_fault_current_ka_symmetric_rms": 15.495176306753239,
+      "remote_fault_current_ka_symmetric_rms": 15.197033293191907,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    },
+    {
+      "calc_id": "SC-5000MVA-1TR-250M",
+      "source_short_circuit_mva_assumed": 5000.0,
+      "transformers_in_parallel_assumed": 1,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.25,
+      "bus_fault_current_ka_symmetric_rms": 15.495176306753239,
+      "remote_fault_current_ka_symmetric_rms": 14.762160308321453,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    },
+    {
+      "calc_id": "SC-5000MVA-1TR-500M",
+      "source_short_circuit_mva_assumed": 5000.0,
+      "transformers_in_parallel_assumed": 1,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.5,
+      "bus_fault_current_ka_symmetric_rms": 15.495176306753239,
+      "remote_fault_current_ka_symmetric_rms": 14.071288606701406,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    },
+    {
+      "calc_id": "SC-5000MVA-2TR-100M",
+      "source_short_circuit_mva_assumed": 5000.0,
+      "transformers_in_parallel_assumed": 2,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.1,
+      "bus_fault_current_ka_symmetric_rms": 28.853086916023273,
+      "remote_fault_current_ka_symmetric_rms": 27.829120011481283,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    },
+    {
+      "calc_id": "SC-5000MVA-2TR-250M",
+      "source_short_circuit_mva_assumed": 5000.0,
+      "transformers_in_parallel_assumed": 2,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.25,
+      "bus_fault_current_ka_symmetric_rms": 28.853086916023273,
+      "remote_fault_current_ka_symmetric_rms": 26.374407570658445,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    },
+    {
+      "calc_id": "SC-5000MVA-2TR-500M",
+      "source_short_circuit_mva_assumed": 5000.0,
+      "transformers_in_parallel_assumed": 2,
+      "transformer_z_pu_assumed": 0.1,
+      "cable_length_km_assumed": 0.5,
+      "bus_fault_current_ka_symmetric_rms": 28.853086916023273,
+      "remote_fault_current_ka_symmetric_rms": 24.170156691198383,
+      "status": "SOURCE_AND_CABLE_SENSITIVITY_R_AND_XR_MISSING"
+    }
+  ],
+  "quality_checks": {
+    "all_voltage_drops_nonnegative": true,
+    "longer_route_not_lower_drop_for_same_feeder": true,
+    "greater_source_strength_not_lower_fault_current_same_case": true,
+    "two_transformers_increase_bus_fault_current": true,
+    "ampacity_not_claimed": true
+  },
+  "limitations": [
+    "Cable ampacity is not calculated: installation method, grouping, mutual heating, ambient/soil conditions, tray fill, screen bonding and correction factors are missing.",
+    "Cable resistance is calculated from 100% IACS copper resistivity; reactance is an explicit 0.1 ohm/km assumption, not a value supplied by Nexans for this installation.",
+    "The cable candidate is a scenario, not a selected conductor or proof that one 240 mm2 cable per phase is adequate for the feeder current.",
+    "Source short-circuit strengths are sensitivities because the utility source equivalent and X/R are unavailable.",
+    "Transformer impedance remains the provisional R8 value of 10%; use actual nameplate/test impedance and tolerances for design.",
+    "The short-circuit calculations neglect source and transformer resistance, motor contribution, converter contribution, asymmetry, decay, grounding path and protection clearing time.",
+    "No breaker interrupting rating, protection setting, selectivity, conductor short-circuit withstand or construction suitability is established."
+  ]
+}

@@ -89,7 +89,7 @@ def calculate(inputs: dict[str, Any], r8: dict[str, Any]) -> dict[str, Any]:
 
     return {
         "project": "19 - Subestacao GIS 138/13,8 kV",
-        "revision": "R9",
+        "revision": str(inputs.get("revision", "R9")),
         "status": "ESTUDO_DE_SENSIBILIDADE - NAO_E_DIMENSIONAMENTO_EXECUTIVO",
         "preserved_r8_calculation_ids": [x["calc_id"] for x in r8["calculations"]],
         "inputs": inputs,
@@ -126,15 +126,16 @@ def calculate(inputs: dict[str, Any], r8: dict[str, Any]) -> dict[str, Any]:
 def write_outputs(inputs: dict[str, Any], r8: dict[str, Any], output_dir: Path) -> dict[str, Any]:
     output_dir.mkdir(parents=True, exist_ok=True)
     result = calculate(inputs, r8)
-    (output_dir / "estudo-complementar-r9.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    revision = str(result.get("revision", "R9")).lower()
+    (output_dir / f"estudo-complementar-{revision}.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     rows = result["cable_sensitivities"] + result["short_circuit_sensitivities"]
     fields = sorted({k for row in rows for k in row})
-    with (output_dir / "estudo-complementar-r9.csv").open("w", newline="", encoding="utf-8-sig") as stream:
+    with (output_dir / f"estudo-complementar-{revision}.csv").open("w", newline="", encoding="utf-8-sig") as stream:
         writer = csv.DictWriter(stream, fieldnames=fields, delimiter=";")
         writer.writeheader()
         writer.writerows(rows)
     md = [
-        "# Estudo complementar de cabos e curto-circuito — R9", "",
+        f"# Estudo complementar de cabos e curto-circuito — {result.get('revision', 'R9')}", "",
         "Os resultados BP-01 a BP-15 e as correntes FDR-* da R8 permanecem inalterados. Este anexo acrescenta sensibilidades com uma resistência de cobre derivada de 100% IACS e parâmetros explicitamente assumidos.", "",
         "## Queda de tensão e perdas: caso candidato", "",
         f"- Cabo candidato: Nexans EPR105-PVC 8,7/15 kV, 1×{inputs['candidate_cable']['conductor_area_mm2']:.0f} mm² Cu por fase; sem validação de ampacidade.",
@@ -152,7 +153,7 @@ def write_outputs(inputs: dict[str, Any], r8: dict[str, Any], output_dir: Path) 
     md += ["", "## Resultados R8 mantidos", "", f"{len(result['preserved_r8_calculation_ids'])} identificadores R8 referenciados em `resultados.json` e preservados sem sobrescrita.", "", "## Verificações automáticas", ""]
     md += [f"- `{k}`: {'OK' if v else 'FALHOU'}" for k, v in result["quality_checks"].items()]
     md += ["", "## Limitações", ""] + [f"- {x}" for x in result["limitations"]] + [""]
-    (output_dir / "memorial-complementar-r9.md").write_text("\n".join(md), encoding="utf-8")
+    (output_dir / f"memorial-complementar-{revision}.md").write_text("\n".join(md), encoding="utf-8")
     return result
 
 

@@ -1,0 +1,3752 @@
+{
+  "project": "19 - Subestação GIS 138/13,8 kV",
+  "revision": "R11",
+  "source": "Revit 2027 API audit CSV/JSON plus explicit topology specification",
+  "validation_class": "MODEL_TOPOLOGY_CORRESPONDENCE_AUDIT_NOT_PROTECTION_STUDY",
+  "summary": {
+    "nodes_expected": 62,
+    "edges_expected": 58,
+    "native_electrical_system_relations_confirmed": 1,
+    "physical_power_conductors_confirmed": 0,
+    "current_transformer_placeholders_expected": 5,
+    "current_transformer_placeholders_found": 5,
+    "missing_expected_model_nodes": [],
+    "missing_geometric_route_edges": [],
+    "edges_by_evidence_class": {
+      "GEOMETRIC_ROUTE_ONLY": 14,
+      "DIAGRAM_ONLY": 43,
+      "NATIVE_ELECTRICAL_SYSTEM_LOGICAL": 1
+    }
+  },
+  "nodes": [
+    {
+      "node_id": "GRID-L01",
+      "label": "Rede externa 138 kV L01",
+      "voltage_kv": 138.0,
+      "marks": [],
+      "external": true,
+      "evidence_class": "EXTERNAL_BOUNDARY",
+      "model_state": "EXTERNAL_OR_REMOTE_NOT_MODELED",
+      "model_elements": []
+    },
+    {
+      "node_id": "GRID-L02",
+      "label": "Rede externa 138 kV L02",
+      "voltage_kv": 138.0,
+      "marks": [],
+      "external": true,
+      "evidence_class": "EXTERNAL_BOUNDARY",
+      "model_state": "EXTERNAL_OR_REMOTE_NOT_MODELED",
+      "model_elements": []
+    },
+    {
+      "node_id": "BUS-138-A",
+      "label": "Barra A GIS 138 kV",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-BUSA-ENCLOSURE"
+      ],
+      "external": false,
+      "evidence_class": "ENCLOSURE_GEOMETRY_ONLY",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357333",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573d5",
+          "mark": "GIS-BUSA-ENCLOSURE",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "BUS-138-B",
+      "label": "Barra B GIS 138 kV",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-BUSB-ENCLOSURE"
+      ],
+      "external": false,
+      "evidence_class": "ENCLOSURE_GEOMETRY_ONLY",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357334",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573d6",
+          "mark": "GIS-BUSB-ENCLOSURE",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-L01-89A",
+      "label": "GIS-L01 seccionadora de barra A",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-L01-89A"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357291",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ab",
+          "mark": "GIS-L01-89A",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-L01-89B",
+      "label": "GIS-L01 seccionadora de barra B",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-L01-89B"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357292",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ac",
+          "mark": "GIS-L01-89B",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-L01-52",
+      "label": "GIS-L01 disjuntor 52",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-L01-52"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357290",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573aa",
+          "mark": "GIS-L01-52",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-L01-CT",
+      "label": "GIS-L01 TC placeholder",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-L01-CT"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357294",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ae",
+          "mark": "GIS-L01-CT",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-L01-TERM",
+      "label": "Entrada L01 terminação GIS",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-L01-TERM"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357296",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b0",
+          "mark": "GIS-L01-TERM",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-T01-89A",
+      "label": "GIS-T01 seccionadora de barra A",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-T01-89A"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357299",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b3",
+          "mark": "GIS-T01-89A",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-T01-89B",
+      "label": "GIS-T01 seccionadora de barra B",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-T01-89B"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357300",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b4",
+          "mark": "GIS-T01-89B",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-T01-52",
+      "label": "GIS-T01 disjuntor 52",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-T01-52"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357298",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b2",
+          "mark": "GIS-T01-52",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-T01-CT",
+      "label": "GIS-T01 TC placeholder",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-T01-CT"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357302",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b6",
+          "mark": "GIS-T01-CT",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "TR-01",
+      "label": "TR-01 tanque",
+      "voltage_kv": 138.0,
+      "marks": [
+        "TR-01"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357419",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005742b",
+          "mark": "TR-01",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "TR-01-HV-TERMINALS",
+      "label": "TR-01 buchas de alta tensão",
+      "voltage_kv": 138.0,
+      "marks": [
+        "TR-01-B-HV-1",
+        "TR-01-B-HV-2",
+        "TR-01-B-HV-3"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357452",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005744c",
+          "mark": "TR-01-B-HV-1",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        },
+        {
+          "element_id": "357454",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005744e",
+          "mark": "TR-01-B-HV-2",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        },
+        {
+          "element_id": "357456",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057450",
+          "mark": "TR-01-B-HV-3",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "TR-01-MV-TERMINALS",
+      "label": "TR-01 buchas de média tensão",
+      "voltage_kv": 13.8,
+      "marks": [
+        "TR-01-B-MV-1",
+        "TR-01-B-MV-2",
+        "TR-01-B-MV-3"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357453",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005744d",
+          "mark": "TR-01-B-MV-1",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        },
+        {
+          "element_id": "357455",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005744f",
+          "mark": "TR-01-B-MV-2",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        },
+        {
+          "element_id": "357457",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057451",
+          "mark": "TR-01-B-MV-3",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-T02-89A",
+      "label": "GIS-T02 seccionadora de barra A",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-T02-89A"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357311",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573bf",
+          "mark": "GIS-T02-89A",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-T02-89B",
+      "label": "GIS-T02 seccionadora de barra B",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-T02-89B"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357312",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c0",
+          "mark": "GIS-T02-89B",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-T02-52",
+      "label": "GIS-T02 disjuntor 52",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-T02-52"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357310",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573be",
+          "mark": "GIS-T02-52",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-T02-CT",
+      "label": "GIS-T02 TC placeholder",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-T02-CT"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357314",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c2",
+          "mark": "GIS-T02-CT",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "TR-02",
+      "label": "TR-02 tanque",
+      "voltage_kv": 138.0,
+      "marks": [
+        "TR-02"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357462",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057456",
+          "mark": "TR-02",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "TR-02-HV-TERMINALS",
+      "label": "TR-02 buchas de alta tensão",
+      "voltage_kv": 138.0,
+      "marks": [
+        "TR-02-B-HV-1",
+        "TR-02-B-HV-2",
+        "TR-02-B-HV-3"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357475",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057463",
+          "mark": "TR-02-B-HV-1",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        },
+        {
+          "element_id": "357477",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057465",
+          "mark": "TR-02-B-HV-2",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        },
+        {
+          "element_id": "357479",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057467",
+          "mark": "TR-02-B-HV-3",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "TR-02-MV-TERMINALS",
+      "label": "TR-02 buchas de média tensão",
+      "voltage_kv": 13.8,
+      "marks": [
+        "TR-02-B-MV-1",
+        "TR-02-B-MV-2",
+        "TR-02-B-MV-3"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357476",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057464",
+          "mark": "TR-02-B-MV-1",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        },
+        {
+          "element_id": "357478",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057466",
+          "mark": "TR-02-B-MV-2",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        },
+        {
+          "element_id": "357480",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057468",
+          "mark": "TR-02-B-MV-3",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-L02-89A",
+      "label": "GIS-L02 seccionadora de barra A",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-L02-89A"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357317",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c5",
+          "mark": "GIS-L02-89A",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-L02-89B",
+      "label": "GIS-L02 seccionadora de barra B",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-L02-89B"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357318",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c6",
+          "mark": "GIS-L02-89B",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-L02-52",
+      "label": "GIS-L02 disjuntor 52",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-L02-52"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357316",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c4",
+          "mark": "GIS-L02-52",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-L02-CT",
+      "label": "GIS-L02 TC placeholder",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-L02-CT"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357320",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c8",
+          "mark": "GIS-L02-CT",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-L02-TERM",
+      "label": "Entrada L02 terminação GIS",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-L02-TERM"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357322",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ca",
+          "mark": "GIS-L02-TERM",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-BC01-89A",
+      "label": "Acoplador 138 kV seccionadora A",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-BC01-89A"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357305",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b9",
+          "mark": "GIS-BC01-89A",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-BC01-52",
+      "label": "Acoplador 138 kV disjuntor",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-BC01-52"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357304",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b8",
+          "mark": "GIS-BC01-52",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-BC01-89B",
+      "label": "Acoplador 138 kV seccionadora B",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-BC01-89B"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357306",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ba",
+          "mark": "GIS-BC01-89B",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "GIS-BC01-CT",
+      "label": "TC placeholder do acoplador",
+      "voltage_kv": 138.0,
+      "marks": [
+        "GIS-BC01-CT"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357308",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573bc",
+          "mark": "GIS-BC01-CT",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "P-BUS",
+      "label": "Painel funcional de proteção de barras",
+      "voltage_kv": 0.125,
+      "marks": [
+        "P-BUS"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357502",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005747e",
+          "mark": "P-BUS",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "BUS-MV-A",
+      "label": "Barra MT seção A 13,8 kV",
+      "voltage_kv": 13.8,
+      "marks": [
+        "BUS-MV-A"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357498",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005747a",
+          "mark": "BUS-MV-A",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "BUS-MV-B",
+      "label": "Barra MT seção B 13,8 kV",
+      "voltage_kv": 13.8,
+      "marks": [
+        "BUS-MV-B"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357499",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005747b",
+          "mark": "BUS-MV-B",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "QMT-TIE",
+      "label": "Cubículo de acoplamento MT",
+      "voltage_kv": 13.8,
+      "marks": [
+        "QMT-TIE"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357497",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057479",
+          "mark": "QMT-TIE",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "QAC-01",
+      "label": "Quadro auxiliar CA",
+      "voltage_kv": 0.38,
+      "marks": [
+        "QAC-01"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357509",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057485",
+          "mark": "QAC-01",
+          "category": "Equipamento elétrico",
+          "connector_count": 2,
+          "isconnected_true": 1
+        }
+      ]
+    },
+    {
+      "node_id": "UPS-01",
+      "label": "UPS",
+      "voltage_kv": 0.38,
+      "marks": [
+        "UPS-01"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357511",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057487",
+          "mark": "UPS-01",
+          "category": "Equipamento elétrico",
+          "connector_count": 1,
+          "isconnected_true": 1
+        }
+      ]
+    },
+    {
+      "node_id": "QMT-A-IN",
+      "label": "Cubículo de entrada BUS-MV-A",
+      "voltage_kv": 13.8,
+      "marks": [
+        "QMT-A-IN"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357483",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005746b",
+          "mark": "QMT-A-IN",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "BUS-MV-A-IN-TERMINALS",
+      "label": "Terminações MT TR-01",
+      "voltage_kv": 13.8,
+      "marks": [
+        "TR-01-B-MV-1",
+        "TR-01-B-MV-2",
+        "TR-01-B-MV-3"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357453",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005744d",
+          "mark": "TR-01-B-MV-1",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        },
+        {
+          "element_id": "357455",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005744f",
+          "mark": "TR-01-B-MV-2",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        },
+        {
+          "element_id": "357457",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057451",
+          "mark": "TR-01-B-MV-3",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "QMT-B-IN",
+      "label": "Cubículo de entrada BUS-MV-B",
+      "voltage_kv": 13.8,
+      "marks": [
+        "QMT-B-IN"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357496",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057478",
+          "mark": "QMT-B-IN",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "BUS-MV-B-IN-TERMINALS",
+      "label": "Terminações MT TR-02",
+      "voltage_kv": 13.8,
+      "marks": [
+        "TR-02-B-MV-1",
+        "TR-02-B-MV-2",
+        "TR-02-B-MV-3"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357476",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057464",
+          "mark": "TR-02-B-MV-1",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        },
+        {
+          "element_id": "357478",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057466",
+          "mark": "TR-02-B-MV-2",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        },
+        {
+          "element_id": "357480",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057468",
+          "mark": "TR-02-B-MV-3",
+          "category": "Modelos genéricos",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "QMT-A-F01",
+      "label": "Cubículo alimentador QMT-A-F01",
+      "voltage_kv": 13.8,
+      "marks": [
+        "QMT-A-F01"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357487",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005746f",
+          "mark": "QMT-A-F01",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "LOAD-A-F01",
+      "label": "Carga remota QMT-A-F01",
+      "voltage_kv": 13.8,
+      "marks": [],
+      "external": true,
+      "evidence_class": "UNMODELED_REMOTE_LOAD",
+      "model_state": "EXTERNAL_OR_REMOTE_NOT_MODELED",
+      "model_elements": []
+    },
+    {
+      "node_id": "QMT-A-F02",
+      "label": "Cubículo alimentador QMT-A-F02",
+      "voltage_kv": 13.8,
+      "marks": [
+        "QMT-A-F02"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357489",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057471",
+          "mark": "QMT-A-F02",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "LOAD-A-F02",
+      "label": "Carga remota QMT-A-F02",
+      "voltage_kv": 13.8,
+      "marks": [],
+      "external": true,
+      "evidence_class": "UNMODELED_REMOTE_LOAD",
+      "model_state": "EXTERNAL_OR_REMOTE_NOT_MODELED",
+      "model_elements": []
+    },
+    {
+      "node_id": "QMT-A-F03",
+      "label": "Cubículo alimentador QMT-A-F03",
+      "voltage_kv": 13.8,
+      "marks": [
+        "QMT-A-F03"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357491",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057473",
+          "mark": "QMT-A-F03",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "LOAD-A-F03",
+      "label": "Carga remota QMT-A-F03",
+      "voltage_kv": 13.8,
+      "marks": [],
+      "external": true,
+      "evidence_class": "UNMODELED_REMOTE_LOAD",
+      "model_state": "EXTERNAL_OR_REMOTE_NOT_MODELED",
+      "model_elements": []
+    },
+    {
+      "node_id": "QMT-A-F04",
+      "label": "Cubículo alimentador QMT-A-F04",
+      "voltage_kv": 13.8,
+      "marks": [
+        "QMT-A-F04"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357493",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057475",
+          "mark": "QMT-A-F04",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "LOAD-A-F04",
+      "label": "Carga remota QMT-A-F04",
+      "voltage_kv": 13.8,
+      "marks": [],
+      "external": true,
+      "evidence_class": "UNMODELED_REMOTE_LOAD",
+      "model_state": "EXTERNAL_OR_REMOTE_NOT_MODELED",
+      "model_elements": []
+    },
+    {
+      "node_id": "QMT-A-F05",
+      "label": "Cubículo alimentador QMT-A-F05",
+      "voltage_kv": 13.8,
+      "marks": [
+        "QMT-A-F05"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357495",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057477",
+          "mark": "QMT-A-F05",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "LOAD-A-F05",
+      "label": "Carga remota QMT-A-F05",
+      "voltage_kv": 13.8,
+      "marks": [],
+      "external": true,
+      "evidence_class": "UNMODELED_REMOTE_LOAD",
+      "model_state": "EXTERNAL_OR_REMOTE_NOT_MODELED",
+      "model_elements": []
+    },
+    {
+      "node_id": "QMT-B-F01",
+      "label": "Cubículo alimentador QMT-B-F01",
+      "voltage_kv": 13.8,
+      "marks": [
+        "QMT-B-F01"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357484",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005746c",
+          "mark": "QMT-B-F01",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "LOAD-B-F01",
+      "label": "Carga remota QMT-B-F01",
+      "voltage_kv": 13.8,
+      "marks": [],
+      "external": true,
+      "evidence_class": "UNMODELED_REMOTE_LOAD",
+      "model_state": "EXTERNAL_OR_REMOTE_NOT_MODELED",
+      "model_elements": []
+    },
+    {
+      "node_id": "QMT-B-F02",
+      "label": "Cubículo alimentador QMT-B-F02",
+      "voltage_kv": 13.8,
+      "marks": [
+        "QMT-B-F02"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357486",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005746e",
+          "mark": "QMT-B-F02",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "LOAD-B-F02",
+      "label": "Carga remota QMT-B-F02",
+      "voltage_kv": 13.8,
+      "marks": [],
+      "external": true,
+      "evidence_class": "UNMODELED_REMOTE_LOAD",
+      "model_state": "EXTERNAL_OR_REMOTE_NOT_MODELED",
+      "model_elements": []
+    },
+    {
+      "node_id": "QMT-B-F03",
+      "label": "Cubículo alimentador QMT-B-F03",
+      "voltage_kv": 13.8,
+      "marks": [
+        "QMT-B-F03"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357488",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057470",
+          "mark": "QMT-B-F03",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "LOAD-B-F03",
+      "label": "Carga remota QMT-B-F03",
+      "voltage_kv": 13.8,
+      "marks": [],
+      "external": true,
+      "evidence_class": "UNMODELED_REMOTE_LOAD",
+      "model_state": "EXTERNAL_OR_REMOTE_NOT_MODELED",
+      "model_elements": []
+    },
+    {
+      "node_id": "QMT-B-F04",
+      "label": "Cubículo alimentador QMT-B-F04",
+      "voltage_kv": 13.8,
+      "marks": [
+        "QMT-B-F04"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357490",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057472",
+          "mark": "QMT-B-F04",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "LOAD-B-F04",
+      "label": "Carga remota QMT-B-F04",
+      "voltage_kv": 13.8,
+      "marks": [],
+      "external": true,
+      "evidence_class": "UNMODELED_REMOTE_LOAD",
+      "model_state": "EXTERNAL_OR_REMOTE_NOT_MODELED",
+      "model_elements": []
+    },
+    {
+      "node_id": "QMT-B-F05",
+      "label": "Cubículo alimentador QMT-B-F05",
+      "voltage_kv": 13.8,
+      "marks": [
+        "QMT-B-F05"
+      ],
+      "external": false,
+      "evidence_class": "BIM_EQUIPMENT",
+      "model_state": "MODEL_ELEMENT_FOUND",
+      "model_elements": [
+        {
+          "element_id": "357492",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057474",
+          "mark": "QMT-B-F05",
+          "category": "Equipamento elétrico",
+          "connector_count": 0,
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "node_id": "LOAD-B-F05",
+      "label": "Carga remota QMT-B-F05",
+      "voltage_kv": 13.8,
+      "marks": [],
+      "external": true,
+      "evidence_class": "UNMODELED_REMOTE_LOAD",
+      "model_state": "EXTERNAL_OR_REMOTE_NOT_MODELED",
+      "model_elements": []
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "GIS-L01-A-SELECTOR",
+      "from_node": "BUS-138-A",
+      "to_node": "GIS-L01-89A",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_CLOSED_NORMAL",
+      "evidence_class": "GEOMETRIC_ROUTE_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-L01-89A"
+      ],
+      "geometry_prefixes": [
+        "GIS-L01-89A-STUB"
+      ],
+      "limitation": "Carcaça geométrica entre barra e seccionadora; contato, estado e condutor não são conectados eletricamente no RVT.",
+      "model_elements": [
+        {
+          "element_id": "357291",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ab",
+          "mark": "GIS-L01-89A",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [
+        {
+          "element_id": "357335",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573d7",
+          "mark": "GIS-L01-89A-STUB"
+        }
+      ],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "GEOMETRY_FOUND_NO_CONDUCTOR"
+    },
+    {
+      "edge_id": "GIS-L01-A-TO-BREAKER",
+      "from_node": "GIS-L01-89A",
+      "to_node": "GIS-L01-52",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_CLOSED_NORMAL",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-L01-89A",
+        "GIS-L01-52"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "O caminho selecionado é uma relação de unifilar; sem PowerCircuit ou contato comutável.",
+      "model_elements": [
+        {
+          "element_id": "357290",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573aa",
+          "mark": "GIS-L01-52",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357291",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ab",
+          "mark": "GIS-L01-89A",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-L01-B-SELECTOR",
+      "from_node": "BUS-138-B",
+      "to_node": "GIS-L01-89B",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_OPEN_NORMAL",
+      "evidence_class": "GEOMETRIC_ROUTE_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-L01-89B"
+      ],
+      "geometry_prefixes": [
+        "GIS-L01-89B-STUB"
+      ],
+      "limitation": "Carcaça geométrica entre barra e seccionadora; contato, estado e condutor não são conectados eletricamente no RVT.",
+      "model_elements": [
+        {
+          "element_id": "357292",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ac",
+          "mark": "GIS-L01-89B",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [
+        {
+          "element_id": "357336",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573d8",
+          "mark": "GIS-L01-89B-STUB"
+        }
+      ],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "GEOMETRY_FOUND_NO_CONDUCTOR"
+    },
+    {
+      "edge_id": "GIS-L01-B-TO-BREAKER",
+      "from_node": "GIS-L01-89B",
+      "to_node": "GIS-L01-52",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_OPEN_NORMAL",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-L01-89B",
+        "GIS-L01-52"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "O caminho selecionado é uma relação de unifilar; sem PowerCircuit ou contato comutável.",
+      "model_elements": [
+        {
+          "element_id": "357290",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573aa",
+          "mark": "GIS-L01-52",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357292",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ac",
+          "mark": "GIS-L01-89B",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-L01-52-TO-CT",
+      "from_node": "GIS-L01-52",
+      "to_node": "GIS-L01-CT",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_CLOSED_NORMAL",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-L01-52",
+        "GIS-L01-CT"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "TC é placeholder de uma família; não comprova um conjunto trifásico selecionado.",
+      "model_elements": [
+        {
+          "element_id": "357290",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573aa",
+          "mark": "GIS-L01-52",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357294",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ae",
+          "mark": "GIS-L01-CT",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-L01-CT-TO-TERM",
+      "from_node": "GIS-L01-CT",
+      "to_node": "GIS-L01-TERM",
+      "voltage_kv": 138.0,
+      "state": "DIAGRAM_RELATION",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-L01-CT",
+        "GIS-L01-TERM"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Terminação representada; condutor primário e interface externa não modelados.",
+      "model_elements": [
+        {
+          "element_id": "357294",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ae",
+          "mark": "GIS-L01-CT",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357296",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b0",
+          "mark": "GIS-L01-TERM",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-L01-TERM-TO-GRID",
+      "from_node": "GIS-L01-TERM",
+      "to_node": "GRID-L01",
+      "voltage_kv": 138.0,
+      "state": "EXTERNAL_NOT_MODELED",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-L01-TERM"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Conexão com a rede da concessionária fora do limite do modelo.",
+      "model_elements": [
+        {
+          "element_id": "357296",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b0",
+          "mark": "GIS-L01-TERM",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-T01-A-SELECTOR",
+      "from_node": "BUS-138-A",
+      "to_node": "GIS-T01-89A",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_CLOSED_NORMAL",
+      "evidence_class": "GEOMETRIC_ROUTE_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-T01-89A"
+      ],
+      "geometry_prefixes": [
+        "GIS-T01-89A-STUB"
+      ],
+      "limitation": "Carcaça geométrica entre barra e seccionadora; contato, estado e condutor não são conectados eletricamente no RVT.",
+      "model_elements": [
+        {
+          "element_id": "357299",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b3",
+          "mark": "GIS-T01-89A",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [
+        {
+          "element_id": "357337",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573d9",
+          "mark": "GIS-T01-89A-STUB"
+        }
+      ],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "GEOMETRY_FOUND_NO_CONDUCTOR"
+    },
+    {
+      "edge_id": "GIS-T01-A-TO-BREAKER",
+      "from_node": "GIS-T01-89A",
+      "to_node": "GIS-T01-52",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_CLOSED_NORMAL",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-T01-89A",
+        "GIS-T01-52"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "O caminho selecionado é uma relação de unifilar; sem PowerCircuit ou contato comutável.",
+      "model_elements": [
+        {
+          "element_id": "357298",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b2",
+          "mark": "GIS-T01-52",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357299",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b3",
+          "mark": "GIS-T01-89A",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-T01-B-SELECTOR",
+      "from_node": "BUS-138-B",
+      "to_node": "GIS-T01-89B",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_OPEN_NORMAL",
+      "evidence_class": "GEOMETRIC_ROUTE_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-T01-89B"
+      ],
+      "geometry_prefixes": [
+        "GIS-T01-89B-STUB"
+      ],
+      "limitation": "Carcaça geométrica entre barra e seccionadora; contato, estado e condutor não são conectados eletricamente no RVT.",
+      "model_elements": [
+        {
+          "element_id": "357300",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b4",
+          "mark": "GIS-T01-89B",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [
+        {
+          "element_id": "357338",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573da",
+          "mark": "GIS-T01-89B-STUB"
+        }
+      ],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "GEOMETRY_FOUND_NO_CONDUCTOR"
+    },
+    {
+      "edge_id": "GIS-T01-B-TO-BREAKER",
+      "from_node": "GIS-T01-89B",
+      "to_node": "GIS-T01-52",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_OPEN_NORMAL",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-T01-89B",
+        "GIS-T01-52"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "O caminho selecionado é uma relação de unifilar; sem PowerCircuit ou contato comutável.",
+      "model_elements": [
+        {
+          "element_id": "357298",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b2",
+          "mark": "GIS-T01-52",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357300",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b4",
+          "mark": "GIS-T01-89B",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-T01-52-TO-CT",
+      "from_node": "GIS-T01-52",
+      "to_node": "GIS-T01-CT",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_CLOSED_NORMAL",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-T01-52",
+        "GIS-T01-CT"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "TC é placeholder de uma família; não comprova um conjunto trifásico selecionado.",
+      "model_elements": [
+        {
+          "element_id": "357298",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b2",
+          "mark": "GIS-T01-52",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357302",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b6",
+          "mark": "GIS-T01-CT",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-T01-CT-TO-TR-01-HV",
+      "from_node": "GIS-T01-CT",
+      "to_node": "TR-01-HV-TERMINALS",
+      "voltage_kv": 138.0,
+      "state": "GEOMETRIC_ROUTE_APPROXIMATE",
+      "evidence_class": "GEOMETRIC_ROUTE_ONLY",
+      "diagram_ref": "E-01 / E-03",
+      "equipment_marks": [
+        "GIS-T01-CT",
+        "TR-01",
+        "TR-01-B-HV-1",
+        "TR-01-B-HV-2",
+        "TR-01-B-HV-3"
+      ],
+      "geometry_prefixes": [
+        "GIS-TR01-HV-PH-A-SEG-",
+        "GIS-TR01-HV-PH-B-SEG-",
+        "GIS-TR01-HV-PH-C-SEG-"
+      ],
+      "limitation": "DirectShapes indicam o envelope de rota por fase; não são condutores ou conectores elétricos.",
+      "model_elements": [
+        {
+          "element_id": "357302",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b6",
+          "mark": "GIS-T01-CT",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357419",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005742b",
+          "mark": "TR-01",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357452",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005744c",
+          "mark": "TR-01-B-HV-1",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357454",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005744e",
+          "mark": "TR-01-B-HV-2",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357456",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057450",
+          "mark": "TR-01-B-HV-3",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [
+        {
+          "element_id": "357345",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573e1",
+          "mark": "GIS-TR01-HV-PH-A-SEG-01"
+        },
+        {
+          "element_id": "357346",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573e2",
+          "mark": "GIS-TR01-HV-PH-A-SEG-02"
+        },
+        {
+          "element_id": "357347",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573e3",
+          "mark": "GIS-TR01-HV-PH-A-SEG-03"
+        },
+        {
+          "element_id": "357348",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573e4",
+          "mark": "GIS-TR01-HV-PH-A-SEG-04"
+        },
+        {
+          "element_id": "357349",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573e5",
+          "mark": "GIS-TR01-HV-PH-A-SEG-05"
+        },
+        {
+          "element_id": "357369",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573f9",
+          "mark": "GIS-TR01-HV-PH-B-SEG-01"
+        },
+        {
+          "element_id": "357370",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573fa",
+          "mark": "GIS-TR01-HV-PH-B-SEG-02"
+        },
+        {
+          "element_id": "357371",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573fb",
+          "mark": "GIS-TR01-HV-PH-B-SEG-03"
+        },
+        {
+          "element_id": "357372",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573fc",
+          "mark": "GIS-TR01-HV-PH-B-SEG-04"
+        },
+        {
+          "element_id": "357373",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573fd",
+          "mark": "GIS-TR01-HV-PH-B-SEG-05"
+        },
+        {
+          "element_id": "357393",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057411",
+          "mark": "GIS-TR01-HV-PH-C-SEG-01"
+        },
+        {
+          "element_id": "357394",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057412",
+          "mark": "GIS-TR01-HV-PH-C-SEG-02"
+        },
+        {
+          "element_id": "357395",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057413",
+          "mark": "GIS-TR01-HV-PH-C-SEG-03"
+        },
+        {
+          "element_id": "357396",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057414",
+          "mark": "GIS-TR01-HV-PH-C-SEG-04"
+        },
+        {
+          "element_id": "357397",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057415",
+          "mark": "GIS-TR01-HV-PH-C-SEG-05"
+        }
+      ],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "GEOMETRY_FOUND_NO_CONDUCTOR"
+    },
+    {
+      "edge_id": "GIS-T02-A-SELECTOR",
+      "from_node": "BUS-138-B",
+      "to_node": "GIS-T02-89A",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_OPEN_NORMAL",
+      "evidence_class": "GEOMETRIC_ROUTE_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-T02-89A"
+      ],
+      "geometry_prefixes": [
+        "GIS-T02-89A-STUB"
+      ],
+      "limitation": "Carcaça geométrica entre barra e seccionadora; contato, estado e condutor não são conectados eletricamente no RVT.",
+      "model_elements": [
+        {
+          "element_id": "357311",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573bf",
+          "mark": "GIS-T02-89A",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [
+        {
+          "element_id": "357341",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573dd",
+          "mark": "GIS-T02-89A-STUB"
+        }
+      ],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "GEOMETRY_FOUND_NO_CONDUCTOR"
+    },
+    {
+      "edge_id": "GIS-T02-A-TO-BREAKER",
+      "from_node": "GIS-T02-89A",
+      "to_node": "GIS-T02-52",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_OPEN_NORMAL",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-T02-89A",
+        "GIS-T02-52"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "O caminho selecionado é uma relação de unifilar; sem PowerCircuit ou contato comutável.",
+      "model_elements": [
+        {
+          "element_id": "357310",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573be",
+          "mark": "GIS-T02-52",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357311",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573bf",
+          "mark": "GIS-T02-89A",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-T02-B-SELECTOR",
+      "from_node": "BUS-138-A",
+      "to_node": "GIS-T02-89B",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_CLOSED_NORMAL",
+      "evidence_class": "GEOMETRIC_ROUTE_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-T02-89B"
+      ],
+      "geometry_prefixes": [
+        "GIS-T02-89B-STUB"
+      ],
+      "limitation": "Carcaça geométrica entre barra e seccionadora; contato, estado e condutor não são conectados eletricamente no RVT.",
+      "model_elements": [
+        {
+          "element_id": "357312",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c0",
+          "mark": "GIS-T02-89B",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [
+        {
+          "element_id": "357342",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573de",
+          "mark": "GIS-T02-89B-STUB"
+        }
+      ],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "GEOMETRY_FOUND_NO_CONDUCTOR"
+    },
+    {
+      "edge_id": "GIS-T02-B-TO-BREAKER",
+      "from_node": "GIS-T02-89B",
+      "to_node": "GIS-T02-52",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_CLOSED_NORMAL",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-T02-89B",
+        "GIS-T02-52"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "O caminho selecionado é uma relação de unifilar; sem PowerCircuit ou contato comutável.",
+      "model_elements": [
+        {
+          "element_id": "357310",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573be",
+          "mark": "GIS-T02-52",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357312",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c0",
+          "mark": "GIS-T02-89B",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-T02-52-TO-CT",
+      "from_node": "GIS-T02-52",
+      "to_node": "GIS-T02-CT",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_CLOSED_NORMAL",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-T02-52",
+        "GIS-T02-CT"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "TC é placeholder de uma família; não comprova um conjunto trifásico selecionado.",
+      "model_elements": [
+        {
+          "element_id": "357310",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573be",
+          "mark": "GIS-T02-52",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357314",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c2",
+          "mark": "GIS-T02-CT",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-T02-CT-TO-TR-02-HV",
+      "from_node": "GIS-T02-CT",
+      "to_node": "TR-02-HV-TERMINALS",
+      "voltage_kv": 138.0,
+      "state": "GEOMETRIC_ROUTE_APPROXIMATE",
+      "evidence_class": "GEOMETRIC_ROUTE_ONLY",
+      "diagram_ref": "E-01 / E-03",
+      "equipment_marks": [
+        "GIS-T02-CT",
+        "TR-02",
+        "TR-02-B-HV-1",
+        "TR-02-B-HV-2",
+        "TR-02-B-HV-3"
+      ],
+      "geometry_prefixes": [
+        "GIS-TR02-HV-PH-A-SEG-",
+        "GIS-TR02-HV-PH-B-SEG-",
+        "GIS-TR02-HV-PH-C-SEG-"
+      ],
+      "limitation": "DirectShapes indicam o envelope de rota por fase; não são condutores ou conectores elétricos.",
+      "model_elements": [
+        {
+          "element_id": "357314",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c2",
+          "mark": "GIS-T02-CT",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357462",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057456",
+          "mark": "TR-02",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357475",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057463",
+          "mark": "TR-02-B-HV-1",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357477",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057465",
+          "mark": "TR-02-B-HV-2",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357479",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057467",
+          "mark": "TR-02-B-HV-3",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [
+        {
+          "element_id": "357350",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573e6",
+          "mark": "GIS-TR02-HV-PH-A-SEG-01"
+        },
+        {
+          "element_id": "357351",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573e7",
+          "mark": "GIS-TR02-HV-PH-A-SEG-02"
+        },
+        {
+          "element_id": "357352",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573e8",
+          "mark": "GIS-TR02-HV-PH-A-SEG-03"
+        },
+        {
+          "element_id": "357353",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573e9",
+          "mark": "GIS-TR02-HV-PH-A-SEG-04"
+        },
+        {
+          "element_id": "357354",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ea",
+          "mark": "GIS-TR02-HV-PH-A-SEG-05"
+        },
+        {
+          "element_id": "357374",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573fe",
+          "mark": "GIS-TR02-HV-PH-B-SEG-01"
+        },
+        {
+          "element_id": "357375",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ff",
+          "mark": "GIS-TR02-HV-PH-B-SEG-02"
+        },
+        {
+          "element_id": "357376",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057400",
+          "mark": "GIS-TR02-HV-PH-B-SEG-03"
+        },
+        {
+          "element_id": "357377",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057401",
+          "mark": "GIS-TR02-HV-PH-B-SEG-04"
+        },
+        {
+          "element_id": "357378",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057402",
+          "mark": "GIS-TR02-HV-PH-B-SEG-05"
+        },
+        {
+          "element_id": "357398",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057416",
+          "mark": "GIS-TR02-HV-PH-C-SEG-01"
+        },
+        {
+          "element_id": "357399",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057417",
+          "mark": "GIS-TR02-HV-PH-C-SEG-02"
+        },
+        {
+          "element_id": "357400",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057418",
+          "mark": "GIS-TR02-HV-PH-C-SEG-03"
+        },
+        {
+          "element_id": "357401",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057419",
+          "mark": "GIS-TR02-HV-PH-C-SEG-04"
+        },
+        {
+          "element_id": "357402",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005741a",
+          "mark": "GIS-TR02-HV-PH-C-SEG-05"
+        }
+      ],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "GEOMETRY_FOUND_NO_CONDUCTOR"
+    },
+    {
+      "edge_id": "GIS-L02-A-SELECTOR",
+      "from_node": "BUS-138-B",
+      "to_node": "GIS-L02-89A",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_OPEN_NORMAL",
+      "evidence_class": "GEOMETRIC_ROUTE_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-L02-89A"
+      ],
+      "geometry_prefixes": [
+        "GIS-L02-89A-STUB"
+      ],
+      "limitation": "Carcaça geométrica entre barra e seccionadora; contato, estado e condutor não são conectados eletricamente no RVT.",
+      "model_elements": [
+        {
+          "element_id": "357317",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c5",
+          "mark": "GIS-L02-89A",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [
+        {
+          "element_id": "357343",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573df",
+          "mark": "GIS-L02-89A-STUB"
+        }
+      ],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "GEOMETRY_FOUND_NO_CONDUCTOR"
+    },
+    {
+      "edge_id": "GIS-L02-A-TO-BREAKER",
+      "from_node": "GIS-L02-89A",
+      "to_node": "GIS-L02-52",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_OPEN_NORMAL",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-L02-89A",
+        "GIS-L02-52"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "O caminho selecionado é uma relação de unifilar; sem PowerCircuit ou contato comutável.",
+      "model_elements": [
+        {
+          "element_id": "357316",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c4",
+          "mark": "GIS-L02-52",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357317",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c5",
+          "mark": "GIS-L02-89A",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-L02-B-SELECTOR",
+      "from_node": "BUS-138-A",
+      "to_node": "GIS-L02-89B",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_CLOSED_NORMAL",
+      "evidence_class": "GEOMETRIC_ROUTE_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-L02-89B"
+      ],
+      "geometry_prefixes": [
+        "GIS-L02-89B-STUB"
+      ],
+      "limitation": "Carcaça geométrica entre barra e seccionadora; contato, estado e condutor não são conectados eletricamente no RVT.",
+      "model_elements": [
+        {
+          "element_id": "357318",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c6",
+          "mark": "GIS-L02-89B",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [
+        {
+          "element_id": "357344",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573e0",
+          "mark": "GIS-L02-89B-STUB"
+        }
+      ],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "GEOMETRY_FOUND_NO_CONDUCTOR"
+    },
+    {
+      "edge_id": "GIS-L02-B-TO-BREAKER",
+      "from_node": "GIS-L02-89B",
+      "to_node": "GIS-L02-52",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_CLOSED_NORMAL",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-L02-89B",
+        "GIS-L02-52"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "O caminho selecionado é uma relação de unifilar; sem PowerCircuit ou contato comutável.",
+      "model_elements": [
+        {
+          "element_id": "357316",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c4",
+          "mark": "GIS-L02-52",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357318",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c6",
+          "mark": "GIS-L02-89B",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-L02-52-TO-CT",
+      "from_node": "GIS-L02-52",
+      "to_node": "GIS-L02-CT",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_CLOSED_NORMAL",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-L02-52",
+        "GIS-L02-CT"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "TC é placeholder de uma família; não comprova um conjunto trifásico selecionado.",
+      "model_elements": [
+        {
+          "element_id": "357316",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c4",
+          "mark": "GIS-L02-52",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357320",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c8",
+          "mark": "GIS-L02-CT",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-L02-CT-TO-TERM",
+      "from_node": "GIS-L02-CT",
+      "to_node": "GIS-L02-TERM",
+      "voltage_kv": 138.0,
+      "state": "DIAGRAM_RELATION",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-L02-CT",
+        "GIS-L02-TERM"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Terminação representada; condutor primário e interface externa não modelados.",
+      "model_elements": [
+        {
+          "element_id": "357320",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573c8",
+          "mark": "GIS-L02-CT",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357322",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ca",
+          "mark": "GIS-L02-TERM",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-L02-TERM-TO-GRID",
+      "from_node": "GIS-L02-TERM",
+      "to_node": "GRID-L02",
+      "voltage_kv": 138.0,
+      "state": "EXTERNAL_NOT_MODELED",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-L02-TERM"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Conexão com a rede da concessionária fora do limite do modelo.",
+      "model_elements": [
+        {
+          "element_id": "357322",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ca",
+          "mark": "GIS-L02-TERM",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-BC-A-SELECTOR",
+      "from_node": "BUS-138-A",
+      "to_node": "GIS-BC01-89A",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_CLOSED_NORMAL",
+      "evidence_class": "GEOMETRIC_ROUTE_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-BC01-89A"
+      ],
+      "geometry_prefixes": [
+        "GIS-BC01-89A-STUB"
+      ],
+      "limitation": "Carcaça geométrica entre barra A e seccionadora; contato, estado e condutor não são conectados eletricamente no RVT.",
+      "model_elements": [
+        {
+          "element_id": "357305",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b9",
+          "mark": "GIS-BC01-89A",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [
+        {
+          "element_id": "357339",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573db",
+          "mark": "GIS-BC01-89A-STUB"
+        }
+      ],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "GEOMETRY_FOUND_NO_CONDUCTOR"
+    },
+    {
+      "edge_id": "GIS-BC-A-TO-52",
+      "from_node": "GIS-BC01-89A",
+      "to_node": "GIS-BC01-52",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_CLOSED_NORMAL",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-BC01-89A",
+        "GIS-BC01-52"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "",
+      "model_elements": [
+        {
+          "element_id": "357304",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b8",
+          "mark": "GIS-BC01-52",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357305",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b9",
+          "mark": "GIS-BC01-89A",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-BC-52-TO-B",
+      "from_node": "GIS-BC01-52",
+      "to_node": "GIS-BC01-89B",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_OPEN_NORMAL",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-BC01-52",
+        "GIS-BC01-89B"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "",
+      "model_elements": [
+        {
+          "element_id": "357304",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573b8",
+          "mark": "GIS-BC01-52",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357306",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ba",
+          "mark": "GIS-BC01-89B",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "GIS-BC-B-SELECTOR",
+      "from_node": "GIS-BC01-89B",
+      "to_node": "BUS-138-B",
+      "voltage_kv": 138.0,
+      "state": "ASSUMED_CLOSED_NORMAL",
+      "evidence_class": "GEOMETRIC_ROUTE_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "GIS-BC01-89B"
+      ],
+      "geometry_prefixes": [
+        "GIS-BC01-89B-STUB"
+      ],
+      "limitation": "Carcaça geométrica entre seccionadora e barra B; contato, estado e condutor não são conectados eletricamente no RVT.",
+      "model_elements": [
+        {
+          "element_id": "357306",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ba",
+          "mark": "GIS-BC01-89B",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [
+        {
+          "element_id": "357340",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573dc",
+          "mark": "GIS-BC01-89B-STUB"
+        }
+      ],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "GEOMETRY_FOUND_NO_CONDUCTOR"
+    },
+    {
+      "edge_id": "GIS-BC-CT-PROTECTION",
+      "from_node": "GIS-BC01-CT",
+      "to_node": "P-BUS",
+      "voltage_kv": 0.125,
+      "state": "CANDIDATE_FUNCTION",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01 / E-06",
+      "equipment_marks": [
+        "GIS-BC01-CT",
+        "P-BUS"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "87B/50BF são funções candidatas; esquema, posição, quantidade por fase, relação e núcleo pendentes.",
+      "model_elements": [
+        {
+          "element_id": "357308",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573bc",
+          "mark": "GIS-BC01-CT",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357502",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005747e",
+          "mark": "P-BUS",
+          "model_geometry": "FAMILY_GEOMETRY_ONLY"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "TR-01-MV-ROUTE",
+      "from_node": "TR-01-MV-TERMINALS",
+      "to_node": "QMT-A-IN",
+      "voltage_kv": 13.8,
+      "state": "GEOMETRIC_ROUTE_APPROXIMATE",
+      "evidence_class": "GEOMETRIC_ROUTE_ONLY",
+      "diagram_ref": "E-01 / E-03 / E-04",
+      "equipment_marks": [
+        "TR-01-B-MV-1",
+        "TR-01-B-MV-2",
+        "TR-01-B-MV-3",
+        "QMT-A-IN"
+      ],
+      "geometry_prefixes": [
+        "TR01-MV-PH-A-SEG-",
+        "TR01-MV-PH-B-SEG-",
+        "TR01-MV-PH-C-SEG-"
+      ],
+      "limitation": "Envelope geométrico trifásico; cabo/busduct, seção, ampacidade, terminações e conexão MEP não selecionados.",
+      "model_elements": [
+        {
+          "element_id": "357453",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005744d",
+          "mark": "TR-01-B-MV-1",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357455",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005744f",
+          "mark": "TR-01-B-MV-2",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357457",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057451",
+          "mark": "TR-01-B-MV-3",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357483",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005746b",
+          "mark": "QMT-A-IN",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [
+        {
+          "element_id": "357355",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573eb",
+          "mark": "TR01-MV-PH-A-SEG-01"
+        },
+        {
+          "element_id": "357356",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ec",
+          "mark": "TR01-MV-PH-A-SEG-02"
+        },
+        {
+          "element_id": "357357",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ed",
+          "mark": "TR01-MV-PH-A-SEG-03"
+        },
+        {
+          "element_id": "357358",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ee",
+          "mark": "TR01-MV-PH-A-SEG-04"
+        },
+        {
+          "element_id": "357359",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573ef",
+          "mark": "TR01-MV-PH-A-SEG-05"
+        },
+        {
+          "element_id": "357360",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573f0",
+          "mark": "TR01-MV-PH-A-SEG-06"
+        },
+        {
+          "element_id": "357361",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573f1",
+          "mark": "TR01-MV-PH-A-SEG-07"
+        },
+        {
+          "element_id": "357379",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057403",
+          "mark": "TR01-MV-PH-B-SEG-01"
+        },
+        {
+          "element_id": "357380",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057404",
+          "mark": "TR01-MV-PH-B-SEG-02"
+        },
+        {
+          "element_id": "357381",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057405",
+          "mark": "TR01-MV-PH-B-SEG-03"
+        },
+        {
+          "element_id": "357382",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057406",
+          "mark": "TR01-MV-PH-B-SEG-04"
+        },
+        {
+          "element_id": "357383",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057407",
+          "mark": "TR01-MV-PH-B-SEG-05"
+        },
+        {
+          "element_id": "357384",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057408",
+          "mark": "TR01-MV-PH-B-SEG-06"
+        },
+        {
+          "element_id": "357385",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057409",
+          "mark": "TR01-MV-PH-B-SEG-07"
+        },
+        {
+          "element_id": "357403",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005741b",
+          "mark": "TR01-MV-PH-C-SEG-01"
+        },
+        {
+          "element_id": "357404",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005741c",
+          "mark": "TR01-MV-PH-C-SEG-02"
+        },
+        {
+          "element_id": "357405",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005741d",
+          "mark": "TR01-MV-PH-C-SEG-03"
+        },
+        {
+          "element_id": "357406",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005741e",
+          "mark": "TR01-MV-PH-C-SEG-04"
+        },
+        {
+          "element_id": "357407",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005741f",
+          "mark": "TR01-MV-PH-C-SEG-05"
+        },
+        {
+          "element_id": "357408",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057420",
+          "mark": "TR01-MV-PH-C-SEG-06"
+        },
+        {
+          "element_id": "357409",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057421",
+          "mark": "TR01-MV-PH-C-SEG-07"
+        }
+      ],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "GEOMETRY_FOUND_NO_CONDUCTOR"
+    },
+    {
+      "edge_id": "QMT-A-IN-TO-BUS-MV-A",
+      "from_node": "QMT-A-IN",
+      "to_node": "BUS-MV-A",
+      "voltage_kv": 13.8,
+      "state": "DIAGRAM_RELATION",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01 / E-04",
+      "equipment_marks": [
+        "QMT-A-IN",
+        "BUS-MV-A"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Contato interno do cubículo e barramento não são circuito elétrico nativo.",
+      "model_elements": [
+        {
+          "element_id": "357483",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005746b",
+          "mark": "QMT-A-IN",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357498",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005747a",
+          "mark": "BUS-MV-A",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "TR-02-MV-ROUTE",
+      "from_node": "TR-02-MV-TERMINALS",
+      "to_node": "QMT-B-IN",
+      "voltage_kv": 13.8,
+      "state": "GEOMETRIC_ROUTE_APPROXIMATE",
+      "evidence_class": "GEOMETRIC_ROUTE_ONLY",
+      "diagram_ref": "E-01 / E-03 / E-04",
+      "equipment_marks": [
+        "TR-02-B-MV-1",
+        "TR-02-B-MV-2",
+        "TR-02-B-MV-3",
+        "QMT-B-IN"
+      ],
+      "geometry_prefixes": [
+        "TR02-MV-PH-A-SEG-",
+        "TR02-MV-PH-B-SEG-",
+        "TR02-MV-PH-C-SEG-"
+      ],
+      "limitation": "Envelope geométrico trifásico; cabo/busduct, seção, ampacidade, terminações e conexão MEP não selecionados.",
+      "model_elements": [
+        {
+          "element_id": "357476",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057464",
+          "mark": "TR-02-B-MV-1",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357478",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057466",
+          "mark": "TR-02-B-MV-2",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357480",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057468",
+          "mark": "TR-02-B-MV-3",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357496",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057478",
+          "mark": "QMT-B-IN",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [
+        {
+          "element_id": "357362",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573f2",
+          "mark": "TR02-MV-PH-A-SEG-01"
+        },
+        {
+          "element_id": "357363",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573f3",
+          "mark": "TR02-MV-PH-A-SEG-02"
+        },
+        {
+          "element_id": "357364",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573f4",
+          "mark": "TR02-MV-PH-A-SEG-03"
+        },
+        {
+          "element_id": "357365",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573f5",
+          "mark": "TR02-MV-PH-A-SEG-04"
+        },
+        {
+          "element_id": "357366",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573f6",
+          "mark": "TR02-MV-PH-A-SEG-05"
+        },
+        {
+          "element_id": "357367",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573f7",
+          "mark": "TR02-MV-PH-A-SEG-06"
+        },
+        {
+          "element_id": "357368",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000573f8",
+          "mark": "TR02-MV-PH-A-SEG-07"
+        },
+        {
+          "element_id": "357386",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005740a",
+          "mark": "TR02-MV-PH-B-SEG-01"
+        },
+        {
+          "element_id": "357387",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005740b",
+          "mark": "TR02-MV-PH-B-SEG-02"
+        },
+        {
+          "element_id": "357388",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005740c",
+          "mark": "TR02-MV-PH-B-SEG-03"
+        },
+        {
+          "element_id": "357389",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005740d",
+          "mark": "TR02-MV-PH-B-SEG-04"
+        },
+        {
+          "element_id": "357390",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005740e",
+          "mark": "TR02-MV-PH-B-SEG-05"
+        },
+        {
+          "element_id": "357391",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005740f",
+          "mark": "TR02-MV-PH-B-SEG-06"
+        },
+        {
+          "element_id": "357392",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057410",
+          "mark": "TR02-MV-PH-B-SEG-07"
+        },
+        {
+          "element_id": "357410",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057422",
+          "mark": "TR02-MV-PH-C-SEG-01"
+        },
+        {
+          "element_id": "357411",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057423",
+          "mark": "TR02-MV-PH-C-SEG-02"
+        },
+        {
+          "element_id": "357412",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057424",
+          "mark": "TR02-MV-PH-C-SEG-03"
+        },
+        {
+          "element_id": "357413",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057425",
+          "mark": "TR02-MV-PH-C-SEG-04"
+        },
+        {
+          "element_id": "357414",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057426",
+          "mark": "TR02-MV-PH-C-SEG-05"
+        },
+        {
+          "element_id": "357415",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057427",
+          "mark": "TR02-MV-PH-C-SEG-06"
+        },
+        {
+          "element_id": "357416",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057428",
+          "mark": "TR02-MV-PH-C-SEG-07"
+        }
+      ],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "GEOMETRY_FOUND_NO_CONDUCTOR"
+    },
+    {
+      "edge_id": "QMT-B-IN-TO-BUS-MV-B",
+      "from_node": "QMT-B-IN",
+      "to_node": "BUS-MV-B",
+      "voltage_kv": 13.8,
+      "state": "DIAGRAM_RELATION",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01 / E-04",
+      "equipment_marks": [
+        "QMT-B-IN",
+        "BUS-MV-B"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Contato interno do cubículo e barramento não são circuito elétrico nativo.",
+      "model_elements": [
+        {
+          "element_id": "357496",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057478",
+          "mark": "QMT-B-IN",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357499",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005747b",
+          "mark": "BUS-MV-B",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "BUS-MV-A-TO-QMT-A-F01",
+      "from_node": "BUS-MV-A",
+      "to_node": "QMT-A-F01",
+      "voltage_kv": 13.8,
+      "state": "DIAGRAM_RELATION",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "BUS-MV-A",
+        "QMT-A-F01"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Disjuntor, cabo de saída, proteção e terminação remota não associados como circuito nativo.",
+      "model_elements": [
+        {
+          "element_id": "357487",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005746f",
+          "mark": "QMT-A-F01",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357498",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005747a",
+          "mark": "BUS-MV-A",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "QMT-A-F01-TO-REMOTE-LOAD",
+      "from_node": "QMT-A-F01",
+      "to_node": "LOAD-A-F01",
+      "voltage_kv": 13.8,
+      "state": "DESTINATION_UNDEFINED",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "QMT-A-F01"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Destino, demanda e cabo do alimentador ainda não especificados.",
+      "model_elements": [
+        {
+          "element_id": "357487",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005746f",
+          "mark": "QMT-A-F01",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "BUS-MV-A-TO-QMT-A-F02",
+      "from_node": "BUS-MV-A",
+      "to_node": "QMT-A-F02",
+      "voltage_kv": 13.8,
+      "state": "DIAGRAM_RELATION",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "BUS-MV-A",
+        "QMT-A-F02"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Disjuntor, cabo de saída, proteção e terminação remota não associados como circuito nativo.",
+      "model_elements": [
+        {
+          "element_id": "357489",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057471",
+          "mark": "QMT-A-F02",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357498",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005747a",
+          "mark": "BUS-MV-A",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "QMT-A-F02-TO-REMOTE-LOAD",
+      "from_node": "QMT-A-F02",
+      "to_node": "LOAD-A-F02",
+      "voltage_kv": 13.8,
+      "state": "DESTINATION_UNDEFINED",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "QMT-A-F02"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Destino, demanda e cabo do alimentador ainda não especificados.",
+      "model_elements": [
+        {
+          "element_id": "357489",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057471",
+          "mark": "QMT-A-F02",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "BUS-MV-A-TO-QMT-A-F03",
+      "from_node": "BUS-MV-A",
+      "to_node": "QMT-A-F03",
+      "voltage_kv": 13.8,
+      "state": "DIAGRAM_RELATION",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "BUS-MV-A",
+        "QMT-A-F03"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Disjuntor, cabo de saída, proteção e terminação remota não associados como circuito nativo.",
+      "model_elements": [
+        {
+          "element_id": "357491",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057473",
+          "mark": "QMT-A-F03",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357498",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005747a",
+          "mark": "BUS-MV-A",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "QMT-A-F03-TO-REMOTE-LOAD",
+      "from_node": "QMT-A-F03",
+      "to_node": "LOAD-A-F03",
+      "voltage_kv": 13.8,
+      "state": "DESTINATION_UNDEFINED",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "QMT-A-F03"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Destino, demanda e cabo do alimentador ainda não especificados.",
+      "model_elements": [
+        {
+          "element_id": "357491",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057473",
+          "mark": "QMT-A-F03",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "BUS-MV-A-TO-QMT-A-F04",
+      "from_node": "BUS-MV-A",
+      "to_node": "QMT-A-F04",
+      "voltage_kv": 13.8,
+      "state": "DIAGRAM_RELATION",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "BUS-MV-A",
+        "QMT-A-F04"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Disjuntor, cabo de saída, proteção e terminação remota não associados como circuito nativo.",
+      "model_elements": [
+        {
+          "element_id": "357493",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057475",
+          "mark": "QMT-A-F04",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357498",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005747a",
+          "mark": "BUS-MV-A",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "QMT-A-F04-TO-REMOTE-LOAD",
+      "from_node": "QMT-A-F04",
+      "to_node": "LOAD-A-F04",
+      "voltage_kv": 13.8,
+      "state": "DESTINATION_UNDEFINED",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "QMT-A-F04"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Destino, demanda e cabo do alimentador ainda não especificados.",
+      "model_elements": [
+        {
+          "element_id": "357493",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057475",
+          "mark": "QMT-A-F04",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "BUS-MV-A-TO-QMT-A-F05",
+      "from_node": "BUS-MV-A",
+      "to_node": "QMT-A-F05",
+      "voltage_kv": 13.8,
+      "state": "DIAGRAM_RELATION",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "BUS-MV-A",
+        "QMT-A-F05"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Disjuntor, cabo de saída, proteção e terminação remota não associados como circuito nativo.",
+      "model_elements": [
+        {
+          "element_id": "357495",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057477",
+          "mark": "QMT-A-F05",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357498",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005747a",
+          "mark": "BUS-MV-A",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "QMT-A-F05-TO-REMOTE-LOAD",
+      "from_node": "QMT-A-F05",
+      "to_node": "LOAD-A-F05",
+      "voltage_kv": 13.8,
+      "state": "DESTINATION_UNDEFINED",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "QMT-A-F05"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Destino, demanda e cabo do alimentador ainda não especificados.",
+      "model_elements": [
+        {
+          "element_id": "357495",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057477",
+          "mark": "QMT-A-F05",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "BUS-MV-B-TO-QMT-B-F01",
+      "from_node": "BUS-MV-B",
+      "to_node": "QMT-B-F01",
+      "voltage_kv": 13.8,
+      "state": "DIAGRAM_RELATION",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "BUS-MV-B",
+        "QMT-B-F01"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Disjuntor, cabo de saída, proteção e terminação remota não associados como circuito nativo.",
+      "model_elements": [
+        {
+          "element_id": "357484",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005746c",
+          "mark": "QMT-B-F01",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357499",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005747b",
+          "mark": "BUS-MV-B",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "QMT-B-F01-TO-REMOTE-LOAD",
+      "from_node": "QMT-B-F01",
+      "to_node": "LOAD-B-F01",
+      "voltage_kv": 13.8,
+      "state": "DESTINATION_UNDEFINED",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "QMT-B-F01"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Destino, demanda e cabo do alimentador ainda não especificados.",
+      "model_elements": [
+        {
+          "element_id": "357484",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005746c",
+          "mark": "QMT-B-F01",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "BUS-MV-B-TO-QMT-B-F02",
+      "from_node": "BUS-MV-B",
+      "to_node": "QMT-B-F02",
+      "voltage_kv": 13.8,
+      "state": "DIAGRAM_RELATION",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "BUS-MV-B",
+        "QMT-B-F02"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Disjuntor, cabo de saída, proteção e terminação remota não associados como circuito nativo.",
+      "model_elements": [
+        {
+          "element_id": "357486",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005746e",
+          "mark": "QMT-B-F02",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357499",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005747b",
+          "mark": "BUS-MV-B",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "QMT-B-F02-TO-REMOTE-LOAD",
+      "from_node": "QMT-B-F02",
+      "to_node": "LOAD-B-F02",
+      "voltage_kv": 13.8,
+      "state": "DESTINATION_UNDEFINED",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "QMT-B-F02"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Destino, demanda e cabo do alimentador ainda não especificados.",
+      "model_elements": [
+        {
+          "element_id": "357486",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005746e",
+          "mark": "QMT-B-F02",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "BUS-MV-B-TO-QMT-B-F03",
+      "from_node": "BUS-MV-B",
+      "to_node": "QMT-B-F03",
+      "voltage_kv": 13.8,
+      "state": "DIAGRAM_RELATION",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "BUS-MV-B",
+        "QMT-B-F03"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Disjuntor, cabo de saída, proteção e terminação remota não associados como circuito nativo.",
+      "model_elements": [
+        {
+          "element_id": "357488",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057470",
+          "mark": "QMT-B-F03",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357499",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005747b",
+          "mark": "BUS-MV-B",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "QMT-B-F03-TO-REMOTE-LOAD",
+      "from_node": "QMT-B-F03",
+      "to_node": "LOAD-B-F03",
+      "voltage_kv": 13.8,
+      "state": "DESTINATION_UNDEFINED",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "QMT-B-F03"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Destino, demanda e cabo do alimentador ainda não especificados.",
+      "model_elements": [
+        {
+          "element_id": "357488",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057470",
+          "mark": "QMT-B-F03",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "BUS-MV-B-TO-QMT-B-F04",
+      "from_node": "BUS-MV-B",
+      "to_node": "QMT-B-F04",
+      "voltage_kv": 13.8,
+      "state": "DIAGRAM_RELATION",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "BUS-MV-B",
+        "QMT-B-F04"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Disjuntor, cabo de saída, proteção e terminação remota não associados como circuito nativo.",
+      "model_elements": [
+        {
+          "element_id": "357490",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057472",
+          "mark": "QMT-B-F04",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357499",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005747b",
+          "mark": "BUS-MV-B",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "QMT-B-F04-TO-REMOTE-LOAD",
+      "from_node": "QMT-B-F04",
+      "to_node": "LOAD-B-F04",
+      "voltage_kv": 13.8,
+      "state": "DESTINATION_UNDEFINED",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "QMT-B-F04"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Destino, demanda e cabo do alimentador ainda não especificados.",
+      "model_elements": [
+        {
+          "element_id": "357490",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057472",
+          "mark": "QMT-B-F04",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "BUS-MV-B-TO-QMT-B-F05",
+      "from_node": "BUS-MV-B",
+      "to_node": "QMT-B-F05",
+      "voltage_kv": 13.8,
+      "state": "DIAGRAM_RELATION",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "BUS-MV-B",
+        "QMT-B-F05"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Disjuntor, cabo de saída, proteção e terminação remota não associados como circuito nativo.",
+      "model_elements": [
+        {
+          "element_id": "357492",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057474",
+          "mark": "QMT-B-F05",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        },
+        {
+          "element_id": "357499",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005747b",
+          "mark": "BUS-MV-B",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "QMT-B-F05-TO-REMOTE-LOAD",
+      "from_node": "QMT-B-F05",
+      "to_node": "LOAD-B-F05",
+      "voltage_kv": 13.8,
+      "state": "DESTINATION_UNDEFINED",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "QMT-B-F05"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Destino, demanda e cabo do alimentador ainda não especificados.",
+      "model_elements": [
+        {
+          "element_id": "357492",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057474",
+          "mark": "QMT-B-F05",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "MV-TIE-A-TO-CUBICLE",
+      "from_node": "BUS-MV-A",
+      "to_node": "QMT-TIE",
+      "voltage_kv": 13.8,
+      "state": "ASSUMED_OPEN_NORMAL",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "QMT-TIE"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "",
+      "model_elements": [
+        {
+          "element_id": "357497",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057479",
+          "mark": "QMT-TIE",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "MV-TIE-CUBICLE-TO-B",
+      "from_node": "QMT-TIE",
+      "to_node": "BUS-MV-B",
+      "voltage_kv": 13.8,
+      "state": "ASSUMED_OPEN_NORMAL",
+      "evidence_class": "DIAGRAM_ONLY",
+      "diagram_ref": "E-01",
+      "equipment_marks": [
+        "QMT-TIE"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "",
+      "model_elements": [
+        {
+          "element_id": "357497",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057479",
+          "mark": "QMT-TIE",
+          "model_geometry": "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": false,
+      "physical_conductor_confirmed": false,
+      "status": "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
+    },
+    {
+      "edge_id": "AUX-QAC-TO-UPS",
+      "from_node": "QAC-01",
+      "to_node": "UPS-01",
+      "voltage_kv": 0.38,
+      "state": "SYSTEM_MEMBERSHIP_TO_AUDIT",
+      "evidence_class": "NATIVE_ELECTRICAL_SYSTEM_LOGICAL",
+      "diagram_ref": "E-06",
+      "equipment_marks": [
+        "QAC-01",
+        "UPS-01"
+      ],
+      "geometry_prefixes": [],
+      "limitation": "Um ElectricalSystem lógico e Wire 2D, se confirmados no audit; não há cabo 3D, fonte a montante nem circuito CC da bateria.",
+      "model_elements": [
+        {
+          "element_id": "357509",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057485",
+          "mark": "QAC-01",
+          "model_geometry": "AUX-UPS-01_ELECTRICALSYSTEM; SEE_2D_WIRE_ROW; NO_3D_CABLE"
+        },
+        {
+          "element_id": "357511",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057487",
+          "mark": "UPS-01",
+          "model_geometry": "AUX-UPS-01_ELECTRICALSYSTEM; SEE_2D_WIRE_ROW; NO_3D_CABLE"
+        }
+      ],
+      "geometry_elements": [],
+      "geometry_present": true,
+      "native_electrical_system_confirmed": true,
+      "physical_conductor_confirmed": false,
+      "status": "CONFIRMED_SYSTEM_MEMBERSHIP_ONLY"
+    }
+  ],
+  "infrastructure": [
+    {
+      "mark_prefix": "LEITO-MV-A",
+      "label": "Infraestrutura de cabos da seção A",
+      "state": "NATIVE_CABLETRAY_INFRASTRUCTURE_ONLY",
+      "electrical_connection": false,
+      "elements": [
+        {
+          "element_id": "357566",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000574be",
+          "mark": "LEITO-MV-A-SEG-01",
+          "isconnected_true": 1
+        },
+        {
+          "element_id": "357567",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000574bf",
+          "mark": "LEITO-MV-A-SEG-02",
+          "isconnected_true": 2
+        },
+        {
+          "element_id": "357568",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000574c0",
+          "mark": "LEITO-MV-A-SEG-03",
+          "isconnected_true": 1
+        }
+      ]
+    },
+    {
+      "mark_prefix": "LEITO-MV-B",
+      "label": "Infraestrutura de cabos da seção B",
+      "state": "NATIVE_CABLETRAY_INFRASTRUCTURE_ONLY",
+      "electrical_connection": false,
+      "elements": [
+        {
+          "element_id": "357569",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000574c1",
+          "mark": "LEITO-MV-B-SEG-01",
+          "isconnected_true": 1
+        },
+        {
+          "element_id": "357570",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000574c2",
+          "mark": "LEITO-MV-B-SEG-02",
+          "isconnected_true": 2
+        },
+        {
+          "element_id": "357571",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000574c3",
+          "mark": "LEITO-MV-B-SEG-03",
+          "isconnected_true": 1
+        }
+      ]
+    },
+    {
+      "mark_prefix": "LEITO-GIS",
+      "label": "Infraestrutura de cabos GIS",
+      "state": "NATIVE_CABLETRAY_INFRASTRUCTURE_ONLY",
+      "electrical_connection": false,
+      "elements": [
+        {
+          "element_id": "357565",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000574bd",
+          "mark": "LEITO-GIS-SEG-01",
+          "isconnected_true": 0
+        }
+      ]
+    },
+    {
+      "mark_prefix": "LEITO-CTRL",
+      "label": "Infraestrutura de controle",
+      "state": "NATIVE_CABLETRAY_INFRASTRUCTURE_ONLY",
+      "electrical_connection": false,
+      "elements": [
+        {
+          "element_id": "357564",
+          "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-000574bc",
+          "mark": "LEITO-CTRL-SEG-01",
+          "isconnected_true": 0
+        }
+      ]
+    }
+  ],
+  "auxiliary_native_system": {
+    "revit_element_id": 357516,
+    "revit_unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-0005748c",
+    "system_id": "AUX-UPS-01",
+    "revit_class": "ElectricalSystem",
+    "terminal_elements": [
+      {
+        "element_id": 357511,
+        "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057487",
+        "mark": "UPS-01"
+      }
+    ],
+    "wire_2d_view_specific_confirmed": true,
+    "three_dimensional_cable_modeled": false,
+    "selected_panel_name": "AUX_PANEL_380VAC_STUDY, 220 V/380 V, Três Fase, 4 Fiação, Ipsílon",
+    "selected_panel_type_name": "AUX_PANEL_380VAC_STUDY",
+    "selected_panel_element": {
+      "element_id": 357509,
+      "unique_id": "79bdd3c5-9c16-4946-9534-a6fd1bb4d8dc-00057485",
+      "mark": "QAC-01",
+      "family": "GIS_AuxiliaryPanelAC",
+      "type": "AUX_PANEL_380VAC_STUDY"
+    },
+    "classification": "ELECTRICAL_SYSTEM_AND_VIEW_SPECIFIC_2D_WIRE"
+  },
+  "limitations": [
+    "A topologia primária GIS/13,8 kV está no E-01 e no grafo; não existe uma rede Revit PowerCircuit conectada para potência.",
+    "Envelopes DirectShape e leitos CableTray não são condutores; a continuidade entre conectores de leito comprova apenas juntas de infraestrutura.",
+    "Estados de disjuntores e seccionadoras são premissas; não há simulação de manobra nem lógica de intertravamento.",
+    "Cada família GIS_CT é um placeholder genérico; não comprova conjunto trifásico, relação, núcleo, burden ou zona de proteção.",
+    "O ElectricalSystem QAC-01–UPS-01 comprova apenas a associação auditada; o Wire 2D é específico da vista e não há cabo 3D, fonte a montante, saída da UPS ou circuito CC da bateria.",
+    "As conexões com as duas redes externas e os dez destinos remotos dos alimentadores ficam fora do limite modelado."
+  ]
+}
