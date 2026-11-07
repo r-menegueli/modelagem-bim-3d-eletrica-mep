@@ -1,0 +1,483 @@
+{
+  "project": "19 - Subestação GIS",
+  "revision": 8,
+  "calculation_date": "2026-11-07",
+  "status": "PREMISSA DE ESTUDO - NAO E PROJETO EXECUTIVO",
+  "input_file": "base-de-projeto.json",
+  "system_summary": {
+    "nominal_voltage_kv": [
+      138.0,
+      13.8
+    ],
+    "frequency_hz": 60.0,
+    "source_line_incomers": 2,
+    "high_voltage_bus": "Double bus with one bus coupler",
+    "medium_voltage_bus": "Split buses A/B with normally open tie"
+  },
+  "inputs": {
+    "project": "19 - Subestação GIS",
+    "revision": 8,
+    "date": "2026-11-07",
+    "status": "PREMISSA DE ESTUDO - NAO E PROJETO EXECUTIVO",
+    "system": {
+      "nominal_voltage_kv": [
+        138.0,
+        13.8
+      ],
+      "frequency_hz": 60.0,
+      "source_line_incomers": 2,
+      "high_voltage_equipment_class_kv": 145.0,
+      "high_voltage_bus": "Double bus with one bus coupler",
+      "medium_voltage_bus": "Split buses A/B with normally open tie",
+      "parallel_transformers_normal": false
+    },
+    "transformers": {
+      "count": 2,
+      "rating_mva_each": 40.0,
+      "nominal_impedance_pu_each_assumed": 0.1,
+      "insulating_fluid_assumption": "Mineral oil; confirm transformer construction",
+      "impedance_status": "PROVISIONAL_ASSUMPTION - replace with nameplate/vendor data"
+    },
+    "load_scenarios": {
+      "normal_active_mw_assumed": 56.0,
+      "power_factor_assumed": 0.95,
+      "target_power_factor_for_sensitivity": 0.98,
+      "critical_active_mw_assumed": 32.0,
+      "noncritical_active_mw_shed_in_n_minus_one": 24.0,
+      "allocation_by_section_mw": {
+        "section_A": {
+          "critical": 16.0,
+          "noncritical": 12.0
+        },
+        "section_B": {
+          "critical": 16.0,
+          "noncritical": 12.0
+        }
+      },
+      "feeders": [
+        {
+          "tag": "A-F01",
+          "section": "A",
+          "active_mw": 6.0,
+          "critical": true
+        },
+        {
+          "tag": "A-F02",
+          "section": "A",
+          "active_mw": 6.0,
+          "critical": true
+        },
+        {
+          "tag": "A-F03",
+          "section": "A",
+          "active_mw": 4.0,
+          "critical": true
+        },
+        {
+          "tag": "A-F04",
+          "section": "A",
+          "active_mw": 6.0,
+          "critical": false
+        },
+        {
+          "tag": "A-F05",
+          "section": "A",
+          "active_mw": 6.0,
+          "critical": false
+        },
+        {
+          "tag": "B-F01",
+          "section": "B",
+          "active_mw": 6.0,
+          "critical": true
+        },
+        {
+          "tag": "B-F02",
+          "section": "B",
+          "active_mw": 6.0,
+          "critical": true
+        },
+        {
+          "tag": "B-F03",
+          "section": "B",
+          "active_mw": 4.0,
+          "critical": true
+        },
+        {
+          "tag": "B-F04",
+          "section": "B",
+          "active_mw": 6.0,
+          "critical": false
+        },
+        {
+          "tag": "B-F05",
+          "section": "B",
+          "active_mw": 6.0,
+          "critical": false
+        }
+      ],
+      "feeder_positions_assumed": 10,
+      "load_profile_status": "ILLUSTRATIVE - no metering or client load list supplied"
+    },
+    "protection": {
+      "settings_status": "NOT_CALCULATED - source and equipment data required",
+      "candidate_functions": [
+        "21",
+        "25",
+        "27",
+        "49",
+        "50",
+        "50BF",
+        "50N",
+        "51",
+        "51N",
+        "59",
+        "63",
+        "64REF",
+        "67",
+        "81",
+        "86",
+        "87B",
+        "87L",
+        "87T"
+      ]
+    },
+    "equipment_data": {
+      "manufacturer_selected": false,
+      "geometry_status": "ESTIMATED until model-specific official outline drawings are obtained",
+      "network_short_circuit_available": false,
+      "soil_resistivity_available": false,
+      "auxiliary_load_and_battery_mission_available": false
+    },
+    "input_file": "base-de-projeto-r7.json"
+  },
+  "calculations": [
+    {
+      "calc_id": "BP-01",
+      "quantity": "Potência aparente total",
+      "inputs": "P=56 MW; FP=0.95",
+      "method": "S=P/FP",
+      "result": 58.94736842105264,
+      "unit": "MVA",
+      "source_or_assumption": "Premissa de estudo em base-de-projeto.json",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "BP-02",
+      "quantity": "Potência reativa total",
+      "inputs": "S=58.947368 MVA; P=56 MW",
+      "method": "Q=sqrt(S^2-P^2)",
+      "result": 18.40630989001635,
+      "unit": "MVAr",
+      "source_or_assumption": "Premissa de estudo em base-de-projeto.json",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "BP-03",
+      "quantity": "Corrente de carga no sistema 138 kV",
+      "inputs": "S=58.947368 MVA; VLL=138 kV",
+      "method": "I=S/(sqrt(3)*VLL)",
+      "result": 0.24661796395590427,
+      "unit": "kA",
+      "source_or_assumption": "Premissa de estudo em base-de-projeto.json",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "BP-04",
+      "quantity": "Corrente de carga no sistema 13,8 kV",
+      "inputs": "S=58.947368 MVA; VLL=13.8 kV",
+      "method": "I=S/(sqrt(3)*VLL)",
+      "result": 2.466179639559042,
+      "unit": "kA",
+      "source_or_assumption": "Premissa de estudo em base-de-projeto.json",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "BP-05",
+      "quantity": "Corrente nominal por transformador no lado 138 kV",
+      "inputs": "Sr=40 MVA; VLL=138 kV",
+      "method": "In=Sr/(sqrt(3)*VLL)",
+      "result": 0.16734790411293501,
+      "unit": "kA",
+      "source_or_assumption": "Rating de estudo; substituir pela placa aprovada",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "BP-06",
+      "quantity": "Corrente nominal por transformador no lado 13,8 kV",
+      "inputs": "Sr=40 MVA; VLL=13.8 kV",
+      "method": "In=Sr/(sqrt(3)*VLL)",
+      "result": 1.6734790411293499,
+      "unit": "kA",
+      "source_or_assumption": "Rating de estudo; substituir pela placa aprovada",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "BP-07",
+      "quantity": "Carregamento normal agregado",
+      "inputs": "S=58.947368 MVA; capacidade instalada=80 MVA",
+      "method": "S/capacidade instalada*100",
+      "result": 73.6842105263158,
+      "unit": "%",
+      "source_or_assumption": "Assume divisão equilibrada entre os dois transformadores",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "BP-08",
+      "quantity": "Carregamento da carga crítica sob N-1",
+      "inputs": "Pcrit=32 MW; FP=0.95; Sr=40 MVA",
+      "method": "(Pcrit/FP)/Sr*100",
+      "result": 84.21052631578947,
+      "unit": "%",
+      "source_or_assumption": "Assume FP uniforme e sem sobrecarga de emergência",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "BP-09",
+      "quantity": "Carregamento da carga total sob N-1",
+      "inputs": "P=56 MW; FP=0.95; Sr=40 MVA",
+      "method": "(P/FP)/Sr*100",
+      "result": 147.3684210526316,
+      "unit": "%",
+      "source_or_assumption": "Sem rejeição de carga; demonstra necessidade de contingência",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "BP-10",
+      "quantity": "Carga ativa a rejeitar sob N-1",
+      "inputs": "P=56 MW; Pcrit=32 MW",
+      "method": "P-Pcrit",
+      "result": 24.0,
+      "unit": "MW",
+      "source_or_assumption": "Premissa do cenário de contingência",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "BP-11",
+      "quantity": "Corrente nominal do acoplamento/cubículo de referência",
+      "inputs": "In de transformador=1673.479 A; candidato=2000 A",
+      "method": "In/candidato*100",
+      "result": 83.67395205646748,
+      "unit": "% do candidato",
+      "source_or_assumption": "GE Vernova M-Tier lista opção de 2.000 A em 17,5 kV; candidato apenas, sujeito a dados e seleção",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "BP-12",
+      "quantity": "Corrente de curto simplificada por transformador em 13,8 kV",
+      "inputs": "In=1.673479 kA; Z=10% assumida",
+      "method": "Isc=In/Zpu",
+      "result": 16.7347904112935,
+      "unit": "kA",
+      "source_or_assumption": "Fonte ideal; somente impedância percentual presumida do transformador",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "BP-13",
+      "quantity": "Corrente de curto simplificada com transformadores em paralelo",
+      "inputs": "2 unidades idênticas; cada contribuição=16.734790 kA",
+      "method": "Soma de contribuições, sem impedâncias da rede/cabos",
+      "result": 33.469580822587,
+      "unit": "kA",
+      "source_or_assumption": "Sensibilidade; acoplador normalmente aberto no regime normal",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "BP-14",
+      "quantity": "Compensação idealizada de FP 0.95 para 0.98",
+      "inputs": "P=56 MW; FPin=0.95; FPout=0.98",
+      "method": "P*(tan(acos(FPin))-tan(acos(FPout)))",
+      "result": 7.035024894512107,
+      "unit": "MVAr",
+      "source_or_assumption": "Estimativa sem harmônicos, variação de carga ou estudo de ressonância",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "BP-15",
+      "quantity": "Corrente normal em cada seção de 13,8 kV",
+      "inputs": "P por seção=28 MW; FP=0.95; VLL=13.8 kV",
+      "method": "(P/FP)/(sqrt(3)*VLL)",
+      "result": 1.233089819779521,
+      "unit": "kA",
+      "source_or_assumption": "Assume cargas iguais nas seções A/B conforme alocação declarada",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS"
+    },
+    {
+      "calc_id": "FDR-A-F01",
+      "quantity": "Corrente estimada do alimentador A-F01",
+      "inputs": "P=6 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.26423353280989736,
+      "unit": "kA",
+      "source_or_assumption": "Carga crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED"
+    },
+    {
+      "calc_id": "FDR-A-F02",
+      "quantity": "Corrente estimada do alimentador A-F02",
+      "inputs": "P=6 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.26423353280989736,
+      "unit": "kA",
+      "source_or_assumption": "Carga crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED"
+    },
+    {
+      "calc_id": "FDR-A-F03",
+      "quantity": "Corrente estimada do alimentador A-F03",
+      "inputs": "P=4 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.17615568853993158,
+      "unit": "kA",
+      "source_or_assumption": "Carga crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED"
+    },
+    {
+      "calc_id": "FDR-A-F04",
+      "quantity": "Corrente estimada do alimentador A-F04",
+      "inputs": "P=6 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.26423353280989736,
+      "unit": "kA",
+      "source_or_assumption": "Carga não crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED"
+    },
+    {
+      "calc_id": "FDR-A-F05",
+      "quantity": "Corrente estimada do alimentador A-F05",
+      "inputs": "P=6 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.26423353280989736,
+      "unit": "kA",
+      "source_or_assumption": "Carga não crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED"
+    },
+    {
+      "calc_id": "FDR-B-F01",
+      "quantity": "Corrente estimada do alimentador B-F01",
+      "inputs": "P=6 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.26423353280989736,
+      "unit": "kA",
+      "source_or_assumption": "Carga crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED"
+    },
+    {
+      "calc_id": "FDR-B-F02",
+      "quantity": "Corrente estimada do alimentador B-F02",
+      "inputs": "P=6 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.26423353280989736,
+      "unit": "kA",
+      "source_or_assumption": "Carga crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED"
+    },
+    {
+      "calc_id": "FDR-B-F03",
+      "quantity": "Corrente estimada do alimentador B-F03",
+      "inputs": "P=4 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.17615568853993158,
+      "unit": "kA",
+      "source_or_assumption": "Carga crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED"
+    },
+    {
+      "calc_id": "FDR-B-F04",
+      "quantity": "Corrente estimada do alimentador B-F04",
+      "inputs": "P=6 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.26423353280989736,
+      "unit": "kA",
+      "source_or_assumption": "Carga não crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED"
+    },
+    {
+      "calc_id": "FDR-B-F05",
+      "quantity": "Corrente estimada do alimentador B-F05",
+      "inputs": "P=6 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.26423353280989736,
+      "unit": "kA",
+      "source_or_assumption": "Carga não crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED"
+    }
+  ],
+  "not_calculated": [
+    {
+      "calc_id": "SC-HV-01",
+      "quantity": "Curto-circuito em 138 kV",
+      "status": "PENDING_NETWORK_EQUIVALENT",
+      "missing_data": "MVA de curto / impedância equivalente, X/R, configuração de fontes e tempos da concessionária"
+    },
+    {
+      "calc_id": "SC-MV-01",
+      "quantity": "Curto-circuito completo em 13,8 kV",
+      "status": "PENDING_SOURCE_TRANSFORMER_CABLE_DATA",
+      "missing_data": "Rede, impedâncias reais de transformadores, motores, cabos, X/R e decaimento"
+    },
+    {
+      "calc_id": "CAB-01",
+      "quantity": "Seções de condutores e queda de tensão",
+      "status": "PENDING_INSTALLATION_DATA",
+      "missing_data": "Comprimento real, método, material, temperatura, agrupamento, formação, limites de queda e curto"
+    },
+    {
+      "calc_id": "PROT-01",
+      "quantity": "Ajustes e coordenação de proteção",
+      "status": "PENDING_NETWORK_AND_DEVICE_DATA",
+      "missing_data": "Curvas dos equipamentos, TCs/TPs, seletividade, tempos, rede e filosofia da concessionária"
+    },
+    {
+      "calc_id": "AUX-01",
+      "quantity": "Demanda de serviços auxiliares CA",
+      "status": "PENDING_LOAD_REGISTER",
+      "missing_data": "Lista de HVAC, bombas, iluminação, tomadas, motores e regimes simultâneos"
+    },
+    {
+      "calc_id": "DC-01",
+      "quantity": "Capacidade de baterias e missão da UPS",
+      "status": "PENDING_MISSION_PROFILE",
+      "missing_data": "Tensão CC escolhida, cargas contínuas, sequência de manobras, autonomia, temperatura, envelhecimento e tensão final"
+    },
+    {
+      "calc_id": "GND-01",
+      "quantity": "Malha de aterramento e tensões de toque/passo",
+      "status": "PENDING_SOIL_AND_FAULT_DATA",
+      "missing_data": "Resistividade por camada, corrente/tempo de falta à terra, geometria e condições da superfície"
+    },
+    {
+      "calc_id": "XFMR-01",
+      "quantity": "Perdas, regulação e elevação térmica dos transformadores",
+      "status": "PENDING_NAMEPLATE_AND_TEST_DATA",
+      "missing_data": "Perdas em vazio/carga, tensão de curto, taps, refrigeração, temperatura e relatório de ensaio"
+    }
+  ],
+  "quality_checks": {
+    "feeders_sum_to_normal_load": true,
+    "feeders_sum_to_critical_load": true,
+    "critical_load_within_one_transformer_nameplate": true,
+    "full_load_requires_shedding_in_n_minus_one": true,
+    "normal_transformers_not_overloaded_if_equally_shared": true
+  },
+  "sources": [
+    {
+      "title": "GE Vernova M-Tier MV Switchgear 3.6-17.5 kV",
+      "url": "https://www.gevernova.com/power-conversion/sites/default/files/2025-05/GEA35559_M-Tier-MV-Switchgear-3.6kV-17.5kV-air-insulated-system_EN_20250905.pdf"
+    },
+    {
+      "title": "IEC 62271-200:2021+AMD1:2024",
+      "url": "https://webstore.iec.ch/en/publication/63466"
+    },
+    {
+      "title": "WEG oil transformer 138/13.8 kV product family",
+      "url": "https://www.weg.net/catalog/weg/BR/en/Generation%2CTransmission-and-Distribution/Oil-type-Reactors-and-Transformers/Oil-Type-Power-Transformer/3-up-to-50-MVA/Oil-Transformer-10000-12500-kVA-138-0-13-8kV-CDC-ONAF/p/14149426"
+    }
+  ],
+  "limitations": [
+    "All loads, ratings and the 10% transformer impedance are assumptions for the portfolio study.",
+    "A calculated load current does not establish ampacity or a conductor cross-section.",
+    "Transformer-only short-circuit values are sensitivity estimates, not interrupting ratings or protection settings.",
+    "No regulatory compliance or construction suitability is claimed."
+  ]
+}

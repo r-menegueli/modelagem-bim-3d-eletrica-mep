@@ -1,0 +1,119 @@
+{
+  "project": "Subestacao GIS 138/13,8 kV - estudo demonstrativo",
+  "revision": "R8",
+  "date": "2026-11-07",
+  "status": "ESTIMATIVA_DE_ESTUDO - nao usar para especificacao ou compra",
+  "ac_system": {
+    "voltage_v_line_to_line_assumed": 380.0,
+    "power_factor_assumed": 0.9,
+    "installed_transformer_candidate_kva": 100.0,
+    "utilization_limit_assumed": 0.8,
+    "loads": [
+      {
+        "id": "AUX-AC-01",
+        "description": "HVAC de salas técnicas",
+        "quantity": 2,
+        "unit_power_kw_assumed": 25.0,
+        "demand_factor_assumed": 0.7,
+        "basis": "Estimativa de estudo; carga térmica e datasheets pendentes"
+      },
+      {
+        "id": "AUX-AC-02",
+        "description": "Iluminação interna",
+        "quantity": 1302,
+        "unit_power_kw_assumed": 0.007,
+        "demand_factor_assumed": 0.8,
+        "basis": "Área construída estimada 1302 m² x 7 W/m²; projeto luminotécnico pendente"
+      },
+      {
+        "id": "AUX-AC-03",
+        "description": "Iluminação de emergência",
+        "quantity": 1302,
+        "unit_power_kw_assumed": 0.0015,
+        "demand_factor_assumed": 0.5,
+        "basis": "Área construída estimada 1302 m² x 1,5 W/m²; autonomia e fotometria pendentes"
+      },
+      {
+        "id": "AUX-AC-04",
+        "description": "Iluminação externa e vias",
+        "quantity": 2800,
+        "unit_power_kw_assumed": 0.0005,
+        "demand_factor_assumed": 0.8,
+        "basis": "Área de pátio iluminada estimada 2800 m² x 0,5 W/m²; estudo fotométrico pendente"
+      },
+      {
+        "id": "AUX-AC-05",
+        "description": "Ventilação e exaustão",
+        "quantity": 4,
+        "unit_power_kw_assumed": 2.2,
+        "demand_factor_assumed": 0.5,
+        "basis": "Potência unitária e simultaneidade assumidas; levantamento térmico pendente"
+      },
+      {
+        "id": "AUX-AC-06",
+        "description": "Painéis de proteção e controle",
+        "quantity": 11,
+        "unit_power_kw_assumed": 0.15,
+        "demand_factor_assumed": 1.0,
+        "basis": "Potência unitária assumida; listas de cargas dos IEDs pendentes"
+      },
+      {
+        "id": "AUX-AC-07",
+        "description": "Telecomunicações e supervisão",
+        "quantity": 1,
+        "unit_power_kw_assumed": 2.0,
+        "demand_factor_assumed": 1.0,
+        "basis": "Carga concentrada assumida; arquitetura e datasheets pendentes"
+      },
+      {
+        "id": "AUX-AC-08",
+        "description": "Carregador do sistema 125 Vcc",
+        "quantity": 1,
+        "unit_power_kw_assumed": 5.0,
+        "demand_factor_assumed": 0.8,
+        "basis": "Candidato derivado da estimativa de recuperação da bateria; topologia e fabricante pendentes"
+      },
+      {
+        "id": "AUX-AC-09",
+        "description": "Carga crítica alimentada por UPS",
+        "quantity": 1,
+        "unit_power_kw_assumed": 1.5,
+        "demand_factor_assumed": 1.0,
+        "basis": "Estimativa de estudo; lista crítica e datasheets pendentes"
+      }
+    ]
+  },
+  "dc_system": {
+    "nominal_voltage_v_assumed": 125.0,
+    "continuous_load_kw_assumed": 1.2,
+    "autonomy_h_assumed": 8.0,
+    "trip_coil_current_a_assumed": 20.0,
+    "trip_duration_s_assumed": 10.0,
+    "emergency_operations_assumed": 5,
+    "design_margin_factor_assumed": 1.25,
+    "aging_factor_assumed": 1.25,
+    "temperature_factor_assumed": 1.1,
+    "depth_of_discharge_assumed": 0.8,
+    "discharge_efficiency_assumed": 0.85,
+    "charger_recovery_h_assumed": 8.0,
+    "basis": "Perfil de missão provisório; tensões, sequência de manobra, temperatura, envelhecimento e baterias reais pendentes"
+  },
+  "ups_system": {
+    "critical_load_kw_assumed": 1.5,
+    "power_factor_assumed": 0.8,
+    "autonomy_h_assumed": 1.0,
+    "design_margin_factor_assumed": 1.25,
+    "depth_of_discharge_assumed": 0.8,
+    "discharge_efficiency_assumed": 0.85,
+    "aging_factor_assumed": 1.25,
+    "temperature_factor_assumed": 1.1,
+    "candidate_ups_rating_kva": 3.0,
+    "basis": "Candidato de estudo; cargas críticas, barramento CC, arquitetura, autonomia e catálogo pendentes"
+  },
+  "limitations": [
+    "Todas as potências, fatores de demanda, FP, tensões auxiliares e autonomias são premissas explícitas, não dados medidos.",
+    "Não há levantamento de cargas, cálculo térmico, projeto luminotécnico, estudo de seletividade CA ou dados de fabricante.",
+    "Os valores resultantes não demonstram atendimento a requisitos normativos, da concessionária ou de segurança.",
+    "Revisar a base com lista de cargas aprovada, sequência de manobras e condições ambientais antes de selecionar equipamento."
+  ]
+}
