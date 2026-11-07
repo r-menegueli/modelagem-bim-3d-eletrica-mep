@@ -1,0 +1,16 @@
+﻿ID;De;Para;Revit electrical connection;3D geometry or infrastructure;Diagram/documentation;Pending
+HV-L01;Rede 138 kV L01;GIS-L01-TERM;NONE;Terminal envelope only;E-01 selector 89A selected;External line route and physical primary conductor
+HV-L02;Rede 138 kV L02;GIS-L02-TERM;NONE;Terminal envelope only;E-01 selector 89B selected;External line route and physical primary conductor
+HV-BUSA;GIS selector 89A;GIS-BUS-A;NONE;Bus casing modules and geometric stubs;E-01;Internal bus conductor/contact and verified switching state
+HV-BUSB;GIS selector 89B;GIS-BUS-B;NONE;Bus casing modules and geometric stubs;E-01;Internal bus conductor/contact and verified switching state
+HV-BC;GIS-BUS-A;GIS-BUS-B;NONE;Bay component envelopes;E-01 52-BC with open normal-state assumption;Switching contacts and interlocks
+HV-TR01;GIS-T01;TR-01-B-HV;NONE;GIS-TR01-HV-PH-A/B/C phase-separated DirectShape envelopes;E-01;Actual conductor/bus, terminal interfaces and manufacturer GA
+HV-TR02;GIS-T02;TR-02-B-HV;NONE;GIS-TR02-HV-PH-A/B/C phase-separated DirectShape envelopes;E-01;Actual conductor/bus, terminal interfaces and manufacturer GA
+MV-TR01;TR-01-B-MV;QMT-A-IN;NONE;TR01-MV-PH-A/B/C geometric route envelopes plus LEITO-MV-A native tray path;E-01 and section A;Cable/busduct design, ampacity, termination and tray connection
+MV-TR02;TR-02-B-MV;QMT-B-IN;NONE;TR02-MV-PH-A/B/C geometric route envelopes plus LEITO-MV-B native tray path;E-01 and section B;Cable/busduct design, ampacity, termination and tray connection
+MV-A;QMT-A-IN;BUS-MV-A;NONE;Cubicle and bar-module envelopes;E-01;Internal switchgear bus/contact and verified ratings
+MV-B;QMT-B-IN;BUS-MV-B;NONE;Cubicle and bar-module envelopes;E-01;Internal switchgear bus/contact and verified ratings
+MV-TIE;BUS-MV-A;BUS-MV-B;NONE;Tie cubicle envelope;E-01 52-TIE normally open assumption;Interlocks and physical switching state
+MV-FDR-A;BUS-MV-A;FDR-A-F01...F05;NONE;Cable tray route only;E-01 feeder positions;Outgoing conductors, destinations, terminations and ampacity
+MV-FDR-B;BUS-MV-B;FDR-B-F01...F05;NONE;Cable tray route only;E-01 feeder positions;Outgoing conductors, destinations, terminations and ampacity
+AUX-UPS-01;QAC-01;UPS-01;ElectricalSystem + 2D Wire view-specific;Wire is view-specific, not a 3D cable;E-06;3D cable, upstream source, conductor sizing, protection and complete UPS output network

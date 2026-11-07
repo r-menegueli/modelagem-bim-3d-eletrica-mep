@@ -111,8 +111,8 @@ namespace PortfolioCasaRevit
             string baseName = number == "01" ? "01-casa-unifamiliar-eletrica" : number + "-" + s.Slug;
             string outputFolder = number == "01" ? "01-casa-unifamiliar-revit" : baseName + "-revit";
             string outDir = number == "19" ? Path.Combine(Root, "projetos", "19-subestacao-gis") : Path.Combine(Root, "outputs", outputFolder);
-            string modelPath = number=="19"?Path.Combine(outDir,"revit","reconstrucao-r8","19-subestacao-gis-r8.rvt"):Path.Combine(outDir,"revit",baseName+".rvt");
-            string pdfPath = number=="19"?Path.Combine(outDir,"pranchas","reconstrucao-r8","19-subestacao-gis-r8.pdf"):Path.Combine(outDir,"pranchas",baseName+".pdf");
+            string modelPath = number=="19"?Path.Combine(outDir,"revit","reconstrucao-r9","19-subestacao-gis-r9.rvt"):Path.Combine(outDir,"revit",baseName+".rvt");
+            string pdfPath = number=="19"?Path.Combine(outDir,"pranchas","reconstrucao-r9","19-subestacao-gis-r9.pdf"):Path.Combine(outDir,"pranchas",baseName+".pdf");
             Directory.CreateDirectory(Path.GetDirectoryName(modelPath));
             Directory.CreateDirectory(Path.GetDirectoryName(pdfPath));
             if (s.Number == 19)
@@ -1236,14 +1236,14 @@ namespace PortfolioCasaRevit
         private static void BuildGISProject(UIApplication uiApp,ProjectSpec spec,string outDir,string baseName,string modelPath,string pdfPath)
         {
             EnsureGISFamilyFiles(uiApp.Application,outDir);
-            Log("GIS_FAMILY_LIBRARY_READY " + Path.Combine(outDir,"familias","reconstrucao-r8"));
+            Log("GIS_FAMILY_LIBRARY_READY " + Path.Combine(outDir,"familias","reconstrucao-r9"));
             ProjectSpec layout=new ProjectSpec{Number=19,Slug=spec.Slug,Title=spec.Title,Width=72,Depth=56,Floors=1,Enclosed=false,Program=spec.Program,UpperProgram=spec.UpperProgram,LightNote=spec.LightNote,PowerNote=spec.PowerNote,Systems=spec.Systems};
             Document doc=uiApp.Application.NewProjectDocument(TemplatePath);
             var sheetIds=new List<ElementId>();
             List<ElementId> roofIds=new List<ElementId>();
             try
             {
-                using(Transaction tx=new Transaction(doc,"Reconstrucao BIM detalhada - GIS 138/13,8 kV"))
+            using(Transaction tx=new Transaction(doc,"Reconstrucao BIM R9 - GIS 138/13,8 kV"))
                 {
                     tx.Start();
                     FailureHandlingOptions failureOptions=tx.GetFailureHandlingOptions();
@@ -1251,16 +1251,16 @@ namespace PortfolioCasaRevit
                     failureOptions.SetClearAfterRollback(true);
                     tx.SetFailureHandlingOptions(failureOptions);
                     doc.ProjectInformation.Name="Subestacao GIS 138-13,8 kV - Estudo de engenharia BIM";
-                    doc.ProjectInformation.Number="PRJ-BIM-19-R8";
+                    doc.ProjectInformation.Number="PRJ-BIM-19-R9";
                     doc.ProjectInformation.ClientName="Estudo demonstrativo";
                     Level level=FindOrCreateLevel(doc,0,"00 - Implantacao - ±0,00 m");
                     WallType sourceWall=new FilteredElementCollector(doc).OfClass(typeof(WallType)).Cast<WallType>().First(x=>x.Kind==WallKind.Basic);
                     FloorType sourceFloor=new FilteredElementCollector(doc).OfClass(typeof(FloorType)).Cast<FloorType>().First();
-                    Material wallMat=GetOrCreateMaterial(doc,"GIS-R8-Concreto",new Color(151,157,160));
-                    Material floorMat=GetOrCreateMaterial(doc,"GIS-R8-Piso",new Color(205,207,202));
-                    Material metalMat=GetOrCreateMaterial(doc,"GIS-R8-Metal",new Color(75,86,93));
-                    WallType wallType=MaterializeHostType(doc,sourceWall,"GIS-R8 - Alvenaria tecnica",wallMat);
-                    FloorType floorType=MaterializeHostType(doc,sourceFloor,"GIS-R8 - Piso industrial",floorMat);
+                    Material wallMat=GetOrCreateMaterial(doc,"GIS-R9-Concreto",new Color(151,157,160));
+                    Material floorMat=GetOrCreateMaterial(doc,"GIS-R9-Piso",new Color(205,207,202));
+                    Material metalMat=GetOrCreateMaterial(doc,"GIS-R9-Metal",new Color(75,86,93));
+                    WallType wallType=MaterializeHostType(doc,sourceWall,"GIS-R9 - Alvenaria tecnica",wallMat);
+                    FloorType floorType=MaterializeHostType(doc,sourceFloor,"GIS-R9 - Piso industrial",floorMat);
                     Dictionary<string,FamilySymbol> symbols=LoadGISFamilySymbols(doc,outDir);
 
                     // Vias e pisos são elementos nativos; as edificações usam paredes, pisos e lajes nativos do Revit.
@@ -1289,30 +1289,57 @@ namespace PortfolioCasaRevit
                     // GIS: duas barras principais, cinco bays (2 linhas, 2 transformadores e acoplamento).
                     string[] bayTags={"GIS-L01","GIS-T01","GIS-BC01","GIS-T02","GIS-L02"};
                     string[] bayNames={"Entrada de linha 01","Transformador TR-01","Acoplamento de barras","Transformador TR-02","Entrada de linha 02"};
-                    double[] bayX={10.6,16.3,22.0,27.7,33.4};
+                    // Five 800 mm bays are laid out at the catalog reference pitch; vendor GA remains pending.
+                    double[] bayX={18.0,18.8,19.6,20.4,21.2};
                     for(int i=0;i<bayTags.Length;i++)
                     {
                         string bay=bayTags[i];double x=bayX[i];
-                        AddGISFamilyInstance(doc,symbols,"GIS_BayFrame",bay+"-EST",bayNames[i]+"; envelope e geometria estimados; afastamentos pendentes.",x,18.3,.05);
-                        AddGISFamilyInstance(doc,symbols,"GIS_CircuitBreaker",bay+"-52", "Disjuntor GIS classe 145 kV; capacidade interruptiva por estudo de curto pendente.",x,13.7,.25);
-                        AddGISFamilyInstance(doc,symbols,"GIS_Disconnector",bay+"-89A", "Seccionadora para barra A; detalhe construtivo representativo.",x,16.0,.35);
-                        AddGISFamilyInstance(doc,symbols,"GIS_Disconnector",bay+"-89B", "Seccionadora para barra B; detalhe construtivo representativo.",x,20.8,.35);
-                        AddGISFamilyInstance(doc,symbols,"GIS_EarthingSwitch",bay+"-89G", "Chave de aterramento; intertravamento e capacidade pendentes.",x-.95,13.7,.35);
-                        AddGISFamilyInstance(doc,symbols,"GIS_CurrentTransformer",bay+"-CT", "TC GIS; relação, classe, núcleos e burden pendentes.",x+.95,13.7,.35);
-                        if(i==0||i==4) AddGISFamilyInstance(doc,symbols,"GIS_VoltageTransformer",bay+"-VT", "TP GIS; relação e classe pendentes de concessionária e estudo.",x,11.8,.35);
-                        if(i==0||i==4) AddGISFamilyInstance(doc,symbols,"GIS_Termination",bay+"-TERM", "Terminal de linha GIS; interface aérea/cabo a definir.",x,10.2,.25);
+                        AddGISFamilyInstance(doc,symbols,"GIS_BayFrame",bay+"-ENV",bayNames[i]+"; módulo 800 mm e envelope 5,7 m de referência combinados como aproximação; GA do pedido pendente.",x,18.8,.05);
+                        if(i==2)
+                            AddGISFamilyInstance(doc,symbols,"GIS_CircuitBreaker",bay+"-52","Disjuntor do acoplador entre barras A/B; rating de interrupção depende do estudo da fonte.",x,19.35,.25);
+                        else
+                            AddGISFamilyInstance(doc,symbols,"GIS_CircuitBreaker",bay+"-52","Disjuntor de bay classe 145 kV; rating de interrupção depende do estudo da fonte.",x,15.55,.25);
+                        AddGISFamilyInstance(doc,symbols,"GIS_Disconnector",bay+"-89A","Seccionadora seletora da barra A; estado operacional documentado no unifilar.",x,18.0,.75);
+                        AddGISFamilyInstance(doc,symbols,"GIS_Disconnector",bay+"-89B","Seccionadora seletora da barra B; estado operacional documentado no unifilar.",x,20.8,.75);
+                        AddGISFamilyInstance(doc,symbols,"GIS_EarthingSwitch",bay+"-89G","Chave de aterramento esquemática; intertravamentos e rating pendentes.",x-.2,i==2?19.35:15.55,.35);
+                        if(i!=2) AddGISFamilyInstance(doc,symbols,"GIS_CurrentTransformer",bay+"-CT","TC GIS de estudo; relação, classe, núcleos e burden pendentes.",x,14.25,.45);
+                        if(i==0||i==4) AddGISFamilyInstance(doc,symbols,"GIS_VoltageTransformer",bay+"-VT","TP GIS de estudo; relação e classe pendentes de concessionária e estudo.",x,13.15,.35);
+                        if(i==0||i==4) AddGISFamilyInstance(doc,symbols,"GIS_Termination",bay+"-TERM","Interface de linha GIS; conexão aérea/cabo e terminal final pendentes.",x,12.0,.25);
                     }
-                    double[] busModuleX={13.3,18.7,24.1,29.5};
-                    foreach(double x in busModuleX)
+                    foreach(double x in bayX)
                     {
-                        AddGISFamilyInstance(doc,symbols,"GIS_BusModule","GIS-BUS-A-MOD-"+x.ToString("00.0"),"Modulo de barra encapsulada A; corrente nominal e ensaio de arco pendentes.",x,18.0,4.15);
-                        AddGISFamilyInstance(doc,symbols,"GIS_BusModule","GIS-BUS-B-MOD-"+x.ToString("00.0"),"Modulo de barra encapsulada B; corrente nominal e ensaio de arco pendentes.",x,19.35,4.15);
+                        AddGISFamilyInstance(doc,symbols,"GIS_BusModule","GIS-BUS-A-MOD-"+x.ToString("00.0"),"Carcaça externa de barra encapsulada A, módulo geométrico de 800 mm; sem condutor interno ou rating representado.",x,18.0,2.55);
+                        AddGISFamilyInstance(doc,symbols,"GIS_BusModule","GIS-BUS-B-MOD-"+x.ToString("00.0"),"Carcaça externa de barra encapsulada B, módulo geométrico de 800 mm; sem condutor interno ou rating representado.",x,20.8,2.55);
                     }
-                    AddGISPrimaryRoute(doc,10.6,13.7,4.4,10.6,18.0,4.4);
-                    AddGISPrimaryRoute(doc,16.3,13.7,4.4,16.3,18.0,4.4);
-                    AddGISPrimaryRoute(doc,22.0,13.7,4.4,22.0,19.35,4.4);
-                    AddGISPrimaryRoute(doc,27.7,13.7,4.4,27.7,18.0,4.4);
-                    AddGISPrimaryRoute(doc,33.4,13.7,4.4,33.4,19.35,4.4);
+                    AddGISPrimaryRoute(doc,"GIS-BUSA-ENCLOSURE","Continuous outer GIS bus enclosure A; internal conductor and switching contacts are not modeled.",new XYZ(M(17.6),M(18.0),M(2.74)),new XYZ(M(21.6),M(18.0),M(2.74)),.17,metalMat);
+                    AddGISPrimaryRoute(doc,"GIS-BUSB-ENCLOSURE","Continuous outer GIS bus enclosure B; internal conductor and switching contacts are not modeled.",new XYZ(M(17.6),M(20.8),M(2.74)),new XYZ(M(21.6),M(20.8),M(2.74)),.17,metalMat);
+                    for(int i=0;i<bayX.Length;i++)
+                    {
+                        double x=bayX[i];string bay=bayTags[i];
+                        AddGISPrimaryRoute(doc,bay+"-89A-STUB","Geometric casing route from bus A module to selector disconnector; not a Revit electrical connection.",new XYZ(M(x),M(18.0),M(2.74)),new XYZ(M(x),M(18.0),M(2.15)),.10,metalMat);
+                        AddGISPrimaryRoute(doc,bay+"-89B-STUB","Geometric casing route from bus B module to selector disconnector; not a Revit electrical connection.",new XYZ(M(x),M(20.8),M(2.74)),new XYZ(M(x),M(20.8),M(2.15)),.10,metalMat);
+                    }
+                    for(int phase=0;phase<3;phase++)
+                    {
+                        double ctY=14.25-.40+.80*(.22+phase*.28);
+                        double tr01HVx=32.0-1.45+phase*1.45;
+                        double tr02HVx=51.5-1.45+phase*1.45;
+                        double tr01MVx=32.0-1.05+phase*1.05;
+                        double tr02MVx=51.5-1.05+phase*1.05;
+                        double tr01CabinetX=44.0-.24+phase*.24;
+                        double tr02CabinetX=60.28-.24+phase*.24;
+                        double tr01ApproachX=43.10+phase*.24;
+                        double tr02ApproachX=61.20-phase*.24;
+                        string phaseName=phase==0?"A":(phase==1?"B":"C");
+                        AddGISPrimaryRoutePolyline(doc,"GIS-TR01-HV-PH-"+phaseName,"Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct.",new[]{
+                            new XYZ(M(19.064),M(ctY),M(1.178)),new XYZ(M(19.064),M(ctY),M(2.55)),new XYZ(M(19.064),M(29.8),M(2.55)),new XYZ(M(tr01HVx),M(29.8),M(2.55)),new XYZ(M(tr01HVx),M(29.8),M(5.55)),new XYZ(M(tr01HVx),M(35.9),M(5.55))},.075,metalMat);
+                        AddGISPrimaryRoutePolyline(doc,"GIS-TR02-HV-PH-"+phaseName,"Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct.",new[]{
+                            new XYZ(M(20.664),M(ctY),M(1.178)),new XYZ(M(20.664),M(ctY),M(2.55)),new XYZ(M(20.664),M(29.3),M(2.55)),new XYZ(M(tr02HVx),M(29.3),M(2.55)),new XYZ(M(tr02HVx),M(29.3),M(5.55)),new XYZ(M(tr02HVx),M(35.9),M(5.55))},.075,metalMat);
+                        AddGISPrimaryRoutePolyline(doc,"TR01-MV-PH-"+phaseName,"Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected.",new[]{
+                            new XYZ(M(tr01MVx),M(33.7),M(4.48)),new XYZ(M(tr01MVx),M(31.5),M(4.48)),new XYZ(M(tr01MVx),M(31.5),M(.55)),new XYZ(M(tr01ApproachX),M(31.5),M(.55)),new XYZ(M(tr01ApproachX),M(25.8),M(.55)),new XYZ(M(tr01ApproachX),M(15.0),M(.55)),new XYZ(M(tr01CabinetX),M(15.0),M(.55)),new XYZ(M(tr01CabinetX),M(14.795),M(.55))},.04,metalMat);
+                        AddGISPrimaryRoutePolyline(doc,"TR02-MV-PH-"+phaseName,"Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected.",new[]{
+                            new XYZ(M(tr02MVx),M(33.7),M(4.48)),new XYZ(M(tr02MVx),M(31.5),M(4.48)),new XYZ(M(tr02MVx),M(31.5),M(.55)),new XYZ(M(tr02ApproachX),M(31.5),M(.55)),new XYZ(M(tr02ApproachX),M(25.8),M(.55)),new XYZ(M(tr02ApproachX),M(15.0),M(.55)),new XYZ(M(tr02CabinetX),M(15.0),M(.55)),new XYZ(M(tr02CabinetX),M(14.795),M(.55))},.04,metalMat);
+                    }
 
                     // Transformadores em duas áreas independentes, com acessórios BIM separados e marcas rastreáveis.
                     AddGISTransformer(doc,symbols,"TR-01",32.0,34.8);
@@ -1345,11 +1372,13 @@ namespace PortfolioCasaRevit
 
                     // Canaletas e leitos segmentados conectam GIS, transformadores e edificações; ocupação e cabos seguem pendentes.
                     AddGISCableRoute(doc,symbols,"CT-GIS-MV",10.0,25.8,54.0,25.8,.02);
-                    AddGISCableRoute(doc,symbols,"CT-TR21",32.0,29.8,32.0,25.8,.02);
-                    AddGISCableRoute(doc,symbols,"CT-TR22",51.5,29.8,51.5,25.8,.02);
+                    AddGISCableRoute(doc,symbols,"CT-TR21",32.0,34.2,32.0,25.8,.02);
+                    AddGISCableRoute(doc,symbols,"CT-TR22",51.5,34.2,51.5,25.8,.02);
                     AddGISCableRoute(doc,symbols,"CT-GIS-CTRL",12.0,27.3,12.0,34.0,.02);
-                    AddGISCableTrayRoute(doc,symbols,"LEITO-CTRL",9.5,35.2,26.5,35.2,4.15);
-                    AddGISCableTrayRoute(doc,symbols,"LEITO-GIS",9.2,10.0,36.5,10.0,4.4);
+                    AddGISCableTrayPath(doc,symbols,"LEITO-CTRL",new[]{new XYZ(M(9.5),M(35.2),M(4.15)),new XYZ(M(26.5),M(35.2),M(4.15))});
+                    AddGISCableTrayPath(doc,symbols,"LEITO-GIS",new[]{new XYZ(M(9.2),M(10.0),M(4.4)),new XYZ(M(36.5),M(10.0),M(4.4))});
+                    AddGISCableTrayPath(doc,symbols,"LEITO-MV-A",new[]{new XYZ(M(32.0),M(25.8),M(.55)),new XYZ(M(43.1),M(25.8),M(.55)),new XYZ(M(43.1),M(14.795),M(.55)),new XYZ(M(44.0),M(14.795),M(.55))});
+                    AddGISCableTrayPath(doc,symbols,"LEITO-MV-B",new[]{new XYZ(M(51.5),M(25.8),M(.55)),new XYZ(M(61.2),M(25.8),M(.55)),new XYZ(M(61.2),M(14.795),M(.55)),new XYZ(M(60.28),M(14.795),M(.55))});
 
                     // Malha conceitual de aterramento, elementos nativos ModelCurve, sem dimensionamento de toque/passo.
                     AddGISGroundGrid(doc,4,68,4,52,4.0);
@@ -1368,12 +1397,12 @@ namespace PortfolioCasaRevit
                     Log("PDF_EXPORTED 19 " + ok + " sheets=" + sheetIds.Count + " path=" + pdfPath);
                 }
                 catch(Exception ex){Log("PDF_FAILED 19 " + ex);throw;}
-                string previewDir=Path.Combine(outDir,"pranchas","reconstrucao-r8","preview");Directory.CreateDirectory(previewDir);
+                string previewDir=Path.Combine(outDir,"pranchas","reconstrucao-r9","preview");Directory.CreateDirectory(previewDir);
                 List<View3D> views3D=new FilteredElementCollector(doc).OfClass(typeof(View3D)).Cast<View3D>().Where(v=>v.Name.StartsWith("3D-")).OrderBy(v=>v.Name).ToList();
                 foreach(View3D view in views3D)
                 {
                     string code=view.Name.Substring(0,5);
-                try{ExportGIS3D(doc,view,Path.Combine(previewDir,"19-subestacao-gis-r8-"+code+".png"));}
+                try{ExportGIS3D(doc,view,Path.Combine(previewDir,"19-subestacao-gis-r9-"+code+".png"));}
                     catch(Exception ex){Log("GIS_3D_EXPORT_FAILED "+code+" "+ex);}
                 }
                 Log("GIS_RECONSTRUCTION_GENERATED families="+GetGISFamilySpecs().Count+" sheets="+sheetIds.Count+" views3d="+views3D.Count);
@@ -1445,17 +1474,66 @@ namespace PortfolioCasaRevit
 
         private static void AddGISCableTrayRoute(Document doc,Dictionary<string,FamilySymbol> symbols,string tag,double x1,double y1,double x2,double y2,double z)
         {
-            double dx=x2-x1,dy=y2-y1,length=Math.Sqrt(dx*dx+dy*dy),angle=Math.Atan2(dy,dx)*Math.PI/180.0;
-            for(double offset=.75;offset<length;offset+=1.5)
+            XYZ start=new XYZ(M(x1),M(y1),M(z)),end=new XYZ(M(x2),M(y2),M(z));
+            if(start.DistanceTo(end)<M(.10))throw new ArgumentException("A rota de leito precisa ter comprimento positivo.",tag);
+            Level level=new FilteredElementCollector(doc).OfClass(typeof(Level)).Cast<Level>().OrderBy(x=>Math.Abs(x.Elevation-M(z))).First();
+            Autodesk.Revit.DB.Electrical.CableTrayType type=new FilteredElementCollector(doc).OfClass(typeof(Autodesk.Revit.DB.Electrical.CableTrayType)).Cast<Autodesk.Revit.DB.Electrical.CableTrayType>().FirstOrDefault();
+            if(type==null)throw new InvalidOperationException("O template nao contem tipo nativo CableTray para a rota "+tag);
+            Autodesk.Revit.DB.Electrical.CableTray tray=Autodesk.Revit.DB.Electrical.CableTray.Create(doc,type.Id,start,end,level.Id);
+            Parameter mark=tray.get_Parameter(BuiltInParameter.ALL_MODEL_MARK);if(mark!=null&&!mark.IsReadOnly)mark.Set(tag);
+            Parameter comments=tray.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS);if(comments!=null&&!comments.IsReadOnly)comments.Set("Elemento nativo CableTray, trecho reto. Apenas infraestrutura; sem cabos, preenchimento, circuitos ou conexao aos equipamentos.");
+            Parameter width=tray.get_Parameter(BuiltInParameter.RBS_CABLETRAY_WIDTH_PARAM);if(width!=null&&!width.IsReadOnly)width.Set(M(.60));
+            Parameter height=tray.get_Parameter(BuiltInParameter.RBS_CABLETRAY_HEIGHT_PARAM);if(height!=null&&!height.IsReadOnly)height.Set(M(.10));
+            Log("GIS_NATIVE_CABLETRAY_CREATED mark="+tag+" id="+tray.Id.Value+" length_m="+UnitUtils.ConvertFromInternalUnits(start.DistanceTo(end),UnitTypeId.Meters).ToString("0.00",System.Globalization.CultureInfo.InvariantCulture)+" end_connectors_open=true");
+        }
+
+        private static void AddGISCableTrayPath(Document doc,Dictionary<string,FamilySymbol> symbols,string tag,IList<XYZ> points)
+        {
+            if(points==null||points.Count<2)throw new ArgumentException("A rota nativa CableTray precisa de pelo menos dois pontos.",tag);
+            Level level=new FilteredElementCollector(doc).OfClass(typeof(Level)).Cast<Level>().OrderBy(x=>Math.Abs(x.Elevation-points[0].Z)).First();
+            Autodesk.Revit.DB.Electrical.CableTrayType type=new FilteredElementCollector(doc).OfClass(typeof(Autodesk.Revit.DB.Electrical.CableTrayType)).Cast<Autodesk.Revit.DB.Electrical.CableTrayType>().FirstOrDefault();
+            if(type==null)throw new InvalidOperationException("O template nao contem tipo nativo CableTray para a rota "+tag);
+            List<Autodesk.Revit.DB.Electrical.CableTray> segments=new List<Autodesk.Revit.DB.Electrical.CableTray>();
+            for(int i=0;i<points.Count-1;i++)
             {
-                double x=x1+dx*offset/length,y=y1+dy*offset/length;
-                AddGISFamilyInstance(doc,symbols,"CableTray",tag+"-"+(Math.Round(offset,1)).ToString("00.0"),"Leito representativo; suportação, aterramento e taxa de ocupação pendentes.",x,y,z,angle*180.0/Math.PI);
+                if(points[i].DistanceTo(points[i+1])<M(.10))throw new ArgumentException("A rota nativa CableTray tem segmentos menores que 100 mm.",tag+"-SEG-"+(i+1).ToString("00"));
+                Autodesk.Revit.DB.Electrical.CableTray tray=Autodesk.Revit.DB.Electrical.CableTray.Create(doc,type.Id,points[i],points[i+1],level.Id);
+                string segmentMark=tag+"-SEG-"+(i+1).ToString("00");
+                Parameter mark=tray.get_Parameter(BuiltInParameter.ALL_MODEL_MARK);if(mark!=null&&!mark.IsReadOnly)mark.Set(segmentMark);
+                Parameter comments=tray.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS);if(comments!=null&&!comments.IsReadOnly)comments.Set("Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento.");
+                Parameter width=tray.get_Parameter(BuiltInParameter.RBS_CABLETRAY_WIDTH_PARAM);if(width!=null&&!width.IsReadOnly)width.Set(M(.60));
+                Parameter height=tray.get_Parameter(BuiltInParameter.RBS_CABLETRAY_HEIGHT_PARAM);if(height!=null&&!height.IsReadOnly)height.Set(M(.10));
+                segments.Add(tray);
             }
+            for(int i=0;i<segments.Count-1;i++)
+            {
+                Autodesk.Revit.DB.Electrical.CableTray first=segments[i],second=segments[i+1];XYZ joint=points[i+1];
+                Connector firstEnd=first.ConnectorManager.Connectors.Cast<Connector>().OrderBy(x=>x.Origin.DistanceTo(joint)).FirstOrDefault();
+                Connector secondEnd=second.ConnectorManager.Connectors.Cast<Connector>().OrderBy(x=>x.Origin.DistanceTo(joint)).FirstOrDefault();
+                using(SubTransaction attempt=new SubTransaction(doc))
+                {
+                    attempt.Start();
+                    try
+                    {
+                        if(firstEnd==null||secondEnd==null)throw new InvalidOperationException("Porta de leito ausente na junta.");
+                        firstEnd.ConnectTo(secondEnd);doc.Regenerate();
+                        bool connected=firstEnd.IsConnected&&secondEnd.IsConnected;
+                        if(!connected)throw new InvalidOperationException("ConnectTo nao confirmou a junta dos leitos.");
+                        attempt.Commit();Log("GIS_CABLETRAY_JOINT_CONNECTED route="+tag+" at="+i.ToString(System.Globalization.CultureInfo.InvariantCulture));
+                    }
+                    catch(Exception ex)
+                    {
+                        if(attempt.GetStatus()==TransactionStatus.Started)attempt.RollBack();
+                        Log("GIS_CABLETRAY_JOINT_FAILED route="+tag+" at="+i.ToString(System.Globalization.CultureInfo.InvariantCulture)+" "+ex.GetType().Name+" "+ex.Message);
+                    }
+                }
+            }
+            Log("GIS_NATIVE_CABLETRAY_PATH_CREATED route="+tag+" segments="+segments.Count.ToString(System.Globalization.CultureInfo.InvariantCulture)+" length_m="+segments.Sum(x=>((LocationCurve)x.Location).Curve.Length).ToString("0.00",System.Globalization.CultureInfo.InvariantCulture));
         }
 
         private static void AddGISGroundGrid(Document doc,double minX,double maxX,double minY,double maxY,double spacing)
         {
-            GraphicsStyle grid=GetLineStyle(doc,"GIS-R8-MALHA-ATERRAMENTO",new Color(112,126,91),1);
+            GraphicsStyle grid=GetLineStyle(doc,"GIS-R9-MALHA-ATERRAMENTO",new Color(112,126,91),1);
             for(double x=minX;x<=maxX+.001;x+=spacing) AddGISModelLine(doc,new XYZ(M(x),M(minY),M(.06)),new XYZ(M(x),M(maxY),M(.06)),grid);
             for(double y=minY;y<=maxY+.001;y+=spacing) AddGISModelLine(doc,new XYZ(M(minX),M(y),M(.06)),new XYZ(M(maxX),M(y),M(.06)),grid);
             Log("GIS_GROUND_GRID_CONCEPTUAL spacing_m="+spacing.ToString("0.0")+"; no soil study");
@@ -1493,9 +1571,30 @@ namespace PortfolioCasaRevit
             Log("GIS_FENCE_CREATED conceptual galvanized rails and posts; access gate gap 6 m");
         }
 
-        private static void AddGISPrimaryRoute(Document doc,double x1,double y1,double z1,double x2,double y2,double z2)
+        private static void AddGISPrimaryRoute(Document doc,string mark,string description,XYZ start,XYZ end,double radius,Material material)
         {
-            AddGISModelLine(doc,new XYZ(M(x1),M(y1),M(z1)),new XYZ(M(x2),M(y2),M(z2)));
+            XYZ axis=end-start;double length=axis.GetLength();if(length<M(.02))return;
+            XYZ direction=axis.Normalize();XYZ guide=Math.Abs(direction.DotProduct(XYZ.BasisZ))<.90?XYZ.BasisZ:XYZ.BasisY;
+            XYZ u=direction.CrossProduct(guide).Normalize();XYZ v=direction.CrossProduct(u).Normalize();
+            CurveLoop loop=new CurveLoop();const int sides=20;
+            for(int i=0;i<sides;i++)
+            {
+                double a=2*Math.PI*i/sides,b=2*Math.PI*(i+1)/sides;
+                XYZ p1=start+u*(M(radius)*Math.Cos(a))+v*(M(radius)*Math.Sin(a));
+                XYZ p2=start+u*(M(radius)*Math.Cos(b))+v*(M(radius)*Math.Sin(b));
+                loop.Append(Line.CreateBound(p1,p2));
+            }
+            Solid solid=GeometryCreationUtilities.CreateExtrusionGeometry(new List<CurveLoop>{loop},direction,length);
+            DirectShape shape=DirectShape.CreateElement(doc,new ElementId(BuiltInCategory.OST_GenericModel));
+            shape.ApplicationId="PortfolioBIM.GIS.R9.GeometryOnly";shape.ApplicationDataId=mark+"-"+Guid.NewGuid().ToString("N");shape.SetShape(new List<GeometryObject>{solid});
+            Parameter p=shape.get_Parameter(BuiltInParameter.ALL_MODEL_MARK);if(p!=null&&!p.IsReadOnly)p.Set(mark);
+            p=shape.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS);if(p!=null&&!p.IsReadOnly)p.Set(description+" REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit.");
+            p=shape.get_Parameter(BuiltInParameter.MATERIAL_ID_PARAM);if(material!=null&&p!=null&&!p.IsReadOnly)p.Set(material.Id);
+        }
+
+        private static void AddGISPrimaryRoutePolyline(Document doc,string mark,string description,IList<XYZ> points,double radius,Material material)
+        {
+            for(int i=0;i<points.Count-1;i++)AddGISPrimaryRoute(doc,mark+"-SEG-"+(i+1).ToString("00"),description,points[i],points[i+1],radius,material);
         }
 
         private static ViewPlan CreateGISPlan(Document doc,Level level,string name,double x1,double y1,double x2,double y2,int scale)
@@ -1503,10 +1602,10 @@ namespace PortfolioCasaRevit
             ViewPlan view=CreatePlan(doc,level,name,x2-x1,y2-y1,scale);
             view.CropBox=new BoundingBoxXYZ{Min=new XYZ(M(x1),M(y1),level.Elevation-M(.2)),Max=new XYZ(M(x2),M(y2),level.Elevation+M(5.8))};
             view.CropBoxActive=true;view.DetailLevel=ViewDetailLevel.Fine;
-            if(!name.StartsWith("E-08",StringComparison.OrdinalIgnoreCase))
+            if(!name.StartsWith("E-05",StringComparison.OrdinalIgnoreCase))
             {
                 Category lineRoot=doc.Settings.Categories.get_Item(BuiltInCategory.OST_Lines);
-                Category groundGrid=lineRoot.SubCategories.Cast<Category>().FirstOrDefault(x=>x.Name=="GIS-R8-MALHA-ATERRAMENTO");
+                Category groundGrid=lineRoot.SubCategories.Cast<Category>().FirstOrDefault(x=>x.Name=="GIS-R9-MALHA-ATERRAMENTO");
                 if(groundGrid!=null)try{view.SetCategoryHidden(groundGrid.Id,true);}catch(Exception ex){Log("GIS_GROUND_GRID_PLAN_HIDE_NOTE "+name+" "+ex.Message);}
             }
             return view;
@@ -1529,10 +1628,10 @@ namespace PortfolioCasaRevit
                 view.SetCategoryOverrides(new ElementId(BuiltInCategory.OST_GenericModel),generic);
             }
             catch(Exception ex){Log("GIS_3D_EQUIPMENT_COLOR_NOTE "+name+" "+ex.Message);}
-            if(!name.StartsWith("3D-08",StringComparison.OrdinalIgnoreCase))
+            if(!name.StartsWith("3D-01",StringComparison.OrdinalIgnoreCase))
             {
                 Category lineRoot=doc.Settings.Categories.get_Item(BuiltInCategory.OST_Lines);
-                Category groundGrid=lineRoot.SubCategories.Cast<Category>().FirstOrDefault(x=>x.Name=="GIS-R8-MALHA-ATERRAMENTO");
+                Category groundGrid=lineRoot.SubCategories.Cast<Category>().FirstOrDefault(x=>x.Name=="GIS-R9-MALHA-ATERRAMENTO");
                 if(groundGrid!=null)try{view.SetCategoryHidden(groundGrid.Id,true);}catch{}
             }
             return view;
@@ -1540,95 +1639,71 @@ namespace PortfolioCasaRevit
 
         private static void CreateGISSheets(Application app,Document doc,ProjectSpec spec,string outDir,string baseName,List<ElementId> sheetIds,IList<ElementId> roofIds)
         {
-            using(Transaction tx=new Transaction(doc,"Pranchas de engenharia GIS - revisao 0"))
+            using(Transaction tx=new Transaction(doc,"Pranchas de engenharia GIS R9"))
             {
                 tx.Start();
                 Level level=new FilteredElementCollector(doc).OfClass(typeof(Level)).Cast<Level>().OrderBy(x=>Math.Abs(x.Elevation)).First();
                 ElementId text=GetTextTypeId(doc);
-                GraphicsStyle note=GetLineStyle(doc,"GIS-R8-ANOTACOES",new Color(42,52,59),2);
-                GraphicsStyle power=GetLineStyle(doc,"GIS-R8-POTENCIA",new Color(45,94,144),4);
-                GraphicsStyle data=GetLineStyle(doc,"GIS-R8-CONTROLE",new Color(34,124,99),3);
-                GraphicsStyle civil=GetLineStyle(doc,"GIS-R8-CIVIL",new Color(132,103,72),3);
-                ViewPlan site=CreateGISPlan(doc,level,"A-01 - Implantacao geral R8",0,0,72,56,400);
-                ViewPlan architecture=CreateGISPlan(doc,level,"A-02 - Arquitetura e setorizacao R8",5,7,67,50,300);
-                ViewPlan gis=CreateGISPlan(doc,level,"E-02 - Arranjo GIS 145 kV R8",6,8,39,28,175);
-                ViewPlan transformers=CreateGISPlan(doc,level,"E-03 - Arranjo dos transformadores R8",26,28,61,42,200);
-                ViewPlan mv=CreateGISPlan(doc,level,"E-04 - Cubiculos de 13,8 kV R8",40,8,66,28,175);
-                ViewPlan cables=CreateGISPlan(doc,level,"E-06 - Canaletas e leitos R8",5,8,67,49,350);
-                ViewPlan grounding=CreateGISPlan(doc,level,"E-08 - Malha de aterramento conceitual R8",3,3,69,53,400);
-                ViewPlan civilPlan=CreateGISPlan(doc,level,"C-01 - Bases e infraestrutura civil R8",4,7,68,50,350);
-                ViewPlan auxPlan=CreateGISPlan(doc,level,"E-07 - Servicos auxiliares CA e CC R8",5,32,31,50,175);
-                View3D overall=CreateGIS3DView(doc,"3D-01 - Vista geral isometrica R8",2,2,-.3,70,54,7.5);
-                View3D interiorGIS=CreateGIS3DView(doc,"3D-02 - Interior GIS R8",6,8,-.2,39,28,7.0);
-                View3D transformers3D=CreateGIS3DView(doc,"3D-03 - Transformadores R8",27,30,-.2,63,45,8.0);
-                View3D mv3D=CreateGIS3DView(doc,"3D-04 - Sala de media tensao R8",41,9,-.2,67,27,5.0);
-                View3D protection3D=CreateGIS3DView(doc,"3D-05 - Protecao e controle R8",7,33,-.2,31,52,5.0);
-                View3D exploded=CreateGIS3DView(doc,"3D-06 - Explodida controlada R8",10,10,-.2,19,24,7.0);
-                View3D cutaway=CreateGIS3DView(doc,"3D-07 - Corte espacial GIS e rotas R8",6,7,-.2,40,29,6.5);
-                View3D infrastructure3D=CreateGIS3DView(doc,"3D-08 - Infraestrutura e interfaces R8",7,7,-.2,58,52,6.0);
-                foreach(View3D interior in new[]{interiorGIS,mv3D,protection3D,cutaway})
-                    try{interior.SetCategoryHidden(new ElementId(BuiltInCategory.OST_Walls),true);}catch{}
-                foreach(View3D interior in new[]{interiorGIS,mv3D,protection3D,cutaway})
+                GraphicsStyle note=GetLineStyle(doc,"GIS-R9-ANOTACOES",new Color(42,52,59),2);
+                GraphicsStyle power=GetLineStyle(doc,"GIS-R9-POTENCIA",new Color(45,94,144),4);
+                GraphicsStyle data=GetLineStyle(doc,"GIS-R9-CONTROLE",new Color(34,124,99),3);
+                ViewPlan site=CreateGISPlan(doc,level,"A-01 - Implantacao geral R9",0,0,72,56,300);
+                ViewPlan architecture=CreateGISPlan(doc,level,"A-02 - Edificios e areas de manutencao R9",5,7,67,50,225);
+                ViewPlan gis=CreateGISPlan(doc,level,"E-02 - Arranjo GIS referencia 145 kV R9",6,8,39,28,125);
+                ViewPlan transformers=CreateGISPlan(doc,level,"E-03 - Transformador e conexoes R9",26,28,61,42,125);
+                ViewPlan mv=CreateGISPlan(doc,level,"E-04 - Secao MT 13,8 kV R9",40,8,66,28,125);
+                ViewPlan routes=CreateGISPlan(doc,level,"E-05 - Rotas de infraestrutura R9",5,8,67,49,250);
+                ViewPlan auxiliaryPlan=CreateGISPlan(doc,level,"E-06 - Servicos auxiliares e controle R9",5,32,31,50,150);
+                TryCreateGISAuxWire(doc,auxiliaryPlan);
+                View3D overall=CreateGIS3DView(doc,"3D-01 - Implantacao BIM geral R9",2,2,-.3,70,54,7.5);
+                View3D gisBay=CreateGIS3DView(doc,"3D-02 - Bay GIS-T01 e selecao de barras R9",17.2,14.9,-.1,20.3,22.9,4.2);
+                View3D transformer3D=CreateGIS3DView(doc,"3D-03 - Transformador TR-01 R9",27.0,29.0,-.2,38.0,41.8,7.0);
+                View3D mv3D=CreateGIS3DView(doc,"3D-04 - Cubiculos secao A MT R9",42.8,9.0,-.1,50.2,18.8,4.2);
+                foreach(View3D interior in new[]{overall,gisBay,transformer3D,mv3D})
+                {
+                    if(interior!=overall)try{interior.SetCategoryHidden(new ElementId(BuiltInCategory.OST_Walls),true);}catch{}
+                    else try{OverrideGraphicSettings walls=new OverrideGraphicSettings();walls.SetSurfaceTransparency(72);interior.SetCategoryOverrides(new ElementId(BuiltInCategory.OST_Walls),walls);}catch{}
                     try{interior.HideElements(roofIds);}catch(Exception ex){Log("GIS_ROOF_HIDE_NOTE "+interior.Name+" "+ex.Message);}
-                bool explodedReady=CreateGISControlledExplodedView(doc,exploded);
-                if(!explodedReady)exploded.Name="3D-06 - Explodida controlada PENDENTE R8";
-                ViewDrafting single=CreateDraftingView(doc,"E-01 - Unifilar geral 138 e 13,8 kV R8");
-                ViewDrafting protection=CreateDraftingView(doc,"E-05 - Arquitetura funcional de protecao e controle R8");
-                ViewDrafting auxiliary=CreateDraftingView(doc,"E-07 - Unifilar auxiliar CA CC e UPS R8");
-                ViewDrafting calculations=CreateDraftingView(doc,"M-01 - Memoria de calculo e rastreabilidade R8");
-
-                AddGISPlanNote(doc,site,text,7,51,"ACESSO PRINCIPAL / PORTAO DE SERVICO");
-                AddGISPlanNote(doc,site,text,11,28,"GIS 145 kV - 5 BAYS");
-                AddGISPlanNote(doc,site,text,44,28,"CUBICULOS MT 13,8 kV - BARRAS A/B");
-                AddGISPlanNote(doc,site,text,29,42,"TR-01 | 40 MVA - ESTIMADO");
-                AddGISPlanNote(doc,site,text,48,42,"TR-02 | 40 MVA - ESTIMADO");
+                }
+                ViewDrafting single=CreateDraftingView(doc,"E-01 - Unifilar geral 138 e 13,8 kV R9");single.Scale=15;
+                ViewDrafting protection=CreateDraftingView(doc,"E-06 - Protecao e servicos auxiliares R9");
+                ViewDrafting calculations=CreateDraftingView(doc,"M-01 - Estudos eletricos e premissas R9");
+                ViewDrafting quantities=CreateDraftingView(doc,"Q-01 - Quantitativos e conectividade R9");
+                AddGISPlanNote(doc,site,text,11,29,"GIS 145 kV | cinco bays | dupla barra");
+                AddGISPlanNote(doc,site,text,44,28,"CUBICULOS MT 13,8 kV | secoes A/B");
+                AddGISPlanNote(doc,site,text,29,42,"TR-01 | 40 MVA | envelope estimado");
+                AddGISPlanNote(doc,site,text,48,42,"TR-02 | 40 MVA | envelope estimado");
                 AddGISPlanNote(doc,site,text,8,50,"CASA DE CONTROLE / PROTECAO / TELECOM");
-                AddGISPlanNote(doc,architecture,text,9,25,"SALA GIS | ACESSO, OPERACAO E MANUTENCAO");
-                AddGISPlanNote(doc,architecture,text,43,25,"SALAO DE CUBICULOS MT | SECOES A/B");
+                AddGISPlanNote(doc,architecture,text,8.5,25.5,"GIS | envelope do bay de referencia e zona de acesso; afastamentos pendentes");
+                AddGISPlanNote(doc,architecture,text,43,25.5,"MT | corredor de operacao e extracao de cubiculos a verificar");
                 AddGISPlanNote(doc,architecture,text,8,47,"CONTROLE / RELES / TELECOM");
                 AddGISPlanNote(doc,architecture,text,19,47,"BATERIAS / AUXILIARES");
-                AddGISPlanNote(doc,gis,text,8,25,"L01 | T01 | BC | T02 | L02");
-                AddGISPlanNote(doc,transformers,text,28,40,"TR-01 | 40 MVA | TANQUE / RADIADORES / BUCHAS / CONTENCAO");
-                AddGISPlanNote(doc,transformers,text,47,40,"TR-02 | 40 MVA | TANQUE / RADIADORES / BUCHAS / CONTENCAO");
-                AddGISPlanNote(doc,mv,text,42,25,"A-IN / A-MED / A-F01...A-F05 / TIE / B-F01...B-F05 / B-MED / B-IN");
-                AddGISPlanNote(doc,cables,text,8,30,"CANAL ETA PRINCIPAL: GIS - SALAO MT - AREAS DE TRANSFORMACAO");
-                AddGISPlanNote(doc,grounding,text,7,51,"MALHA CONCEITUAL 4 m; NAO DIMENSIONADA SEM ρ DO SOLO E CORRENTE DE FALTA");
-                AddGISPlanNote(doc,civilPlan,text,28,43,"BASES, ACESSOS E ZONA DE CONTENCAO - ESTUDO CIVIL");
-                AddGISPlanNote(doc,auxPlan,text,8,48,"P-L01/P-L02/P-BUS/P-TR/QAC/QCC/UPS/BAT");
-
+                AddGISPlanNote(doc,gis,text,17.6,25.5,"DETALHE: GIS-T01 | 89A/89B | 52 | TC | rota GIS-TR01");
+                AddGISPlanNote(doc,transformers,text,28,40.5,"TR-01 | tanque, radiadores, ventiladores, buchas, conservador condicional e contencao");
+                AddGISPlanNote(doc,transformers,text,47,40.5,"TR-02 | dimensoes do fabricante nao publicadas");
+                AddGISPlanNote(doc,mv,text,42.2,25.5,"A-IN / MED / F01...F05 | entrada TR-01 e saidas representadas no unifilar");
+                AddGISPlanNote(doc,routes,text,8,30,"ROTAS: GIS/MT/transformadores/controle | leitos nativos e envelopes | sem condutores");
+                AddGISPlanNote(doc,auxiliaryPlan,text,8,48,"AUX-UPS-01 | ElectricalSystem + fio 2D Revit, se conectores confirmados | nao e cabo 3D");
                 DrawGISSingleLine(doc,single,text,note,power);
                 DrawGISProtectionArchitecture(doc,protection,text,note,power,data);
-                DrawGISAuxiliaryDiagram(doc,auxiliary,text,note,power,data);
                 DrawGISReconstructionCalculationTable(doc,calculations,text,note,power,data);
+                DrawGISQuantitySummary(doc,quantities,text);
 
                 ElementId titleBlock=EnsureTitleBlock(doc,app,outDir);
-                sheetIds.Add(CreateSheet(doc,titleBlock,"A-01","Implantação geral",site,text,"ARRANJO DE ESTUDO\nTerreno 72 x 56 m; edifícios, pátio, acessos, transformadores, caminhos e malha conceitual.\n\nLIMITES\nLocação, afastamentos elétricos, drenagem e requisitos de concessionária pendentes.",spec,baseName));
-                sheetIds.Add(CreateSheet(doc,titleBlock,"A-02","Arquitetura e setorização",architecture,text,"EDIFICIOS NATIVOS REVIT\nParedes, pisos, acessos e setores GIS, média tensão e comando.\n\nLIMITES\nRotas de fuga, incêndio, ventilação, acessibilidade e aprovação legal não verificados.",spec,baseName));
-                sheetIds.Add(CreateSheet(doc,titleBlock,"E-01","Unifilar geral 138 / 13,8 kV",single,text,"CONFIGURACAO DE ESTUDO\n138 kV: dupla barra com acoplador. 13,8 kV: barras A/B seccionadas, tie normalmente aberto.\n\nPROTECAO E ESTADOS\nFunções candidatas; intertravamentos e manobras dependem de estudos e filosofia aprovada.",spec,baseName));
-                sheetIds.Add(CreateSheet(doc,titleBlock,"E-02","Arranjo GIS 145 kV",gis,text,"BAYS\nDuas entradas de linha, dois bays de transformador e um acoplador. Famílias paramétricas de estudo, tags e propriedades técnicas.\n\nGEOMETRIA E INTERFACES\nDimensões estimadas; sem desenho dimensional de fabricante ou especificação de isolamento. Conectores MEP definidos em famílias; conexões físicas não verificadas.",spec,baseName));
-                sheetIds.Add(CreateSheet(doc,titleBlock,"E-03","Transformadores 40 MVA",transformers,text,"TR-01 E TR-02\nFamílias separadas: tanque, radiadores, ventiladores, buchas, conservador condicional, base, contenção e painel local.\n\nDADOS PENDENTES\nPlaca, perdas, impedância, resfriamento, acessórios, volume de óleo, estrutura e geotecnia.",spec,baseName));
-                sheetIds.Add(CreateSheet(doc,titleBlock,"E-04","Distribuição 13,8 kV",mv,text,"CUBICULOS\nSete posições por seção A/B e acoplamento normalmente aberto. Dez alimentadores conforme base de estudo.\n\nLIMITES\nCapacidade de interrupção, arco interno, rating das barras, proteções e cabos pendentes.",spec,baseName));
-                sheetIds.Add(CreateSheet(doc,titleBlock,"E-05","Proteção, controle e SCADA",protection,text,"ARQUITETURA FUNCIONAL\nIEDs por linha, transformador e barras; trip/close, telecomando, gateway, HMI e fibra.\n\nIEC 61850\nConceito funcional apenas; nenhuma rede ou configuração real foi implementada ou testada.",spec,baseName));
-                sheetIds.Add(CreateSheet(doc,titleBlock,"E-06","Caminhos de cabos",cables,text,"ROTAS CONCEITUAIS\nCanaletas e leitos em famílias Revit definem envelopes espaciais entre as áreas GIS, MT, transformadores e comando.\n\nLIMITES\nCabos não modelados nem fisicamente roteados; ocupação, segregação, queda de tensão e suportação não dimensionadas.",spec,baseName));
-                sheetIds.Add(CreateSheet(doc,titleBlock,"E-07","Serviços auxiliares CA / CC",auxiliary,text,"EQUIPAMENTOS\nQuadros CA/CC, UPS e rack de baterias como famílias identificáveis.\n\nLIMITES\nDemanda, autonomia, carregadores, tensão CC e regime de cargas aguardam perfil de missão.",spec,baseName));
-                sheetIds.Add(CreateSheet(doc,titleBlock,"E-08","Aterramento e descargas",grounding,text,"MALHA CONCEITUAL\nModelCurve Revit em grade regular de 4 m para coordenação espacial preliminar.\n\nLIMITES\nSem resistividade, geometria final, corrente e tempo de falta; toque, passo e conformidade não avaliados.",spec,baseName));
-                sheetIds.Add(CreateSheet(doc,titleBlock,"C-01","Bases e infraestrutura civil",civilPlan,text,"ELEMENTOS\nPisos e paredes nativos, bases parametrizadas de transformadores, contenções e acessos conceituais.\n\nLIMITES\nCargas, armaduras, geotecnia, drenagem, óleo e dimensionamento estrutural não verificados.",spec,baseName));
-                ViewDrafting quantities=CreateDraftingView(doc,"Q-01 - Tabela de equipamentos e quantitativos R8");
-                DrawGISQuantitySummary(doc,quantities,text);
-                sheetIds.Add(CreateSheet(doc,titleBlock,"Q-01","Equipamentos e quantitativos",quantities,text,"FONTE\nContagem agrupada por família e tipo, lida das instâncias no RVT.\n\nDETALHAMENTO\nIDs, marcas, categoria, sistema, coordenadas, parâmetros e fontes por instância em dados/reconstrucao-r8/quantitativos-modelo.csv.",spec,baseName));
-                string explodedNote=explodedReady
-                    ? "Vista explodida controlada; deslocamentos e linhas de chamada registrados no RVT."
-                    : "Vista explodida pendente; a vista mantém os componentes na posição original.";
-                string common3DNote="Familias Revit e elementos nativos; geometrias estimadas e rotas conceituais. 93 portas MEP; 1 circuito lógico auxiliar QAC-01 a UPS-01. Sem cabos fisicos modelados ou conectores fisicamente conectados.";
-                sheetIds.Add(CreateGISPerspectiveSheet(doc,titleBlock,"BIM-01","Vista geral isométrica",overall,text,"Implantacao completa, edificios, acessos e patio.\n\n"+common3DNote,spec));
-                sheetIds.Add(CreateGISPerspectiveSheet(doc,titleBlock,"BIM-02","Interior do GIS 145 kV",interiorGIS,text,"Bays de linha, transformador e acoplamento; barras A/B e componentes separados.\n\n"+common3DNote,spec));
-                sheetIds.Add(CreateGISPerspectiveSheet(doc,titleBlock,"BIM-03","Transformadores e acessórios",transformers3D,text,"Tanques, radiadores, ventiladores, buchas, bases e contenções estimadas.\n\n"+common3DNote,spec));
-                sheetIds.Add(CreateGISPerspectiveSheet(doc,titleBlock,"BIM-04","Cubículos 13,8 kV",mv3D,text,"Seções A/B, medição, entradas, alimentadores e tie normalmente aberto por premissa.\n\n"+common3DNote,spec));
-                sheetIds.Add(CreateGISPerspectiveSheet(doc,titleBlock,"BIM-05","Proteção e controle",protection3D,text,"Painéis por função, telecomando, supervisão e serviços auxiliares conceituais.\n\n"+common3DNote,spec));
-                sheetIds.Add(CreateGISPerspectiveSheet(doc,titleBlock,"BIM-06","Vista explodida controlada",exploded,text,explodedNote+"\n\n"+common3DNote,spec));
-                sheetIds.Add(CreateGISPerspectiveSheet(doc,titleBlock,"BIM-07","Corte espacial GIS e rotas",cutaway,text,"Vista de coordenação com paredes ocultas para inspeção espacial.\n\n"+common3DNote,spec));
-                sheetIds.Add(CreateGISPerspectiveSheet(doc,titleBlock,"BIM-08","Infraestrutura e interfaces",infrastructure3D,text,"Canaletas, leitos, áreas de transformador e interfaces conceituais.\n\n"+common3DNote,spec));
-                sheetIds.Add(CreateSheet(doc,titleBlock,"M-01","Memorial de cálculo e resultados",calculations,text,"RASTREABILIDADE\nResultados reproduzíveis pelo script Python e arquivos JSON/CSV do estudo.\n\nPENDENCIAS\nCurto completo, seletividade, cabos, perdas, auxiliares e aterramento requerem dados de concessionária, fabricante e campo.",spec,baseName));
+                sheetIds.Add(CreateSheet(doc,titleBlock,"A-01","Implantacao e acessos",site,text,"LOTE DE ESTUDO\n72 x 56 m. Edificios, transformadores, acessos, rotas de infraestrutura e malha conceitual.\n\nPENDENTE\nLocacao, afastamentos, drenagem, incêndio, ventilação, circulação de manutenção e requisitos da concessionária.",spec,baseName));
+                sheetIds.Add(CreateSheet(doc,titleBlock,"A-02","Edificios e zonas operacionais",architecture,text,"PAREDES E PISOS REVIT\nSetores GIS, média tensão e comando. A vista amplia a implantação dos edifícios e áreas de operação.\n\nPENDENTE\nRotas de fuga, acessibilidade, ventilação, incêndio e afastamentos de manutenção.",spec,baseName));
+                sheetIds.Add(CreateSheet(doc,titleBlock,"E-01","Unifilar de potência 138 / 13,8 kV",single,text,"TOPOLOGIA\nBarras A/B em 138 kV; cada bay usa seletores 89A/89B; o acoplador 52-BC fica normalmente aberto como hipótese. TR-01 alimenta a seção A; TR-02, a seção B; 52-TIE MT normalmente aberto.\n\nC=fechado; O=aberto. Estados e intertravamentos são premissas a validar.",spec,baseName));
+                sheetIds.Add(CreateSheet(doc,titleBlock,"E-02","Bay GIS de referência 145 kV",gis,text,"REFERÊNCIA\nGE Vernova F35: classe 145 kV e módulo de bay 800 mm. O envelope 5,7 m e o arranjo dos elementos são aproximações; não há desenho GA do conjunto selecionado.\n\nMODELO\nCarcaças e stubs geométricos; contato interno, isolamento, rating, conectores elétricos e estados Revit não modelados.",spec,baseName));
+                sheetIds.Add(CreateSheet(doc,titleBlock,"E-03","Transformadores e terminais",transformers,text,"REFERÊNCIA\nDAX TRP-EA40-DML-01: 138/13,8 kV, 30/40 MVA, Dyn1, LTC, Z=11%; referência não selecionada e desenho de contorno não publicado. O estudo preserva Z=10% provisória.\n\nMODELO\nTanque/acessórios estimados; transição HV/MV trifásica é DirectShape geométrico até as buchas/entrada traseira, sem condutor, interface elétrica ou cabo no Revit.",spec,baseName));
+                sheetIds.Add(CreateSheet(doc,titleBlock,"E-04","Cubículos MT, seção A",mv,text,"REFERÊNCIA\nABB UniGear ZS1 17,5 kV: largura 800 mm e profundidade 1390 mm; altura depende do compartimento LV. Modelo externo aproximado, sem detalhes internos proprietários.\n\nPENDENTE\nRating aprovado, arco interno, cabos, terminações, extração e intertravamentos.",spec,baseName));
+                sheetIds.Add(CreateSheet(doc,titleBlock,"E-05","Infraestrutura e caminhos",routes,text,"ELEMENTOS NATIVOS\nLeitos CableTray nativos em segmentos com juntas via ConnectTo quando confirmadas pela API; envelopes DirectShape separados por fase indicam as transições HV/MV. Nenhum deles constitui condutor/circuito de potência.\n\nPENDENTE\nCabos, terminações, suportação, ocupação, segregação, ampacidade e juntas não confirmadas na auditoria.",spec,baseName));
+                sheetIds.Add(CreateSheet(doc,titleBlock,"E-06","Proteção e serviços auxiliares",protection,text,"SISTEMA AUXILIAR\nAUX-UPS-01: ElectricalSystem entre QAC-01 e UPS-01 e fio nativo 2D no plano E-06, se os dois conectores forem confirmados na extração. O fio é view-specific, não é cabo 3D nem prova alimentação completa. QCC, bateria e demais cargas seguem sem circuitos artificiais.\n\nPENDENTE\nMissão DC/UPS, cargas, ajustes, protocolos, proteção e seletividade.",spec,baseName));
+                sheetIds.Add(CreateSheet(doc,titleBlock,"M-01","Cálculos e sensibilidades",calculations,text,"R8 PRESERVADA\nBP-01 a BP-15 e correntes FDR-* mantidas sem alteração.\n\nR9\nSensibilidades de fonte curta, impedância provisória do transformador e cabo candidato; nenhum resultado seleciona cabo, disjuntor ou ajuste.",spec,baseName));
+                sheetIds.Add(CreateSheet(doc,titleBlock,"Q-01","Equipamentos e conectividade",quantities,text,"EXTRAÇÃO\nQuantitativos e conectores devem ser lidos do documento aberto no Revit 2027.\n\nARQUIVOS\nCSV por equipamento, conectores AllRefs/IsConnected, sistemas elétricos, tray nativos, rotas geométricas e relações não implementadas.",spec,baseName));
+                sheetIds.Add(CreateGISPerspectiveSheet(doc,titleBlock,"BIM-01","Implantação BIM geral",overall,text,"Visão geral da subestação e dos principais edifícios e equipamentos.",spec));
+                sheetIds.Add(CreateGISPerspectiveSheet(doc,titleBlock,"BIM-02","Bay GIS-T01 e seletor de barras",gisBay,text,"Um bay completo em escala espacial ampliada, com módulo de barra A/B, chaves seletoras, disjuntor, TC e envelope de transição. Geometria aproximada; contatos internos não expostos.",spec));
+                sheetIds.Add(CreateGISPerspectiveSheet(doc,titleBlock,"BIM-03","Transformador TR-01 e acessórios",transformer3D,text,"Tanque externo, buchas, radiadores, ventiladores, base e contenção; dimensões do contorno estimadas por ausência de desenho de fabricante.",spec));
+                sheetIds.Add(CreateGISPerspectiveSheet(doc,titleBlock,"BIM-04","Cubículos MT seção A",mv3D,text,"Envelope externo e organização de uma seção de cubículos ABB UniGear de referência; compartimentos internos não modelados.",spec));
                 doc.Regenerate();
                 if(tx.Commit()!=TransactionStatus.Committed)throw new InvalidOperationException("A transação de folhas GIS não foi confirmada.");
             }
@@ -1653,8 +1728,8 @@ namespace PortfolioCasaRevit
                     State=GetGISParameter(x.Symbol,"BIM_EstadoGeometria")
                 })
                 .OrderBy(x=>x.Key.Category).ThenBy(x=>x.Key.Family).ToList();
-            GraphicsStyle line=GetLineStyle(doc,"GIS-R8-QUANTITATIVOS",new Color(120,132,139),1);
-            TextNote.Create(doc,view.Id,XY(.35,10.5,0),"QUANTITATIVOS EXTRAIDOS DAS INSTANCIAS FAMILYINSTANCE DO RVT | CONTAGEM POR FAMILIA / TIPO",text);
+            GraphicsStyle line=GetLineStyle(doc,"GIS-R9-QUANTITATIVOS",new Color(120,132,139),1);
+            TextNote.Create(doc,view.Id,XY(.35,10.5,0),"QUANTITATIVOS DO DOCUMENTO REVIT | INSTANCIAS FAMILYINSTANCE AGRUPADAS POR FAMILIA / TIPO",text);
             TextNote.Create(doc,view.Id,XY(.40,9.85,0),"CATEGORIA",text);
             TextNote.Create(doc,view.Id,XY(3.2,9.85,0),"FAMILIA",text);
             TextNote.Create(doc,view.Id,XY(11.2,9.85,0),"SISTEMA",text);
@@ -1673,7 +1748,7 @@ namespace PortfolioCasaRevit
                 y-=rowStep;
             }
             DrawLine(doc,view,.35,y-.16,18.6,y-.16,line,0);
-            TextNote.Create(doc,view.Id,XY(.40,y-.42,0),"A lista completa por instância, com parâmetros, fonte e coordenadas, está no CSV de quantitativos.",text);
+            TextNote.Create(doc,view.Id,XY(.40,y-.42,0),"CSV R9: lista por instância, parâmetros, conectores e estados IsConnected/AllRefs; DirectShapes e CableTray são auditados separadamente.",text);
             if(rows.Count==0)throw new InvalidOperationException("Q-01 nao encontrou instancias BIM para contar.");
         }
 
@@ -1774,7 +1849,7 @@ namespace PortfolioCasaRevit
 
         private static void DrawGISReconstructionCalculationTable(Document doc,ViewDrafting view,ElementId text,GraphicsStyle note,GraphicsStyle power,GraphicsStyle data)
         {
-            TextNote.Create(doc,view.Id,XY(.35,10.0,0),"MEMORIAL R8 | RESULTADOS CALCULADOS A PARTIR DAS PREMISSAS EXPLICITAS",text);
+            TextNote.Create(doc,view.Id,XY(.35,10.0,0),"R8 MANTIDA + SENSIBILIDADES COMPLEMENTARES R9 | PREMISSAS EXPLICITAS",text);
             string[][] rows={
                 new[]{"ID","GRANDEZA","RESULTADO","ESTADO"},
                 new[]{"BP-01","S total, 56 MW / FP 0,95",GisCalc("BP-01","0.000")+" MVA","PREMISSA DE ESTUDO"},
@@ -1784,8 +1859,10 @@ namespace PortfolioCasaRevit
                 new[]{"BP-07","Carga normal agregada",GisCalc("BP-07","0.0")+" % de 80 MVA","DIVISAO EQUILIBRADA"},
                 new[]{"BP-08/09","N-1 crítica / total",GisCalc("BP-08","0.0")+" / "+GisCalc("BP-09","0.0")+" %","24 MW DE ALIVIO"},
                 new[]{"BP-12/13","Icc simplificada 1 / 2 TR",GisCalc("BP-12","0.00")+" / "+GisCalc("BP-13","0.00")+" kA","Z=10% PROVISORIA"},
+                new[]{"SC-1000-1TR-250M","Icc fonte+TR+cabo bus/remoto",GisR9Calc("short_circuit_sensitivities","SC-1000MVA-1TR-250M","bus_fault_current_ka_symmetric_rms","remote_fault_current_ka_symmetric_rms")+" kA","SENSIBILIDADE"},
+                new[]{"CAB-06-250M","FDR 6 MW | ΔV | perda",GisR9Calc("cable_sensitivities","CAB-06MW-250M","voltage_drop_percent","three_phase_copper_loss_kw")+" % / kW","AMPACIDADE PENDENTE"},
                 new[]{"BP-14","Qc idealizada FP 0,95→0,98",GisCalc("BP-14","0.00")+" MVAr","SEM HARMONICOS"},
-                new[]{"PENDENTE","Rede / proteção / cabo / solo","NAO CALCULADO","DADOS DE ENTRADA AUSENTES"}
+                new[]{"PENDENTE","Proteção / solo / perdas trafo","NAO CALCULADO","DADOS DE ENTRADA AUSENTES"}
             };
             double x=.55,top=8.9,rowH=.64;
             double[] widths={1.8,5.1,4.6,5.1};
@@ -1799,7 +1876,7 @@ namespace PortfolioCasaRevit
                     left=right;
                 }
             }
-            TextNote.Create(doc,view.Id,XY(.55,.95,0),"Curto-circuito de trafo usa fonte ideal e Z provisoria; não representa curto da rede nem seleção de disjuntor. Ver entradas, equações, status e limitações nos arquivos JSON/CSV/MD.",text);
+            TextNote.Create(doc,view.Id,XY(.55,.55,0),"R8: fonte ideal e Z=10% provisória. R9: fonte 1000 MVA, 1 TR e 250 m de cabo são apenas hipótese. X/R, Z real, motores, instalação/ampacidade e seletividade pendentes; sem seleção de disjuntor.",text);
         }
 
         private static string GisCalc(string calcId,string format)
@@ -1811,6 +1888,19 @@ namespace PortfolioCasaRevit
                 if(item.ValueKind==JsonValueKind.Undefined)return "PENDENTE";
                 double value=item.GetProperty("result").GetDouble();
                 return value.ToString(format,System.Globalization.CultureInfo.GetCultureInfo("pt-BR"));
+            }
+        }
+
+        private static string GisR9Calc(string arrayName,string calcId,string firstField,string secondField)
+        {
+            string path=Path.Combine(Root,"projetos","19-subestacao-gis","dados","reconstrucao-r9","estudo-complementar-r9.json");
+            if(!File.Exists(path))return "PENDENTE";
+            using(JsonDocument document=JsonDocument.Parse(File.ReadAllText(path)))
+            {
+                JsonElement item=document.RootElement.GetProperty(arrayName).EnumerateArray().FirstOrDefault(x=>x.GetProperty("calc_id").GetString()==calcId);
+                if(item.ValueKind==JsonValueKind.Undefined)return "PENDENTE";
+                double a=item.GetProperty(firstField).GetDouble(),b=item.GetProperty(secondField).GetDouble();
+                return a.ToString("0.000",System.Globalization.CultureInfo.GetCultureInfo("pt-BR"))+" / "+b.ToString("0.000",System.Globalization.CultureInfo.GetCultureInfo("pt-BR"));
             }
         }
 
@@ -1907,15 +1997,15 @@ namespace PortfolioCasaRevit
         {
             return new List<GISFamilySpec>
             {
-                new GISFamilySpec{Key="GIS_BayFrame",TypeName="GIS_SUPPORT_STUDY",Width=5.8,Depth=2.5,Height=3.0,VoltageKv=145,Source="Portfolio estimate; replace with selected OEM outline drawing",GeometryStatus="ESTIMATED",Description="Suporte e envelope conceitual de bay GIS; sem isolacao, fabricante ou rating de curto especificado."},
-                new GISFamilySpec{Key="GIS_CircuitBreaker",TypeName="GIS_CB_145KV_STUDY",ElectricalEquipment=true,Width=1.6,Depth=1.0,Height=2.2,VoltageKv=145,Source="GE Vernova 145 kV GIS portfolio reference; dimensions estimated",GeometryStatus="ESTIMATED",Description="Disjuntor encapsulado conceitual. Capacidade interruptiva pendente do curto da rede."},
-                new GISFamilySpec{Key="GIS_Disconnector",TypeName="GIS_DS_145KV_STUDY",Width=1.1,Depth=0.8,Height=1.4,VoltageKv=145,Source="Portfolio estimate; no model-specific outline drawing supplied",GeometryStatus="ESTIMATED",Description="Seccionadora GIS conceitual com mecanismo indicativo."},
+                new GISFamilySpec{Key="GIS_BayFrame",TypeName="GIS_SUPPORT_STUDY",Width=0.8,Depth=5.7,Height=3.6,VoltageKv=145,Source="GE Vernova F35 145 kV brochure: 800 mm bay width and 5,700 mm line-bay footprint; arrangement combined as study envelope, not selected GA",GeometryStatus="REFERENCE_DIMENSIONS_APPROXIMATE",Description="Envelope do bay de referência F35; orientação e combinação das dimensões aproximadas, desenho de arranjo geral do pedido não fornecido."},
+                new GISFamilySpec{Key="GIS_CircuitBreaker",TypeName="GIS_CB_145KV_STUDY",ElectricalEquipment=true,Width=0.8,Depth=1.0,Height=2.2,VoltageKv=145,Source="GE Vernova F35 145 kV product family; device envelope estimated",GeometryStatus="ESTIMATED",Description="Elemento esquemático de disjuntor GIS; sem detalhamento interno, rating ou desenho de fabricação."},
+                new GISFamilySpec{Key="GIS_Disconnector",TypeName="GIS_DS_145KV_STUDY",Width=0.8,Depth=0.8,Height=1.4,VoltageKv=145,Source="GE Vernova F35 145 kV product family; mechanism envelope estimated",GeometryStatus="ESTIMATED",Description="Seccionadora GIS com mecanismo indicativo; detalhes internos e arranjo do fabricante não representados."},
                 new GISFamilySpec{Key="GIS_EarthingSwitch",TypeName="GIS_ES_145KV_STUDY",Width=0.8,Depth=0.7,Height=1.0,VoltageKv=145,Source="Portfolio estimate; no model-specific outline drawing supplied",GeometryStatus="ESTIMATED",Description="Chave de aterramento GIS conceitual; capacidade de fechamento pendente."},
                 new GISFamilySpec{Key="GIS_CurrentTransformer",TypeName="GIS_CT_145KV_STUDY",ElectricalEquipment=true,Width=0.8,Depth=0.8,Height=1.4,VoltageKv=145,Source="Portfolio estimate; ratio/class pending protection study",GeometryStatus="ESTIMATED",Description="Transformador de corrente GIS; relacao, classe e nucleos nao selecionados."},
                 new GISFamilySpec{Key="GIS_VoltageTransformer",TypeName="GIS_VT_145KV_STUDY",ElectricalEquipment=true,Width=0.7,Depth=0.7,Height=1.5,VoltageKv=145,Source="Portfolio estimate; ratio/class pending utility data",GeometryStatus="ESTIMATED",Description="Transformador de potencial GIS; relacao, classe e carga nao selecionadas."},
-                new GISFamilySpec{Key="GIS_BusModule",TypeName="GIS_BUS_145KV_STUDY",Width=5.4,Depth=0.38,Height=0.38,VoltageKv=145,Source="Portfolio estimate; bus current rating pending",GeometryStatus="ESTIMATED",Description="Modulo de barramento GIS para arranjo de barras duplas."},
+                new GISFamilySpec{Key="GIS_BusModule",TypeName="GIS_BUS_145KV_STUDY",Width=0.8,Depth=0.38,Height=0.38,VoltageKv=145,Source="GE Vernova F35 reference bay width 800 mm; enclosure OD and joints estimated",GeometryStatus="ENVELOPE_ESTIMATE",Description="Módulo de carcaça de barra GIS externa; não revela condutor interno, juntas ou rating do pedido."},
                 new GISFamilySpec{Key="GIS_Termination",TypeName="GIS_TERMINATION_145KV_STUDY",ElectricalEquipment=true,Width=0.9,Depth=0.9,Height=2.0,VoltageKv=145,Source="Portfolio estimate; terminal type pending line/cable data",GeometryStatus="ESTIMATED",Description="Envelope de terminal de linha GIS, configuracao de conexao pendente."},
-                new GISFamilySpec{Key="Transformer_Tank",TypeName="TR_40MVA_STUDY",ElectricalEquipment=true,Width=6.2,Depth=3.5,Height=3.8,VoltageKv=138,SecondaryVoltageKv=13.8,RatingMva=40,ImpedancePu=0.10,Source="WEG 138/13.8 kV product family; 40/50 MVA is a customary rating, outline estimated",GeometryStatus="ESTIMATED",Description="Transformador trifasico 40 MVA 138/13.8 kV, tanque conceitual; Z=10% provisoria, dados de placa pendentes."},
+                new GISFamilySpec{Key="Transformer_Tank",TypeName="TR_40MVA_STUDY",ElectricalEquipment=true,Width=6.2,Depth=3.5,Height=3.8,VoltageKv=138,SecondaryVoltageKv=13.8,RatingMva=40,ImpedancePu=0.10,Source="DAX Energy TRP-EA40-DML-01 catalog reference: 138/13.8 kV, 30/40 MVA, Dyn1, LTC and Z=11%; outline not published; envelope estimated and 10% preserved R8 study assumption",GeometryStatus="ESTIMATED_NO_OUTLINE_DRAWING",Description="Transformador trifásico de referência, não selecionado. Dimensões estimadas; 10% é impedância provisória R8 e difere do Z=11% da opção de catálogo."},
                 new GISFamilySpec{Key="Transformer_Radiator",TypeName="TR_RADIATOR_STUDY",Width=1.25,Depth=0.32,Height=2.4,VoltageKv=0,RatingMva=0,Source="Portfolio estimate; cooling data pending transformer datasheet",GeometryStatus="ESTIMATED",Description="Banco de radiadores conceitual; area e perda termica nao selecionadas."},
                 new GISFamilySpec{Key="Transformer_Conservator",TypeName="TR_CONSERVATOR_STUDY",Width=1.7,Depth=0.75,Height=0.8,Source="Portfolio estimate; include only if conservator construction is confirmed",GeometryStatus="CONDITIONAL",Description="Conservador de oleo conceitual, condicionado a construcao com conservador."},
                 new GISFamilySpec{Key="Transformer_BushingHV",TypeName="TR_BUSHING_HV_STUDY",Width=0.5,Depth=0.5,Height=1.35,VoltageKv=145,Source="Portfolio estimate; bushing datasheet pending",GeometryStatus="ESTIMATED",Description="Bucha de alta tensao conceitual; classe de isolamento e terminais pendentes."},
@@ -1923,7 +2013,7 @@ namespace PortfolioCasaRevit
                 new GISFamilySpec{Key="Transformer_Fan",TypeName="TR_FAN_STUDY",Width=0.55,Depth=0.35,Height=0.55,Source="Portfolio estimate; cooling equipment datasheet pending",GeometryStatus="ESTIMATED",Description="Ventilador conceitual de radiador; potencia e comando pendentes."},
                 new GISFamilySpec{Key="Transformer_Base",TypeName="TR_BASE_STUDY",Width=7.0,Depth=5.4,Height=0.35,Source="Portfolio estimate; structural/geotechnical design pending",GeometryStatus="ESTIMATED",Description="Base de concreto conceitual; projeto estrutural e geotecnico pendentes."},
                 new GISFamilySpec{Key="OilContainment",TypeName="OIL_CONTAINMENT_STUDY",Width=8.2,Depth=6.5,Height=0.55,Source="Portfolio estimate; oil volume and drainage study pending",GeometryStatus="ESTIMATED",Description="Contencao conceitual de oleo; capacidade e drenagem nao dimensionadas."},
-                new GISFamilySpec{Key="MV_Cubicle",TypeName="MV_17K5_2KA_STUDY",ElectricalEquipment=true,Width=0.8,Depth=1.45,Height=2.45,VoltageKv=17.5,CurrentA=2000,Source="GE Vernova M-Tier public rating range; dimensions estimated",GeometryStatus="ESTIMATED",Description="Cubiculo 13.8 kV classe de equipamento 17.5 kV; 2,000 A e candidato, interrupcao e classe interna pendentes."},
+                new GISFamilySpec{Key="MV_Cubicle",TypeName="MV_17K5_2KA_STUDY",ElectricalEquipment=true,Width=0.8,Depth=1.39,Height=2.595,VoltageKv=17.5,CurrentA=2000,Source="ABB UniGear ZS1 17.5 kV product-line table: width 800 mm, depth 1390 mm, height 2200/2595 mm depending LV compartment; selected assembly and rating pending",GeometryStatus="REFERENCE_DIMENSIONS_APPROXIMATE",Description="Envelope externo de referência UniGear ZS1; sem miolo comercial, ratings ou desenho do conjunto pedido."},
                 new GISFamilySpec{Key="MV_BusCoupler",TypeName="MV_TIE_17K5_STUDY",ElectricalEquipment=true,Width=0.9,Depth=1.45,Height=2.45,VoltageKv=17.5,CurrentA=2000,Source="Portfolio estimate; 2,000 A candidate only, switchgear manufacturer not selected",GeometryStatus="ESTIMATED",Description="Cubiculo de acoplamento de barras 13.8 kV; 2,000 A e candidato, normalmente aberto por premissa."},
                 new GISFamilySpec{Key="MVBusModule",TypeName="MV_BUS_17K5_STUDY",Width=5.8,Depth=0.22,Height=0.22,VoltageKv=17.5,CurrentA=2000,Source="Portfolio estimate; 2,000 A candidate based on switchgear family, final bus rating pending",GeometryStatus="ESTIMATED",Description="Modulo visual de barra 13,8 kV; 2,000 A candidato, rating termico e dinamico pendentes."},
                 new GISFamilySpec{Key="ProtectionPanel",TypeName="PROTECTION_PANEL_125VDC_STUDY",ElectricalEquipment=true,Width=0.8,Depth=0.65,Height=2.2,VoltageKv=.125,Source="Portfolio study assumption: 125 V DC control supply; panel design and utility philosophy pending",GeometryStatus="ESTIMATED",Description="Painel de protecao, controle e supervisao; 125 Vcc e premissa, IEDs e arquitetura funcionais pendentes."},
@@ -1942,7 +2032,7 @@ namespace PortfolioCasaRevit
 
         private static void EnsureGISFamilyFiles(Application app,string outDir)
         {
-            string familyDir=Path.Combine(outDir,"familias","reconstrucao-r8");
+            string familyDir=Path.Combine(outDir,"familias","reconstrucao-r9");
             Directory.CreateDirectory(familyDir);
             foreach(GISFamilySpec spec in GetGISFamilySpecs())
             {
@@ -2062,14 +2152,11 @@ namespace PortfolioCasaRevit
                     fdoc.FamilyCreate.NewAlignment(plan,right.GetReference(),rightFace.Reference);
                     fdoc.FamilyCreate.NewAlignment(plan,front.GetReference(),frontFace.Reference);
                     fdoc.FamilyCreate.NewAlignment(plan,back.GetReference(),backFace.Reference);
-                    if(spec.ElectricalEquipment)
+                    if(spec.Key=="AuxiliaryPanelAC"||spec.Key=="UPS_Cabinet")
                     {
                         ConnectorElement terminalA=ConnectorElement.CreateElectricalConnector(fdoc,Autodesk.Revit.DB.Electrical.ElectricalSystemType.PowerCircuit,leftFace.Reference);
-                        ConnectorElement terminalB=ConnectorElement.CreateElectricalConnector(fdoc,Autodesk.Revit.DB.Electrical.ElectricalSystemType.PowerCircuit,rightFace.Reference);
-                        SetGISConnectorStudyData(terminalA,GISNominalVoltageKv(spec.Key),spec.Key,"Interface A; study port; circuit assignment is project-specific.");
-                        double terminalBVoltageKv=spec.SecondaryVoltageKv>0?spec.SecondaryVoltageKv:GISNominalVoltageKv(spec.Key);
-                        SetGISConnectorStudyData(terminalB,terminalBVoltageKv,spec.Key,"Interface B; study port; circuit assignment is project-specific.");
-                        Log("GIS_FAMILY_CONNECTORS_CREATED family="+spec.Key+" terminalA_kV="+GISNominalVoltageKv(spec.Key).ToString("0.###",System.Globalization.CultureInfo.InvariantCulture)+" terminalB_kV="+terminalBVoltageKv.ToString("0.###",System.Globalization.CultureInfo.InvariantCulture));
+                        SetGISConnectorStudyData(terminalA,.380,spec.Key,"Porta de entrada CA do sistema auxiliar QAC-01 a UPS-01; sistema logico; sem fio fisico 3D.");
+                        Log("GIS_FAMILY_CONNECTOR_CREATED family="+spec.Key+" voltage_kV=0.380 purpose=AUX-UPS-01");
                     }
                     ReferenceArray widthRefs=new ReferenceArray();widthRefs.Append(left.GetReference());widthRefs.Append(right.GetReference());
                     ReferenceArray depthRefs=new ReferenceArray();depthRefs.Append(front.GetReference());depthRefs.Append(back.GetReference());
@@ -2373,7 +2460,7 @@ namespace PortfolioCasaRevit
             foreach(GISFamilySpec spec in GetGISFamilySpecs())
             {
                 string familyStem=GISFamilyFileStem(spec);
-                string path=Path.Combine(outDir,"familias","reconstrucao-r8",familyStem+".rfa");
+                string path=Path.Combine(outDir,"familias","reconstrucao-r9",familyStem+".rfa");
                 if(!File.Exists(path))throw new FileNotFoundException("Familia GIS esperada nao foi gerada",path);
                 Family family=null;
                 try{doc.LoadFamily(path,out family);}catch(Exception ex){Log("GIS_FAMILY_LOAD_NOTE "+spec.Key+" "+ex.Message);}
@@ -2444,41 +2531,142 @@ namespace PortfolioCasaRevit
             }
         }
 
+        private static void TryCreateGISAuxWire(Document doc,ViewPlan view)
+        {
+            using(SubTransaction attempt=new SubTransaction(doc))
+            {
+                attempt.Start();
+                try
+                {
+                    FamilyInstance panel=new FilteredElementCollector(doc).OfClass(typeof(FamilyInstance)).Cast<FamilyInstance>().First(x=>GISModelMark(x)=="QAC-01");
+                    FamilyInstance load=new FilteredElementCollector(doc).OfClass(typeof(FamilyInstance)).Cast<FamilyInstance>().First(x=>GISModelMark(x)=="UPS-01");
+                    Connector panelConnector=GetGISConnectors(panel)?.Cast<Connector>().FirstOrDefault(x=>x.Domain==Domain.DomainElectrical&&x.ElectricalSystemType==Autodesk.Revit.DB.Electrical.ElectricalSystemType.PowerCircuit);
+                    Connector loadConnector=GetGISConnectors(load)?.Cast<Connector>().FirstOrDefault(x=>x.Domain==Domain.DomainElectrical&&x.ElectricalSystemType==Autodesk.Revit.DB.Electrical.ElectricalSystemType.PowerCircuit);
+                    if(panelConnector==null||loadConnector==null)throw new InvalidOperationException("QAC-01 e UPS-01 precisam expor conectores eletricos PowerCircuit compativeis.");
+                    Autodesk.Revit.DB.Electrical.WireType wireType=new FilteredElementCollector(doc).OfClass(typeof(Autodesk.Revit.DB.Electrical.WireType)).Cast<Autodesk.Revit.DB.Electrical.WireType>().FirstOrDefault();
+                    if(wireType==null)throw new InvalidOperationException("O template nao contem tipo nativo Wire para o plano auxiliar.");
+                    double routeY=Math.Max(panelConnector.Origin.Y,loadConnector.Origin.Y)+M(1.2);
+                    double planeZ=view.GenLevel==null?panelConnector.Origin.Z:view.GenLevel.Elevation;
+                    IList<XYZ> vertices=new List<XYZ>{new XYZ(panelConnector.Origin.X,routeY,planeZ),new XYZ(loadConnector.Origin.X,routeY,planeZ)};
+                    Autodesk.Revit.DB.Electrical.Wire wire=Autodesk.Revit.DB.Electrical.Wire.Create(doc,wireType.Id,view.Id,Autodesk.Revit.DB.Electrical.WiringType.Chamfer,vertices,panelConnector,loadConnector);
+                    Parameter mark=wire.get_Parameter(BuiltInParameter.ALL_MODEL_MARK);if(mark!=null&&!mark.IsReadOnly)mark.Set("AUX-UPS-01-WIRE");
+                    Parameter comments=wire.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS);if(comments!=null&&!comments.IsReadOnly)comments.Set("Fio eletrico nativo Revit 2D, visivel somente no plano E-06 e conectado aos conectores QAC-01/UPS-01. Representacao grafica de circuito auxiliar; nao e cabo 3D, nao dimensiona condutor e nao prova origem/alimentacao completa.");
+                    doc.Regenerate();
+                    ConnectorSet wireConnectors=wire.ConnectorManager.Connectors;int connected=wireConnectors.Cast<Connector>().Count(x=>x.IsConnected);
+                    if(connected<2)throw new InvalidOperationException("O fio foi criado, mas Revit nao confirmou ambos os conectores de extremidade. connected="+connected.ToString(System.Globalization.CultureInfo.InvariantCulture));
+                    if(attempt.Commit()!=TransactionStatus.Committed)throw new InvalidOperationException("Subtransacao do fio auxiliar nao foi confirmada.");
+                    Log("GIS_AUXILIARY_2D_WIRE_CREATED id="+wire.Id.Value+" view="+view.Name+" connectors="+wireConnectors.Size+" connected="+connected+" 3d_cable=false");
+                }
+                catch(Exception ex)
+                {
+                    if(attempt.GetStatus()==TransactionStatus.Started)attempt.RollBack();
+                    Log("GIS_AUXILIARY_2D_WIRE_FAILED "+ex.GetType().Name+" "+ex.Message);
+                }
+            }
+        }
+
         private static void DrawGISSingleLine(Document doc,ViewDrafting view,ElementId text,GraphicsStyle line,GraphicsStyle power)
         {
-            TextNote.Create(doc,view.Id,XY(.25,10.25,0),"UNIFILAR FUNCIONAL | 138 / 13,8 kV | 60 Hz | R8 | SEM ESCALA",text);
-            Box(doc,view,.65,8.75,4.45,9.65,"REDE 138 kV\nENTRADA L01",text,line,0);
-            Box(doc,view,13.6,8.75,17.35,9.65,"REDE 138 kV\nENTRADA L02",text,line,0);
-            DrawLine(doc,view,2.55,8.75,2.55,8.22,line,0);DrawLine(doc,view,15.45,8.75,15.45,8.22,line,0);
-            TextNote.Create(doc,view.Id,XY(1.5,8.02,0),"TC / TP / 21 / 25 / 50-51 / 50BF",text);
-            TextNote.Create(doc,view.Id,XY(13.9,8.02,0),"TC / TP / 21 / 25 / 50-51 / 50BF",text);
-            DrawLine(doc,view,1.0,7.5,17.2,7.5,line,0);DrawLine(doc,view,1.0,6.9,17.2,6.9,power,0);
-            TextNote.Create(doc,view.Id,XY(.5,7.55,0),"BARRA A 145 kV (classe de equipamento)",text);
-            TextNote.Create(doc,view.Id,XY(.5,6.55,0),"BARRA B 145 kV (classe de equipamento)",text);
-            double[] x={3.0,6.15,9.3,12.45,15.6};
+            TextNote.Create(doc,view.Id,XY(.45,10.35,0),"E-01 | UNIFILAR DE POTENCIA | 138 kV / 13,8 kV | 60 Hz | R9",text);
+            TextNote.Create(doc,view.Id,XY(.45,9.95,0),"Topologia de estudo: dupla barra AT com acoplador; selecao de barra por bay; dois transformadores 40 MVA; MT em secoes A/B.",text);
+            const double busA=9.10,busB=7.85;
+            DrawLine(doc,view,1.55,busA,16.95,busA,line,0);
+            DrawLine(doc,view,1.55,busB,16.95,busB,power,0);
+            TextNote.Create(doc,view.Id,XY(.50,busA+.06,0),"BARRA A\n138 kV",text);
+            TextNote.Create(doc,view.Id,XY(.50,busB+.06,0),"BARRA B\n138 kV",text);
+            double[] x={2.25,5.65,9.10,12.55,15.95};
             string[] tags={"GIS-L01","GIS-T01","GIS-BC01","GIS-T02","GIS-L02"};
-            string[] descriptions={"BAY LINHA 01","BAY TR-01","ACOPLADOR","BAY TR-02","BAY LINHA 02"};
+            string[] labels={"ENTRADA L01","TR-01","ACOPLADOR","TR-02","ENTRADA L02"};
             for(int i=0;i<x.Length;i++)
             {
-                DrawLine(doc,view,x[i],6.9,x[i],5.95,power,0);
-                Box(doc,view,x[i]-.85,5.05,x[i]+.85,5.95,"52\n"+tags[i],text,power,0);
-                DrawLine(doc,view,x[i]-.48,6.1,x[i]+.48,6.1,line,0);
-                TextNote.Create(doc,view.Id,XY(x[i],4.75,0),descriptions[i],text);
+                double cx=x[i];
+                if(i==2)
+                {
+                    DrawLine(doc,view,cx,busA,cx,8.88,line,0);DrawGISDisconnectorSymbol(doc,view,cx,8.72,"89A",text,line);
+                    DrawLine(doc,view,cx,8.56,cx,8.38,line,0);DrawGISBreakerSymbol(doc,view,cx,8.30,"52-BC",text,power);
+                    DrawLine(doc,view,cx,8.08,cx,8.02,line,0);DrawGISDisconnectorSymbol(doc,view,cx,7.97,"89B",text,line);
+                    DrawLine(doc,view,cx,7.81,cx,busB,line,0);
+                    TextNote.Create(doc,view.Id,XY(cx-.55,7.26,0),"Acoplador\n52-BC normal ABERTO*",text);
+                    continue;
+                }
+                // Two separate bus-selector branches converge only through the selected 89A or 89B switch.
+                DrawLine(doc,view,cx-.18,busA,cx-.18,8.80,line,0);
+                DrawGISDisconnectorSymbol(doc,view,cx-.18,8.62,(i==3||i==4)?"89A O":"89A C",text,line);
+                DrawLine(doc,view,cx-.18,8.46,cx-.18,7.00,line,0);
+                DrawLine(doc,view,cx-.18,7.00,cx,6.82,line,0);
+                DrawLine(doc,view,cx+.18,busB,cx+.18,7.60,power,0);
+                DrawGISDisconnectorSymbol(doc,view,cx+.18,7.44,(i==3||i==4)?"89B C":"89B O",text,power);
+                DrawLine(doc,view,cx+.18,7.28,cx+.18,7.00,power,0);
+                DrawLine(doc,view,cx+.18,7.00,cx,6.82,power,0);
+                DrawLine(doc,view,cx,6.82,cx,6.56,power,0);
+                DrawGISBreakerSymbol(doc,view,cx,6.42,"52",text,power);
+                DrawLine(doc,view,cx,6.20,cx,5.88,power,0);
+                DrawGISCTSymbol(doc,view,cx,5.78,text,power);
+                DrawLine(doc,view,cx,5.60,cx,5.12,power,0);
+                TextNote.Create(doc,view.Id,XY(cx-.64,4.87,0),tags[i]+"\n"+labels[i],text);
+                if(i==1||i==3)
+                {
+                    double bx=cx;
+                    Circle(doc,view,bx-.10,4.25,.20,power,0);Circle(doc,view,bx+.10,4.25,.20,power,0);
+                    TextNote.Create(doc,view.Id,XY(bx-.68,3.80,0),(i==1?"TR-01":"TR-02")+" | 40 MVA\n138/13,8 kV | Dyn1*",text);
+                    DrawLine(doc,view,bx,3.80,bx,3.32,power,0);
+                    DrawGISBreakerSymbol(doc,view,bx,3.20,i==1?"QMT-A-IN":"QMT-B-IN",text,power);
+                    DrawLine(doc,view,bx,2.98,bx,2.52,power,0);
+                }
+                else
+                {
+                    DrawGISLineTerminal(doc,view,cx,4.62,text,power);
+                    TextNote.Create(doc,view.Id,XY(cx-.55,4.12,0),i==0?"REDE L01\n138 kV":"REDE L02\n138 kV",text);
+                }
             }
-            DrawLine(doc,view,9.3,7.5,9.3,6.9,line,0);
-            Box(doc,view,8.55,7.08,10.05,7.32,"52-BC | 89A/B",text,power,0);
-            Box(doc,view,4.05,3.6,7.15,4.5,"TR-01\n40 MVA\n138/13,8 kV",text,power,0);
-            Box(doc,view,11.45,3.6,14.55,4.5,"TR-02\n40 MVA\n138/13,8 kV",text,power,0);
-            DrawLine(doc,view,6.15,5.05,6.15,4.5,power,0);DrawLine(doc,view,12.45,5.05,12.45,4.5,power,0);
-            TextNote.Create(doc,view.Id,XY(4.2,3.35,0),"87T / 64REF / 63 / 49 / 50-51",text);
-            TextNote.Create(doc,view.Id,XY(11.6,3.35,0),"87T / 64REF / 63 / 49 / 50-51",text);
-            DrawLine(doc,view,5.6,3.6,5.6,2.75,power,0);DrawLine(doc,view,13.0,3.6,13.0,2.75,power,0);
-            DrawLine(doc,view,.8,2.55,8.1,2.55,power,0);DrawLine(doc,view,9.9,2.55,17.2,2.55,power,0);
-            TextNote.Create(doc,view.Id,XY(.9,2.62,0),"BARRA 13,8 kV A | IN-A / MED / A-F01...A-F05",text);
-            TextNote.Create(doc,view.Id,XY(10.0,2.62,0),"BARRA 13,8 kV B | B-F01...B-F05 / MED / IN-B",text);
-            DrawLine(doc,view,9.0,2.55,9.0,1.8,line,0);
-            Box(doc,view,8.1,1.2,9.9,1.8,"52-TIE\nNA",text,power,0);
-            TextNote.Create(doc,view.Id,XY(.75,.55,0),"TIE 13,8 kV normalmente aberto por premissa. N-1: 32 MW críticos assumidos atendidos; 24 MW não críticos requerem rejeição. Configuração e ajustes sujeitos a estudo.",text);
+            DrawLine(doc,view,1.30,2.48,8.25,2.48,power,0);
+            DrawLine(doc,view,9.95,2.48,16.90,2.48,power,0);
+            TextNote.Create(doc,view.Id,XY(1.35,2.55,0),"BARRA MT A | 13,8 kV",text);
+            TextNote.Create(doc,view.Id,XY(10.0,2.55,0),"BARRA MT B | 13,8 kV",text);
+            DrawGISFeederBank(doc,view,new[]{1.75,2.68,3.61,4.54,5.47,6.40,7.33},new[]{"A-IN","A-MED","A-F01","A-F02","A-F03","A-F04","A-F05"},text,power);
+            DrawGISFeederBank(doc,view,new[]{10.87,11.80,12.73,13.66,14.59,15.52,16.45},new[]{"B-F01","B-F02","B-F03","B-F04","B-F05","B-MED","B-IN"},text,power);
+            DrawLine(doc,view,8.25,2.48,8.70,2.48,power,0);DrawLine(doc,view,9.50,2.48,9.95,2.48,power,0);
+            DrawLine(doc,view,8.70,2.48,8.70,1.92,power,0);DrawLine(doc,view,9.50,2.48,9.50,1.92,power,0);
+            DrawGISDisconnectorSymbol(doc,view,8.70,1.82,"89T-A",text,power);DrawGISDisconnectorSymbol(doc,view,9.50,1.82,"89T-B",text,power);
+            DrawLine(doc,view,8.70,1.66,9.50,1.66,power,0);DrawGISBreakerSymbol(doc,view,9.10,1.48,"52-TIE",text,power);
+            TextNote.Create(doc,view.Id,XY(8.20,1.10,0),"NORMAL ABERTO*",text);
+            TextNote.Create(doc,view.Id,XY(.55,.40,0),"C=fechada; O=aberta. Estado normal de estudo: L01/TR-01 selecionam A; L02/TR-02 selecionam B; 89A/89B do acoplador fechadas e 52-BC aberto; 52-TIE aberto.",text);
+            TextNote.Create(doc,view.Id,XY(.55,.08,0),"* Catálogo DAX TRP-EA40-DML-01: 30/40 MVA, Dyn1, Z=11%, não selecionado; o estudo R8 mantém Z=10% provisória. Proteções sem ajustes/seletividade.",text);
+        }
+
+        private static void DrawGISDisconnectorSymbol(Document doc,View view,double x,double y,string label,ElementId text,GraphicsStyle style)
+        {
+            DrawLine(doc,view,x,y-.11,x,y-.055,style,0);DrawLine(doc,view,x,y+.055,x,y+.11,style,0);
+            Circle(doc,view,x,y-.055,.025,style,0);Circle(doc,view,x,y+.055,.025,style,0);
+            DrawLine(doc,view,x-.035,y-.035,x+.045,y+.045,style,0);
+            TextNote.Create(doc,view.Id,XY(x+.10,y-.04,0),label,text);
+        }
+
+        private static void DrawGISBreakerSymbol(Document doc,View view,double x,double y,string label,ElementId text,GraphicsStyle style)
+        {
+            DrawLine(doc,view,x,y+.18,x,y+.10,style,0);DrawLine(doc,view,x,y-.10,x,y-.18,style,0);
+            Box(doc,view,x-.16,y-.10,x+.16,y+.10,"",text,style,0);
+            TextNote.Create(doc,view.Id,XY(x+.22,y-.04,0),label,text);
+        }
+
+        private static void DrawGISCTSymbol(Document doc,View view,double x,double y,ElementId text,GraphicsStyle style)
+        {
+            Circle(doc,view,x,y,.12,style,0);TextNote.Create(doc,view.Id,XY(x+.17,y-.04,0),"TC",text);
+        }
+
+        private static void DrawGISLineTerminal(Document doc,View view,double x,double y,ElementId text,GraphicsStyle style)
+        {
+            DrawLine(doc,view,x,y+.18,x,y-.07,style,0);DrawLine(doc,view,x-.14,y-.08,x+.14,y-.08,style,0);
+            DrawLine(doc,view,x-.10,y-.13,x+.10,y-.13,style,0);DrawLine(doc,view,x-.05,y-.18,x+.05,y-.18,style,0);
+        }
+
+        private static void DrawGISFeederBank(Document doc,View view,double[] x,string[] labels,ElementId text,GraphicsStyle style)
+        {
+            for(int i=0;i<x.Length;i++)
+            {
+                DrawLine(doc,view,x[i],2.48,x[i],2.18,style,0);DrawGISBreakerSymbol(doc,view,x[i],2.02,"52",text,style);
+                DrawLine(doc,view,x[i],1.84,x[i],1.56,style,0);Box(doc,view,x[i]-.39,1.18,x[i]+.39,1.55,labels[i],text,style,0);
+            }
         }
 
         private static void DrawGISProtectionArchitecture(Document doc,ViewDrafting view,ElementId text,GraphicsStyle note,GraphicsStyle power,GraphicsStyle data)
@@ -2596,27 +2784,27 @@ namespace PortfolioCasaRevit
             List<FamilyInstance> elements=new FilteredElementCollector(doc).OfClass(typeof(FamilyInstance)).Cast<FamilyInstance>()
                 .Where(x=>x.Category!=null&&(x.Category.Id==new ElementId(BuiltInCategory.OST_ElectricalEquipment)||x.Category.Id==new ElementId(BuiltInCategory.OST_GenericModel)))
                 .OrderBy(x=>x.Category.Name).ThenBy(x=>x.Symbol.Family.Name).ThenBy(x=>x.Id.Value).ToList();
-            string resultDir=Path.Combine(outDir,"dados","reconstrucao-r8");Directory.CreateDirectory(resultDir);
+            string resultDir=Path.Combine(outDir,"dados","reconstrucao-r9");Directory.CreateDirectory(resultDir);
             string path=Path.Combine(resultDir,"quantitativos-modelo.csv");
             using(StreamWriter writer=new StreamWriter(path,false,new UTF8Encoding(true)))
             {
-                writer.WriteLine("element_id;categoria_revit;familia;tipo;marca;mep_connectors;mep_connectors_conectados;sistema;bay;localizacao_m;U_nominal_kV;U_classe_kV;U_sec_nominal_kV;U_sec_classe_kV;I_nominal_A;I_sec_ref_A;S_MVA;Z_pu;estado_geometria;fabricante;referencia;comentarios");
+                writer.WriteLine("element_id;categoria_revit;familia;tipo;marca;mep_connectors;isconnected_true;allrefs_externos;tipos_conector;dominios;sistema;bay;localizacao_m;U_nominal_kV;U_classe_kV;U_sec_nominal_kV;U_sec_classe_kV;I_nominal_A;I_sec_ref_A;S_MVA;Z_pu;estado_geometria;fabricante;referencia;comentarios");
                 foreach(FamilyInstance element in elements)
                 {
                     string mark=element.get_Parameter(BuiltInParameter.ALL_MODEL_MARK)?.AsString()??"";
                     string comments=element.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS)?.AsString()??"";
                     LocationPoint point=element.Location as LocationPoint;
                     string location=point==null?"":string.Format(System.Globalization.CultureInfo.InvariantCulture,"X={0:0.000} m; Y={1:0.000} m; Z={2:0.000} m",UnitUtils.ConvertFromInternalUnits(point.Point.X,UnitTypeId.Meters),UnitUtils.ConvertFromInternalUnits(point.Point.Y,UnitTypeId.Meters),UnitUtils.ConvertFromInternalUnits(point.Point.Z,UnitTypeId.Meters));
-                    int rowConnectorCount=0,rowConnectedCount=0;
-                    ConnectorSet rowConnectors=null;
-                    try{if(element.MEPModel!=null)rowConnectors=element.MEPModel.ConnectorManager.Connectors;}catch{}
+                    int rowConnectorCount=0,rowConnectedCount=0,rowExternalRefs=0;List<string> connectorTypes=new List<string>(),domains=new List<string>();
+                    ConnectorSet rowConnectors=GetGISConnectors(element);
                     if(rowConnectors!=null)foreach(Connector connector in rowConnectors)
                     {
-                        rowConnectorCount++;
+                        rowConnectorCount++;connectorTypes.Add(connector.ConnectorType.ToString());domains.Add(connector.Domain.ToString());
                         try{if(connector.IsConnected)rowConnectedCount++;}catch(Autodesk.Revit.Exceptions.InvalidOperationException){}
+                        try{foreach(Connector reference in connector.AllRefs)if(reference.Owner!=null&&reference.Owner.Id!=element.Id)rowExternalRefs++;}catch(Autodesk.Revit.Exceptions.InvalidOperationException){}
                     }
                     FamilySymbol symbol=element.Symbol;
-                    string[] values={element.Id.Value.ToString(),element.Category.Name,symbol.Family.Name,symbol.Name,mark,rowConnectorCount.ToString(System.Globalization.CultureInfo.InvariantCulture),rowConnectedCount.ToString(System.Globalization.CultureInfo.InvariantCulture),GetGISParameter(element,"BIM_Sistema_Elemento"),GetGISParameter(element,"BIM_Bay"),location,GetGISParameter(symbol,"BIM_TensaoNominal_kV"),GetGISParameter(symbol,"BIM_TensaoClasse_kV"),GetGISParameter(symbol,"BIM_TensaoSecundaria_kV"),GetGISParameter(symbol,"BIM_TensaoClasseSecundaria_kV"),GetGISParameter(symbol,"BIM_CorrenteNominal_A"),GetGISParameter(symbol,"BIM_CorrenteReferenciaSecundaria_A"),GetGISParameter(symbol,"BIM_Potencia_MVA"),GetGISParameter(symbol,"BIM_Impedancia_pu"),GetGISParameter(symbol,"BIM_EstadoGeometria"),GetGISParameter(symbol,"BIM_Fabricante"),GetGISParameter(symbol,"BIM_ReferenciaCatalogo"),comments};
+                    string[] values={element.Id.Value.ToString(),element.Category.Name,symbol.Family.Name,symbol.Name,mark,rowConnectorCount.ToString(System.Globalization.CultureInfo.InvariantCulture),rowConnectedCount.ToString(System.Globalization.CultureInfo.InvariantCulture),rowExternalRefs.ToString(System.Globalization.CultureInfo.InvariantCulture),string.Join(",",connectorTypes.Distinct()),string.Join(",",domains.Distinct()),GetGISParameter(element,"BIM_Sistema_Elemento"),GetGISParameter(element,"BIM_Bay"),location,GetGISParameter(symbol,"BIM_TensaoNominal_kV"),GetGISParameter(symbol,"BIM_TensaoClasse_kV"),GetGISParameter(symbol,"BIM_TensaoSecundaria_kV"),GetGISParameter(symbol,"BIM_TensaoClasseSecundaria_kV"),GetGISParameter(symbol,"BIM_CorrenteNominal_A"),GetGISParameter(symbol,"BIM_CorrenteReferenciaSecundaria_A"),GetGISParameter(symbol,"BIM_Potencia_MVA"),GetGISParameter(symbol,"BIM_Impedancia_pu"),GetGISParameter(symbol,"BIM_EstadoGeometria"),GetGISParameter(symbol,"BIM_Fabricante"),GetGISParameter(symbol,"BIM_ReferenciaCatalogo"),comments};
                     writer.WriteLine(string.Join(";",values.Select(GISCsv)));
                 }
             }
@@ -2624,18 +2812,23 @@ namespace PortfolioCasaRevit
             int generic=elements.Count(x=>x.Category.Id==new ElementId(BuiltInCategory.OST_GenericModel));
             int walls=new FilteredElementCollector(doc).OfClass(typeof(Wall)).GetElementCount();
             int floors=new FilteredElementCollector(doc).OfClass(typeof(Floor)).GetElementCount();
-            int directShapes=new FilteredElementCollector(doc).OfClass(typeof(DirectShape)).GetElementCount();
+            List<DirectShape> directShapeElements=new FilteredElementCollector(doc).OfClass(typeof(DirectShape)).Cast<DirectShape>().ToList();
+            int directShapes=directShapeElements.Count;
             int modelCurves=new FilteredElementCollector(doc).OfClass(typeof(CurveElement)).Cast<CurveElement>().Count(x=>x is ModelCurve);
             int connectorCount=0,connectedConnectorCount=0,connectorsWithoutPhysicalStatus=0,electricalWithoutConnectors=0,missingIdentityMetadata=0;
+            List<object> connectorDetails=new List<object>();
             foreach(FamilyInstance element in elements)
             {
-                ConnectorSet connectors=null;
-                try{if(element.MEPModel!=null)connectors=element.MEPModel.ConnectorManager.Connectors;}catch{}
+                ConnectorSet connectors=GetGISConnectors(element);
                 int count=connectors==null?0:connectors.Size;
                 if(connectors!=null)foreach(Connector connector in connectors)
                 {
-                    try{if(connector.IsConnected)connectedConnectorCount++;}
+                    bool connected=false;int externalRefs=0;List<string> refs=new List<string>();
+                    try{connected=connector.IsConnected;if(connected)connectedConnectorCount++;}
                     catch(Autodesk.Revit.Exceptions.InvalidOperationException){connectorsWithoutPhysicalStatus++;}
+                    try{foreach(Connector reference in connector.AllRefs)if(reference.Owner!=null&&reference.Owner.Id!=element.Id){externalRefs++;refs.Add(reference.Owner.Id.Value+":"+reference.ConnectorType+":"+reference.Domain);}}
+                    catch(Autodesk.Revit.Exceptions.InvalidOperationException){}
+                    connectorDetails.Add(new{element_id=element.Id.Value,mark=GISModelMark(element),connector_id=connector.Id.ToString(),domain=connector.Domain.ToString(),connector_type=connector.ConnectorType.ToString(),is_connected=connected,external_allrefs=externalRefs,allrefs=refs});
                 }
                 connectorCount+=count;
                 if(element.Category.Id==new ElementId(BuiltInCategory.OST_ElectricalEquipment)&&count==0)electricalWithoutConnectors++;
@@ -2646,10 +2839,139 @@ namespace PortfolioCasaRevit
             List<Autodesk.Revit.DB.Electrical.ElectricalSystem> systems=new FilteredElementCollector(doc).OfClass(typeof(Autodesk.Revit.DB.Electrical.ElectricalSystem)).Cast<Autodesk.Revit.DB.Electrical.ElectricalSystem>().ToList();
             int electricalSystems=systems.Count;
             int electricalSystemTerminalElements=systems.Sum(x=>x.Elements.Size);
+            List<Autodesk.Revit.DB.Electrical.Wire> wires=new FilteredElementCollector(doc).OfClass(typeof(Autodesk.Revit.DB.Electrical.Wire)).Cast<Autodesk.Revit.DB.Electrical.Wire>().ToList();
+            List<object> wireDetails=new List<object>();int wireConnectors=0,wireConnectedConnectors=0;
+            foreach(Autodesk.Revit.DB.Electrical.Wire wire in wires)
+            {
+                ConnectorSet set=GetGISConnectors(wire);int count=0,connected=0;List<string> externalOwners=new List<string>();
+                if(set!=null)foreach(Connector connector in set)
+                {
+                    count++;try{if(connector.IsConnected)connected++;}catch(Autodesk.Revit.Exceptions.InvalidOperationException){}
+                    try{foreach(Connector reference in connector.AllRefs)if(reference.Owner!=null&&reference.Owner.Id!=wire.Id)externalOwners.Add(reference.Owner.Id.Value+":"+GISModelMark(reference.Owner));}catch(Autodesk.Revit.Exceptions.InvalidOperationException){}
+                }
+                wireConnectors+=count;wireConnectedConnectors+=connected;
+                Element ownerView=wire.OwnerViewId==ElementId.InvalidElementId?null:doc.GetElement(wire.OwnerViewId);
+                wireDetails.Add(new{element_id=wire.Id.Value,mark=GISModelMark(wire),owner_view_id=wire.OwnerViewId.Value,owner_view=ownerView?.Name??"",wiring_type=wire.WiringType.ToString(),vertex_count=wire.NumberOfVertices,connector_count=count,connected_connector_count=connected,external_allrefs=externalOwners.Distinct().ToList(),comments=wire.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS)?.AsString()??""});
+            }
+            bool auxWireConfirmed=wires.Any(w=>GISModelMark(w)=="AUX-UPS-01-WIRE"&&GetGISConnectors(w)!=null&&GetGISConnectors(w).Cast<Connector>().Count(c=>c.IsConnected)>=2);
+            var systemDetails=systems.Select(s=>new{revit_element_id=s.Id.Value,system_id=s.Elements.Cast<Element>().Any(e=>GISModelMark(e)=="UPS-01")?"AUX-UPS-01":"UNASSIGNED",revit_class=s.GetType().Name,terminal_elements=s.Elements.Cast<Element>().Select(e=>new{element_id=e.Id.Value,mark=GISModelMark(e)}).ToList(),wire_2d_view_specific_confirmed=auxWireConfirmed,three_dimensional_cable_modeled=false,selected_panel="QAC-01",classification=auxWireConfirmed?"ELECTRICAL_SYSTEM_AND_VIEW_SPECIFIC_2D_WIRE":"LOGICAL_ELECTRICAL_SYSTEM_ONLY"}).ToList();
+            List<Autodesk.Revit.DB.Electrical.CableTray> trays=new FilteredElementCollector(doc).OfClass(typeof(Autodesk.Revit.DB.Electrical.CableTray)).Cast<Autodesk.Revit.DB.Electrical.CableTray>().ToList();
+            int trayConnectors=0,trayConnectedConnectors=0;List<object> trayDetails=new List<object>();
+            foreach(Autodesk.Revit.DB.Electrical.CableTray tray in trays)
+            {
+                int count=0,connected=0;try{foreach(Connector connector in tray.ConnectorManager.Connectors){count++;try{if(connector.IsConnected)connected++;}catch(Autodesk.Revit.Exceptions.InvalidOperationException){}}}catch{}
+                trayConnectors+=count;trayConnectedConnectors+=connected;
+                trayDetails.Add(new{element_id=tray.Id.Value,mark=GISModelMark(tray),connector_count=count,connected_connector_count=connected,comments=tray.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS)?.AsString()??""});
+            }
+            List<object> routeDetails=directShapeElements.Where(x=>{string m=GISModelMark(x);return m.IndexOf("ROUTE",StringComparison.OrdinalIgnoreCase)>=0||m.IndexOf("STUB",StringComparison.OrdinalIgnoreCase)>=0||m.IndexOf("-PH-",StringComparison.OrdinalIgnoreCase)>=0||m.IndexOf("BUSA-ENCLOSURE",StringComparison.OrdinalIgnoreCase)>=0||m.IndexOf("BUSB-ENCLOSURE",StringComparison.OrdinalIgnoreCase)>=0;})
+                .Select(x=>new{element_id=x.Id.Value,mark=GISModelMark(x),comments=x.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS)?.AsString()??""}).Cast<object>().ToList();
             var counts=elements.GroupBy(x=>x.Symbol.Family.Name+" | "+x.Symbol.Name).OrderBy(x=>x.Key).ToDictionary(x=>x.Key,x=>x.Count());
-            string audit=JsonSerializer.Serialize(new{status="GENERATED_FROM_OPEN_REVIT_DOCUMENT",elements=elements.Count,electrical_equipment=electrical,generic_model_families=generic,walls,floors,direct_shapes=directShapes,model_curves=modelCurves,sheets=viewSheets,views_3d=views3D,mep_connectors=connectorCount,connected_mep_connectors=connectedConnectorCount,mep_connectors_without_physical_status=connectorsWithoutPhysicalStatus,electrical_systems=electricalSystems,electrical_system_terminal_elements=electricalSystemTerminalElements,electrical_equipment_without_mep_connectors=electricalWithoutConnectors,instances_missing_required_identity_metadata=missingIdentityMetadata,family_type_counts=counts},new JsonSerializerOptions{WriteIndented=true});
-            File.WriteAllText(Path.Combine(resultDir,"auditoria-modelo-r8.json"),audit,new UTF8Encoding(false));
-            Log("GIS_MODEL_QUANTITIES families="+elements.Count+" electrical_equipment="+electrical+" generic_families="+generic+" walls="+walls+" floors="+floors+" direct_shapes="+directShapes+" model_curves="+modelCurves+" sheets="+viewSheets+" views3d="+views3D+" connectors="+connectorCount+" connected_connectors="+connectedConnectorCount+" connectors_without_physical_status="+connectorsWithoutPhysicalStatus+" electrical_systems="+electricalSystems+" electrical_system_terminal_elements="+electricalSystemTerminalElements+" csv="+path);
+            List<string> warnings=new List<string>();try{warnings=doc.GetWarnings().Select(x=>x.GetDescriptionText()).ToList();}catch(Exception ex){warnings.Add("WARNING_EXTRACTION_FAILED: "+ex.Message);}
+            string audit=JsonSerializer.Serialize(new{status="GENERATED_FROM_OPEN_REVIT_DOCUMENT",revit_document=doc.Title,elements=elements.Count,electrical_equipment=electrical,generic_model_families=generic,walls,floors,direct_shapes=directShapes,geometric_route_elements=routeDetails.Count,geometric_routes=routeDetails,model_curves=modelCurves,cable_trays=trays.Count,cable_tray_connectors=trayConnectors,cable_tray_connected_connectors=trayConnectedConnectors,cable_tray_elements=trayDetails,sheets=viewSheets,views_3d=views3D,mep_connectors=connectorCount,mep_connectors_isconnected_true=connectedConnectorCount,mep_connectors_without_physical_status=connectorsWithoutPhysicalStatus,mep_connector_details=connectorDetails,electrical_systems=electricalSystems,electrical_system_terminal_elements=electricalSystemTerminalElements,electrical_system_details=systemDetails,electrical_wire_2d_elements=wires.Count,electrical_wire_2d_connectors=wireConnectors,electrical_wire_2d_connected_connectors=wireConnectedConnectors,electrical_wire_2d_details=wireDetails,electrical_equipment_without_mep_connectors=electricalWithoutConnectors,instances_missing_required_identity_metadata=missingIdentityMetadata,document_warnings=warnings,family_type_counts=counts},new JsonSerializerOptions{WriteIndented=true});
+            File.WriteAllText(Path.Combine(resultDir,"auditoria-modelo-r9.json"),audit,new UTF8Encoding(false));
+            WriteGISConnectivityReport(elements,directShapeElements,trays,wires,resultDir);
+            Log("GIS_MODEL_QUANTITIES_R9 family_instances="+elements.Count+" electrical_equipment="+electrical+" generic_families="+generic+" walls="+walls+" floors="+floors+" direct_shapes="+directShapes+" geometric_routes="+routeDetails.Count+" native_cable_trays="+trays.Count+" cable_tray_connectors="+trayConnectors+" cable_tray_connected="+trayConnectedConnectors+" electrical_connectors="+connectorCount+" electrical_isconnected_true="+connectedConnectorCount+" electrical_systems="+electricalSystems+" system_terminals="+electricalSystemTerminalElements+" 2d_wires="+wires.Count+" wire_connectors="+wireConnectors+" wire_connected="+wireConnectedConnectors+" sheets="+viewSheets+" views3d="+views3D+" warnings="+warnings.Count+" csv="+path);
+        }
+
+        private static ConnectorSet GetGISConnectors(Element element)
+        {
+            try{FamilyInstance instance=element as FamilyInstance;if(instance!=null&&instance.MEPModel!=null)return instance.MEPModel.ConnectorManager.Connectors;}catch{}
+            try{MEPCurve curve=element as MEPCurve;if(curve!=null)return curve.ConnectorManager.Connectors;}catch{}
+            return null;
+        }
+
+        private static string GISModelMark(Element element)
+        {
+            try{return element.get_Parameter(BuiltInParameter.ALL_MODEL_MARK)?.AsString()??"";}catch{return "";}
+        }
+
+        private static string GISGeometryAssociation(string mark,Element element)
+        {
+            if(element is Autodesk.Revit.DB.Electrical.Wire)return "NATIVE_ELECTRICAL_WIRE_2D_VIEW_SPECIFIC";
+            if(element is Autodesk.Revit.DB.Electrical.CableTray)return "NATIVE_CABLETRAY_INFRASTRUCTURE_SEGMENT";
+            if(element is DirectShape)return "GEOMETRIC_ENVELOPE_ONLY_NO_ELECTRICAL_CONNECTOR";
+            if(mark=="QAC-01"||mark=="UPS-01")return "AUX-UPS-01_ELECTRICALSYSTEM; SEE_2D_WIRE_ROW; NO_3D_CABLE";
+            if(mark.StartsWith("GIS-",StringComparison.OrdinalIgnoreCase)||mark.StartsWith("TR-",StringComparison.OrdinalIgnoreCase)||mark.StartsWith("QMT-",StringComparison.OrdinalIgnoreCase)||mark.StartsWith("BUS-MV",StringComparison.OrdinalIgnoreCase))return "EQUIPMENT_ENVELOPE_ONLY_NO_POWER_CONNECTOR";
+            return "FAMILY_GEOMETRY_ONLY";
+        }
+
+        private static string GISDiagramAssociation(string mark)
+        {
+            if(mark.StartsWith("GIS-L01",StringComparison.OrdinalIgnoreCase))return "E-01: 138kV L01; selector A closed / B open";
+            if(mark.StartsWith("GIS-L02",StringComparison.OrdinalIgnoreCase))return "E-01: 138kV L02; selector A open / B closed";
+            if(mark.StartsWith("GIS-T01",StringComparison.OrdinalIgnoreCase))return "E-01: TR-01 bay; GIS double-bus selection";
+            if(mark.StartsWith("GIS-T02",StringComparison.OrdinalIgnoreCase))return "E-01: TR-02 bay; GIS double-bus selection";
+            if(mark.StartsWith("GIS-BC01",StringComparison.OrdinalIgnoreCase))return "E-01: 138kV bus coupler; breaker normally open assumption";
+            if(mark=="TR-01"||mark.StartsWith("TR-01-",StringComparison.OrdinalIgnoreCase))return "E-01: TR-01 to QMT-A-IN, diagram relation";
+            if(mark=="TR-02"||mark.StartsWith("TR-02-",StringComparison.OrdinalIgnoreCase))return "E-01: TR-02 to QMT-B-IN, diagram relation";
+            if(mark.StartsWith("QMT-A",StringComparison.OrdinalIgnoreCase)||mark=="BUS-MV-A")return "E-01: 13.8kV section A and feeder IDs";
+            if(mark.StartsWith("QMT-B",StringComparison.OrdinalIgnoreCase)||mark=="BUS-MV-B")return "E-01: 13.8kV section B and feeder IDs";
+            if(mark=="QMT-TIE")return "E-01: 13.8kV tie normally open assumption";
+            if(mark=="QAC-01"||mark=="UPS-01"||mark=="AUX-UPS-01-WIRE")return "E-06: AUX-UPS-01 system and 2D plan representation";
+            if(mark.StartsWith("LEITO-",StringComparison.OrdinalIgnoreCase))return "E-05: cable tray route; no cable circuit";
+            return "No power relation assigned; see equipment connectivity CSV";
+        }
+
+        private static void WriteGISConnectivityReport(List<FamilyInstance> instances,List<DirectShape> directShapes,List<Autodesk.Revit.DB.Electrical.CableTray> trays,List<Autodesk.Revit.DB.Electrical.Wire> wires,string resultDir)
+        {
+            bool auxWireConfirmed=wires.Any(w=>GISModelMark(w)=="AUX-UPS-01-WIRE"&&GetGISConnectors(w)!=null&&GetGISConnectors(w).Cast<Connector>().Count(c=>c.IsConnected)>=2);
+            int trayConnectorCount=0,trayConnectedConnectorCount=0;
+            foreach(Autodesk.Revit.DB.Electrical.CableTray tray in trays)try{foreach(Connector connector in tray.ConnectorManager.Connectors){trayConnectorCount++;try{if(connector.IsConnected)trayConnectedConnectorCount++;}catch(Autodesk.Revit.Exceptions.InvalidOperationException){}}}catch{}
+            string path=Path.Combine(resultDir,"conectividade-equipamentos-r9.csv");
+            using(StreamWriter writer=new StreamWriter(path,false,new UTF8Encoding(true)))
+            {
+                writer.WriteLine("element_id;categoria_revit;familia_ou_classe;marca;mep_connectors;isconnected_true;allrefs_external;model_geometry;diagram_relation;connection_not_implemented");
+                foreach(Element element in instances.Cast<Element>().Concat(directShapes.Cast<Element>()).Concat(trays.Cast<Element>()).Concat(wires.Cast<Element>()).OrderBy(x=>x.Id.Value))
+                {
+                    ConnectorSet set=GetGISConnectors(element);int count=0,connected=0,refs=0;
+                    if(set!=null)foreach(Connector connector in set)
+                    {
+                        count++;try{if(connector.IsConnected)connected++;}catch(Autodesk.Revit.Exceptions.InvalidOperationException){}
+                        try{foreach(Connector reference in connector.AllRefs)if(reference.Owner!=null&&reference.Owner.Id!=element.Id)refs++;}catch{}
+                    }
+                    string mark=GISModelMark(element),family=element is FamilyInstance fi?fi.Symbol.Family.Name:element.GetType().Name;
+                    string pending=element is Autodesk.Revit.DB.Electrical.Wire?"No 3D cable; conductor size, upstream supply and protective coordination remain unmodeled":
+                        mark=="QAC-01"||mark=="UPS-01"?"2D wire confirmed="+auxWireConfirmed+"; no 3D cable, upstream QAC supply, UPS output, DC circuit, battery or final loads":
+                        element is Autodesk.Revit.DB.Electrical.CableTray?"Infrastructure only; open route ends and no conductors/equipment power connection":
+                        mark.StartsWith("QMT-A-F",StringComparison.OrdinalIgnoreCase)||mark.StartsWith("QMT-B-F",StringComparison.OrdinalIgnoreCase)?"Outgoing cable, remote endpoint, conductor count and protection not modeled":
+                        mark.StartsWith("GIS-",StringComparison.OrdinalIgnoreCase)||mark.StartsWith("TR-",StringComparison.OrdinalIgnoreCase)||mark.StartsWith("QMT-",StringComparison.OrdinalIgnoreCase)?"Power connectors and switching contacts are not electrically linked in Revit":
+                        element is DirectShape?"Geometric envelope has no electrical connector or switching state":"No electrical relation declared for this equipment";
+                    string[] values={element.Id.Value.ToString(),element.Category?.Name??"",family,mark,count.ToString(System.Globalization.CultureInfo.InvariantCulture),connected.ToString(System.Globalization.CultureInfo.InvariantCulture),refs.ToString(System.Globalization.CultureInfo.InvariantCulture),GISGeometryAssociation(mark,element),GISDiagramAssociation(mark),pending};
+                    writer.WriteLine(string.Join(";",values.Select(GISCsv)));
+                }
+            }
+            string rows="ID;De;Para;Revit electrical connection;3D geometry or infrastructure;Diagram/documentation;Pending\r\n"+
+                "HV-L01;Rede 138 kV L01;GIS-L01-TERM;NONE;Terminal envelope only;E-01 selector 89A selected;External line route and physical primary conductor\r\n"+
+                "HV-L02;Rede 138 kV L02;GIS-L02-TERM;NONE;Terminal envelope only;E-01 selector 89B selected;External line route and physical primary conductor\r\n"+
+                "HV-BUSA;GIS selector 89A;GIS-BUS-A;NONE;Bus casing modules and geometric stubs;E-01;Internal bus conductor/contact and verified switching state\r\n"+
+                "HV-BUSB;GIS selector 89B;GIS-BUS-B;NONE;Bus casing modules and geometric stubs;E-01;Internal bus conductor/contact and verified switching state\r\n"+
+                "HV-BC;GIS-BUS-A;GIS-BUS-B;NONE;Bay component envelopes;E-01 52-BC with open normal-state assumption;Switching contacts and interlocks\r\n"+
+                "HV-TR01;GIS-T01;TR-01-B-HV;NONE;GIS-TR01-HV-PH-A/B/C phase-separated DirectShape envelopes;E-01;Actual conductor/bus, terminal interfaces and manufacturer GA\r\n"+
+                "HV-TR02;GIS-T02;TR-02-B-HV;NONE;GIS-TR02-HV-PH-A/B/C phase-separated DirectShape envelopes;E-01;Actual conductor/bus, terminal interfaces and manufacturer GA\r\n"+
+                "MV-TR01;TR-01-B-MV;QMT-A-IN;NONE;TR01-MV-PH-A/B/C geometric route envelopes plus LEITO-MV-A native tray path;E-01 and section A;Cable/busduct design, ampacity, termination and tray connection\r\n"+
+                "MV-TR02;TR-02-B-MV;QMT-B-IN;NONE;TR02-MV-PH-A/B/C geometric route envelopes plus LEITO-MV-B native tray path;E-01 and section B;Cable/busduct design, ampacity, termination and tray connection\r\n"+
+                "MV-A;QMT-A-IN;BUS-MV-A;NONE;Cubicle and bar-module envelopes;E-01;Internal switchgear bus/contact and verified ratings\r\n"+
+                "MV-B;QMT-B-IN;BUS-MV-B;NONE;Cubicle and bar-module envelopes;E-01;Internal switchgear bus/contact and verified ratings\r\n"+
+                "MV-TIE;BUS-MV-A;BUS-MV-B;NONE;Tie cubicle envelope;E-01 52-TIE normally open assumption;Interlocks and physical switching state\r\n"+
+                "MV-FDR-A;BUS-MV-A;FDR-A-F01...F05;NONE;Cable tray route only;E-01 feeder positions;Outgoing conductors, destinations, terminations and ampacity\r\n"+
+                "MV-FDR-B;BUS-MV-B;FDR-B-F01...F05;NONE;Cable tray route only;E-01 feeder positions;Outgoing conductors, destinations, terminations and ampacity\r\n"+
+                "AUX-UPS-01;QAC-01;UPS-01;"+(auxWireConfirmed?"ElectricalSystem + 2D Wire view-specific":"ElectricalSystem logical only")+";Wire is view-specific, not a 3D cable;E-06;3D cable, upstream source, conductor sizing, protection and complete UPS output network\r\n";
+            File.WriteAllText(Path.Combine(resultDir,"relacoes-rede-r9.csv"),rows,new UTF8Encoding(true));
+            string md="# Relatório de conectividade por equipamento — R9\n\n"+
+                "A extração lê o RVT gerado no Revit. `IsConnected` e `AllRefs` são registrados separadamente; os elementos DirectShape, as famílias de equipamento e os sistemas elétricos não são tratados como equivalentes.\n\n"+
+                "## Estado de execução\n\n"+
+                "- A rede principal 138/13,8 kV não é uma rede elétrica conectada pela API MEP do Revit. Os equipamentos HV/MV não recebem conectores `PowerCircuit`.\n"+
+                "- `AUX-UPS-01` tem "+(auxWireConfirmed?"um Wire nativo Revit com os dois conectores confirmados no plano E-06 e representação view-specific":"um ElectricalSystem lógico; não foi confirmada a conexão de fio no plano")+". Em ambos os casos não existe cabo 3D, dimensionamento do condutor ou prova de alimentação completa.\n"+
+                "- As carcaças GIS, stubs, transições HV/MV e barras de invólucro são geometrias representativas sem contato interno ou porta elétrica.\n"+
+                "- Foram extraídos "+trays.Count.ToString(System.Globalization.CultureInfo.InvariantCulture)+" segmentos nativos CableTray, com "+trayConnectedConnectorCount.ToString(System.Globalization.CultureInfo.InvariantCulture)+" de "+trayConnectorCount.ToString(System.Globalization.CultureInfo.InvariantCulture)+" conectores marcados IsConnected. Essas juntas ligam infraestrutura a infraestrutura; não conectam os leitos aos equipamentos/circuitos.\n\n"+
+                "## Relações da topologia\n\n"+
+                "O CSV `relacoes-rede-r9.csv` lista as relações de cada etapa, separando conexão elétrica no RVT, geometria/infrastructure, relação mostrada em E-01 e pendências.\n\n"+
+                "O CSV `conectividade-equipamentos-r9.csv` tem uma linha para cada FamilyInstance, DirectShape de rota, trecho CableTray e Wire, com ElementId, marca, contagem de conectores, `IsConnected`, referências externas e relação declarada.\n\n"+
+                "## Pendências principais\n\n"+
+                "1. Condutores primários, contatos internos GIS, ligação física aos terminais dos transformadores, condutores/barramento MT e saídas dos dez alimentadores não estão implementados como circuito ou cabo no RVT.\n"+
+                "2. As juntas internas de leito só são consideradas conectadas quando `ConnectTo`/`IsConnected` foram confirmados; terminais externos continuam abertos, e não há ocupação de cabos nem conexão dos leitos aos equipamentos.\n"+
+                "3. A relação lógica auxiliar não inclui circuitos QCC/bateria, saída CC da UPS ou cargas finais.\n";
+            File.WriteAllText(Path.Combine(resultDir,"conectividade-r9.md"),md,new UTF8Encoding(false));
         }
 
         private static string GetGISParameter(Element element,string name)
@@ -2678,7 +3000,7 @@ namespace PortfolioCasaRevit
                 get
                 {
                     if(Enclosed)return "Pisos, paredes perimetrais, esquadrias conceituais e "+RoofDescription(Number)+".";
-                    if(Number==19)return "Subestacao GIS com paredes Revit, bays e cubiculos Electrical Equipment, transformadores, controles, canaletas e vista 3D; geometria conceitual sem conectores MEP.";
+                    if(Number==19)return "Subestacao GIS com dupla barra, bays, transformadores, seções MT, infraestrutura nativa CableTray e ElectricalSystem/Wire 2D auxiliar; caminhos HV/MT em geometria sem conectores de potência.";
                     if(Number==11||Number==14)return "Implantacao FV com mesas inclinadas, conversao e abrigos tecnicos localizados.";
                     if(Number==13)return "Implantacao de processo com tanques cilindricos, bombeamento e casa de bombas coberta.";
                     if(Number==10)return "Implantacao de vagas, carregadores e coberturas tipo canopy sobre zonas de recarga.";
@@ -2710,5 +3032,3 @@ namespace PortfolioCasaRevit
         }
     }
 }
-
-\r\n
