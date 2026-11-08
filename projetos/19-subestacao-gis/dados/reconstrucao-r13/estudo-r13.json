@@ -1,0 +1,58 @@
+{
+  "project": "19 - Subestacao GIS 138/13,8 kV",
+  "revision": "R13",
+  "date": "2026-11-07",
+  "status": "ESTUDO_DE_SENSIBILIDADE - NAO_E_DIMENSIONAMENTO_EXECUTIVO",
+  "medium_voltage_kv": 13.8,
+  "power_factor_assumed": 0.95,
+  "feeder_active_power_mw_scenarios": [
+    4.0,
+    6.0
+  ],
+  "route_length_km_scenarios": [
+    0.1,
+    0.25,
+    0.5
+  ],
+  "candidate_cable": {
+    "manufacturer": "Nexans",
+    "reference": "EPR105-PVC 8,7/15 kV 1x240 mm2",
+    "conductor_material": "copper, 100% IACS per product page",
+    "conductor_area_mm2": 240,
+    "outer_diameter_mm": 33.5,
+    "maximum_continuous_conductor_temperature_c_reference": 105,
+    "copper_resistivity_ohm_mm2_per_m_assumed_20c": 0.017241,
+    "temperature_coefficient_per_c_assumed": 0.00393,
+    "conductor_temperature_c_assumed": 105,
+    "reactance_ohm_per_km_assumed": 0.1,
+    "references": [
+      "https://www.nexans.com.br/pt/products/Transmission.and.Distribution/Insulated.Copper-Aluminium-CablesForMediumVoltage/Nexans-EPR105-PVC/Nexans-EPR37761/product~ID540477955~.html"
+    ],
+    "status": "CANDIDATE_REFERENCE_ONLY_AMPACITY_NOT_CHECKED"
+  },
+  "short_circuit_sensitivity": {
+    "transformer_base_mva": 40,
+    "transformer_z_pu_assumed": 0.1,
+    "source_short_circuit_mva_assumed": [
+      500,
+      1000,
+      5000
+    ],
+    "source_impedance_model": "source short-circuit MVA converted to pu; source R neglected; transformer Z treated as X",
+    "operating_cases": [
+      "one transformer in service",
+      "two identical transformers in parallel with 13.8 kV tie closed"
+    ]
+  },
+  "limitations": [
+    "Cable ampacity is not calculated: installation method, grouping, mutual heating, ambient/soil conditions, tray fill, screen bonding and correction factors are missing.",
+    "Cable resistance is calculated from 100% IACS copper resistivity; reactance is an explicit 0.1 ohm/km assumption, not a value supplied by Nexans for this installation.",
+    "The cable candidate is a scenario, not a selected conductor or proof that one 240 mm2 cable per phase is adequate for the feeder current.",
+    "Source short-circuit strengths are sensitivities because the utility source equivalent and X/R are unavailable.",
+    "Transformer impedance remains the provisional R8 value of 10%; use actual nameplate/test impedance and tolerances for design.",
+    "The short-circuit calculations neglect source and transformer resistance, motor contribution, converter contribution, asymmetry, decay, grounding path and protection clearing time.",
+    "No breaker interrupting rating, protection setting, selectivity, conductor short-circuit withstand or construction suitability is established."
+  ],
+  "carried_forward_from_revision": "R12",
+  "new_calculation_note": "R13 nao acrescenta calculos. Preserva os resultados R8/R11 e a validacao auxiliar incompleta R12; esta revisao altera a composicao das vistas BIM e os identificadores placeholders de TC."
+}

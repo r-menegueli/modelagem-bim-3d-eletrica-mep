@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -65,7 +66,10 @@ def _close(actual: Any, expected: float, tolerance: float) -> bool:
     )
 
 
-def build_schedule(auxiliary_inputs: dict[str, Any]) -> dict[str, Any]:
+def build_schedule(auxiliary_inputs: dict[str, Any], *, revision: str = "R12") -> dict[str, Any]:
+    revision = revision.upper()
+    if not re.fullmatch(r"R[1-9][0-9]*", revision):
+        raise ValueError("revision must use the form R followed by a positive integer")
     ac = auxiliary_inputs["ac_system"]
     load = next(item for item in ac["loads"] if item["id"] == "AUX-AC-06")
     count = _count("AUX-AC-06.quantity", load["quantity"])
@@ -129,7 +133,7 @@ def build_schedule(auxiliary_inputs: dict[str, Any]) -> dict[str, Any]:
     }
     return {
         "project": "19 - Subestacao GIS 138/13,8 kV",
-        "revision": "R12",
+        "revision": revision,
         "source_inputs": "../../servicos-auxiliares-r8.json / AUX-AC-06",
         "status": "PRELIMINARY_AUXILIARY_BRANCH_CIRCUIT_STUDY",
         "distribution_system": {
@@ -151,7 +155,7 @@ def build_schedule(auxiliary_inputs: dict[str, Any]) -> dict[str, Any]:
         },
         "circuits": circuits,
         "model_validation": {
-            "status": "NOT_RUN_NO_REVIT_R12_AUDIT",
+            "status": f"NOT_RUN_NO_REVIT_{revision}_AUDIT",
             "native_systems_confirmed": 0,
             "expected_systems": count,
             "physical_power_conductors_confirmed": 0,
@@ -280,22 +284,26 @@ def validate_revit_audit(
     return updated
 
 
-def write_outputs(root: Path, *, validate_model: bool = True) -> dict[str, Any]:
+def write_outputs(root: Path, *, validate_model: bool = True, revision: str = "R12") -> dict[str, Any]:
+    revision = revision.upper()
+    if not re.fullmatch(r"R[1-9][0-9]*", revision):
+        raise ValueError("revision must use the form R followed by a positive integer")
     data_dir = root / "projetos/19-subestacao-gis/dados"
-    revision_dir = data_dir / "reconstrucao-r12"
+    revision_slug = revision.lower()
+    revision_dir = data_dir / f"reconstrucao-{revision_slug}"
     revision_dir.mkdir(parents=True, exist_ok=True)
     input_path = data_dir / "servicos-auxiliares-r8.json"
-    schedule = build_schedule(json.loads(input_path.read_text(encoding="utf-8")))
-    audit_path = revision_dir / "auditoria-modelo-r12.json"
+    schedule = build_schedule(json.loads(input_path.read_text(encoding="utf-8")), revision=revision)
+    audit_path = revision_dir / f"auditoria-modelo-{revision_slug}.json"
     quantities_path = revision_dir / "quantitativos-modelo.csv"
     if validate_model and audit_path.exists() and quantities_path.exists():
         with quantities_path.open("r", encoding="utf-8-sig", newline="") as stream:
             rows = list(csv.DictReader(stream, delimiter=";"))
         audit = json.loads(audit_path.read_text(encoding="utf-8"))
         schedule = validate_revit_audit(schedule, rows, audit)
-    json_path = revision_dir / "circuitos-auxiliares-r12.json"
+    json_path = revision_dir / f"circuitos-auxiliares-{revision_slug}.json"
     json_path.write_text(json.dumps(schedule, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    csv_path = revision_dir / "circuitos-auxiliares-r12.csv"
+    csv_path = revision_dir / f"circuitos-auxiliares-{revision_slug}.csv"
     columns = [
         "calculation_id", "revit_system_id", "source_equipment_mark", "terminal_equipment_mark",
         "phase_assigned_for_study", "nominal_voltage_v_line_to_neutral_assumed",
@@ -317,8 +325,9 @@ def write_outputs(root: Path, *, validate_model: bool = True) -> dict[str, Any]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path.cwd(), help="Repository root")
+    parser.add_argument("--revision", default="R12", help="GIS revision to validate (for example R13)")
     args = parser.parse_args()
-    result = write_outputs(args.root)
+    result = write_outputs(args.root, revision=args.revision)
     print(json.dumps(result["model_validation"], ensure_ascii=False, indent=2))
 
 

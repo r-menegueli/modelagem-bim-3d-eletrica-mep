@@ -86,6 +86,13 @@ class GISAuxiliaryCircuitTests(unittest.TestCase):
         self.assertEqual(set(PANEL_MARKS), {c["terminal_equipment_mark"] for c in schedule["circuits"]})
         self.assertTrue(all(not c["physical_power_conductor_confirmed"] for c in schedule["circuits"]))
 
+    def test_schedule_labels_requested_revision_and_rejects_path_like_values(self):
+        schedule = build_schedule(auxiliary_inputs(), revision="r13")
+        self.assertEqual("R13", schedule["revision"])
+        self.assertEqual("NOT_RUN_NO_REVIT_R13_AUDIT", schedule["model_validation"]["status"])
+        with self.assertRaises(ValueError):
+            build_schedule(auxiliary_inputs(), revision="../../R13")
+
     def test_revit_validation_confirms_logical_loads_without_claiming_physical_feeders(self):
         schedule = build_schedule(auxiliary_inputs())
         equipment, audit = fixture_model()
