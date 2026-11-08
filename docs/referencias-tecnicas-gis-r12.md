@@ -1,0 +1,17 @@
+# Referências de modelagem — Subestação GIS R12
+
+Este registro identifica as referências usadas para orientar envelopes e dados de catálogo. Elas não representam seleção de fabricante, aprovação de equipamento, desenho geral de fabricação ou especificação de compra.
+
+| Subsistema | Referência pública | Dado verificável | Uso e limite no modelo R12 |
+|---|---|---|---|
+| GIS 145 kV | [GE Vernova F35 145 kV Dual Gas GIS](https://www.gevernova.com/grid-solutions/sites/default/files/2026-02/F35-145-kV-Dual-Gas-GIS-EN-33282-202504-LTR-R002_0.pdf); [folheto F35 com desenhos de arranjo](https://www.gevernova.com/grid-solutions/sites/default/files/resources/products/brochures/grid-gis-l3-f35_145_kv-0169-2016_07-en.pdf) | Classe até 145 kV; bay de 800 mm de largura. O folheto de arranjo F35 apresenta bays de linha, transformador e acoplador e um envelope de linha de referência de 5,7 m. | Dimensões externas são referência geométrica. Não afirmam que o arranjo foi comprado como F35, nem reproduzem o interior, contatos, mecanismos, pressurização ou conexões do produto. O GA do arranjo específico continua pendente. |
+| GIS de dupla barra | [Hitachi Energy — Integrated GIS Applications up to 170 kV](https://www.hitachienergy.com/content/dam/documents/external/application_guide_iga_1hc0151157_ad_en.pdf) | Para ELK-04 de dupla barra, classe 145 kV: envelope de aplicação publicado de 13.000 × 3.000 × 3.500 mm; valores publicados incluem 3.150 A e 40 kA/3 s. | Referência comparativa para conferir ordem de grandeza e topologia. É outro produto/layout e suas dimensões não foram transferidas para a família F35 nem usadas como rating do projeto. |
+| Transformador 138/13,8 kV | [DAX Energy — TRP-EA40-DML-01](https://dax.energy/produtos/transformadores-de-potencia) | Página do fabricante lista 138/13,8 kV, 30/40 MVA, Dyn1, LTC sob carga e impedância de 11% para essa referência. | A família BIM permanece envelope estimado. O estudo R8/R12 mantém 10% como impedância provisória; o valor de catálogo de 11% não foi adotado como placa do transformador do projeto. Nenhum desenho geral dimensional do equipamento do projeto foi fornecido. |
+| Cubículos 13,8 kV | [ABB UniGear ZS1 — catálogo técnico](https://library.e.abb.com/public/fccec936d6324c5da9dd2a5435e40769/UniGear%20ZS1_Catalogue_1VCP000138_RevT_EN.pdf) | Linha de cubículos inclui classe 17,5 kV e larguras de 650, 800 e 1.000 mm; a tabela traz combinações de alturas e profundidades dependentes da corrente e configuração. | Envelope externo de referência 0,80 × 1,39 × 2,595 m. Não se declara miolo, rating, arco interno ou configuração de pedido selecionados. |
+
+## Interpretação para revisão
+
+- A geometria R12 é uma representação externa de estudo. Cilindros de buchas, radiadores, conservador, painéis e terminações não documentam a construção interna comercial.
+- A classe de 145 kV do GIS é compatibilidade de classe do equipamento de referência; não substitui especificação dielétrica, corrente, curto-circuito, ambiente, altitudes, requisitos da concessionária ou estudos de coordenação.
+- Os dados públicos de catálogo não comprovam que um fabricante, modelo ou rating foi selecionado para a subestação.
+- Os dados de entrada, hipóteses e cálculos elétricos estão nos arquivos R12 em `projetos/19-subestacao-gis/dados/reconstrucao-r12/`. Circuitos auxiliares nativos só serão reportados após confirmação no audit extraído do Revit; eles não comprovam cabos físicos.

@@ -29,13 +29,14 @@ class EdgeSpec:
     edge_id: str
     from_node: str
     to_node: str
-    voltage_kv: float
+    voltage_kv: float | None
     state: str
     evidence_class: str
     diagram_ref: str
     equipment_marks: tuple[str, ...] = ()
     geometry_prefixes: tuple[str, ...] = ()
     limitation: str = ""
+    system_id: str = ""
 
 
 def _node(node_id: str, label: str, voltage: float | None, *marks: str,
@@ -111,8 +112,8 @@ _mutable_edges.extend((
     EdgeSpec("GIS-BC-52-TO-B", "GIS-BC01-52", "GIS-BC01-89B", 138.0, "ASSUMED_OPEN_NORMAL", "DIAGRAM_ONLY", "E-01", ("GIS-BC01-52", "GIS-BC01-89B")),
     EdgeSpec("GIS-BC-B-SELECTOR", "GIS-BC01-89B", "BUS-138-B", 138.0, "ASSUMED_CLOSED_NORMAL", "GEOMETRIC_ROUTE_ONLY", "E-01", ("GIS-BC01-89B",), ("GIS-BC01-89B-STUB",),
              limitation="Carcaça geométrica entre seccionadora e barra B; contato, estado e condutor não são conectados eletricamente no RVT."),
-    EdgeSpec("GIS-BC-CT-PROTECTION", "GIS-BC01-CT", "P-BUS", 0.125, "CANDIDATE_FUNCTION", "DIAGRAM_ONLY", "E-01 / E-06", ("GIS-BC01-CT", "P-BUS"),
-             limitation="87B/50BF são funções candidatas; esquema, posição, quantidade por fase, relação e núcleo pendentes."),
+    EdgeSpec("GIS-BC-CT-PROTECTION", "GIS-BC01-CT", "P-BUS", None, "CANDIDATE_PROTECTION_RELATION", "DIAGRAM_ONLY", "E-01 / E-06", ("GIS-BC01-CT", "P-BUS"),
+             limitation="87B/50BF são funções candidatas; relação secundária, núcleo, posição e associação ao painel pendentes. Não é conexão 125 Vcc."),
 ))
 
 for transformer, section, cubicle, phase_prefix in (
@@ -147,8 +148,27 @@ _mutable_edges.extend((
     EdgeSpec("MV-TIE-A-TO-CUBICLE", "BUS-MV-A", "QMT-TIE", 13.8, "ASSUMED_OPEN_NORMAL", "DIAGRAM_ONLY", "E-01", ("QMT-TIE",)),
     EdgeSpec("MV-TIE-CUBICLE-TO-B", "QMT-TIE", "BUS-MV-B", 13.8, "ASSUMED_OPEN_NORMAL", "DIAGRAM_ONLY", "E-01", ("QMT-TIE",)),
     EdgeSpec("AUX-QAC-TO-UPS", "QAC-01", "UPS-01", 0.38, "SYSTEM_MEMBERSHIP_TO_AUDIT", "NATIVE_ELECTRICAL_SYSTEM_LOGICAL", "E-06", ("QAC-01", "UPS-01"),
-             limitation="Um ElectricalSystem lógico e Wire 2D, se confirmados no audit; não há cabo 3D, fonte a montante nem circuito CC da bateria."),
+             limitation="ElectricalSystem lógico e Wire 2D view-specific, se confirmados no audit; não há cabo 3D, fonte a montante nem circuito CC da bateria.", system_id="AUX-UPS-01"),
 ))
+
+_protection_panel_marks = (
+    "P-L01", "P-L02", "P-BUS", "P-TR21-A", "P-TR21-B", "P-TR22-A", "P-TR22-B",
+    "P-BC", "P-SCADA", "TR-01-CTRL", "TR-02-CTRL",
+)
+for panel_mark in _protection_panel_marks:
+    _mutable_nodes.append(_node(
+        f"AUX-INPUT-{panel_mark}", f"Entrada auxiliar CA do painel {panel_mark}", 0.220,
+        panel_mark, evidence="ASSUMED_220V_LINE_TO_NEUTRAL_PANEL_INPUT",
+    ))
+    _mutable_edges.append(EdgeSpec(
+        f"AUX-QAC-TO-{panel_mark}", "QAC-01", f"AUX-INPUT-{panel_mark}", 0.220,
+        "SYSTEM_MEMBERSHIP_TO_AUDIT", "NATIVE_ELECTRICAL_SYSTEM_LOGICAL", "E-06",
+        ("QAC-01", panel_mark),
+        limitation=("150 W, FP 0.90 and 220 V line-neutral are explicit preliminary assumptions based on AUX-AC-06 "
+                    "and the 380Y/220 V four-wire setup; native circuit membership must match audited ElementIds/UniqueIds. "
+                    "No 3D cable, conductor sizing, protection, or internal 125 Vcc circuit is implied."),
+        system_id=f"AUX-AC-{panel_mark}",
+    ))
 
 INFRASTRUCTURE_SPECS = (
     ("LEITO-MV-A", "Infraestrutura de cabos da seção A"),
@@ -169,29 +189,45 @@ def _load_rows(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(stream, delimiter=";"))
 
 
-def _native_aux_confirmed(
+def _native_systems_confirmed(
     elements: list[dict[str, str]], audit: dict[str, Any]
-) -> tuple[bool, dict[str, Any] | None]:
+) -> dict[str, dict[str, Any]]:
+    row_by_mark = {row.get("marca", ""): row for row in elements}
+    confirmed: dict[str, dict[str, Any]] = {}
     for system in audit.get("electrical_system_details", []):
-        marks = {str(x.get("mark", "")) for x in system.get("terminal_elements", [])}
+        system_id = str(system.get("system_id", ""))
+        terminal_elements = system.get("terminal_elements") or []
         panel = system.get("selected_panel_element") or {}
-        panel_rows = [row for row in elements if row.get("marca") == "QAC-01"]
-        panel_is_model_instance = any(
-            row.get("unique_id") == panel.get("unique_id")
-            and row.get("element_id") == str(panel.get("element_id", ""))
-            for row in panel_rows
-        )
-        if (
-            system.get("system_id") == "AUX-UPS-01"
-            and "UPS-01" in marks
+        panel_row = row_by_mark.get("QAC-01")
+        if not (
+            panel_row
             and panel.get("mark") == "QAC-01"
-            and panel_is_model_instance
+            and panel.get("unique_id") == panel_row.get("unique_id")
+            and str(panel.get("element_id", "")) == panel_row.get("element_id", "")
+            and "DomainElectrical" in panel_row.get("dominios", "")
+            and _as_int(panel_row.get("isconnected_true")) > 0
         ):
-            return True, system
-    return False, None
+            continue
+        expected_terminal = "UPS-01" if system_id == "AUX-UPS-01" else (
+            system_id.removeprefix("AUX-AC-") if system_id.startswith("AUX-AC-") else ""
+        )
+        terminal_matches = [row for row in terminal_elements if row.get("mark") == expected_terminal]
+        terminal_row = row_by_mark.get(expected_terminal)
+        if not (
+            expected_terminal
+            and len(terminal_matches) == 1
+            and terminal_row
+            and str(terminal_matches[0].get("element_id", "")) == terminal_row.get("element_id", "")
+            and terminal_matches[0].get("unique_id") == terminal_row.get("unique_id")
+            and "DomainElectrical" in terminal_row.get("dominios", "")
+            and _as_int(terminal_row.get("isconnected_true")) > 0
+        ):
+            continue
+        confirmed[system_id] = system
+    return confirmed
 
 
-def build_graph(elements: list[dict[str, str]], audit: dict[str, Any], revision: str = "R10") -> dict[str, Any]:
+def build_graph(elements: list[dict[str, str]], audit: dict[str, Any], revision: str = "R12") -> dict[str, Any]:
     if len({n.node_id for n in NODES}) != len(NODES):
         raise ValueError("Node IDs duplicados na especificação.")
     node_ids = {n.node_id for n in NODES}
@@ -199,7 +235,7 @@ def build_graph(elements: list[dict[str, str]], audit: dict[str, Any], revision:
         if edge.from_node not in node_ids or edge.to_node not in node_ids:
             raise ValueError(f"Aresta {edge.edge_id} referencia nó ausente.")
 
-    native_aux, aux_system = _native_aux_confirmed(elements, audit)
+    native_systems = _native_systems_confirmed(elements, audit)
     node_records: list[dict[str, Any]] = []
     for spec in NODES:
         matches = [r for r in elements if _matches(r.get("marca", ""), spec.marks)] if spec.marks else []
@@ -229,9 +265,9 @@ def build_graph(elements: list[dict[str, str]], audit: dict[str, Any], revision:
         geometry_matches = [r for r in elements if any(r.get("marca", "").startswith(prefix) for prefix in spec.geometry_prefixes)]
         classification = spec.evidence_class
         native_confirmed = False
-        if spec.edge_id == "AUX-QAC-TO-UPS":
-            native_confirmed = native_aux
-            if not native_aux:
+        if spec.system_id:
+            native_confirmed = spec.system_id in native_systems
+            if not native_confirmed:
                 classification = "NATIVE_SYSTEM_NOT_CONFIRMED"
         edge_records.append({
             **asdict(spec),
@@ -252,6 +288,7 @@ def build_graph(elements: list[dict[str, str]], audit: dict[str, Any], revision:
             "geometry_present": not spec.geometry_prefixes or bool(geometry_matches),
             "native_electrical_system_confirmed": native_confirmed,
             "physical_conductor_confirmed": False,
+            "native_system_id": spec.system_id,
             "status": "CONFIRMED_SYSTEM_MEMBERSHIP_ONLY" if native_confirmed else (
                 "GEOMETRY_FOUND_NO_CONDUCTOR" if geometry_matches else "DOCUMENTED_RELATION_NOT_ELECTRICALLY_CONNECTED"
             ),
@@ -297,13 +334,13 @@ def build_graph(elements: list[dict[str, str]], audit: dict[str, Any], revision:
         "nodes": node_records,
         "edges": edge_records,
         "infrastructure": infrastructure,
-        "auxiliary_native_system": aux_system,
+        "auxiliary_native_systems": [native_systems[key] for key in sorted(native_systems)],
         "limitations": [
-            "A topologia primária GIS/13,8 kV está no E-01 e no grafo; não existe uma rede Revit PowerCircuit conectada para potência.",
+            "A topologia primária GIS/13,8 kV está no E-01 e no grafo; esta auditoria não confirmou PowerCircuits nem condutores primários no RVT. Isso descreve o estado do modelo, não uma impossibilidade demonstrada da API.",
             "Envelopes DirectShape e leitos CableTray não são condutores; a continuidade entre conectores de leito comprova apenas juntas de infraestrutura.",
             "Estados de disjuntores e seccionadoras são premissas; não há simulação de manobra nem lógica de intertravamento.",
             "Cada família GIS_CT é um placeholder genérico; não comprova conjunto trifásico, relação, núcleo, burden ou zona de proteção.",
-            "O ElectricalSystem QAC-01–UPS-01 comprova apenas a associação auditada; o Wire 2D é específico da vista e não há cabo 3D, fonte a montante, saída da UPS ou circuito CC da bateria.",
+            "Sistemas auxiliares QAC-01→UPS/painéis só são contados quando sistema, painel, terminais e conectores são confirmados por ElementId/UniqueId; não provam cabo 3D. O Wire 2D existente é específico da vista E-06.",
             "As conexões com as duas redes externas e os dez destinos remotos dos alimentadores ficam fora do limite modelado.",
         ],
     }
@@ -316,7 +353,7 @@ def _as_int(value: Any) -> int:
         return 0
 
 
-def write_graph(audit_dir: Path, out_dir: Path | None = None, revision: str = "R10") -> dict[str, Any]:
+def write_graph(audit_dir: Path, out_dir: Path | None = None, revision: str = "R12") -> dict[str, Any]:
     base = out_dir or audit_dir
     suffix = revision.lower()
     element_path = audit_dir / f"conectividade-equipamentos-{suffix}.csv"
@@ -328,7 +365,7 @@ def write_graph(audit_dir: Path, out_dir: Path | None = None, revision: str = "R
     (base / f"grafo-conectividade-{suffix}.json").write_text(json.dumps(graph, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     with (base / f"relacoes-rede-{suffix}.csv").open("w", newline="", encoding="utf-8-sig") as stream:
         columns = ("edge_id", "from_node", "to_node", "voltage_kv", "state", "evidence_class", "diagram_ref", "status",
-                   "native_electrical_system_confirmed", "physical_conductor_confirmed", "geometry_present", "equipment_marks", "geometry_prefixes", "limitation")
+                   "native_system_id", "native_electrical_system_confirmed", "physical_conductor_confirmed", "geometry_present", "equipment_marks", "geometry_prefixes", "limitation")
         writer = csv.DictWriter(stream, fieldnames=columns, delimiter=";", extrasaction="ignore")
         writer.writeheader()
         for row in graph["edges"]:
@@ -339,7 +376,7 @@ def write_graph(audit_dir: Path, out_dir: Path | None = None, revision: str = "R
         "## Resultado", "",
         f"- Nós esperados: {graph['summary']['nodes_expected']}; relações: {graph['summary']['edges_expected']}.",
         "- Classes de relação: " + "; ".join(f"`{name}`: {count}" for name, count in sorted(graph["summary"]["edges_by_evidence_class"].items())) + ".",
-        f"- ElectricalSystem nativo confirmado: {graph['summary']['native_electrical_system_relations_confirmed']} relação auxiliar.",
+        f"- ElectricalSystem nativo confirmado: {graph['summary']['native_electrical_system_relations_confirmed']} relações auxiliares auditadas.",
         f"- Condutores primários de potência confirmados: {graph['summary']['physical_power_conductors_confirmed']}.",
         f"- Placeholders de TC: {graph['summary']['current_transformer_placeholders_found']}/{graph['summary']['current_transformer_placeholders_expected']}.",
         f"- Nós BIM esperados ausentes: {len(graph['summary']['missing_expected_model_nodes'])}; rotas geométricas faltantes: {len(graph['summary']['missing_geometric_route_edges'])}.", "",
@@ -355,7 +392,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--audit-dir", type=Path, required=True, help="Pasta do audit extraído do Revit")
     parser.add_argument("--output", type=Path, help="Destino dos artefatos; por padrão é --audit-dir")
-    parser.add_argument("--revision", default="R10", help="Identificador da revisão (padrão R10 para compatibilidade)")
+    parser.add_argument("--revision", default="R12", help="Identificador da revisão (padrão: revisão atual R12)")
     args = parser.parse_args()
     result = write_graph(args.audit_dir, args.output, args.revision)
     print(json.dumps(result["summary"], ensure_ascii=False, indent=2))

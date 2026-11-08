@@ -7,7 +7,7 @@ coordination. All inputs use the units named in the argument/field names.
 
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, is_dataclass
 import math
 from typing import Any
 
@@ -38,6 +38,14 @@ class ThreePhaseCurrent:
     apparent_power_kva: float
     line_voltage_v: float
     line_current_a: float
+    provenance: Provenance
+
+
+@dataclass(frozen=True)
+class SinglePhaseCurrent:
+    apparent_power_va: float
+    voltage_v: float
+    current_a: float
     provenance: Provenance
 
 
@@ -146,8 +154,8 @@ class ShortCircuitSensitivity:
 
 
 def _real(name: str, value: float) -> float:
-    if isinstance(value, bool):
-        raise ValueError(f"{name} must be a finite real number, not bool")
+    if isinstance(value, bool) or isinstance(value, (str, bytes)):
+        raise ValueError(f"{name} must be a finite real number, not bool or text")
     try:
         parsed = float(value)
     except (TypeError, ValueError, OverflowError) as exc:
@@ -191,6 +199,8 @@ def _provenance(value: Provenance | None, default_status: str) -> Provenance:
         return Provenance(status=default_status)
     if not isinstance(value, Provenance):
         raise ValueError("provenance must be a Provenance instance or None")
+    if not isinstance(value.source_or_assumption, str) or not isinstance(value.status, str):
+        raise ValueError("provenance source_or_assumption and status must be text")
     if not value.source_or_assumption.strip() or not value.status.strip():
         raise ValueError("provenance source_or_assumption and status cannot be blank")
     return value
@@ -271,6 +281,24 @@ def three_phase_line_current(
         line_voltage_v=voltage_v,
         line_current_a=current_a,
         provenance=_provenance(provenance, "BALANCED_THREE_PHASE_CURRENT_FROM_APPARENT_POWER"),
+    )
+
+
+def single_phase_current(
+    *,
+    apparent_power_va: float,
+    voltage_v: float,
+    provenance: Provenance | None = None,
+) -> SinglePhaseCurrent:
+    """Single-phase current from apparent power and line-to-neutral voltage."""
+    apparent_va = _nonnegative("apparent_power_va", apparent_power_va)
+    voltage = _positive("voltage_v", voltage_v)
+    current_a = _finite_result("current_a", apparent_va / voltage)
+    return SinglePhaseCurrent(
+        apparent_power_va=apparent_va,
+        voltage_v=voltage,
+        current_a=current_a,
+        provenance=_provenance(provenance, "SINGLE_PHASE_CURRENT_FROM_APPARENT_POWER"),
     )
 
 
@@ -554,7 +582,7 @@ def result_record(result: Any) -> dict[str, Any]:
     Dataclass fields retain explicit unit suffixes. The nested provenance is
     flattened into the familiar `source_or_assumption` and `status` columns.
     """
-    if not hasattr(result, "__dataclass_fields__") or not hasattr(result, "provenance"):
+    if not is_dataclass(result) or isinstance(result, type) or not isinstance(getattr(result, "provenance", None), Provenance):
         raise ValueError("result must be a core result dataclass with provenance")
     record = asdict(result)
     provenance = record.pop("provenance")

@@ -1,0 +1,1310 @@
+{
+  "status": "GENERATED_FROM_OPEN_REVIT_DOCUMENT",
+  "revit_document": "19-subestacao-gis-r12",
+  "elements": 170,
+  "electrical_equipment": 46,
+  "generic_model_families": 124,
+  "walls": 21,
+  "floors": 7,
+  "direct_shapes": 84,
+  "geometric_route_elements": 84,
+  "geometric_routes": [
+    {
+      "element_id": 357341,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573dd",
+      "mark": "GIS-BUSA-ENCLOSURE",
+      "comments": "Continuous outer GIS bus enclosure A; internal conductor and switching contacts are not modeled. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357342,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573de",
+      "mark": "GIS-BUSB-ENCLOSURE",
+      "comments": "Continuous outer GIS bus enclosure B; internal conductor and switching contacts are not modeled. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357343,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573df",
+      "mark": "GIS-L01-89A-STUB",
+      "comments": "Geometric casing route from bus A module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357344,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573e0",
+      "mark": "GIS-L01-89B-STUB",
+      "comments": "Geometric casing route from bus B module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357345,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573e1",
+      "mark": "GIS-T01-89A-STUB",
+      "comments": "Geometric casing route from bus A module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357346,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573e2",
+      "mark": "GIS-T01-89B-STUB",
+      "comments": "Geometric casing route from bus B module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357347,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573e3",
+      "mark": "GIS-BC01-89A-STUB",
+      "comments": "Geometric casing route from bus A module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357348,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573e4",
+      "mark": "GIS-BC01-89B-STUB",
+      "comments": "Geometric casing route from bus B module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357349,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573e5",
+      "mark": "GIS-T02-89A-STUB",
+      "comments": "Geometric casing route from bus A module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357350,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573e6",
+      "mark": "GIS-T02-89B-STUB",
+      "comments": "Geometric casing route from bus B module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357351,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573e7",
+      "mark": "GIS-L02-89A-STUB",
+      "comments": "Geometric casing route from bus A module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357352,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573e8",
+      "mark": "GIS-L02-89B-STUB",
+      "comments": "Geometric casing route from bus B module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357353,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573e9",
+      "mark": "GIS-TR01-HV-PH-A-SEG-01",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357354,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573ea",
+      "mark": "GIS-TR01-HV-PH-A-SEG-02",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357355,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573eb",
+      "mark": "GIS-TR01-HV-PH-A-SEG-03",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357356,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573ec",
+      "mark": "GIS-TR01-HV-PH-A-SEG-04",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357357,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573ed",
+      "mark": "GIS-TR01-HV-PH-A-SEG-05",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357358,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573ee",
+      "mark": "GIS-TR02-HV-PH-A-SEG-01",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357359,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573ef",
+      "mark": "GIS-TR02-HV-PH-A-SEG-02",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357360,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573f0",
+      "mark": "GIS-TR02-HV-PH-A-SEG-03",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357361,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573f1",
+      "mark": "GIS-TR02-HV-PH-A-SEG-04",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357362,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573f2",
+      "mark": "GIS-TR02-HV-PH-A-SEG-05",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357363,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573f3",
+      "mark": "TR01-MV-PH-A-SEG-01",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357364,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573f4",
+      "mark": "TR01-MV-PH-A-SEG-02",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357365,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573f5",
+      "mark": "TR01-MV-PH-A-SEG-03",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357366,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573f6",
+      "mark": "TR01-MV-PH-A-SEG-04",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357367,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573f7",
+      "mark": "TR01-MV-PH-A-SEG-05",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357368,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573f8",
+      "mark": "TR01-MV-PH-A-SEG-06",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357369,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573f9",
+      "mark": "TR01-MV-PH-A-SEG-07",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357370,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573fa",
+      "mark": "TR02-MV-PH-A-SEG-01",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357371,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573fb",
+      "mark": "TR02-MV-PH-A-SEG-02",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357372,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573fc",
+      "mark": "TR02-MV-PH-A-SEG-03",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357373,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573fd",
+      "mark": "TR02-MV-PH-A-SEG-04",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357374,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573fe",
+      "mark": "TR02-MV-PH-A-SEG-05",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357375,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000573ff",
+      "mark": "TR02-MV-PH-A-SEG-06",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357376,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057400",
+      "mark": "TR02-MV-PH-A-SEG-07",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357377,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057401",
+      "mark": "GIS-TR01-HV-PH-B-SEG-01",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357378,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057402",
+      "mark": "GIS-TR01-HV-PH-B-SEG-02",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357379,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057403",
+      "mark": "GIS-TR01-HV-PH-B-SEG-03",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357380,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057404",
+      "mark": "GIS-TR01-HV-PH-B-SEG-04",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357381,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057405",
+      "mark": "GIS-TR01-HV-PH-B-SEG-05",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357382,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057406",
+      "mark": "GIS-TR02-HV-PH-B-SEG-01",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357383,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057407",
+      "mark": "GIS-TR02-HV-PH-B-SEG-02",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357384,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057408",
+      "mark": "GIS-TR02-HV-PH-B-SEG-03",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357385,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057409",
+      "mark": "GIS-TR02-HV-PH-B-SEG-04",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357386,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005740a",
+      "mark": "GIS-TR02-HV-PH-B-SEG-05",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357387,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005740b",
+      "mark": "TR01-MV-PH-B-SEG-01",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357388,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005740c",
+      "mark": "TR01-MV-PH-B-SEG-02",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357389,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005740d",
+      "mark": "TR01-MV-PH-B-SEG-03",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357390,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005740e",
+      "mark": "TR01-MV-PH-B-SEG-04",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357391,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005740f",
+      "mark": "TR01-MV-PH-B-SEG-05",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357392,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057410",
+      "mark": "TR01-MV-PH-B-SEG-06",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357393,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057411",
+      "mark": "TR01-MV-PH-B-SEG-07",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357394,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057412",
+      "mark": "TR02-MV-PH-B-SEG-01",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357395,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057413",
+      "mark": "TR02-MV-PH-B-SEG-02",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357396,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057414",
+      "mark": "TR02-MV-PH-B-SEG-03",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357397,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057415",
+      "mark": "TR02-MV-PH-B-SEG-04",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357398,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057416",
+      "mark": "TR02-MV-PH-B-SEG-05",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357399,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057417",
+      "mark": "TR02-MV-PH-B-SEG-06",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357400,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057418",
+      "mark": "TR02-MV-PH-B-SEG-07",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357401,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057419",
+      "mark": "GIS-TR01-HV-PH-C-SEG-01",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357402,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005741a",
+      "mark": "GIS-TR01-HV-PH-C-SEG-02",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357403,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005741b",
+      "mark": "GIS-TR01-HV-PH-C-SEG-03",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357404,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005741c",
+      "mark": "GIS-TR01-HV-PH-C-SEG-04",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357405,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005741d",
+      "mark": "GIS-TR01-HV-PH-C-SEG-05",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T01 CT terminal to TR-01 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357406,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005741e",
+      "mark": "GIS-TR02-HV-PH-C-SEG-01",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357407,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005741f",
+      "mark": "GIS-TR02-HV-PH-C-SEG-02",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357408,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057420",
+      "mark": "GIS-TR02-HV-PH-C-SEG-03",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357409,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057421",
+      "mark": "GIS-TR02-HV-PH-C-SEG-04",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357410,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057422",
+      "mark": "GIS-TR02-HV-PH-C-SEG-05",
+      "comments": "Approximate geometric 138 kV phase route from GIS-T02 CT terminal to TR-02 HV bushing; not an electrical connector or selected busduct. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357411,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057423",
+      "mark": "TR01-MV-PH-C-SEG-01",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357412,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057424",
+      "mark": "TR01-MV-PH-C-SEG-02",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357413,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057425",
+      "mark": "TR01-MV-PH-C-SEG-03",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357414,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057426",
+      "mark": "TR01-MV-PH-C-SEG-04",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357415,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057427",
+      "mark": "TR01-MV-PH-C-SEG-05",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357416,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057428",
+      "mark": "TR01-MV-PH-C-SEG-06",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357417,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057429",
+      "mark": "TR01-MV-PH-C-SEG-07",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-01 bushing to QMT-A-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357418,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005742a",
+      "mark": "TR02-MV-PH-C-SEG-01",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357419,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005742b",
+      "mark": "TR02-MV-PH-C-SEG-02",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357420,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005742c",
+      "mark": "TR02-MV-PH-C-SEG-03",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357421,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005742d",
+      "mark": "TR02-MV-PH-C-SEG-04",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357422,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005742e",
+      "mark": "TR02-MV-PH-C-SEG-05",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357423,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005742f",
+      "mark": "TR02-MV-PH-C-SEG-06",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357424,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057430",
+      "mark": "TR02-MV-PH-C-SEG-07",
+      "comments": "Approximate 13.8 kV phase route envelope from TR-02 bushing to QMT-B-IN rear entry; conductor count, cable section, ampacity and installation remain unselected. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    }
+  ],
+  "model_curves": 175,
+  "cable_trays": 8,
+  "cable_tray_connectors": 16,
+  "cable_tray_connected_connectors": 8,
+  "cable_tray_elements": [
+    {
+      "element_id": 357583,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000574cf",
+      "mark": "LEITO-CTRL-SEG-01",
+      "connector_count": 2,
+      "connected_connector_count": 0,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 357584,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000574d0",
+      "mark": "LEITO-GIS-SEG-01",
+      "connector_count": 2,
+      "connected_connector_count": 0,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 357585,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000574d1",
+      "mark": "LEITO-MV-A-SEG-01",
+      "connector_count": 2,
+      "connected_connector_count": 1,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 357586,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000574d2",
+      "mark": "LEITO-MV-A-SEG-02",
+      "connector_count": 2,
+      "connected_connector_count": 2,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 357587,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000574d3",
+      "mark": "LEITO-MV-A-SEG-03",
+      "connector_count": 2,
+      "connected_connector_count": 1,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 357588,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000574d4",
+      "mark": "LEITO-MV-B-SEG-01",
+      "connector_count": 2,
+      "connected_connector_count": 1,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 357589,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000574d5",
+      "mark": "LEITO-MV-B-SEG-02",
+      "connector_count": 2,
+      "connected_connector_count": 2,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 357590,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-000574d6",
+      "mark": "LEITO-MV-B-SEG-03",
+      "connector_count": 2,
+      "connected_connector_count": 1,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    }
+  ],
+  "sheets": 14,
+  "views_3d": 4,
+  "mep_connectors": 14,
+  "mep_connectors_isconnected_true": 2,
+  "mep_connectors_without_physical_status": 1,
+  "mep_connector_details": [
+    {
+      "element_id": 357517,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748d",
+      "mark": "QAC-01",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "is_connected": true,
+      "external_allrefs": 1,
+      "allrefs": [
+        "357729:End:DomainElectrical"
+      ]
+    },
+    {
+      "element_id": 357517,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748d",
+      "mark": "QAC-01",
+      "connector_id": "50000",
+      "domain": "DomainUndefined",
+      "connector_type": "Logical",
+      "is_connected": false,
+      "external_allrefs": 1,
+      "allrefs": [
+        "357524:Logical:DomainUndefined"
+      ]
+    },
+    {
+      "element_id": 357467,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005745b",
+      "mark": "TR-01-CTRL",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357490,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057472",
+      "mark": "TR-02-CTRL",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357508,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057484",
+      "mark": "P-L01",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357509,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057485",
+      "mark": "P-L02",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357510,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057486",
+      "mark": "P-BUS",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357511,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057487",
+      "mark": "P-TR21-A",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357512,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057488",
+      "mark": "P-TR21-B",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357513,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057489",
+      "mark": "P-TR22-A",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357514,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748a",
+      "mark": "P-TR22-B",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357515,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748b",
+      "mark": "P-BC",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357516,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748c",
+      "mark": "P-SCADA",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357519,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748f",
+      "mark": "UPS-01",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "is_connected": true,
+      "external_allrefs": 2,
+      "allrefs": [
+        "357729:End:DomainElectrical",
+        "357524:Logical:DomainUndefined"
+      ]
+    }
+  ],
+  "electrical_systems": 1,
+  "electrical_system_terminal_elements": 1,
+  "electrical_system_details": [
+    {
+      "revit_element_id": 357524,
+      "revit_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057494",
+      "system_id": "AUX-UPS-01",
+      "revit_load_name": "UPS_STUDY, 220 V/380 V, Tr\u00EAs Fase, 4 Fia\u00E7\u00E3o, Ips\u00EDlon",
+      "revit_circuit_number": "1,3,5",
+      "circuit_number": "1,3,5",
+      "load_name_confirmed": false,
+      "revit_class": "ElectricalSystem",
+      "system_type": "PowerCircuit",
+      "terminal_elements": [
+        {
+          "element_id": 357519,
+          "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748f",
+          "mark": "UPS-01"
+        }
+      ],
+      "wire_2d_view_specific_confirmed": true,
+      "three_dimensional_cable_modeled": false,
+      "physical_endpoint_connectors_isconnected_true": 2,
+      "selected_panel_name": "AUX_PANEL_380VAC_STUDY, 220 V/380 V, Tr\u00EAs Fase, 4 Fia\u00E7\u00E3o, Ips\u00EDlon",
+      "selected_panel_type_name": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_element": {
+        "element_id": 357517,
+        "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748d",
+        "mark": "QAC-01",
+        "family": "GIS_AuxiliaryPanelAC",
+        "type": "AUX_PANEL_380VAC_STUDY"
+      },
+      "assumed_voltage_V": null,
+      "assumed_true_load_W": null,
+      "assumed_power_factor": null,
+      "assumed_apparent_power_VA": null,
+      "model_voltage_V": 380,
+      "model_true_load_W": 0,
+      "model_apparent_power_VA": 0,
+      "model_apparent_current_A": 0,
+      "model_power_factor": 1,
+      "native_membership_confirmed": true,
+      "panel_assignment_confirmed": true,
+      "terminal_membership_confirmed": true,
+      "load_calculation_confirmed": false,
+      "classification": "ELECTRICAL_SYSTEM_AND_VIEW_SPECIFIC_2D_WIRE"
+    }
+  ],
+  "auxiliary_circuit_feeders": [
+    {
+      "system_id": "AUX-AC-P-L01",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357517,
+      "panel_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748d",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "AUX_PANEL_380VAC_STUDY, 220 V/380 V, Tr\u00EAs Fase, 4 Fia\u00E7\u00E3o, Ips\u00EDlon",
+      "terminal_mark": "P-L01",
+      "terminal_element_id": 357508,
+      "terminal_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057484",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW; FP 0.90 assumido; listas de cargas dos IEDs pendentes",
+      "revit_voltage_V": 219.99999999999997,
+      "revit_true_load_W": 0,
+      "revit_apparent_power_VA": 0,
+      "revit_apparent_current_A": 0,
+      "revit_power_factor": 1,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-L01; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-P-L02",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357517,
+      "panel_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748d",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "AUX_PANEL_380VAC_STUDY, 220 V/380 V, Tr\u00EAs Fase, 4 Fia\u00E7\u00E3o, Ips\u00EDlon",
+      "terminal_mark": "P-L02",
+      "terminal_element_id": 357509,
+      "terminal_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057485",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW; FP 0.90 assumido; listas de cargas dos IEDs pendentes",
+      "revit_voltage_V": 219.99999999999997,
+      "revit_true_load_W": 0,
+      "revit_apparent_power_VA": 0,
+      "revit_apparent_current_A": 0,
+      "revit_power_factor": 1,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-L02; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-P-BUS",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357517,
+      "panel_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748d",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "AUX_PANEL_380VAC_STUDY, 220 V/380 V, Tr\u00EAs Fase, 4 Fia\u00E7\u00E3o, Ips\u00EDlon",
+      "terminal_mark": "P-BUS",
+      "terminal_element_id": 357510,
+      "terminal_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057486",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW; FP 0.90 assumido; listas de cargas dos IEDs pendentes",
+      "revit_voltage_V": 219.99999999999997,
+      "revit_true_load_W": 0,
+      "revit_apparent_power_VA": 0,
+      "revit_apparent_current_A": 0,
+      "revit_power_factor": 1,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-BUS; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-P-TR21-A",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357517,
+      "panel_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748d",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "AUX_PANEL_380VAC_STUDY, 220 V/380 V, Tr\u00EAs Fase, 4 Fia\u00E7\u00E3o, Ips\u00EDlon",
+      "terminal_mark": "P-TR21-A",
+      "terminal_element_id": 357511,
+      "terminal_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057487",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW; FP 0.90 assumido; listas de cargas dos IEDs pendentes",
+      "revit_voltage_V": 219.99999999999997,
+      "revit_true_load_W": 0,
+      "revit_apparent_power_VA": 0,
+      "revit_apparent_current_A": 0,
+      "revit_power_factor": 1,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-TR21-A; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-P-TR21-B",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357517,
+      "panel_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748d",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "AUX_PANEL_380VAC_STUDY, 220 V/380 V, Tr\u00EAs Fase, 4 Fia\u00E7\u00E3o, Ips\u00EDlon",
+      "terminal_mark": "P-TR21-B",
+      "terminal_element_id": 357512,
+      "terminal_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057488",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW; FP 0.90 assumido; listas de cargas dos IEDs pendentes",
+      "revit_voltage_V": 219.99999999999997,
+      "revit_true_load_W": 0,
+      "revit_apparent_power_VA": 0,
+      "revit_apparent_current_A": 0,
+      "revit_power_factor": 1,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-TR21-B; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-P-TR22-A",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357517,
+      "panel_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748d",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "AUX_PANEL_380VAC_STUDY, 220 V/380 V, Tr\u00EAs Fase, 4 Fia\u00E7\u00E3o, Ips\u00EDlon",
+      "terminal_mark": "P-TR22-A",
+      "terminal_element_id": 357513,
+      "terminal_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057489",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW; FP 0.90 assumido; listas de cargas dos IEDs pendentes",
+      "revit_voltage_V": 219.99999999999997,
+      "revit_true_load_W": 0,
+      "revit_apparent_power_VA": 0,
+      "revit_apparent_current_A": 0,
+      "revit_power_factor": 1,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-TR22-A; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-P-TR22-B",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357517,
+      "panel_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748d",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "AUX_PANEL_380VAC_STUDY, 220 V/380 V, Tr\u00EAs Fase, 4 Fia\u00E7\u00E3o, Ips\u00EDlon",
+      "terminal_mark": "P-TR22-B",
+      "terminal_element_id": 357514,
+      "terminal_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748a",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW; FP 0.90 assumido; listas de cargas dos IEDs pendentes",
+      "revit_voltage_V": 219.99999999999997,
+      "revit_true_load_W": 0,
+      "revit_apparent_power_VA": 0,
+      "revit_apparent_current_A": 0,
+      "revit_power_factor": 1,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-TR22-B; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-P-BC",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357517,
+      "panel_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748d",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "AUX_PANEL_380VAC_STUDY, 220 V/380 V, Tr\u00EAs Fase, 4 Fia\u00E7\u00E3o, Ips\u00EDlon",
+      "terminal_mark": "P-BC",
+      "terminal_element_id": 357515,
+      "terminal_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748b",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW; FP 0.90 assumido; listas de cargas dos IEDs pendentes",
+      "revit_voltage_V": 219.99999999999997,
+      "revit_true_load_W": 0,
+      "revit_apparent_power_VA": 0,
+      "revit_apparent_current_A": 0,
+      "revit_power_factor": 1,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-BC; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-P-SCADA",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357517,
+      "panel_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748d",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "AUX_PANEL_380VAC_STUDY, 220 V/380 V, Tr\u00EAs Fase, 4 Fia\u00E7\u00E3o, Ips\u00EDlon",
+      "terminal_mark": "P-SCADA",
+      "terminal_element_id": 357516,
+      "terminal_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748c",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW; FP 0.90 assumido; listas de cargas dos IEDs pendentes",
+      "revit_voltage_V": 219.99999999999997,
+      "revit_true_load_W": 0,
+      "revit_apparent_power_VA": 0,
+      "revit_apparent_current_A": 0,
+      "revit_power_factor": 1,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-SCADA; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-TR-01-CTRL",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357517,
+      "panel_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748d",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "AUX_PANEL_380VAC_STUDY, 220 V/380 V, Tr\u00EAs Fase, 4 Fia\u00E7\u00E3o, Ips\u00EDlon",
+      "terminal_mark": "TR-01-CTRL",
+      "terminal_element_id": 357467,
+      "terminal_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005745b",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW; FP 0.90 assumido; listas de cargas dos IEDs pendentes",
+      "revit_voltage_V": 219.99999999999997,
+      "revit_true_load_W": 0,
+      "revit_apparent_power_VA": 0,
+      "revit_apparent_current_A": 0,
+      "revit_power_factor": 1,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para TR-01-CTRL; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-TR-02-CTRL",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357517,
+      "panel_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-0005748d",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "AUX_PANEL_380VAC_STUDY, 220 V/380 V, Tr\u00EAs Fase, 4 Fia\u00E7\u00E3o, Ips\u00EDlon",
+      "terminal_mark": "TR-02-CTRL",
+      "terminal_element_id": 357490,
+      "terminal_unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057472",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW; FP 0.90 assumido; listas de cargas dos IEDs pendentes",
+      "revit_voltage_V": 219.99999999999997,
+      "revit_true_load_W": 0,
+      "revit_apparent_power_VA": 0,
+      "revit_apparent_current_A": 0,
+      "revit_power_factor": 1,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para TR-02-CTRL; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    }
+  ],
+  "electrical_wire_2d_elements": 1,
+  "electrical_wire_2d_connectors": 2,
+  "electrical_wire_2d_connected_connectors": 2,
+  "electrical_wire_2d_details": [
+    {
+      "element_id": 357729,
+      "unique_id": "05f4abf7-4a32-4b87-802c-bb241fe17f61-00057561",
+      "mark": "AUX-UPS-01-WIRE",
+      "owner_view_id": 357719,
+      "owner_view": "E-06 - Servicos auxiliares e controle R12",
+      "wiring_type": "Chamfer",
+      "vertex_count": 4,
+      "connector_count": 2,
+      "connected_connector_count": 2,
+      "external_allrefs": [
+        "357517:QAC-01",
+        "357519:UPS-01"
+      ],
+      "comments": "Fio eletrico nativo Revit 2D, visivel somente no plano E-06 e conectado aos conectores QAC-01/UPS-01. Representacao grafica de circuito auxiliar; nao e cabo 3D, nao dimensiona condutor e nao prova origem/alimentacao completa."
+    }
+  ],
+  "electrical_equipment_without_mep_connectors": 33,
+  "instances_missing_required_identity_metadata": 0,
+  "document_warnings": [],
+  "family_type_counts": {
+    "GIS_AuxiliaryPanelAC | AUX_PANEL_380VAC_STUDY": 1,
+    "GIS_AuxiliaryPanelDC | AUX_PANEL_125VDC_STUDY": 1,
+    "GIS_BatteryRack | BATTERY_RACK_125VDC_STUDY": 1,
+    "GIS_BayFrame | GIS_SUPPORT_STUDY": 5,
+    "GIS_BuildingRoof_Control | ROOF_CONTROL_22M_EST": 1,
+    "GIS_BuildingRoof_GIS | ROOF_GIS_31M_EST": 1,
+    "GIS_BuildingRoof_MV | ROOF_MV_23M_EST": 1,
+    "GIS_BusModule | GIS_BUS_145KV_STUDY": 10,
+    "GIS_CableTrench | CABLE_TRENCH_STUDY": 47,
+    "GIS_CircuitBreaker | GIS_CB_145KV_STUDY": 5,
+    "GIS_CurrentTransformer | GIS_CT_145KV_STUDY": 5,
+    "GIS_Disconnector | GIS_DS_145KV_STUDY": 10,
+    "GIS_EarthingSwitch | GIS_ES_145KV_STUDY": 5,
+    "GIS_MV_BusCoupler | MV_TIE_17K5_STUDY": 1,
+    "GIS_MV_Cubicle | MV_17K5_2KA_STUDY": 14,
+    "GIS_MVBusModule | MV_BUS_17K5_STUDY": 2,
+    "GIS_OilContainment | OIL_CONTAINMENT_STUDY": 2,
+    "GIS_ProtectionPanel | PROTECTION_PANEL_125VDC_STUDY": 11,
+    "GIS_Termination | GIS_TERMINATION_145KV_STUDY": 2,
+    "GIS_Transformer_Base | TR_BASE_STUDY": 2,
+    "GIS_Transformer_BushingHV | TR_BUSHING_HV_STUDY": 6,
+    "GIS_Transformer_BushingMV | TR_BUSHING_MV_STUDY": 6,
+    "GIS_Transformer_Conservator | TR_CONSERVATOR_STUDY": 2,
+    "GIS_Transformer_Fan | TR_FAN_STUDY": 12,
+    "GIS_Transformer_Radiator | TR_RADIATOR_STUDY": 12,
+    "GIS_Transformer_Tank | TR_40MVA_STUDY": 2,
+    "GIS_UPS_Cabinet | UPS_STUDY": 1,
+    "GIS_VoltageTransformer | GIS_VT_145KV_STUDY": 2
+  }
+}

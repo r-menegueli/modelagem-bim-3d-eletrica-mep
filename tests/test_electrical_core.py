@@ -13,6 +13,7 @@ from scripts.engineering.electrical_core import (
     pv_energy_yield,
     result_record,
     short_circuit_from_series_impedances,
+    single_phase_current,
     three_phase_line_current,
     transformer_loading,
 )
@@ -41,6 +42,11 @@ class ElectricalCoreTests(unittest.TestCase):
     def test_three_phase_current_uses_line_voltage_and_kva(self):
         result = three_phase_line_current(apparent_power_kva=1000.0, line_voltage_v=400.0)
         self.assertAlmostEqual(result.line_current_a, 1000.0 * 1000.0 / (math.sqrt(3.0) * 400.0))
+
+    def test_single_phase_current_uses_line_to_neutral_voltage_and_va(self):
+        result = single_phase_current(apparent_power_va=150.0 / 0.9, voltage_v=220.0)
+        self.assertAlmostEqual(result.current_a, (150.0 / 0.9) / 220.0)
+        self.assertAlmostEqual(result.current_a, 0.7575757575757576)
 
     def test_balanced_cable_voltage_drop_and_resistive_loss_reference_case(self):
         result = balanced_three_phase_cable_performance(
@@ -172,6 +178,14 @@ class ElectricalCoreTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             three_phase_line_current(apparent_power_kva=1.0, line_voltage_v=float("nan"))
         with self.assertRaises(ValueError):
+            single_phase_current(apparent_power_va=1.0, voltage_v=0.0)
+        with self.assertRaises(ValueError):
+            single_phase_current(apparent_power_va=-1.0, voltage_v=220.0)
+        with self.assertRaises(ValueError):
+            three_phase_line_current(apparent_power_kva="1000", line_voltage_v=400.0)
+        with self.assertRaises(ValueError):
+            three_phase_line_current(apparent_power_kva=1e308, line_voltage_v=1e-300)
+        with self.assertRaises(ValueError):
             balanced_three_phase_cable_performance(
                 active_power_kw=1.0,
                 reactive_power_kvar=0.0,
@@ -199,6 +213,14 @@ class ElectricalCoreTests(unittest.TestCase):
                 feeder_resistance_ohm_per_phase=0.0,
                 feeder_reactance_ohm_per_phase=0.0,
             )
+        with self.assertRaises(ValueError):
+            energy_from_average_power(
+                average_power_kw=1.0,
+                duration_h=1.0,
+                provenance=Provenance(source_or_assumption=None),  # type: ignore[arg-type]
+            )
+        with self.assertRaises(ValueError):
+            result_record({"provenance": Provenance()})
 
 
 if __name__ == "__main__":
