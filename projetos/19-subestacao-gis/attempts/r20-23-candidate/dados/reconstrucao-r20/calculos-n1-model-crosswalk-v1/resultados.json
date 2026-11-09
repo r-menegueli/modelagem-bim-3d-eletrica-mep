@@ -1,0 +1,1784 @@
+{
+  "project": "19 - Subestação GIS",
+  "revision": 0,
+  "calculation_date": "2026-11-07",
+  "status": "PREMISSA DE ESTUDO - NAO E PROJETO EXECUTIVO",
+  "input_file": "base-de-projeto.json",
+  "system_summary": {
+    "nominal_voltage_kv": [
+      138.0,
+      13.8
+    ],
+    "frequency_hz": 60.0,
+    "source_line_incomers": 2,
+    "high_voltage_bus": "Double bus with one bus coupler",
+    "medium_voltage_bus": "Split buses A/B with normally open tie"
+  },
+  "inputs": {
+    "project": "19 - Subestação GIS",
+    "revision": 0,
+    "date": "2026-11-07",
+    "status": "PREMISSA DE ESTUDO - NAO E PROJETO EXECUTIVO",
+    "system": {
+      "nominal_voltage_kv": [
+        138.0,
+        13.8
+      ],
+      "frequency_hz": 60.0,
+      "source_line_incomers": 2,
+      "high_voltage_equipment_class_kv": 145.0,
+      "high_voltage_bus": "Double bus with one bus coupler",
+      "medium_voltage_bus": "Split buses A/B with normally open tie",
+      "parallel_transformers_normal": false
+    },
+    "transformers": {
+      "count": 2,
+      "rating_mva_each": 40.0,
+      "nominal_impedance_pu_each_assumed": 0.1,
+      "insulating_fluid_assumption": "Mineral oil; confirm transformer construction",
+      "impedance_status": "PROVISIONAL_ASSUMPTION - replace with nameplate/vendor data"
+    },
+    "load_scenarios": {
+      "normal_active_mw_assumed": 56.0,
+      "power_factor_assumed": 0.95,
+      "target_power_factor_for_sensitivity": 0.98,
+      "critical_active_mw_assumed": 32.0,
+      "noncritical_active_mw_shed_in_n_minus_one": 24.0,
+      "allocation_by_section_mw": {
+        "section_A": {
+          "critical": 16.0,
+          "noncritical": 12.0
+        },
+        "section_B": {
+          "critical": 16.0,
+          "noncritical": 12.0
+        }
+      },
+      "feeders": [
+        {
+          "tag": "A-F01",
+          "section": "A",
+          "active_mw": 6.0,
+          "critical": true
+        },
+        {
+          "tag": "A-F02",
+          "section": "A",
+          "active_mw": 6.0,
+          "critical": true
+        },
+        {
+          "tag": "A-F03",
+          "section": "A",
+          "active_mw": 4.0,
+          "critical": true
+        },
+        {
+          "tag": "A-F04",
+          "section": "A",
+          "active_mw": 6.0,
+          "critical": false
+        },
+        {
+          "tag": "A-F05",
+          "section": "A",
+          "active_mw": 6.0,
+          "critical": false
+        },
+        {
+          "tag": "B-F01",
+          "section": "B",
+          "active_mw": 6.0,
+          "critical": true
+        },
+        {
+          "tag": "B-F02",
+          "section": "B",
+          "active_mw": 6.0,
+          "critical": true
+        },
+        {
+          "tag": "B-F03",
+          "section": "B",
+          "active_mw": 4.0,
+          "critical": true
+        },
+        {
+          "tag": "B-F04",
+          "section": "B",
+          "active_mw": 6.0,
+          "critical": false
+        },
+        {
+          "tag": "B-F05",
+          "section": "B",
+          "active_mw": 6.0,
+          "critical": false
+        }
+      ],
+      "feeder_positions_assumed": 10,
+      "load_profile_status": "ILLUSTRATIVE - no metering or client load list supplied"
+    },
+    "protection": {
+      "settings_status": "NOT_CALCULATED - source and equipment data required",
+      "candidate_functions": [
+        "21",
+        "25",
+        "27",
+        "49",
+        "50",
+        "50BF",
+        "50N",
+        "51",
+        "51N",
+        "59",
+        "63",
+        "64REF",
+        "67",
+        "81",
+        "86",
+        "87B",
+        "87L",
+        "87T"
+      ]
+    },
+    "equipment_data": {
+      "manufacturer_selected": false,
+      "geometry_status": "ESTIMATED until model-specific official outline drawings are obtained",
+      "network_short_circuit_available": false,
+      "soil_resistivity_available": false,
+      "auxiliary_load_and_battery_mission_available": false
+    }
+  },
+  "calculations": [
+    {
+      "calc_id": "BP-01",
+      "quantity": "Potência aparente total",
+      "inputs": "P=56 MW; FP=0.95",
+      "method": "S=P/FP",
+      "result": 58.94736842105264,
+      "unit": "MVA",
+      "source_or_assumption": "Premissa de estudo em base-de-projeto.json",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "A-F01",
+        "A-F02",
+        "A-F03",
+        "A-F04",
+        "A-F05",
+        "B-F01",
+        "B-F02",
+        "B-F03",
+        "B-F04",
+        "B-F05"
+      ],
+      "model_mark_refs": [
+        "QMT-A-F01",
+        "QMT-A-F02",
+        "QMT-A-F03",
+        "QMT-A-F04",
+        "QMT-A-F05",
+        "QMT-B-F01",
+        "QMT-B-F02",
+        "QMT-B-F03",
+        "QMT-B-F04",
+        "QMT-B-F05"
+      ]
+    },
+    {
+      "calc_id": "BP-02",
+      "quantity": "Potência reativa total",
+      "inputs": "S=58.947368 MVA; P=56 MW",
+      "method": "Q=sqrt(S^2-P^2)",
+      "result": 18.40630989001635,
+      "unit": "MVAr",
+      "source_or_assumption": "Premissa de estudo em base-de-projeto.json",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "A-F01",
+        "A-F02",
+        "A-F03",
+        "A-F04",
+        "A-F05",
+        "B-F01",
+        "B-F02",
+        "B-F03",
+        "B-F04",
+        "B-F05"
+      ],
+      "model_mark_refs": [
+        "QMT-A-F01",
+        "QMT-A-F02",
+        "QMT-A-F03",
+        "QMT-A-F04",
+        "QMT-A-F05",
+        "QMT-B-F01",
+        "QMT-B-F02",
+        "QMT-B-F03",
+        "QMT-B-F04",
+        "QMT-B-F05"
+      ]
+    },
+    {
+      "calc_id": "BP-03",
+      "quantity": "Corrente de carga no sistema 138 kV",
+      "inputs": "S=58.947368 MVA; VLL=138 kV",
+      "method": "I=S/(sqrt(3)*VLL)",
+      "result": 0.24661796395590427,
+      "unit": "kA",
+      "source_or_assumption": "Premissa de estudo em base-de-projeto.json",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "GIS-L01",
+        "GIS-L02"
+      ],
+      "model_mark_refs": [
+        "GIS-L01-ENV",
+        "GIS-L01-52",
+        "GIS-L01-89A",
+        "GIS-L01-89B",
+        "GIS-L01-89G",
+        "GIS-L01-CT",
+        "GIS-L01-VT",
+        "GIS-L01-TERM",
+        "GIS-L02-ENV",
+        "GIS-L02-52",
+        "GIS-L02-89A",
+        "GIS-L02-89B",
+        "GIS-L02-89G",
+        "GIS-L02-CT",
+        "GIS-L02-VT",
+        "GIS-L02-TERM"
+      ]
+    },
+    {
+      "calc_id": "BP-04",
+      "quantity": "Corrente de carga no sistema 13,8 kV",
+      "inputs": "S=58.947368 MVA; VLL=13.8 kV",
+      "method": "I=S/(sqrt(3)*VLL)",
+      "result": 2.466179639559042,
+      "unit": "kA",
+      "source_or_assumption": "Premissa de estudo em base-de-projeto.json",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "QMT-A-IN",
+        "QMT-B-IN",
+        "BUS-MV-A",
+        "BUS-MV-B",
+        "A-F01",
+        "A-F02",
+        "A-F03",
+        "A-F04",
+        "A-F05",
+        "B-F01",
+        "B-F02",
+        "B-F03",
+        "B-F04",
+        "B-F05"
+      ],
+      "model_mark_refs": [
+        "QMT-A-IN",
+        "QMT-B-IN",
+        "BUS-MV-A",
+        "BUS-MV-B",
+        "QMT-A-F01",
+        "QMT-A-F02",
+        "QMT-A-F03",
+        "QMT-A-F04",
+        "QMT-A-F05",
+        "QMT-B-F01",
+        "QMT-B-F02",
+        "QMT-B-F03",
+        "QMT-B-F04",
+        "QMT-B-F05"
+      ]
+    },
+    {
+      "calc_id": "BP-05",
+      "quantity": "Corrente nominal por transformador no lado 138 kV",
+      "inputs": "Sr=40 MVA; VLL=138 kV",
+      "method": "In=Sr/(sqrt(3)*VLL)",
+      "result": 0.16734790411293501,
+      "unit": "kA",
+      "source_or_assumption": "Rating de estudo; substituir pela placa aprovada",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "TR-01",
+        "TR-02"
+      ],
+      "model_mark_refs": [
+        "TR-01",
+        "TR-02"
+      ]
+    },
+    {
+      "calc_id": "BP-06",
+      "quantity": "Corrente nominal por transformador no lado 13,8 kV",
+      "inputs": "Sr=40 MVA; VLL=13.8 kV",
+      "method": "In=Sr/(sqrt(3)*VLL)",
+      "result": 1.6734790411293499,
+      "unit": "kA",
+      "source_or_assumption": "Rating de estudo; substituir pela placa aprovada",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "TR-01",
+        "TR-02"
+      ],
+      "model_mark_refs": [
+        "TR-01",
+        "TR-02"
+      ]
+    },
+    {
+      "calc_id": "BP-07",
+      "quantity": "Carregamento normal agregado",
+      "inputs": "S=58.947368 MVA; capacidade instalada=80 MVA",
+      "method": "S/capacidade instalada*100",
+      "result": 73.6842105263158,
+      "unit": "%",
+      "source_or_assumption": "Assume divisão equilibrada entre os dois transformadores",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "TR-01",
+        "TR-02",
+        "A-F01",
+        "A-F02",
+        "A-F03",
+        "A-F04",
+        "A-F05",
+        "B-F01",
+        "B-F02",
+        "B-F03",
+        "B-F04",
+        "B-F05"
+      ],
+      "model_mark_refs": [
+        "TR-01",
+        "TR-02",
+        "QMT-A-F01",
+        "QMT-A-F02",
+        "QMT-A-F03",
+        "QMT-A-F04",
+        "QMT-A-F05",
+        "QMT-B-F01",
+        "QMT-B-F02",
+        "QMT-B-F03",
+        "QMT-B-F04",
+        "QMT-B-F05"
+      ]
+    },
+    {
+      "calc_id": "BP-08",
+      "quantity": "Carregamento da carga crítica agregada após transferência entre seções no N-1",
+      "inputs": "Pcrit=32 MW; FP=0.95; Sr=40 MVA",
+      "method": "(Pcrit/FP)/Sr*100",
+      "result": 84.21052631578947,
+      "unit": "%",
+      "source_or_assumption": "Só representa atendimento das duas seções se o acoplador MT puder fechar e transferir a carga; manobra, proteção e capacidade do caminho não foram verificados",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "TR-01",
+        "TR-02",
+        "QMT-A-IN",
+        "QMT-B-IN",
+        "QMT-TIE",
+        "A-F01",
+        "A-F02",
+        "A-F03",
+        "B-F01",
+        "B-F02",
+        "B-F03"
+      ],
+      "model_mark_refs": [
+        "TR-01",
+        "TR-02",
+        "QMT-A-IN",
+        "QMT-B-IN",
+        "QMT-TIE",
+        "QMT-A-F01",
+        "QMT-A-F02",
+        "QMT-A-F03",
+        "QMT-B-F01",
+        "QMT-B-F02",
+        "QMT-B-F03"
+      ]
+    },
+    {
+      "calc_id": "BP-09",
+      "quantity": "Carregamento da carga total sob N-1",
+      "inputs": "P=56 MW; FP=0.95; Sr=40 MVA",
+      "method": "(P/FP)/Sr*100",
+      "result": 147.3684210526316,
+      "unit": "%",
+      "source_or_assumption": "Sem rejeição de carga; demonstra necessidade de contingência",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "TR-01",
+        "TR-02",
+        "A-F01",
+        "A-F02",
+        "A-F03",
+        "A-F04",
+        "A-F05",
+        "B-F01",
+        "B-F02",
+        "B-F03",
+        "B-F04",
+        "B-F05"
+      ],
+      "model_mark_refs": [
+        "TR-01",
+        "TR-02",
+        "QMT-A-F01",
+        "QMT-A-F02",
+        "QMT-A-F03",
+        "QMT-A-F04",
+        "QMT-A-F05",
+        "QMT-B-F01",
+        "QMT-B-F02",
+        "QMT-B-F03",
+        "QMT-B-F04",
+        "QMT-B-F05"
+      ]
+    },
+    {
+      "calc_id": "BP-10",
+      "quantity": "Carga ativa a rejeitar sob N-1",
+      "inputs": "P=56 MW; Pcrit=32 MW",
+      "method": "P-Pcrit",
+      "result": 24.0,
+      "unit": "MW",
+      "source_or_assumption": "Premissa do cenário de contingência",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "A-F01",
+        "A-F02",
+        "A-F03",
+        "A-F04",
+        "A-F05",
+        "B-F01",
+        "B-F02",
+        "B-F03",
+        "B-F04",
+        "B-F05"
+      ],
+      "model_mark_refs": [
+        "QMT-A-F01",
+        "QMT-A-F02",
+        "QMT-A-F03",
+        "QMT-A-F04",
+        "QMT-A-F05",
+        "QMT-B-F01",
+        "QMT-B-F02",
+        "QMT-B-F03",
+        "QMT-B-F04",
+        "QMT-B-F05"
+      ]
+    },
+    {
+      "calc_id": "BP-11",
+      "quantity": "Corrente nominal do acoplamento/cubículo de referência",
+      "inputs": "In de transformador=1673.479 A; candidato=2000 A",
+      "method": "In/candidato*100",
+      "result": 83.67395205646748,
+      "unit": "% do candidato",
+      "source_or_assumption": "Comparação com candidato de 2.000 A; a brochura GE Vernova lista faixas de tensão e corrente, mas não comprova essa combinação específica; confirmar rating, configuração e condição térmica com o fabricante",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "QMT-TIE"
+      ],
+      "model_mark_refs": [
+        "QMT-TIE"
+      ]
+    },
+    {
+      "calc_id": "BP-12",
+      "quantity": "Corrente de curto simplificada por transformador em 13,8 kV",
+      "inputs": "In=1.673479 kA; Z=10% assumida",
+      "method": "Isc=In/Zpu",
+      "result": 16.7347904112935,
+      "unit": "kA",
+      "source_or_assumption": "Fonte ideal; somente impedância percentual presumida do transformador",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "TR-01",
+        "TR-02"
+      ],
+      "model_mark_refs": [
+        "TR-01",
+        "TR-02"
+      ]
+    },
+    {
+      "calc_id": "BP-13",
+      "quantity": "Corrente de curto simplificada com transformadores em paralelo",
+      "inputs": "2 unidades idênticas; cada contribuição=16.734790 kA",
+      "method": "Soma de contribuições, sem impedâncias da rede/cabos",
+      "result": 33.469580822587,
+      "unit": "kA",
+      "source_or_assumption": "Sensibilidade; acoplador normalmente aberto no regime normal",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "TR-01",
+        "TR-02",
+        "BUS-MV-A",
+        "BUS-MV-B",
+        "QMT-TIE"
+      ],
+      "model_mark_refs": [
+        "TR-01",
+        "TR-02",
+        "BUS-MV-A",
+        "BUS-MV-B",
+        "QMT-TIE"
+      ]
+    },
+    {
+      "calc_id": "BP-14",
+      "quantity": "Compensação idealizada de FP 0.95 para 0.98",
+      "inputs": "P=56 MW; FPin=0.95; FPout=0.98",
+      "method": "P*(tan(acos(FPin))-tan(acos(FPout)))",
+      "result": 7.035024894512107,
+      "unit": "MVAr",
+      "source_or_assumption": "Estimativa sem harmônicos, variação de carga ou estudo de ressonância",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "A-F01",
+        "A-F02",
+        "A-F03",
+        "A-F04",
+        "A-F05",
+        "B-F01",
+        "B-F02",
+        "B-F03",
+        "B-F04",
+        "B-F05"
+      ],
+      "model_mark_refs": [
+        "QMT-A-F01",
+        "QMT-A-F02",
+        "QMT-A-F03",
+        "QMT-A-F04",
+        "QMT-A-F05",
+        "QMT-B-F01",
+        "QMT-B-F02",
+        "QMT-B-F03",
+        "QMT-B-F04",
+        "QMT-B-F05"
+      ]
+    },
+    {
+      "calc_id": "BP-15",
+      "quantity": "Corrente normal em cada seção de 13,8 kV",
+      "inputs": "P por seção=28 MW; FP=0.95; VLL=13.8 kV",
+      "method": "(P/FP)/(sqrt(3)*VLL)",
+      "result": 1.233089819779521,
+      "unit": "kA",
+      "source_or_assumption": "Assume cargas iguais nas seções A/B conforme alocação declarada",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "QMT-A-IN",
+        "QMT-B-IN",
+        "BUS-MV-A",
+        "BUS-MV-B",
+        "A-F01",
+        "A-F02",
+        "A-F03",
+        "A-F04",
+        "A-F05",
+        "B-F01",
+        "B-F02",
+        "B-F03",
+        "B-F04",
+        "B-F05"
+      ],
+      "model_mark_refs": [
+        "QMT-A-IN",
+        "QMT-B-IN",
+        "BUS-MV-A",
+        "BUS-MV-B",
+        "QMT-A-F01",
+        "QMT-A-F02",
+        "QMT-A-F03",
+        "QMT-A-F04",
+        "QMT-A-F05",
+        "QMT-B-F01",
+        "QMT-B-F02",
+        "QMT-B-F03",
+        "QMT-B-F04",
+        "QMT-B-F05"
+      ]
+    },
+    {
+      "calc_id": "BP-16",
+      "quantity": "Capacidade ativa de um transformador no fator de potência assumido",
+      "inputs": "Sr=40 MVA; FP=0.95",
+      "method": "P_limite=Sr*FP",
+      "result": 38.0,
+      "unit": "MW",
+      "source_or_assumption": "Limite de placa em regime contínuo no FP assumido; não inclui sobrecarga de emergência",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "TR-01",
+        "TR-02"
+      ],
+      "model_mark_refs": [
+        "TR-01",
+        "TR-02"
+      ]
+    },
+    {
+      "calc_id": "BP-17",
+      "quantity": "Margem aparente na placa após atendimento agregado das cargas críticas no N-1",
+      "inputs": "Sr=40 MVA; Scrit=33.6842 MVA",
+      "method": "Sr-Scrit",
+      "result": 6.315789473684212,
+      "unit": "MVA",
+      "source_or_assumption": "Só existe atendimento das duas seções se o acoplador MT e o caminho de transferência estiverem disponíveis; verificação pendente",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "TR-01",
+        "TR-02",
+        "QMT-TIE",
+        "BUS-MV-A",
+        "BUS-MV-B",
+        "A-F01",
+        "A-F02",
+        "A-F03",
+        "B-F01",
+        "B-F02",
+        "B-F03"
+      ],
+      "model_mark_refs": [
+        "TR-01",
+        "TR-02",
+        "QMT-TIE",
+        "BUS-MV-A",
+        "BUS-MV-B",
+        "QMT-A-F01",
+        "QMT-A-F02",
+        "QMT-A-F03",
+        "QMT-B-F01",
+        "QMT-B-F02",
+        "QMT-B-F03"
+      ]
+    },
+    {
+      "calc_id": "BP-18",
+      "quantity": "Carga não crítica adicional dentro da capacidade de placa após as cargas críticas",
+      "inputs": "P_limite=38 MW; Pcrit=32 MW",
+      "method": "max(0, P_limite-Pcrit)",
+      "result": 6.0,
+      "unit": "MW",
+      "source_or_assumption": "Envelope agregado teórico com acoplador fechado; seleção de alimentadores e capacidade do acoplador pendentes",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "TR-01",
+        "TR-02",
+        "QMT-TIE",
+        "BUS-MV-A",
+        "BUS-MV-B",
+        "A-F04",
+        "A-F05",
+        "B-F04",
+        "B-F05"
+      ],
+      "model_mark_refs": [
+        "TR-01",
+        "TR-02",
+        "QMT-TIE",
+        "BUS-MV-A",
+        "BUS-MV-B",
+        "QMT-A-F04",
+        "QMT-A-F05",
+        "QMT-B-F04",
+        "QMT-B-F05"
+      ]
+    },
+    {
+      "calc_id": "BP-19",
+      "quantity": "Rejeição ativa mínima agregada para limitar o transformador remanescente à placa no N-1",
+      "inputs": "Pnormal=56 MW; P_limite=38 MW",
+      "method": "max(0, Pnormal-P_limite)",
+      "result": 18.0,
+      "unit": "MW",
+      "source_or_assumption": "Envelope agregado contínuo a FP uniforme; não é filosofia de rejeição automática nem lista de prioridade de cargas",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "TR-01",
+        "TR-02",
+        "A-F01",
+        "A-F02",
+        "A-F03",
+        "A-F04",
+        "A-F05",
+        "B-F01",
+        "B-F02",
+        "B-F03",
+        "B-F04",
+        "B-F05"
+      ],
+      "model_mark_refs": [
+        "TR-01",
+        "TR-02",
+        "QMT-A-F01",
+        "QMT-A-F02",
+        "QMT-A-F03",
+        "QMT-A-F04",
+        "QMT-A-F05",
+        "QMT-B-F01",
+        "QMT-B-F02",
+        "QMT-B-F03",
+        "QMT-B-F04",
+        "QMT-B-F05"
+      ]
+    },
+    {
+      "calc_id": "BP-20",
+      "quantity": "Carga crítica em uma seção isolada com acoplador MT aberto",
+      "inputs": "Máxima carga crítica de uma seção=16 MW",
+      "method": "max(Pcrit_A, Pcrit_B)",
+      "result": 16.0,
+      "unit": "MW",
+      "source_or_assumption": "Carga crítica associada ao transformador indisponível sem caminho de transferência; resultado depende da alocação real por seção",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "TR-01",
+        "TR-02",
+        "QMT-A-IN",
+        "QMT-B-IN",
+        "QMT-TIE",
+        "A-F01",
+        "A-F02",
+        "A-F03",
+        "B-F01",
+        "B-F02",
+        "B-F03"
+      ],
+      "model_mark_refs": [
+        "TR-01",
+        "TR-02",
+        "QMT-A-IN",
+        "QMT-B-IN",
+        "QMT-TIE",
+        "QMT-A-F01",
+        "QMT-A-F02",
+        "QMT-A-F03",
+        "QMT-B-F01",
+        "QMT-B-F02",
+        "QMT-B-F03"
+      ]
+    },
+    {
+      "calc_id": "BP-21",
+      "quantity": "Carregamento N-1 com cargas críticas e o maior alimentador não crítico individual que cabe",
+      "inputs": "Pcrit=32 MW; Pnc=6 MW; FP=0.95; Sr=40 MVA",
+      "method": "((Pcrit+Pnc)/FP)/Sr*100",
+      "result": 100.0,
+      "unit": "%",
+      "source_or_assumption": "Exige transferência entre seções; mostra apenas a maior opção individual e não escolhe prioridade operacional",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "TR-01",
+        "TR-02",
+        "QMT-TIE",
+        "BUS-MV-A",
+        "BUS-MV-B",
+        "A-F01",
+        "A-F02",
+        "A-F03",
+        "B-F01",
+        "B-F02",
+        "B-F03",
+        "A-F04",
+        "A-F05",
+        "B-F04",
+        "B-F05"
+      ],
+      "model_mark_refs": [
+        "TR-01",
+        "TR-02",
+        "QMT-TIE",
+        "BUS-MV-A",
+        "BUS-MV-B",
+        "QMT-A-F01",
+        "QMT-A-F02",
+        "QMT-A-F03",
+        "QMT-B-F01",
+        "QMT-B-F02",
+        "QMT-B-F03",
+        "QMT-A-F04",
+        "QMT-A-F05",
+        "QMT-B-F04",
+        "QMT-B-F05"
+      ]
+    },
+    {
+      "calc_id": "BP-22",
+      "quantity": "Relação nominal de tensão linha-linha do transformador",
+      "inputs": "VHVLL=138 kV; VLVLL=13.8 kV",
+      "method": "VHVLL/VLVLL",
+      "result": "10:1",
+      "unit": "relação VLL",
+      "source_or_assumption": "Relação de tensões nominais do estudo; placa, grupo vetorial e taps devem ser confirmados",
+      "status": "CALCULATED_FROM_STUDY_ASSUMPTIONS",
+      "diagram_refs": [
+        "TR-01",
+        "TR-02"
+      ],
+      "model_mark_refs": [
+        "TR-01",
+        "TR-02"
+      ]
+    },
+    {
+      "calc_id": "FDR-A-F01",
+      "quantity": "Corrente estimada do alimentador A-F01",
+      "inputs": "P=6 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.26423353280989736,
+      "unit": "kA",
+      "source_or_assumption": "Carga crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED",
+      "diagram_refs": [
+        "A-F01"
+      ],
+      "model_mark_refs": [
+        "QMT-A-F01"
+      ]
+    },
+    {
+      "calc_id": "FDR-A-F02",
+      "quantity": "Corrente estimada do alimentador A-F02",
+      "inputs": "P=6 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.26423353280989736,
+      "unit": "kA",
+      "source_or_assumption": "Carga crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED",
+      "diagram_refs": [
+        "A-F02"
+      ],
+      "model_mark_refs": [
+        "QMT-A-F02"
+      ]
+    },
+    {
+      "calc_id": "FDR-A-F03",
+      "quantity": "Corrente estimada do alimentador A-F03",
+      "inputs": "P=4 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.17615568853993158,
+      "unit": "kA",
+      "source_or_assumption": "Carga crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED",
+      "diagram_refs": [
+        "A-F03"
+      ],
+      "model_mark_refs": [
+        "QMT-A-F03"
+      ]
+    },
+    {
+      "calc_id": "FDR-A-F04",
+      "quantity": "Corrente estimada do alimentador A-F04",
+      "inputs": "P=6 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.26423353280989736,
+      "unit": "kA",
+      "source_or_assumption": "Carga não crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED",
+      "diagram_refs": [
+        "A-F04"
+      ],
+      "model_mark_refs": [
+        "QMT-A-F04"
+      ]
+    },
+    {
+      "calc_id": "FDR-A-F05",
+      "quantity": "Corrente estimada do alimentador A-F05",
+      "inputs": "P=6 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.26423353280989736,
+      "unit": "kA",
+      "source_or_assumption": "Carga não crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED",
+      "diagram_refs": [
+        "A-F05"
+      ],
+      "model_mark_refs": [
+        "QMT-A-F05"
+      ]
+    },
+    {
+      "calc_id": "FDR-B-F01",
+      "quantity": "Corrente estimada do alimentador B-F01",
+      "inputs": "P=6 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.26423353280989736,
+      "unit": "kA",
+      "source_or_assumption": "Carga crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED",
+      "diagram_refs": [
+        "B-F01"
+      ],
+      "model_mark_refs": [
+        "QMT-B-F01"
+      ]
+    },
+    {
+      "calc_id": "FDR-B-F02",
+      "quantity": "Corrente estimada do alimentador B-F02",
+      "inputs": "P=6 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.26423353280989736,
+      "unit": "kA",
+      "source_or_assumption": "Carga crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED",
+      "diagram_refs": [
+        "B-F02"
+      ],
+      "model_mark_refs": [
+        "QMT-B-F02"
+      ]
+    },
+    {
+      "calc_id": "FDR-B-F03",
+      "quantity": "Corrente estimada do alimentador B-F03",
+      "inputs": "P=4 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.17615568853993158,
+      "unit": "kA",
+      "source_or_assumption": "Carga crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED",
+      "diagram_refs": [
+        "B-F03"
+      ],
+      "model_mark_refs": [
+        "QMT-B-F03"
+      ]
+    },
+    {
+      "calc_id": "FDR-B-F04",
+      "quantity": "Corrente estimada do alimentador B-F04",
+      "inputs": "P=6 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.26423353280989736,
+      "unit": "kA",
+      "source_or_assumption": "Carga não crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED",
+      "diagram_refs": [
+        "B-F04"
+      ],
+      "model_mark_refs": [
+        "QMT-B-F04"
+      ]
+    },
+    {
+      "calc_id": "FDR-B-F05",
+      "quantity": "Corrente estimada do alimentador B-F05",
+      "inputs": "P=6 MW; FP=0.95; VLL=13.8 kV",
+      "method": "If=S/(sqrt(3)*VLL), where S=P/FP",
+      "result": 0.26423353280989736,
+      "unit": "kA",
+      "source_or_assumption": "Carga não crítica assumida; sem método de instalação, comprimento ou agrupamento",
+      "status": "CALCULATED_LOAD_CURRENT_ONLY_CONDUCTOR_NOT_SIZED",
+      "diagram_refs": [
+        "B-F05"
+      ],
+      "model_mark_refs": [
+        "QMT-B-F05"
+      ]
+    }
+  ],
+  "identifier_scope": "diagram_refs are E-01/feeder schedule tags; model_mark_refs are Revit Mark values. The optional model_mark_crosswalk_audit resolves those marks to extracted ElementId/UniqueId records and never treats identity as electrical connectivity.",
+  "diagram_to_model_crosswalk": {
+    "A-F01": [
+      "QMT-A-F01"
+    ],
+    "A-F02": [
+      "QMT-A-F02"
+    ],
+    "A-F03": [
+      "QMT-A-F03"
+    ],
+    "A-F04": [
+      "QMT-A-F04"
+    ],
+    "A-F05": [
+      "QMT-A-F05"
+    ],
+    "B-F01": [
+      "QMT-B-F01"
+    ],
+    "B-F02": [
+      "QMT-B-F02"
+    ],
+    "B-F03": [
+      "QMT-B-F03"
+    ],
+    "B-F04": [
+      "QMT-B-F04"
+    ],
+    "B-F05": [
+      "QMT-B-F05"
+    ],
+    "BUS-MV-A": [
+      "BUS-MV-A"
+    ],
+    "BUS-MV-B": [
+      "BUS-MV-B"
+    ],
+    "GIS-L01": [
+      "GIS-L01-ENV",
+      "GIS-L01-52",
+      "GIS-L01-89A",
+      "GIS-L01-89B",
+      "GIS-L01-89G",
+      "GIS-L01-CT",
+      "GIS-L01-VT",
+      "GIS-L01-TERM"
+    ],
+    "GIS-L02": [
+      "GIS-L02-ENV",
+      "GIS-L02-52",
+      "GIS-L02-89A",
+      "GIS-L02-89B",
+      "GIS-L02-89G",
+      "GIS-L02-CT",
+      "GIS-L02-VT",
+      "GIS-L02-TERM"
+    ],
+    "QMT-A-IN": [
+      "QMT-A-IN"
+    ],
+    "QMT-B-IN": [
+      "QMT-B-IN"
+    ],
+    "QMT-TIE": [
+      "QMT-TIE"
+    ],
+    "TR-01": [
+      "TR-01"
+    ],
+    "TR-02": [
+      "TR-02"
+    ]
+  },
+  "n_minus_one_scenarios": {
+    "inputs_and_assumptions": [
+      "Dois transformadores idênticos, cada um associado a uma seção MT A/B em regime normal.",
+      "O acoplador MT é normalmente aberto conforme a base de projeto.",
+      "FP uniforme igual ao valor assumido; capacidade ativa equivalente = MVA nominal × FP.",
+      "O caso com acoplador fechado é condicional: capacidade do acoplador, intertravamentos, proteção, cabos e procedimento de transferência não foram verificados."
+    ],
+    "transformer_outage_with_tie_open": [
+      {
+        "scenario_id": "N1-TIE-OPEN-TR-A",
+        "failed_transformer_section": "A",
+        "surviving_transformer_section": "B",
+        "failed_transformer_tag": "TR-01",
+        "isolated_section_incomer_tag": "QMT-A-IN",
+        "surviving_transformer_tag": "TR-02",
+        "surviving_section_incomer_tag": "QMT-B-IN",
+        "tie_tag": "QMT-TIE",
+        "diagram_refs": [
+          "TR-01",
+          "QMT-A-IN",
+          "TR-02",
+          "QMT-B-IN",
+          "QMT-TIE",
+          "A-F01",
+          "A-F02",
+          "A-F03",
+          "A-F04",
+          "A-F05",
+          "B-F01",
+          "B-F02",
+          "B-F03",
+          "B-F04",
+          "B-F05"
+        ],
+        "critical_load_on_surviving_section_mw": 16.0,
+        "critical_load_on_isolated_section_mw": 16.0,
+        "active_load_on_surviving_section_mw": 28.0,
+        "surviving_transformer_loading_percent": 73.6842105263158,
+        "status": "TOPOLOGY_ONLY_TIE_OPEN_NO_CROSS_SECTION_TRANSFER",
+        "model_mark_refs": [
+          "TR-01",
+          "QMT-A-IN",
+          "TR-02",
+          "QMT-B-IN",
+          "QMT-TIE",
+          "QMT-A-F01",
+          "QMT-A-F02",
+          "QMT-A-F03",
+          "QMT-A-F04",
+          "QMT-A-F05",
+          "QMT-B-F01",
+          "QMT-B-F02",
+          "QMT-B-F03",
+          "QMT-B-F04",
+          "QMT-B-F05"
+        ]
+      },
+      {
+        "scenario_id": "N1-TIE-OPEN-TR-B",
+        "failed_transformer_section": "B",
+        "surviving_transformer_section": "A",
+        "failed_transformer_tag": "TR-02",
+        "isolated_section_incomer_tag": "QMT-B-IN",
+        "surviving_transformer_tag": "TR-01",
+        "surviving_section_incomer_tag": "QMT-A-IN",
+        "tie_tag": "QMT-TIE",
+        "diagram_refs": [
+          "TR-02",
+          "QMT-B-IN",
+          "TR-01",
+          "QMT-A-IN",
+          "QMT-TIE",
+          "B-F01",
+          "B-F02",
+          "B-F03",
+          "B-F04",
+          "B-F05",
+          "A-F01",
+          "A-F02",
+          "A-F03",
+          "A-F04",
+          "A-F05"
+        ],
+        "critical_load_on_surviving_section_mw": 16.0,
+        "critical_load_on_isolated_section_mw": 16.0,
+        "active_load_on_surviving_section_mw": 28.0,
+        "surviving_transformer_loading_percent": 73.6842105263158,
+        "status": "TOPOLOGY_ONLY_TIE_OPEN_NO_CROSS_SECTION_TRANSFER",
+        "model_mark_refs": [
+          "TR-02",
+          "QMT-B-IN",
+          "TR-01",
+          "QMT-A-IN",
+          "QMT-TIE",
+          "QMT-B-F01",
+          "QMT-B-F02",
+          "QMT-B-F03",
+          "QMT-B-F04",
+          "QMT-B-F05",
+          "QMT-A-F01",
+          "QMT-A-F02",
+          "QMT-A-F03",
+          "QMT-A-F04",
+          "QMT-A-F05"
+        ]
+      }
+    ],
+    "candidate_full_noncritical_feeder_retention": [
+      {
+        "retained_feeder_tag": "A-F04",
+        "diagram_refs": [
+          "TR-01",
+          "TR-02",
+          "QMT-TIE",
+          "A-F01",
+          "A-F02",
+          "A-F03",
+          "B-F01",
+          "B-F02",
+          "B-F03",
+          "A-F04"
+        ],
+        "retained_noncritical_active_mw": 6.0,
+        "aggregate_active_load_mw": 38.0,
+        "surviving_transformer_loading_percent": 100.0,
+        "status": "INDIVIDUAL_FEEDER_OPTION_NO_PRIORITY_OR_TRANSFER_VALIDATION",
+        "model_mark_refs": [
+          "TR-01",
+          "TR-02",
+          "QMT-TIE",
+          "QMT-A-F01",
+          "QMT-A-F02",
+          "QMT-A-F03",
+          "QMT-B-F01",
+          "QMT-B-F02",
+          "QMT-B-F03",
+          "QMT-A-F04"
+        ]
+      },
+      {
+        "retained_feeder_tag": "A-F05",
+        "diagram_refs": [
+          "TR-01",
+          "TR-02",
+          "QMT-TIE",
+          "A-F01",
+          "A-F02",
+          "A-F03",
+          "B-F01",
+          "B-F02",
+          "B-F03",
+          "A-F05"
+        ],
+        "retained_noncritical_active_mw": 6.0,
+        "aggregate_active_load_mw": 38.0,
+        "surviving_transformer_loading_percent": 100.0,
+        "status": "INDIVIDUAL_FEEDER_OPTION_NO_PRIORITY_OR_TRANSFER_VALIDATION",
+        "model_mark_refs": [
+          "TR-01",
+          "TR-02",
+          "QMT-TIE",
+          "QMT-A-F01",
+          "QMT-A-F02",
+          "QMT-A-F03",
+          "QMT-B-F01",
+          "QMT-B-F02",
+          "QMT-B-F03",
+          "QMT-A-F05"
+        ]
+      },
+      {
+        "retained_feeder_tag": "B-F04",
+        "diagram_refs": [
+          "TR-01",
+          "TR-02",
+          "QMT-TIE",
+          "A-F01",
+          "A-F02",
+          "A-F03",
+          "B-F01",
+          "B-F02",
+          "B-F03",
+          "B-F04"
+        ],
+        "retained_noncritical_active_mw": 6.0,
+        "aggregate_active_load_mw": 38.0,
+        "surviving_transformer_loading_percent": 100.0,
+        "status": "INDIVIDUAL_FEEDER_OPTION_NO_PRIORITY_OR_TRANSFER_VALIDATION",
+        "model_mark_refs": [
+          "TR-01",
+          "TR-02",
+          "QMT-TIE",
+          "QMT-A-F01",
+          "QMT-A-F02",
+          "QMT-A-F03",
+          "QMT-B-F01",
+          "QMT-B-F02",
+          "QMT-B-F03",
+          "QMT-B-F04"
+        ]
+      },
+      {
+        "retained_feeder_tag": "B-F05",
+        "diagram_refs": [
+          "TR-01",
+          "TR-02",
+          "QMT-TIE",
+          "A-F01",
+          "A-F02",
+          "A-F03",
+          "B-F01",
+          "B-F02",
+          "B-F03",
+          "B-F05"
+        ],
+        "retained_noncritical_active_mw": 6.0,
+        "aggregate_active_load_mw": 38.0,
+        "surviving_transformer_loading_percent": 100.0,
+        "status": "INDIVIDUAL_FEEDER_OPTION_NO_PRIORITY_OR_TRANSFER_VALIDATION",
+        "model_mark_refs": [
+          "TR-01",
+          "TR-02",
+          "QMT-TIE",
+          "QMT-A-F01",
+          "QMT-A-F02",
+          "QMT-A-F03",
+          "QMT-B-F01",
+          "QMT-B-F02",
+          "QMT-B-F03",
+          "QMT-B-F05"
+        ]
+      }
+    ],
+    "transfer_available_aggregate_envelope": {
+      "diagram_refs": [
+        "TR-01",
+        "TR-02",
+        "QMT-A-IN",
+        "QMT-B-IN",
+        "BUS-MV-A",
+        "BUS-MV-B",
+        "QMT-TIE",
+        "A-F01",
+        "A-F02",
+        "A-F03",
+        "A-F04",
+        "A-F05",
+        "B-F01",
+        "B-F02",
+        "B-F03",
+        "B-F04",
+        "B-F05"
+      ],
+      "model_mark_refs": [
+        "TR-01",
+        "TR-02",
+        "QMT-A-IN",
+        "QMT-B-IN",
+        "BUS-MV-A",
+        "BUS-MV-B",
+        "QMT-TIE",
+        "QMT-A-F01",
+        "QMT-A-F02",
+        "QMT-A-F03",
+        "QMT-A-F04",
+        "QMT-A-F05",
+        "QMT-B-F01",
+        "QMT-B-F02",
+        "QMT-B-F03",
+        "QMT-B-F04",
+        "QMT-B-F05"
+      ],
+      "critical_active_load_mw": 32.0,
+      "critical_apparent_load_mva": 33.68421052631579,
+      "surviving_transformer_loading_percent_for_critical_load": 84.21052631578947,
+      "one_transformer_active_capacity_at_assumed_power_factor_mw": 38.0,
+      "additional_noncritical_headroom_mw": 6.0,
+      "minimum_active_shedding_to_respect_nameplate_mw": 18.0,
+      "planned_noncritical_shedding_mw": 24.0,
+      "planned_shedding_exceeds_minimum_by_mw": 6.0,
+      "status": "CONDITIONAL_TRANSFER_ENVELOPE_NOT_OPERATIONALLY_VALIDATED"
+    },
+    "limitations": [
+      "Com acoplador aberto, a carga crítica da seção associada ao transformador perdido permanece sem transferência neste modelo.",
+      "O envelope agregado com acoplador fechado não prova que o equipamento ou os alimentadores suportem a transferência.",
+      "A seleção de alimentadores não críticos, os estados de manobra, a rejeição automática, as interligações e a sequência de transferência continuam pendentes.",
+      "Não foi modelada capacidade de sobrecarga de emergência; o limite usado é a placa de 40 MVA."
+    ]
+  },
+  "not_calculated": [
+    {
+      "calc_id": "SC-HV-01",
+      "quantity": "Curto-circuito em 138 kV",
+      "status": "PENDING_NETWORK_EQUIVALENT",
+      "missing_data": "MVA de curto / impedância equivalente, X/R, configuração de fontes e tempos da concessionária"
+    },
+    {
+      "calc_id": "SC-MV-01",
+      "quantity": "Curto-circuito completo em 13,8 kV",
+      "status": "PENDING_SOURCE_TRANSFORMER_CABLE_DATA",
+      "missing_data": "Rede, impedâncias reais de transformadores, motores, cabos, X/R e decaimento"
+    },
+    {
+      "calc_id": "CAB-01",
+      "quantity": "Seções de condutores e queda de tensão",
+      "status": "PENDING_INSTALLATION_DATA",
+      "missing_data": "Comprimento real, método, material, temperatura, agrupamento, formação, limites de queda e curto"
+    },
+    {
+      "calc_id": "PROT-01",
+      "quantity": "Ajustes e coordenação de proteção",
+      "status": "PENDING_NETWORK_AND_DEVICE_DATA",
+      "missing_data": "Curvas dos equipamentos, TCs/TPs, seletividade, tempos, rede e filosofia da concessionária"
+    },
+    {
+      "calc_id": "AUX-01",
+      "quantity": "Demanda de serviços auxiliares CA",
+      "status": "PENDING_LOAD_REGISTER",
+      "missing_data": "Lista de HVAC, bombas, iluminação, tomadas, motores e regimes simultâneos"
+    },
+    {
+      "calc_id": "DC-01",
+      "quantity": "Capacidade de baterias e missão da UPS",
+      "status": "PENDING_MISSION_PROFILE",
+      "missing_data": "Tensão CC escolhida, cargas contínuas, sequência de manobras, autonomia, temperatura, envelhecimento e tensão final"
+    },
+    {
+      "calc_id": "GND-01",
+      "quantity": "Malha de aterramento e tensões de toque/passo",
+      "status": "PENDING_SOIL_AND_FAULT_DATA",
+      "missing_data": "Resistividade por camada, corrente/tempo de falta à terra, geometria e condições da superfície"
+    },
+    {
+      "calc_id": "XFMR-01",
+      "quantity": "Perdas, regulação e elevação térmica dos transformadores",
+      "status": "PENDING_NAMEPLATE_AND_TEST_DATA",
+      "missing_data": "Perdas em vazio/carga, tensão de curto, taps, refrigeração, temperatura e relatório de ensaio"
+    }
+  ],
+  "quality_checks": {
+    "all_calculations_have_diagram_and_model_refs": true,
+    "feeders_sum_to_normal_load": true,
+    "feeders_sum_to_critical_load": true,
+    "critical_load_within_one_transformer_nameplate": true,
+    "full_load_requires_shedding_in_n_minus_one": true,
+    "normal_transformers_not_overloaded_if_equally_shared": true,
+    "n1_open_tie_serves_all_critical_sections": false,
+    "n1_critical_load_fits_one_unit_if_transfer_path_is_available": true,
+    "n1_minimum_shedding_satisfies_one_unit_nameplate": true,
+    "n1_full_noncritical_shedding_is_at_least_minimum_nameplate_shedding": true
+  },
+  "sources": [
+    {
+      "title": "GE Vernova M-Tier MV Switchgear 3.6-17.5 kV",
+      "url": "https://www.gevernova.com/power-conversion/sites/default/files/2025-05/GEA35559_M-Tier-MV-Switchgear-3.6kV-17.5kV-air-insulated-system_EN_20250905.pdf"
+    },
+    {
+      "title": "IEC 62271-200:2021+AMD1:2024",
+      "url": "https://webstore.iec.ch/en/publication/63466"
+    },
+    {
+      "title": "WEG oil transformer 138/13.8 kV product family",
+      "url": "https://www.weg.net/catalog/weg/BR/en/Generation%2CTransmission-and-Distribution/Oil-type-Reactors-and-Transformers/Oil-Type-Power-Transformer/3-up-to-50-MVA/Oil-Transformer-10000-12500-kVA-138-0-13-8kV-CDC-ONAF/p/14149426"
+    }
+  ],
+  "limitations": [
+    "All loads, ratings and the 10% transformer impedance are assumptions for the portfolio study.",
+    "A calculated load current does not establish ampacity or a conductor cross-section.",
+    "Transformer-only short-circuit values are sensitivity estimates, not interrupting ratings or protection settings.",
+    "No regulatory compliance or construction suitability is claimed."
+  ],
+  "model_mark_crosswalk_audit": {
+    "status": "MODEL_MARK_CROSSWALK_COMPLETE",
+    "source_file": "projetos/19-subestacao-gis/attempts/r20-23-candidate/dados/reconstrucao-r20/quantitativos-modelo.csv",
+    "source_sha256": "4256899c5c585450f7d9a835be1fa1dfadac117a09d866b9a7c154081b9e58b4",
+    "referenced_mark_count": 33,
+    "unique_model_mark_count": 168,
+    "missing_marks": [],
+    "duplicate_referenced_marks": [],
+    "incomplete_element_identity_marks": [],
+    "mark_to_revit_elements": {
+      "BUS-MV-A": [
+        {
+          "mark": "BUS-MV-A",
+          "element_id": "357945",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057639",
+          "category": "Modelos genéricos",
+          "family": "GIS_MVBusModule",
+          "type": "MV_BUS_17K5_STUDY"
+        }
+      ],
+      "BUS-MV-B": [
+        {
+          "mark": "BUS-MV-B",
+          "element_id": "357946",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005763a",
+          "category": "Modelos genéricos",
+          "family": "GIS_MVBusModule",
+          "type": "MV_BUS_17K5_STUDY"
+        }
+      ],
+      "GIS-L01-52": [
+        {
+          "mark": "GIS-L01-52",
+          "element_id": "357799",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575a7",
+          "category": "Equipamento elétrico",
+          "family": "GIS_CircuitBreaker",
+          "type": "GIS_CB_145KV_STUDY"
+        }
+      ],
+      "GIS-L01-89A": [
+        {
+          "mark": "GIS-L01-89A",
+          "element_id": "357800",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575a8",
+          "category": "Modelos genéricos",
+          "family": "GIS_Disconnector",
+          "type": "GIS_DS_145KV_STUDY"
+        }
+      ],
+      "GIS-L01-89B": [
+        {
+          "mark": "GIS-L01-89B",
+          "element_id": "357801",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575a9",
+          "category": "Modelos genéricos",
+          "family": "GIS_Disconnector",
+          "type": "GIS_DS_145KV_STUDY"
+        }
+      ],
+      "GIS-L01-89G": [
+        {
+          "mark": "GIS-L01-89G",
+          "element_id": "357802",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575aa",
+          "category": "Modelos genéricos",
+          "family": "GIS_EarthingSwitch",
+          "type": "GIS_ES_145KV_STUDY"
+        }
+      ],
+      "GIS-L01-CT": [
+        {
+          "mark": "GIS-L01-CT",
+          "element_id": "357803",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575ab",
+          "category": "Equipamento elétrico",
+          "family": "GIS_CurrentTransformer",
+          "type": "GIS_CT_145KV_STUDY"
+        }
+      ],
+      "GIS-L01-ENV": [
+        {
+          "mark": "GIS-L01-ENV",
+          "element_id": "357798",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575a6",
+          "category": "Modelos genéricos",
+          "family": "GIS_BayFrame",
+          "type": "GIS_BAY_F35_145KV_DIGITAL_SF6_BAY_ENVELOPE"
+        }
+      ],
+      "GIS-L01-TERM": [
+        {
+          "mark": "GIS-L01-TERM",
+          "element_id": "357805",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575ad",
+          "category": "Equipamento elétrico",
+          "family": "GIS_Termination",
+          "type": "GIS_TERMINATION_145KV_STUDY"
+        }
+      ],
+      "GIS-L01-VT": [
+        {
+          "mark": "GIS-L01-VT",
+          "element_id": "357804",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575ac",
+          "category": "Equipamento elétrico",
+          "family": "GIS_VoltageTransformer",
+          "type": "GIS_VT_145KV_STUDY"
+        }
+      ],
+      "GIS-L02-52": [
+        {
+          "mark": "GIS-L02-52",
+          "element_id": "357825",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575c1",
+          "category": "Equipamento elétrico",
+          "family": "GIS_CircuitBreaker",
+          "type": "GIS_CB_145KV_STUDY"
+        }
+      ],
+      "GIS-L02-89A": [
+        {
+          "mark": "GIS-L02-89A",
+          "element_id": "357826",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575c2",
+          "category": "Modelos genéricos",
+          "family": "GIS_Disconnector",
+          "type": "GIS_DS_145KV_STUDY"
+        }
+      ],
+      "GIS-L02-89B": [
+        {
+          "mark": "GIS-L02-89B",
+          "element_id": "357827",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575c3",
+          "category": "Modelos genéricos",
+          "family": "GIS_Disconnector",
+          "type": "GIS_DS_145KV_STUDY"
+        }
+      ],
+      "GIS-L02-89G": [
+        {
+          "mark": "GIS-L02-89G",
+          "element_id": "357828",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575c4",
+          "category": "Modelos genéricos",
+          "family": "GIS_EarthingSwitch",
+          "type": "GIS_ES_145KV_STUDY"
+        }
+      ],
+      "GIS-L02-CT": [
+        {
+          "mark": "GIS-L02-CT",
+          "element_id": "357829",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575c5",
+          "category": "Equipamento elétrico",
+          "family": "GIS_CurrentTransformer",
+          "type": "GIS_CT_145KV_STUDY"
+        }
+      ],
+      "GIS-L02-ENV": [
+        {
+          "mark": "GIS-L02-ENV",
+          "element_id": "357824",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575c0",
+          "category": "Modelos genéricos",
+          "family": "GIS_BayFrame",
+          "type": "GIS_BAY_F35_145KV_DIGITAL_SF6_BAY_ENVELOPE"
+        }
+      ],
+      "GIS-L02-TERM": [
+        {
+          "mark": "GIS-L02-TERM",
+          "element_id": "357831",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575c7",
+          "category": "Equipamento elétrico",
+          "family": "GIS_Termination",
+          "type": "GIS_TERMINATION_145KV_STUDY"
+        }
+      ],
+      "GIS-L02-VT": [
+        {
+          "mark": "GIS-L02-VT",
+          "element_id": "357830",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575c6",
+          "category": "Equipamento elétrico",
+          "family": "GIS_VoltageTransformer",
+          "type": "GIS_VT_145KV_STUDY"
+        }
+      ],
+      "QMT-A-F01": [
+        {
+          "mark": "QMT-A-F01",
+          "element_id": "357934",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005762e",
+          "category": "Equipamento elétrico",
+          "family": "GIS_MV_Cubicle",
+          "type": "MV_UNIGEAR_ZS1_17K5_2KA_REFERENCE"
+        }
+      ],
+      "QMT-A-F02": [
+        {
+          "mark": "QMT-A-F02",
+          "element_id": "357936",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057630",
+          "category": "Equipamento elétrico",
+          "family": "GIS_MV_Cubicle",
+          "type": "MV_UNIGEAR_ZS1_17K5_2KA_REFERENCE"
+        }
+      ],
+      "QMT-A-F03": [
+        {
+          "mark": "QMT-A-F03",
+          "element_id": "357938",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057632",
+          "category": "Equipamento elétrico",
+          "family": "GIS_MV_Cubicle",
+          "type": "MV_UNIGEAR_ZS1_17K5_2KA_REFERENCE"
+        }
+      ],
+      "QMT-A-F04": [
+        {
+          "mark": "QMT-A-F04",
+          "element_id": "357940",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057634",
+          "category": "Equipamento elétrico",
+          "family": "GIS_MV_Cubicle",
+          "type": "MV_UNIGEAR_ZS1_17K5_2KA_REFERENCE"
+        }
+      ],
+      "QMT-A-F05": [
+        {
+          "mark": "QMT-A-F05",
+          "element_id": "357942",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057636",
+          "category": "Equipamento elétrico",
+          "family": "GIS_MV_Cubicle",
+          "type": "MV_UNIGEAR_ZS1_17K5_2KA_REFERENCE"
+        }
+      ],
+      "QMT-A-IN": [
+        {
+          "mark": "QMT-A-IN",
+          "element_id": "357930",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005762a",
+          "category": "Equipamento elétrico",
+          "family": "GIS_MV_Cubicle",
+          "type": "MV_UNIGEAR_ZS1_17K5_2KA_REFERENCE"
+        }
+      ],
+      "QMT-B-F01": [
+        {
+          "mark": "QMT-B-F01",
+          "element_id": "357931",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005762b",
+          "category": "Equipamento elétrico",
+          "family": "GIS_MV_Cubicle",
+          "type": "MV_UNIGEAR_ZS1_17K5_2KA_REFERENCE"
+        }
+      ],
+      "QMT-B-F02": [
+        {
+          "mark": "QMT-B-F02",
+          "element_id": "357933",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005762d",
+          "category": "Equipamento elétrico",
+          "family": "GIS_MV_Cubicle",
+          "type": "MV_UNIGEAR_ZS1_17K5_2KA_REFERENCE"
+        }
+      ],
+      "QMT-B-F03": [
+        {
+          "mark": "QMT-B-F03",
+          "element_id": "357935",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005762f",
+          "category": "Equipamento elétrico",
+          "family": "GIS_MV_Cubicle",
+          "type": "MV_UNIGEAR_ZS1_17K5_2KA_REFERENCE"
+        }
+      ],
+      "QMT-B-F04": [
+        {
+          "mark": "QMT-B-F04",
+          "element_id": "357937",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057631",
+          "category": "Equipamento elétrico",
+          "family": "GIS_MV_Cubicle",
+          "type": "MV_UNIGEAR_ZS1_17K5_2KA_REFERENCE"
+        }
+      ],
+      "QMT-B-F05": [
+        {
+          "mark": "QMT-B-F05",
+          "element_id": "357939",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057633",
+          "category": "Equipamento elétrico",
+          "family": "GIS_MV_Cubicle",
+          "type": "MV_UNIGEAR_ZS1_17K5_2KA_REFERENCE"
+        }
+      ],
+      "QMT-B-IN": [
+        {
+          "mark": "QMT-B-IN",
+          "element_id": "357943",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057637",
+          "category": "Equipamento elétrico",
+          "family": "GIS_MV_Cubicle",
+          "type": "MV_UNIGEAR_ZS1_17K5_2KA_REFERENCE"
+        }
+      ],
+      "QMT-TIE": [
+        {
+          "mark": "QMT-TIE",
+          "element_id": "357944",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057638",
+          "category": "Equipamento elétrico",
+          "family": "GIS_MV_BusCoupler",
+          "type": "MV_TIE_17K5_STUDY"
+        }
+      ],
+      "TR-01": [
+        {
+          "mark": "TR-01",
+          "element_id": "357868",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575ec",
+          "category": "Equipamento elétrico",
+          "family": "GIS_Transformer_Tank",
+          "type": "TR_40MVA_DAX_EA40_REFERENCE"
+        }
+      ],
+      "TR-02": [
+        {
+          "mark": "TR-02",
+          "element_id": "357910",
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057616",
+          "category": "Equipamento elétrico",
+          "family": "GIS_Transformer_Tank",
+          "type": "TR_40MVA_DAX_EA40_REFERENCE"
+        }
+      ]
+    },
+    "connectivity_verified": false,
+    "scope_note": "Esta auditoria resolve as marcas dos cálculos para registros Revit extraídos com ElementId e UniqueId. Confirma identidade e presença da marca; não prova conectividade elétrica, participação em circuito ou continuidade de condutor físico."
+  }
+}

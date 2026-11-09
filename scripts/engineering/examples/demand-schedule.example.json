@@ -1,0 +1,31 @@
+{
+  "project": "LIBRARY-EXAMPLE-NOT-A-REAL-FACILITY",
+  "revision": "1.0",
+  "calc_id": "EX-DIST-001",
+  "status": "ILLUSTRATIVE_EXPLICIT_INPUTS",
+  "source_or_assumption": "Synthetic reference case to demonstrate the input format; not project or manufacturer data.",
+  "active_power_unit": "kW",
+  "reactive_power_unit": "kvar",
+  "limitations": [
+    "Demand factors are explicit assumptions and do not prove actual simultaneity.",
+    "The schedule does not model phase allocation, voltage, feeder impedance, or conductor sizing."
+  ],
+  "loads": [
+    {
+      "equipment_id": "MCC-01",
+      "connected_active_power_kw": 100.0,
+      "power_factor": 0.8,
+      "demand_factor": 0.5,
+      "reactive_direction": "lagging",
+      "source_or_assumption": "Synthetic example value."
+    },
+    {
+      "equipment_id": "LGT-01",
+      "connected_active_power_kw": 40.0,
+      "power_factor": 1.0,
+      "demand_factor": 0.5,
+      "reactive_direction": "leading",
+      "source_or_assumption": "Synthetic example value."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "basis": "Exemplo sintético para demonstrar a estrutura de dados; não representa equipamento instalado.",
+  "equipment_ids": ["PLC-01", "PT-01", "XV-01"],
+  "controller_ids": ["PLC-01"],
+  "field_device_ids": ["PT-01", "XV-01"],
+  "points": [
+    {
+      "point_id": "PT-01.PV",
+      "signal_kind": "AI",
+      "source_equipment_id": "PT-01",
+      "destination_equipment_id": "PLC-01",
+      "function": "Pressão do tanque",
+      "engineering_units": "bar",
+      "range_low": 0,
+      "range_high": 16,
+      "source_or_assumption": "Exemplo sintético; faixa não selecionada por fabricante"
+    },
+    {
+      "point_id": "XV-01.CMD",
+      "signal_kind": "DO",
+      "source_equipment_id": "PLC-01",
+      "destination_equipment_id": "XV-01",
+      "function": "Comando discreto de abertura",
+      "source_or_assumption": "Exemplo sintético; lógica e tensão não especificadas"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "CTRL-01",
+      "from_equipment_id": "PLC-01",
+      "to_equipment_id": "XV-01",
+      "relation_type": "CONTROL",
+      "description": "Relação funcional PLC para atuador"
+    }
+  ]
+}

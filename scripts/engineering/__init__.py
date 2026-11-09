@@ -1,1 +1,1 @@
-"""Engineering calculations for the BIM portfolio studies."""
+"""Reusable electrical engineering calculation package."""

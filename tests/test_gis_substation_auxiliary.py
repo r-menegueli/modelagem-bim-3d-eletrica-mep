@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 import unittest
@@ -23,6 +24,41 @@ class GisSubstationAuxiliaryTest(unittest.TestCase):
         self.assertTrue(math.isclose(values["AUX-AC-12"], values["AUX-AC-11"] / 0.9, rel_tol=1e-12))
         self.assertLess(values["AUX-AC-14"], 80.0)
         self.assertTrue(result["quality_checks"]["ac_candidate_below_assumed_utilization_limit"])
+
+    def test_shared_core_refactor_preserves_every_legacy_r1_to_r8_output(self) -> None:
+        baseline_path = ROOT / "tests" / "fixtures" / "gis_auxiliary_legacy_outputs.sha256.json"
+        baseline = json.loads(baseline_path.read_text(encoding="utf-8"))
+        input_paths = sorted((ROOT / "projetos" / "19-subestacao-gis" / "dados").glob("servicos-auxiliares-r*.json"))
+        self.assertEqual({path.name for path in input_paths}, set(baseline["outputs"]))
+        total_rows = 0
+        for path in input_paths:
+            result = calculate(json.loads(path.read_text(encoding="utf-8")))
+            canonical = json.dumps(
+                result,
+                ensure_ascii=False,
+                sort_keys=True,
+                separators=(",", ":"),
+                allow_nan=False,
+            ).encode("utf-8")
+            expected = baseline["outputs"][path.name]
+            self.assertEqual(hashlib.sha256(canonical).hexdigest(), expected["sha256"], path.name)
+            self.assertEqual(len(result["calculations"]), expected["calculation_rows"], path.name)
+            total_rows += len(result["calculations"])
+        self.assertEqual(total_rows, 184)
+
+    def test_r20_r8_baseline_reproduction_matches_current_calculation(self) -> None:
+        source = ROOT / "projetos" / "19-subestacao-gis" / "dados" / "servicos-auxiliares-r8.json"
+        saved = (
+            ROOT
+            / "projetos"
+            / "19-subestacao-gis"
+            / "dados"
+            / "reconstrucao-r20"
+            / "servicos-auxiliares-resultados-r8.json"
+        )
+        base = json.loads(source.read_text(encoding="utf-8"))
+        self.assertEqual(json.loads(saved.read_text(encoding="utf-8")), calculate(base))
+        self.assertEqual(json.loads(saved.read_text(encoding="utf-8"))["revision"], "R8")
 
     def test_dc_battery_capacity_includes_mission_and_correction_factors(self) -> None:
         result = calculate(self.base)

@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass, is_dataclass
 import math
-from typing import Any
+from typing import Any, Sequence
 
 
 _SQRT_3 = math.sqrt(3.0)
@@ -30,6 +30,14 @@ class PowerTriangle:
     reactive_power_kvar: float
     apparent_power_kva: float
     power_factor: float | None
+    provenance: Provenance
+
+
+@dataclass(frozen=True)
+class ApparentPower:
+    active_power_kw: float
+    power_factor: float
+    apparent_power_kva: float
     provenance: Provenance
 
 
@@ -153,6 +161,85 @@ class ShortCircuitSensitivity:
     provenance: Provenance
 
 
+@dataclass(frozen=True)
+class DemandLoad:
+    """Declared load; demand factor is explicit and reactive inputs are an optional pair."""
+
+    equipment_id: str
+    connected_active_power_kw: float
+    power_factor: float | None
+    demand_factor: float
+    reactive_direction: str | None
+
+
+@dataclass(frozen=True)
+class DemandScheduleLine:
+    equipment_id: str
+    connected_active_power_kw: float
+    demand_factor: float
+    demand_active_power_kw: float
+    demand_reactive_power_kvar: float | None
+    demand_apparent_power_kva: float | None
+    power_factor: float | None
+    reactive_direction: str | None
+
+
+@dataclass(frozen=True)
+class DemandSchedule:
+    connected_active_power_kw: float
+    diversified_active_power_kw: float
+    diversified_reactive_power_kvar: float | None
+    diversified_apparent_power_kva: float | None
+    aggregate_power_factor: float | None
+    lines: tuple[DemandScheduleLine, ...]
+    provenance: Provenance
+
+
+@dataclass(frozen=True)
+class CorrectedAmpacity:
+    reference_ampacity_a: float
+    applied_correction_factors: tuple[dict[str, Any], ...]
+    combined_factor: float
+    corrected_ampacity_a: float
+    provenance: Provenance
+
+
+@dataclass(frozen=True)
+class AdiabaticConductorWithstand:
+    k_a_sqrt_s_per_mm2: float
+    conductor_area_mm2: float
+    fault_duration_s: float
+    withstand_current_a: float
+    withstand_i2t_a2s: float
+    provenance: Provenance
+
+
+@dataclass(frozen=True)
+class InterruptingRatingComparison:
+    calculated_fault_current_ka: float
+    device_interrupting_rating_ka: float
+    fault_current_basis: str
+    device_rating_basis: str
+    bus_nominal_voltage_kv: float
+    device_rated_voltage_kv: float
+    rating_margin_ka: float | None
+    current_rating_sufficient: bool | None
+    voltage_rating_sufficient: bool
+    status: str
+    provenance: Provenance
+
+
+@dataclass(frozen=True)
+class PowerFactorCorrection:
+    active_power_kw: float
+    initial_power_factor: float
+    target_power_factor: float
+    initial_reactive_power_kvar: float
+    target_reactive_power_kvar: float
+    required_reactive_compensation_kvar: float
+    provenance: Provenance
+
+
 def _real(name: str, value: float) -> float:
     if isinstance(value, bool) or isinstance(value, (str, bytes)):
         raise ValueError(f"{name} must be a finite real number, not bool or text")
@@ -232,7 +319,11 @@ def power_triangle_from_active_power_and_power_factor(
         raise ValueError("reactive_direction must be 'lagging' or 'leading'")
     if p_kw == 0 and pf != 1:
         raise ValueError("zero active power requires unity power factor in this input form")
-    s_kva = _finite_result("apparent_power_kva", p_kw / pf)
+    s_kva = apparent_power_from_active_power_and_power_factor(
+        active_power_kw=p_kw,
+        power_factor=pf,
+        provenance=provenance,
+    ).apparent_power_kva
     q_abs_kvar = _finite_result(
         "reactive_power_kvar", p_kw * math.sqrt(max(0.0, 1.0 - pf * pf)) / pf
     )
@@ -243,6 +334,24 @@ def power_triangle_from_active_power_and_power_factor(
         apparent_power_kva=s_kva,
         power_factor=pf,
         provenance=_provenance(provenance, "CALCULATED_FROM_ACTIVE_POWER_AND_POWER_FACTOR"),
+    )
+
+
+def apparent_power_from_active_power_and_power_factor(
+    *,
+    active_power_kw: float,
+    power_factor: float,
+    provenance: Provenance | None = None,
+) -> ApparentPower:
+    """Calculate S=P/PF without assuming the leading/lagging reactive sign."""
+    p_kw = _nonnegative("active_power_kw", active_power_kw)
+    pf = _fraction("power_factor", power_factor)
+    apparent_kva = _finite_result("apparent_power_kva", p_kw / pf)
+    return ApparentPower(
+        active_power_kw=p_kw,
+        power_factor=pf,
+        apparent_power_kva=apparent_kva,
+        provenance=_provenance(provenance, "APPARENT_POWER_FROM_ACTIVE_POWER_AND_POWER_FACTOR"),
     )
 
 
@@ -576,6 +685,276 @@ def short_circuit_from_series_impedances(
     )
 
 
+def aggregate_demand_schedule(
+    *,
+    loads: Sequence[DemandLoad],
+    provenance: Provenance | None = None,
+) -> DemandSchedule:
+    """Aggregate an explicitly diversified load schedule.
+
+    Each load must provide connected active power and a demand factor in
+    [0, 1]. Power factor and leading/lagging direction are an optional pair.
+    If any load lacks either value, reactive/apparent aggregates remain unknown
+    instead of being inferred. The result assumes stated demand factors are
+    mutually applicable and does not infer coincidence, phases, voltage, or
+    feeder topology.
+    """
+    if isinstance(loads, (str, bytes)) or not isinstance(loads, Sequence) or not loads:
+        raise ValueError("loads must be a non-empty sequence of DemandLoad values")
+    lines: list[DemandScheduleLine] = []
+    seen_ids: set[str] = set()
+    connected_kw_total = 0.0
+    demand_kw_total = 0.0
+    demand_kvar_total = 0.0
+    all_reactive_data_known = True
+
+    for index, load in enumerate(loads):
+        if not isinstance(load, DemandLoad):
+            raise ValueError(f"loads[{index}] must be a DemandLoad value")
+        equipment_id = load.equipment_id
+        if not isinstance(equipment_id, str) or not equipment_id.strip():
+            raise ValueError(f"loads[{index}].equipment_id cannot be blank")
+        if equipment_id in seen_ids:
+            raise ValueError(f"duplicate equipment_id: {equipment_id}")
+        seen_ids.add(equipment_id)
+        connected_kw = _nonnegative(
+            f"loads[{index}].connected_active_power_kw", load.connected_active_power_kw
+        )
+        pf = (
+            None
+            if load.power_factor is None
+            else _fraction(f"loads[{index}].power_factor", load.power_factor)
+        )
+        demand_factor = _fraction(
+            f"loads[{index}].demand_factor", load.demand_factor, allow_zero=True
+        )
+        direction = (
+            load.reactive_direction.strip().lower()
+            if isinstance(load.reactive_direction, str)
+            else None
+        )
+        if (pf is None) != (direction is None):
+            raise ValueError(f"loads[{index}] must supply both power_factor and reactive_direction, or omit both")
+        if direction is not None and direction not in {"leading", "lagging"}:
+            raise ValueError(f"loads[{index}].reactive_direction must be 'leading' or 'lagging'")
+
+        demand_kw = _finite_result("demand_active_power_kw", connected_kw * demand_factor)
+        if pf is None:
+            demand_kvar = None
+            demand_kva = None
+            all_reactive_data_known = False
+        else:
+            kvar_magnitude = demand_kw * math.tan(math.acos(pf)) if demand_kw > 0.0 else 0.0
+            demand_kvar = kvar_magnitude if direction == "lagging" else -kvar_magnitude
+            demand_kva = _finite_result(
+                "demand_apparent_power_kva", math.hypot(demand_kw, demand_kvar)
+            )
+            demand_kvar_total = _finite_result(
+                "diversified_reactive_power_kvar", demand_kvar_total + demand_kvar
+            )
+        connected_kw_total = _finite_result(
+            "connected_active_power_kw", connected_kw_total + connected_kw
+        )
+        demand_kw_total = _finite_result(
+            "diversified_active_power_kw", demand_kw_total + demand_kw
+        )
+        lines.append(
+            DemandScheduleLine(
+                equipment_id=equipment_id,
+                connected_active_power_kw=connected_kw,
+                demand_factor=demand_factor,
+                demand_active_power_kw=demand_kw,
+                demand_reactive_power_kvar=demand_kvar,
+                demand_apparent_power_kva=demand_kva,
+                power_factor=pf,
+                reactive_direction=direction,
+            )
+        )
+
+    aggregate_kvar = demand_kvar_total if all_reactive_data_known else None
+    aggregate_kva = (
+        _finite_result("diversified_apparent_power_kva", math.hypot(demand_kw_total, demand_kvar_total))
+        if all_reactive_data_known
+        else None
+    )
+    aggregate_pf = demand_kw_total / aggregate_kva if aggregate_kva is not None and aggregate_kva > 0.0 else None
+    return DemandSchedule(
+        connected_active_power_kw=connected_kw_total,
+        diversified_active_power_kw=demand_kw_total,
+        diversified_reactive_power_kvar=aggregate_kvar,
+        diversified_apparent_power_kva=aggregate_kva,
+        aggregate_power_factor=aggregate_pf,
+        lines=tuple(lines),
+        provenance=_provenance(provenance, "EXPLICIT_LOADS_AND_DEMAND_FACTORS_NO_INFERRED_SIMULTANEITY"),
+    )
+
+
+def ampacity_after_corrections(
+    *,
+    reference_ampacity_a: float,
+    correction_factors: Sequence[dict[str, Any]],
+    provenance: Provenance | None = None,
+) -> CorrectedAmpacity:
+    """Apply named, supplied multipliers to a supplied reference ampacity.
+
+    This does not determine the base ampacity or verify an installation/code
+    method. Each factor must identify its value and source/assumption. Factors
+    greater than one are allowed because this is a generic multiplier; the
+    caller must justify them from a source applicable to the installation.
+    """
+    reference_a = _positive("reference_ampacity_a", reference_ampacity_a)
+    if isinstance(correction_factors, (str, bytes)) or not isinstance(correction_factors, Sequence) or not correction_factors:
+        raise ValueError("correction_factors must be a non-empty sequence of named factor records")
+    seen: set[str] = set()
+    records: list[dict[str, Any]] = []
+    combined = 1.0
+    for index, factor in enumerate(correction_factors):
+        if not isinstance(factor, dict):
+            raise ValueError(f"correction_factors[{index}] must be a dict")
+        name = factor.get("name")
+        source = factor.get("source_or_assumption")
+        if not isinstance(name, str) or not name.strip():
+            raise ValueError(f"correction_factors[{index}].name cannot be blank")
+        if name in seen:
+            raise ValueError(f"duplicate correction factor name: {name}")
+        seen.add(name)
+        if not isinstance(source, str) or not source.strip():
+            raise ValueError(f"correction_factors[{index}].source_or_assumption cannot be blank")
+        multiplier = _positive(f"correction_factors[{index}].multiplier", factor.get("multiplier"))
+        combined = _finite_result("combined_factor", combined * multiplier)
+        records.append({
+            "name": name,
+            "multiplier": multiplier,
+            "source_or_assumption": source,
+        })
+    corrected_a = _finite_result("corrected_ampacity_a", reference_a * combined)
+    return CorrectedAmpacity(
+        reference_ampacity_a=reference_a,
+        applied_correction_factors=tuple(records),
+        combined_factor=combined,
+        corrected_ampacity_a=corrected_a,
+        provenance=_provenance(provenance, "MULTIPLIERS_APPLIED_TO_USER_SUPPLIED_REFERENCE_AMPACITY"),
+    )
+
+
+def adiabatic_conductor_withstand(
+    *,
+    k_a_sqrt_s_per_mm2: float,
+    conductor_area_mm2: float,
+    fault_duration_s: float,
+    provenance: Provenance | None = None,
+) -> AdiabaticConductorWithstand:
+    """Calculate a simplified adiabatic I²t withstand from explicitly given k.
+
+    `k` is supplied by the caller with units A*sqrt(s)/mm² for its declared
+    conductor and temperature assumptions. No material, insulation, initial
+    temperature, final temperature, or normative k value is inferred.
+    """
+    k_value = _positive("k_a_sqrt_s_per_mm2", k_a_sqrt_s_per_mm2)
+    area = _positive("conductor_area_mm2", conductor_area_mm2)
+    duration = _positive("fault_duration_s", fault_duration_s)
+    current_a = _finite_result(
+        "withstand_current_a", k_value * area / math.sqrt(duration)
+    )
+    i2t = _finite_result("withstand_i2t_a2s", (k_value * area) ** 2)
+    return AdiabaticConductorWithstand(
+        k_a_sqrt_s_per_mm2=k_value,
+        conductor_area_mm2=area,
+        fault_duration_s=duration,
+        withstand_current_a=current_a,
+        withstand_i2t_a2s=i2t,
+        provenance=_provenance(provenance, "ADIABATIC_I2T_FROM_EXPLICIT_K_AREA_AND_DURATION"),
+    )
+
+
+def compare_interrupting_rating(
+    *,
+    calculated_fault_current_ka: float,
+    device_interrupting_rating_ka: float,
+    fault_current_basis: str,
+    device_rating_basis: str,
+    bus_nominal_voltage_kv: float,
+    device_rated_voltage_kv: float,
+    provenance: Provenance | None = None,
+) -> InterruptingRatingComparison:
+    """Compare explicitly supplied current/voltage ratings without selecting protection.
+
+    Current is compared only when both basis labels match exactly. This is a
+    numeric screen, not a standards-compliance, transient, duty, or selectivity
+    study. Device data must be applicable to the bus and fault basis.
+    """
+    fault_ka = _positive("calculated_fault_current_ka", calculated_fault_current_ka)
+    device_ka = _positive("device_interrupting_rating_ka", device_interrupting_rating_ka)
+    bus_kv = _positive("bus_nominal_voltage_kv", bus_nominal_voltage_kv)
+    device_kv = _positive("device_rated_voltage_kv", device_rated_voltage_kv)
+    if not isinstance(fault_current_basis, str) or not fault_current_basis.strip():
+        raise ValueError("fault_current_basis cannot be blank")
+    if not isinstance(device_rating_basis, str) or not device_rating_basis.strip():
+        raise ValueError("device_rating_basis cannot be blank")
+    voltage_ok = device_kv >= bus_kv
+    comparable = fault_current_basis == device_rating_basis
+    margin = device_ka - fault_ka if comparable else None
+    current_ok = margin >= 0.0 if margin is not None else None
+    if not comparable:
+        status = "CURRENT_BASES_NOT_COMPARABLE"
+    elif not voltage_ok:
+        status = "DEVICE_VOLTAGE_RATING_BELOW_BUS_NOMINAL"
+    elif not current_ok:
+        status = "DEVICE_INTERRUPT_RATING_BELOW_DECLARED_FAULT_CURRENT"
+    else:
+        status = "NUMERIC_RATINGS_MEET_DECLARED_SCREEN_ONLY"
+    return InterruptingRatingComparison(
+        calculated_fault_current_ka=fault_ka,
+        device_interrupting_rating_ka=device_ka,
+        fault_current_basis=fault_current_basis.strip(),
+        device_rating_basis=device_rating_basis.strip(),
+        bus_nominal_voltage_kv=bus_kv,
+        device_rated_voltage_kv=device_kv,
+        rating_margin_ka=margin,
+        current_rating_sufficient=current_ok,
+        voltage_rating_sufficient=voltage_ok,
+        status=status,
+        provenance=_provenance(provenance, "NUMERIC_DEVICE_RATING_SCREEN_NO_COORDINATION_OR_STANDARD_CHECK"),
+    )
+
+
+def required_reactive_compensation(
+    *,
+    active_power_kw: float,
+    initial_power_factor: float,
+    target_power_factor: float,
+    provenance: Provenance | None = None,
+) -> PowerFactorCorrection:
+    """Calculate signed capacitive kvar to move a constant-P load between PFs.
+
+    Positive compensation is capacitive; negative compensation means the
+    target would require more lagging reactive power. Harmonics, voltage
+    variation, switching steps, resonance, and equipment sizing are excluded.
+    """
+    p_kw = _nonnegative("active_power_kw", active_power_kw)
+    initial_pf = _fraction("initial_power_factor", initial_power_factor)
+    target_pf = _fraction("target_power_factor", target_power_factor)
+    q_initial = _finite_result(
+        "initial_reactive_power_kvar",
+        p_kw * math.tan(math.acos(initial_pf)),
+    )
+    q_target = _finite_result(
+        "target_reactive_power_kvar",
+        p_kw * math.tan(math.acos(target_pf)),
+    )
+    return PowerFactorCorrection(
+        active_power_kw=p_kw,
+        initial_power_factor=initial_pf,
+        target_power_factor=target_pf,
+        initial_reactive_power_kvar=q_initial,
+        target_reactive_power_kvar=q_target,
+        required_reactive_compensation_kvar=_finite_result(
+            "required_reactive_compensation_kvar", q_initial - q_target
+        ),
+        provenance=_provenance(provenance, "CONSTANT_ACTIVE_POWER_POWER_FACTOR_SCENARIO_NO_RESONANCE_STUDY"),
+    )
+
+
 def result_record(result: Any) -> dict[str, Any]:
     """Flatten a core dataclass to a JSON-friendly record with provenance.
 
@@ -589,3 +968,42 @@ def result_record(result: Any) -> dict[str, Any]:
     record["source_or_assumption"] = provenance["source_or_assumption"]
     record["status"] = provenance["status"]
     return record
+
+
+def identified_calculation_record(
+    *,
+    calc_id: str,
+    inputs: dict[str, Any],
+    method: str,
+    result: Any,
+    unit: str,
+    limitations: Sequence[str],
+) -> dict[str, Any]:
+    """Add stable calculation identity and traceability to a core result."""
+    required_text = {
+        "calc_id": calc_id,
+        "method": method,
+        "unit": unit,
+    }
+    for name, value in required_text.items():
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(f"{name} cannot be blank")
+    if not isinstance(inputs, dict) or not inputs:
+        raise ValueError("inputs must be a non-empty structured dictionary")
+    if isinstance(limitations, (str, bytes)) or not isinstance(limitations, Sequence) or not limitations:
+        raise ValueError("limitations must be a non-empty sequence of explicit statements")
+    if any(not isinstance(item, str) or not item.strip() for item in limitations):
+        raise ValueError("each limitation must be non-empty text")
+    values = result_record(result)
+    source_or_assumption = values.pop("source_or_assumption")
+    status = values.pop("status")
+    return {
+        "calc_id": calc_id.strip(),
+        "inputs": inputs,
+        "method": method.strip(),
+        "result": values,
+        "unit": unit.strip(),
+        "source_or_assumption": source_or_assumption,
+        "status": status,
+        "limitations": [item.strip() for item in limitations],
+    }

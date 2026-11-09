@@ -1,4 +1,4 @@
-# Auditoria R11 — conectividade, CTs e coerência do unifilar
+# Auditoria de conectividade GIS — histórico R11 e candidata R20-23
 
 **Data:** 07/11/2026  
 **Escopo:** leitura estática dos CSVs/JSONs R8, R9 e R11, do gerador C# e do construtor do grafo; inspeção visual do preview E-01.  
@@ -74,4 +74,18 @@ Não se deve somar leitos, DirectShapes, ModelCurves, Wire 2D, conectores sem li
 - [Auditoria R11](../projetos/19-subestacao-gis/dados/reconstrucao-r11/auditoria-modelo-r11.json), [quantitativos R11](../projetos/19-subestacao-gis/dados/reconstrucao-r11/quantitativos-modelo.csv), [conectividade por equipamento](../projetos/19-subestacao-gis/dados/reconstrucao-r11/conectividade-equipamentos-r11.csv), [relações de rede](../projetos/19-subestacao-gis/dados/reconstrucao-r11/relacoes-rede-r11.csv) e [grafo R11](../projetos/19-subestacao-gis/dados/reconstrucao-r11/grafo-conectividade-r11.json)
 - [Gerador de modelo e E-01](../scripts/revit-addin/RevitPortfolioGenerator.cs#L1441) e [especificação do grafo](../scripts/engineering/gis_connectivity.py#L95)
 - [Preview PNG E-01](../projetos/19-subestacao-gis/pranchas/reconstrucao-r11/preview/folhas/folha-03.png)
+> A análise detalhada acima registra a revisão R11 como histórico. O estado candidato atual está resumido abaixo; ele supersede as conclusões técnicas anteriores sem alterar os arquivos históricos.
 
+## Estado atual — candidata R20-23 (09/11/2026)
+
+A [auditoria consolidada](../projetos/19-subestacao-gis/attempts/r20-23-candidate/dados/reconstrucao-r20/auditoria-grafo-inventario-v1/RELATORIO.md) usa as extrações do RVT aberto no Revit 2027.3 e separa sistemas nativos, infraestrutura, rotas geométricas e relações documentadas no diagrama. O [grafo JSON](../projetos/19-subestacao-gis/attempts/r20-23-candidate/dados/reconstrucao-r20/auditoria-grafo-inventario-v1/grafo-conectividade-r20.json), o [CSV de relações](../projetos/19-subestacao-gis/attempts/r20-23-candidate/dados/reconstrucao-r20/auditoria-grafo-inventario-v1/relacoes-rede-r20.csv) e a [matriz de cálculos com crosswalk BIM](../projetos/19-subestacao-gis/attempts/r20-23-candidate/dados/reconstrucao-r20/calculos-n1-model-crosswalk-v1/memorial-de-calculo.md) preservam os dados e limitações.
+
+- Inventário: 168 instâncias de família, 24 DirectShapes, 8 segmentos CableTray, 25 conectores MEP, 1 ElectricalSystem auxiliar e 1 Wire 2D. A API registrou zero avisos no documento.
+- Grafo: 73 nós e 70 relações; identidades sem duplicidade ou ausências. As classes incluem 14 GEOMETRIC_ROUTE_ONLY, 44 DIAGRAM_ONLY, 1 NATIVE_ELECTRICAL_SYSTEM_LOGICAL e 11 NATIVE_SYSTEM_NOT_CONFIRMED.
+- Rotas: as 12 geometrias DirectShape foram localizadas em quatro grupos A/B/C e comparadas a envelopes de famílias. Essa proximidade não identifica portas, terminais, condutores nem fases elétricas.
+- Infraestrutura: 8 de 16 conectores CableTray reportam IsConnected; são juntas entre leitos, sem cabos instalados ou ligação aos equipamentos.
+- Conectividade elétrica: o único sistema nativo é auxiliar QAC-01→UPS-01, sem carga calculada confirmada. Seu Wire é 2D e específico da vista E-06. Circuitos primários HV/MV e condutores primários 3D confirmados: zero.
+- Cálculos: 32 resultados vinculam 33 marcas a ElementIds/UniqueIds, sem marcas ausentes ou duplicadas. As entradas são hipóteses documentadas; a transferência de todas as cargas críticas não ocorre com o acoplamento MT normalmente aberto.
+- Execução: o RVT foi aberto no Revit 2027.3 e as extrações vieram da API. O canvas 3D ao vivo permaneceu vazio; a inspeção visual foi feita pelas pranchas e PNGs. A saída A3 foi normalizada a partir do PDF Carta impresso pelo Revit porque o exportador nativo falhou por recursos de renderização/material indisponíveis.
+
+A R20-23 é uma candidata parcial de estudo BIM. O unifilar documenta topologia e manobras hipotéticas, mas isso não cria conectividade no modelo. Permanecem pendentes circuitos 138/13,8 kV, condutores, portas e contatos internos, parâmetros reais de rede/equipamentos, estudos completos de proteção e validação visual da vista 3D dentro da sessão Revit. Não classificar como projeto executivo, dimensionamento aprovado, seletividade comprovada ou conforme para construção.

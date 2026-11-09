@@ -9,6 +9,14 @@ import math
 from pathlib import Path
 from typing import Any
 
+from .electrical_core import (
+    DemandLoad,
+    aggregate_demand_schedule,
+    apparent_power_from_active_power_and_power_factor,
+    three_phase_line_current,
+    transformer_loading,
+)
+
 
 def calculate(base: dict[str, Any]) -> dict[str, Any]:
     revision_tag = str(base.get("revision", "R1")).lower()
@@ -27,9 +35,8 @@ def calculate(base: dict[str, Any]) -> dict[str, Any]:
     if any(value <= 0 for value in positive) or pf > 1 or ups_pf > 1 or max_utilization > 1:
         raise ValueError("Tensões, fatores de potência, autonomia e capacidade devem ser positivos e válidos.")
 
-    ac_rows = []
-    connected_kw = 0.0
-    demand_kw = 0.0
+    ac_load_values: list[DemandLoad] = []
+    source_load_rows = []
     seen: set[str] = set()
     for load in ac["loads"]:
         load_id = str(load["id"])
@@ -40,23 +47,47 @@ def calculate(base: dict[str, Any]) -> dict[str, Any]:
             raise ValueError(f"Carga auxiliar inválida ou duplicada: {load_id}")
         seen.add(load_id)
         connected = quantity * unit_kw
-        demanded = connected * demand_factor
-        connected_kw += connected
-        demand_kw += demanded
+        ac_load_values.append(
+            DemandLoad(
+                equipment_id=load_id,
+                connected_active_power_kw=connected,
+                power_factor=None,
+                demand_factor=demand_factor,
+                reactive_direction=None,
+            )
+        )
+        source_load_rows.append((load, quantity, unit_kw, demand_factor))
+
+    ac_schedule = aggregate_demand_schedule(loads=ac_load_values)
+    connected_kw = ac_schedule.connected_active_power_kw
+    demand_kw = ac_schedule.diversified_active_power_kw
+    ac_rows = []
+    for (load, quantity, unit_kw, demand_factor), demand_line in zip(
+        source_load_rows, ac_schedule.lines, strict=True
+    ):
         ac_rows.append({
-            "calc_id": load_id,
+            "calc_id": demand_line.equipment_id,
             "quantity": load["description"],
             "inputs": f"quantidade={quantity:g}; P_unit={unit_kw:g} kW; fator_demanda={demand_factor:g}",
             "method": "P_demanda=quantidade*P_unit*fator_demanda",
-            "result": demanded,
+            "result": demand_line.demand_active_power_kw,
             "unit": "kW",
             "source_or_assumption": load["basis"],
             "status": "ESTIMATE_FROM_EXPLICIT_ASSUMPTIONS",
         })
 
-    ac_kva = demand_kw / pf
-    ac_current = ac_kva * 1000.0 / (math.sqrt(3.0) * voltage)
-    ac_utilization = ac_kva / ac_rating * 100.0
+    ac_kva = apparent_power_from_active_power_and_power_factor(
+        active_power_kw=demand_kw,
+        power_factor=pf,
+    ).apparent_power_kva
+    ac_current = three_phase_line_current(
+        apparent_power_kva=ac_kva,
+        line_voltage_v=voltage,
+    ).line_current_a
+    ac_utilization = transformer_loading(
+        load_apparent_power_kva=ac_kva,
+        unit_rating_kva=ac_rating,
+    ).equal_share_loading_percent
 
     continuous_dc_ah = float(dc["continuous_load_kw_assumed"]) * 1000.0 * autonomy / dc_voltage
     trip_dc_ah = (
@@ -79,7 +110,10 @@ def calculate(base: dict[str, Any]) -> dict[str, Any]:
     charger_kw = (dc_load_a + dc_recharge_a) * dc_voltage / 1000.0
 
     ups_kw = float(ups["critical_load_kw_assumed"])
-    ups_kva = ups_kw / ups_pf
+    ups_kva = apparent_power_from_active_power_and_power_factor(
+        active_power_kw=ups_kw,
+        power_factor=ups_pf,
+    ).apparent_power_kva
     ups_utilization = ups_kva / float(ups["candidate_ups_rating_kva"]) * 100.0
     ups_energy_kwh = (
         ups_kw

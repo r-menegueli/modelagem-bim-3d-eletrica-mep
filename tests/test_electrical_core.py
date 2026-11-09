@@ -2,16 +2,23 @@ import math
 import unittest
 
 from scripts.engineering.electrical_core import (
+    DemandLoad,
     Provenance,
+    adiabatic_conductor_withstand,
+    aggregate_demand_schedule,
+    ampacity_after_corrections,
     balanced_three_phase_cable_performance,
     battery_autonomy,
+    compare_interrupting_rating,
     energy_from_average_power,
     hydro_generation,
+    identified_calculation_record,
     motor_electrical_input,
     power_triangle_from_active_and_reactive_power,
     power_triangle_from_active_power_and_power_factor,
     pv_energy_yield,
     result_record,
+    required_reactive_compensation,
     short_circuit_from_series_impedances,
     single_phase_current,
     three_phase_line_current,
@@ -170,6 +177,124 @@ class ElectricalCoreTests(unittest.TestCase):
         self.assertEqual(record["source_or_assumption"], "metered example")
         self.assertEqual(record["status"], "MEASURED_INPUT_CALCULATION")
 
+    def test_identified_calculation_record_contains_inputs_method_units_and_limits(self):
+        result = energy_from_average_power(
+            average_power_kw=5.0,
+            duration_h=2.0,
+            provenance=Provenance("explicit example", "REFERENCE_CASE"),
+        )
+        record = identified_calculation_record(
+            calc_id="TEST-ENERGY-01",
+            inputs={"average_power_kw": 5.0, "duration_h": 2.0},
+            method="E=P*t",
+            result=result,
+            unit="kWh",
+            limitations=("average power is assumed constant",),
+        )
+        self.assertEqual(record["calc_id"], "TEST-ENERGY-01")
+        self.assertEqual(record["inputs"]["duration_h"], 2.0)
+        self.assertEqual(record["method"], "E=P*t")
+        self.assertEqual(record["result"]["energy_kwh"], 10.0)
+        self.assertEqual(record["unit"], "kWh")
+        self.assertEqual(record["limitations"], ["average power is assumed constant"])
+        self.assertEqual(record["status"], "REFERENCE_CASE")
+
+    def test_demand_schedule_requires_and_applies_explicit_factors_and_q_direction(self):
+        result = aggregate_demand_schedule(
+            loads=(
+                DemandLoad("MCC-01", 100.0, 0.8, 0.5, "lagging"),
+                DemandLoad("LGT-01", 40.0, 1.0, 0.5, "leading"),
+            ),
+            provenance=Provenance("declared example schedule", "REFERENCE_CASE"),
+        )
+        self.assertEqual(result.connected_active_power_kw, 140.0)
+        self.assertEqual(result.diversified_active_power_kw, 70.0)
+        self.assertAlmostEqual(result.diversified_reactive_power_kvar, 37.5)
+        self.assertAlmostEqual(result.diversified_apparent_power_kva, math.hypot(70.0, 37.5))
+        self.assertAlmostEqual(result.aggregate_power_factor, 70.0 / math.hypot(70.0, 37.5))
+        self.assertEqual([line.equipment_id for line in result.lines], ["MCC-01", "LGT-01"])
+        self.assertEqual(result.provenance.status, "REFERENCE_CASE")
+
+    def test_demand_schedule_allows_active_power_only_without_inventing_q_or_s(self):
+        result = aggregate_demand_schedule(
+            loads=(
+                DemandLoad("AUX-01", 10.0, None, 0.5, None),
+                DemandLoad("AUX-02", 4.0, None, 1.0, None),
+            )
+        )
+        self.assertAlmostEqual(result.connected_active_power_kw, 14.0)
+        self.assertAlmostEqual(result.diversified_active_power_kw, 9.0)
+        self.assertIsNone(result.diversified_reactive_power_kvar)
+        self.assertIsNone(result.diversified_apparent_power_kva)
+        self.assertIsNone(result.lines[0].demand_apparent_power_kva)
+
+    def test_demand_schedule_rejects_only_one_of_power_factor_and_direction(self):
+        with self.assertRaisesRegex(ValueError, "both power_factor and reactive_direction"):
+            aggregate_demand_schedule(
+                loads=(DemandLoad("AUX-01", 1.0, 0.9, 1.0, None),)
+            )
+
+    def test_ampacity_multipliers_are_named_and_based_on_supplied_rating(self):
+        result = ampacity_after_corrections(
+            reference_ampacity_a=300.0,
+            correction_factors=(
+                {"name": "ambient", "multiplier": 0.8, "source_or_assumption": "declared table row"},
+                {"name": "grouping", "multiplier": 0.9, "source_or_assumption": "declared study input"},
+            ),
+        )
+        self.assertAlmostEqual(result.combined_factor, 0.72)
+        self.assertAlmostEqual(result.corrected_ampacity_a, 216.0)
+        self.assertEqual(len(result.applied_correction_factors), 2)
+        self.assertIn("USER_SUPPLIED_REFERENCE", result.provenance.status)
+
+    def test_adiabatic_withstand_uses_explicit_k_area_and_duration(self):
+        result = adiabatic_conductor_withstand(
+            k_a_sqrt_s_per_mm2=143.0,
+            conductor_area_mm2=95.0,
+            fault_duration_s=0.25,
+        )
+        expected_i2t = (143.0 * 95.0) ** 2
+        self.assertAlmostEqual(result.withstand_current_a, 143.0 * 95.0 / math.sqrt(0.25))
+        self.assertAlmostEqual(result.withstand_i2t_a2s, expected_i2t)
+        self.assertIn("EXPLICIT_K", result.provenance.status)
+
+    def test_interrupting_rating_screen_requires_matching_bases_and_voltage(self):
+        result = compare_interrupting_rating(
+            calculated_fault_current_ka=24.0,
+            device_interrupting_rating_ka=25.0,
+            fault_current_basis="symmetrical_rms_3_phase",
+            device_rating_basis="symmetrical_rms_3_phase",
+            bus_nominal_voltage_kv=13.8,
+            device_rated_voltage_kv=17.5,
+        )
+        self.assertEqual(result.rating_margin_ka, 1.0)
+        self.assertTrue(result.current_rating_sufficient)
+        self.assertTrue(result.voltage_rating_sufficient)
+        self.assertEqual(result.status, "NUMERIC_RATINGS_MEET_DECLARED_SCREEN_ONLY")
+
+        incomparable = compare_interrupting_rating(
+            calculated_fault_current_ka=24.0,
+            device_interrupting_rating_ka=25.0,
+            fault_current_basis="symmetrical_rms_3_phase",
+            device_rating_basis="making_peak",
+            bus_nominal_voltage_kv=13.8,
+            device_rated_voltage_kv=12.0,
+        )
+        self.assertIsNone(incomparable.rating_margin_ka)
+        self.assertIsNone(incomparable.current_rating_sufficient)
+        self.assertFalse(incomparable.voltage_rating_sufficient)
+        self.assertEqual(incomparable.status, "CURRENT_BASES_NOT_COMPARABLE")
+
+    def test_power_factor_correction_matches_independent_triangle_reference(self):
+        result = required_reactive_compensation(
+            active_power_kw=1000.0,
+            initial_power_factor=0.8,
+            target_power_factor=0.95,
+        )
+        expected = 1000.0 * (math.tan(math.acos(0.8)) - math.tan(math.acos(0.95)))
+        self.assertAlmostEqual(result.required_reactive_compensation_kvar, expected)
+        self.assertGreater(result.required_reactive_compensation_kvar, 0.0)
+
     def test_rejects_invalid_or_ambiguous_inputs(self):
         with self.assertRaises(ValueError):
             power_triangle_from_active_power_and_power_factor(active_power_kw=1.0, power_factor=0.0)
@@ -221,6 +346,25 @@ class ElectricalCoreTests(unittest.TestCase):
             )
         with self.assertRaises(ValueError):
             result_record({"provenance": Provenance()})
+        with self.assertRaises(ValueError):
+            aggregate_demand_schedule(loads=(DemandLoad("L1", 10.0, 0.9, 1.1, "lagging"),))
+        with self.assertRaises(ValueError):
+            aggregate_demand_schedule(
+                loads=(DemandLoad("L1", 10.0, 0.9, 1.0, "lagging"), DemandLoad("L1", 2.0, 1.0, 1.0, "lagging"))
+            )
+        with self.assertRaises(ValueError):
+            ampacity_after_corrections(reference_ampacity_a=100.0, correction_factors=())
+        with self.assertRaises(ValueError):
+            adiabatic_conductor_withstand(k_a_sqrt_s_per_mm2=143.0, conductor_area_mm2=0.0, fault_duration_s=1.0)
+        with self.assertRaises(ValueError):
+            compare_interrupting_rating(
+                calculated_fault_current_ka=10.0,
+                device_interrupting_rating_ka=12.0,
+                fault_current_basis="",
+                device_rating_basis="symmetrical_rms_3_phase",
+                bus_nominal_voltage_kv=13.8,
+                device_rated_voltage_kv=17.5,
+            )
 
 
 if __name__ == "__main__":

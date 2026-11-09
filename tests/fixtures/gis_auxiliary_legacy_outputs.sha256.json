@@ -1,0 +1,39 @@
+{
+  "baseline_source": "scripts/engineering/gis_substation_auxiliary.py from git HEAD before shared-core refactor",
+  "baseline_commit": "23a5de6780d5f0832ac9c102a8070d6bff789bdb",
+  "canonicalization": "UTF-8 JSON; ensure_ascii=false; sorted keys; compact separators; NaN rejected",
+  "outputs": {
+    "servicos-auxiliares-r1.json": {
+      "sha256": "f6b7042589481158978b4ff2f9d6af5f948e1cacdf9bf9df138d30dcb56b4ee0",
+      "calculation_rows": 23
+    },
+    "servicos-auxiliares-r2.json": {
+      "sha256": "edc56530870e7078e26934b8884f3e55c4c5d80eedaa43d76ba217381356eb42",
+      "calculation_rows": 23
+    },
+    "servicos-auxiliares-r3.json": {
+      "sha256": "60397c7584056d95c1430c07e8d2fc60b239b9cd6476d4a41653917c5fe02590",
+      "calculation_rows": 23
+    },
+    "servicos-auxiliares-r4.json": {
+      "sha256": "c420ff6b156e9fa0b615b9a9010b6e01eeedb021dd693aa49cf31cfd2d7d8a28",
+      "calculation_rows": 23
+    },
+    "servicos-auxiliares-r5.json": {
+      "sha256": "65acaddabfd0c0e703b3f2a09de2919e87b28e5c325aab2cbaf1d5acabe2e532",
+      "calculation_rows": 23
+    },
+    "servicos-auxiliares-r6.json": {
+      "sha256": "d7ca5b3bdf0498693c18a84a00545effd1dbc63e9a3385f921bf2404eb031a0e",
+      "calculation_rows": 23
+    },
+    "servicos-auxiliares-r7.json": {
+      "sha256": "e16e0993e596db9ec1b1b97daa276b8e15c9c9b3cf91a17224277c3f772b4753",
+      "calculation_rows": 23
+    },
+    "servicos-auxiliares-r8.json": {
+      "sha256": "4fe01b0baaf66a830e474ce078774387c471bfb9fb146918f9ad3b7a3b6a3cfb",
+      "calculation_rows": 23
+    }
+  }
+}
