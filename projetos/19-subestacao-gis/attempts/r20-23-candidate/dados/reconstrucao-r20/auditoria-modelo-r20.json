@@ -1,0 +1,2401 @@
+{
+  "status": "GENERATED_FROM_OPEN_REVIT_DOCUMENT",
+  "revit_document": "19-subestacao-gis-r20",
+  "elements": 168,
+  "electrical_equipment": 46,
+  "generic_model_families": 122,
+  "walls": 21,
+  "floors": 7,
+  "direct_shapes": 24,
+  "geometric_route_elements": 24,
+  "geometric_routes": [
+    {
+      "element_id": 357842,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575d2",
+      "mark": "GIS-BUSA-ENCLOSURE",
+      "comments": "Continuous outer GIS bus enclosure A; internal conductor and switching contacts are not modeled. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357843,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575d3",
+      "mark": "GIS-BUSB-ENCLOSURE",
+      "comments": "Continuous outer GIS bus enclosure B; internal conductor and switching contacts are not modeled. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357844,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575d4",
+      "mark": "GIS-L01-89A-STUB",
+      "comments": "Geometric casing route from bus A module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357845,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575d5",
+      "mark": "GIS-L01-89B-STUB",
+      "comments": "Geometric casing route from bus B module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357846,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575d6",
+      "mark": "GIS-T01-89A-STUB",
+      "comments": "Geometric casing route from bus A module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357847,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575d7",
+      "mark": "GIS-T01-89B-STUB",
+      "comments": "Geometric casing route from bus B module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357848,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575d8",
+      "mark": "GIS-BC01-89A-STUB",
+      "comments": "Geometric casing route from bus A module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357849,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575d9",
+      "mark": "GIS-BC01-89B-STUB",
+      "comments": "Geometric casing route from bus B module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357850,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575da",
+      "mark": "GIS-T02-89A-STUB",
+      "comments": "Geometric casing route from bus A module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357851,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575db",
+      "mark": "GIS-T02-89B-STUB",
+      "comments": "Geometric casing route from bus B module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357852,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575dc",
+      "mark": "GIS-L02-89A-STUB",
+      "comments": "Geometric casing route from bus A module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357853,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575dd",
+      "mark": "GIS-L02-89B-STUB",
+      "comments": "Geometric casing route from bus B module to selector disconnector; not a Revit electrical connection. REPRESENTACAO GEOMETRICA; sem conector eletrico, contato interno ou circuito Revit."
+    },
+    {
+      "element_id": 357854,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575de",
+      "mark": "GIS-TR01-HV-PH-A-ROUTE",
+      "comments": "Illustrative 138 kV phase-route geometry; 200 mm conceptual pitch. Family-envelope touch only; phase assignment, terminal ports, busduct and conductor are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022GIS-T01-CT-TO-TR-01-HV\u0022,\u0022phase\u0022:\u0022A\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022GIS-T01-CT\u0022,\u0022to_equipment_mark\u0022:\u0022TR-01-B-HV-1\u0022,\u0022route_radius_mm\u0022:75,\u0022route_vertices_m\u0022:[[18.6,19.496,1.178],[18.6,19.496,2.55],[18.6,29.5,2.55],[30.55,29.5,2.55],[30.55,29.5,5.55],[30.55,35.9,5.55]]};"
+    },
+    {
+      "element_id": 357855,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575df",
+      "mark": "GIS-TR02-HV-PH-A-ROUTE",
+      "comments": "Illustrative 138 kV phase-route geometry; 200 mm conceptual pitch. Family-envelope touch only; phase assignment, terminal ports, busduct and conductor are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022GIS-T02-CT-TO-TR-02-HV\u0022,\u0022phase\u0022:\u0022A\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022GIS-T02-CT\u0022,\u0022to_equipment_mark\u0022:\u0022TR-02-B-HV-1\u0022,\u0022route_radius_mm\u0022:75,\u0022route_vertices_m\u0022:[[20.2,19.496,1.178],[20.2,19.496,2.55],[20.2,29.299999999999997,2.55],[50.05,29.299999999999997,2.55],[50.05,29.299999999999997,5.55],[50.05,35.9,5.55]]};"
+    },
+    {
+      "element_id": 357856,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e0",
+      "mark": "TR01-MV-PH-A-ROUTE",
+      "comments": "Illustrative separated 13.8 kV phase-route geometry. Family-envelope touch only; phase assignment, terminal ports, cable/busduct, section and ampacity are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022TR-01-MV-ROUTE\u0022,\u0022phase\u0022:\u0022A\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022TR-01-B-MV-1\u0022,\u0022to_equipment_mark\u0022:\u0022QMT-A-IN\u0022,\u0022route_radius_mm\u0022:40,\u0022route_vertices_m\u0022:[[30.95,33.7,4.48],[30.95,31.5,4.48],[30.95,31.5,0.55],[43.1,25.8,0.55],[43.1,15,0.55],[43.76,14.77,0.55]]};"
+    },
+    {
+      "element_id": 357857,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e1",
+      "mark": "TR02-MV-PH-A-ROUTE",
+      "comments": "Illustrative separated 13.8 kV phase-route geometry. Family-envelope touch only; phase assignment, terminal ports, cable/busduct, section and ampacity are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022TR-02-MV-ROUTE\u0022,\u0022phase\u0022:\u0022A\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022TR-02-B-MV-1\u0022,\u0022to_equipment_mark\u0022:\u0022QMT-B-IN\u0022,\u0022route_radius_mm\u0022:40,\u0022route_vertices_m\u0022:[[50.45,33.7,4.48],[50.45,31.5,4.48],[50.45,31.5,0.55],[60.72,25.8,0.55],[60.72,15,0.55],[59.559999999999995,14.77,0.55]]};"
+    },
+    {
+      "element_id": 357858,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e2",
+      "mark": "GIS-TR01-HV-PH-B-ROUTE",
+      "comments": "Illustrative 138 kV phase-route geometry; 200 mm conceptual pitch. Family-envelope touch only; phase assignment, terminal ports, busduct and conductor are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022GIS-T01-CT-TO-TR-01-HV\u0022,\u0022phase\u0022:\u0022B\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022GIS-T01-CT\u0022,\u0022to_equipment_mark\u0022:\u0022TR-01-B-HV-2\u0022,\u0022route_radius_mm\u0022:75,\u0022route_vertices_m\u0022:[[18.8,19.719999999999995,1.178],[18.8,19.719999999999995,2.55],[18.8,29.8,2.55],[32,29.8,2.55],[32,29.8,5.55],[32,35.9,5.55]]};"
+    },
+    {
+      "element_id": 357859,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e3",
+      "mark": "GIS-TR02-HV-PH-B-ROUTE",
+      "comments": "Illustrative 138 kV phase-route geometry; 200 mm conceptual pitch. Family-envelope touch only; phase assignment, terminal ports, busduct and conductor are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022GIS-T02-CT-TO-TR-02-HV\u0022,\u0022phase\u0022:\u0022B\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022GIS-T02-CT\u0022,\u0022to_equipment_mark\u0022:\u0022TR-02-B-HV-2\u0022,\u0022route_radius_mm\u0022:75,\u0022route_vertices_m\u0022:[[20.4,19.719999999999995,1.178],[20.4,19.719999999999995,2.55],[20.4,29.6,2.55],[51.5,29.6,2.55],[51.5,29.6,5.55],[51.5,35.9,5.55]]};"
+    },
+    {
+      "element_id": 357860,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e4",
+      "mark": "TR01-MV-PH-B-ROUTE",
+      "comments": "Illustrative separated 13.8 kV phase-route geometry. Family-envelope touch only; phase assignment, terminal ports, cable/busduct, section and ampacity are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022TR-01-MV-ROUTE\u0022,\u0022phase\u0022:\u0022B\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022TR-01-B-MV-2\u0022,\u0022to_equipment_mark\u0022:\u0022QMT-A-IN\u0022,\u0022route_radius_mm\u0022:40,\u0022route_vertices_m\u0022:[[32,33.7,4.48],[32,31.5,4.48],[32,31.5,0.55],[43.34,25.8,0.55],[43.34,15,0.55],[44,14.77,0.55]]};"
+    },
+    {
+      "element_id": 357861,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e5",
+      "mark": "TR02-MV-PH-B-ROUTE",
+      "comments": "Illustrative separated 13.8 kV phase-route geometry. Family-envelope touch only; phase assignment, terminal ports, cable/busduct, section and ampacity are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022TR-02-MV-ROUTE\u0022,\u0022phase\u0022:\u0022B\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022TR-02-B-MV-2\u0022,\u0022to_equipment_mark\u0022:\u0022QMT-B-IN\u0022,\u0022route_radius_mm\u0022:40,\u0022route_vertices_m\u0022:[[51.5,33.7,4.48],[51.5,31.5,4.48],[51.5,31.5,0.55],[60.96,25.8,0.55],[60.96,15,0.55],[59.79999999999999,14.77,0.55]]};"
+    },
+    {
+      "element_id": 357862,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e6",
+      "mark": "GIS-TR01-HV-PH-C-ROUTE",
+      "comments": "Illustrative 138 kV phase-route geometry; 200 mm conceptual pitch. Family-envelope touch only; phase assignment, terminal ports, busduct and conductor are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022GIS-T01-CT-TO-TR-01-HV\u0022,\u0022phase\u0022:\u0022C\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022GIS-T01-CT\u0022,\u0022to_equipment_mark\u0022:\u0022TR-01-B-HV-3\u0022,\u0022route_radius_mm\u0022:75,\u0022route_vertices_m\u0022:[[19,19.944,1.178],[19,19.944,2.55],[19,30.1,2.55],[33.45,30.1,2.55],[33.45,30.1,5.55],[33.45,35.9,5.55]]};"
+    },
+    {
+      "element_id": 357863,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e7",
+      "mark": "GIS-TR02-HV-PH-C-ROUTE",
+      "comments": "Illustrative 138 kV phase-route geometry; 200 mm conceptual pitch. Family-envelope touch only; phase assignment, terminal ports, busduct and conductor are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022GIS-T02-CT-TO-TR-02-HV\u0022,\u0022phase\u0022:\u0022C\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022GIS-T02-CT\u0022,\u0022to_equipment_mark\u0022:\u0022TR-02-B-HV-3\u0022,\u0022route_radius_mm\u0022:75,\u0022route_vertices_m\u0022:[[20.599999999999998,19.944,1.178],[20.599999999999998,19.944,2.55],[20.599999999999998,29.900000000000002,2.55],[52.949999999999996,29.900000000000002,2.55],[52.949999999999996,29.900000000000002,5.55],[52.949999999999996,35.9,5.55]]};"
+    },
+    {
+      "element_id": 357864,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e8",
+      "mark": "TR01-MV-PH-C-ROUTE",
+      "comments": "Illustrative separated 13.8 kV phase-route geometry. Family-envelope touch only; phase assignment, terminal ports, cable/busduct, section and ampacity are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022TR-01-MV-ROUTE\u0022,\u0022phase\u0022:\u0022C\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022TR-01-B-MV-3\u0022,\u0022to_equipment_mark\u0022:\u0022QMT-A-IN\u0022,\u0022route_radius_mm\u0022:40,\u0022route_vertices_m\u0022:[[33.05,33.7,4.48],[33.05,31.5,4.48],[33.05,31.5,0.55],[43.58,25.8,0.55],[43.58,15,0.55],[44.239999999999995,14.77,0.55]]};"
+    },
+    {
+      "element_id": 357865,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e9",
+      "mark": "TR02-MV-PH-C-ROUTE",
+      "comments": "Illustrative separated 13.8 kV phase-route geometry. Family-envelope touch only; phase assignment, terminal ports, cable/busduct, section and ampacity are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022TR-02-MV-ROUTE\u0022,\u0022phase\u0022:\u0022C\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022TR-02-B-MV-3\u0022,\u0022to_equipment_mark\u0022:\u0022QMT-B-IN\u0022,\u0022route_radius_mm\u0022:40,\u0022route_vertices_m\u0022:[[52.550000000000004,33.7,4.48],[52.550000000000004,31.5,4.48],[52.550000000000004,31.5,0.55],[61.199999999999996,25.8,0.55],[61.199999999999996,15,0.55],[60.03999999999999,14.77,0.55]]};"
+    }
+  ],
+  "geometric_phase_route_shapes_extracted": 12,
+  "geometric_phase_route_details": [
+    {
+      "audit_record_status": "API_GEOMETRY_EXTRACTED",
+      "evidence_source": "REVIT_API_GEOMETRY_AUDIT",
+      "representation_role": "GEOMETRIC_PHASE_ROUTE_ONLY",
+      "edge_id": "GIS-T01-CT-TO-TR-01-HV",
+      "phase": "A",
+      "phase_label_basis": "GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED",
+      "element_id": 357854,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575de",
+      "mark": "GIS-TR01-HV-PH-A-ROUTE",
+      "revit_element_class": "DirectShape",
+      "from_equipment_mark": "GIS-T01-CT",
+      "from_equipment_match_count": 1,
+      "from_equipment_element_id": 357811,
+      "from_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575b3",
+      "from_endpoint_gap_mm": 0,
+      "to_equipment_mark": "TR-01-B-HV-1",
+      "to_equipment_match_count": 1,
+      "to_equipment_element_id": 357901,
+      "to_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005760d",
+      "to_endpoint_gap_mm": 0,
+      "endpoint_gap_basis": "Closest distance from route centerline endpoint to get_BoundingBox(null) of the exact FamilyInstance; this is an equipment-envelope measurement, not a terminal-port or connector test.",
+      "endpoint_tolerance_mm": 25,
+      "tolerance_basis": "25 mm geometric envelope check for this study model only; not a terminal fit-up allowance or manufacturer tolerance.",
+      "route_radius_mm": 75,
+      "route_vertices_m": [
+        {
+          "x": 18.6,
+          "y": 19.496,
+          "z": 1.178
+        },
+        {
+          "x": 18.6,
+          "y": 19.496,
+          "z": 2.55
+        },
+        {
+          "x": 18.6,
+          "y": 29.5,
+          "z": 2.55
+        },
+        {
+          "x": 30.55,
+          "y": 29.5,
+          "z": 2.55
+        },
+        {
+          "x": 30.55,
+          "y": 29.5,
+          "z": 5.55
+        },
+        {
+          "x": 30.55,
+          "y": 35.9,
+          "z": 5.55
+        }
+      ],
+      "route_vertex_count": 6,
+      "expected_solid_count": 5,
+      "solid_count": 5,
+      "solid_volume_m3": 0.568850071382697,
+      "model_bounds": {
+        "min_m": {
+          "x": 18.525,
+          "y": 19.421,
+          "z": 1.1780000000000004
+        },
+        "max_m": {
+          "x": 30.625,
+          "y": 35.90000000000001,
+          "z": 5.625000000000001
+        }
+      },
+      "geometry_exists": true,
+      "electrical_connection_confirmed": false,
+      "terminal_port_identified": false,
+      "native_electrical_system_confirmed": false,
+      "model_geometry": "GEOMETRIC_ENVELOPE_ONLY_NO_ELECTRICAL_CONNECTOR",
+      "comments": "Illustrative 138 kV phase-route geometry; 200 mm conceptual pitch. Family-envelope touch only; phase assignment, terminal ports, busduct and conductor are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022GIS-T01-CT-TO-TR-01-HV\u0022,\u0022phase\u0022:\u0022A\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022GIS-T01-CT\u0022,\u0022to_equipment_mark\u0022:\u0022TR-01-B-HV-1\u0022,\u0022route_radius_mm\u0022:75,\u0022route_vertices_m\u0022:[[18.6,19.496,1.178],[18.6,19.496,2.55],[18.6,29.5,2.55],[30.55,29.5,2.55],[30.55,29.5,5.55],[30.55,35.9,5.55]]};"
+    },
+    {
+      "audit_record_status": "API_GEOMETRY_EXTRACTED",
+      "evidence_source": "REVIT_API_GEOMETRY_AUDIT",
+      "representation_role": "GEOMETRIC_PHASE_ROUTE_ONLY",
+      "edge_id": "GIS-T01-CT-TO-TR-01-HV",
+      "phase": "B",
+      "phase_label_basis": "GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED",
+      "element_id": 357858,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e2",
+      "mark": "GIS-TR01-HV-PH-B-ROUTE",
+      "revit_element_class": "DirectShape",
+      "from_equipment_mark": "GIS-T01-CT",
+      "from_equipment_match_count": 1,
+      "from_equipment_element_id": 357811,
+      "from_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575b3",
+      "from_endpoint_gap_mm": 0,
+      "to_equipment_mark": "TR-01-B-HV-2",
+      "to_equipment_match_count": 1,
+      "to_equipment_element_id": 357903,
+      "to_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005760f",
+      "to_endpoint_gap_mm": 0,
+      "endpoint_gap_basis": "Closest distance from route centerline endpoint to get_BoundingBox(null) of the exact FamilyInstance; this is an equipment-envelope measurement, not a terminal-port or connector test.",
+      "endpoint_tolerance_mm": 25,
+      "tolerance_basis": "25 mm geometric envelope check for this study model only; not a terminal fit-up allowance or manufacturer tolerance.",
+      "route_radius_mm": 75,
+      "route_vertices_m": [
+        {
+          "x": 18.8,
+          "y": 19.719999999999995,
+          "z": 1.178
+        },
+        {
+          "x": 18.8,
+          "y": 19.719999999999995,
+          "z": 2.55
+        },
+        {
+          "x": 18.8,
+          "y": 29.8,
+          "z": 2.55
+        },
+        {
+          "x": 32,
+          "y": 29.8,
+          "z": 2.55
+        },
+        {
+          "x": 32,
+          "y": 29.8,
+          "z": 5.55
+        },
+        {
+          "x": 32,
+          "y": 35.9,
+          "z": 5.55
+        }
+      ],
+      "route_vertex_count": 6,
+      "expected_solid_count": 5,
+      "solid_count": 5,
+      "solid_volume_m3": 0.5866842146705622,
+      "model_bounds": {
+        "min_m": {
+          "x": 18.725,
+          "y": 19.644999999999996,
+          "z": 1.1780000000000004
+        },
+        "max_m": {
+          "x": 32.075,
+          "y": 35.90000000000001,
+          "z": 5.625000000000001
+        }
+      },
+      "geometry_exists": true,
+      "electrical_connection_confirmed": false,
+      "terminal_port_identified": false,
+      "native_electrical_system_confirmed": false,
+      "model_geometry": "GEOMETRIC_ENVELOPE_ONLY_NO_ELECTRICAL_CONNECTOR",
+      "comments": "Illustrative 138 kV phase-route geometry; 200 mm conceptual pitch. Family-envelope touch only; phase assignment, terminal ports, busduct and conductor are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022GIS-T01-CT-TO-TR-01-HV\u0022,\u0022phase\u0022:\u0022B\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022GIS-T01-CT\u0022,\u0022to_equipment_mark\u0022:\u0022TR-01-B-HV-2\u0022,\u0022route_radius_mm\u0022:75,\u0022route_vertices_m\u0022:[[18.8,19.719999999999995,1.178],[18.8,19.719999999999995,2.55],[18.8,29.8,2.55],[32,29.8,2.55],[32,29.8,5.55],[32,35.9,5.55]]};"
+    },
+    {
+      "audit_record_status": "API_GEOMETRY_EXTRACTED",
+      "evidence_source": "REVIT_API_GEOMETRY_AUDIT",
+      "representation_role": "GEOMETRIC_PHASE_ROUTE_ONLY",
+      "edge_id": "GIS-T01-CT-TO-TR-01-HV",
+      "phase": "C",
+      "phase_label_basis": "GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED",
+      "element_id": 357862,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e6",
+      "mark": "GIS-TR01-HV-PH-C-ROUTE",
+      "revit_element_class": "DirectShape",
+      "from_equipment_mark": "GIS-T01-CT",
+      "from_equipment_match_count": 1,
+      "from_equipment_element_id": 357811,
+      "from_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575b3",
+      "from_endpoint_gap_mm": 0,
+      "to_equipment_mark": "TR-01-B-HV-3",
+      "to_equipment_match_count": 1,
+      "to_equipment_element_id": 357905,
+      "to_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057611",
+      "to_endpoint_gap_mm": 0,
+      "endpoint_gap_basis": "Closest distance from route centerline endpoint to get_BoundingBox(null) of the exact FamilyInstance; this is an equipment-envelope measurement, not a terminal-port or connector test.",
+      "endpoint_tolerance_mm": 25,
+      "tolerance_basis": "25 mm geometric envelope check for this study model only; not a terminal fit-up allowance or manufacturer tolerance.",
+      "route_radius_mm": 75,
+      "route_vertices_m": [
+        {
+          "x": 19,
+          "y": 19.944,
+          "z": 1.178
+        },
+        {
+          "x": 19,
+          "y": 19.944,
+          "z": 2.55
+        },
+        {
+          "x": 19,
+          "y": 30.1,
+          "z": 2.55
+        },
+        {
+          "x": 33.45,
+          "y": 30.1,
+          "z": 2.55
+        },
+        {
+          "x": 33.45,
+          "y": 30.1,
+          "z": 5.55
+        },
+        {
+          "x": 33.45,
+          "y": 35.9,
+          "z": 5.55
+        }
+      ],
+      "route_vertex_count": 6,
+      "expected_solid_count": 5,
+      "solid_count": 5,
+      "solid_volume_m3": 0.6045183579584265,
+      "model_bounds": {
+        "min_m": {
+          "x": 18.925,
+          "y": 19.868999999999996,
+          "z": 1.1780000000000004
+        },
+        "max_m": {
+          "x": 33.525000000000006,
+          "y": 35.90000000000001,
+          "z": 5.625000000000001
+        }
+      },
+      "geometry_exists": true,
+      "electrical_connection_confirmed": false,
+      "terminal_port_identified": false,
+      "native_electrical_system_confirmed": false,
+      "model_geometry": "GEOMETRIC_ENVELOPE_ONLY_NO_ELECTRICAL_CONNECTOR",
+      "comments": "Illustrative 138 kV phase-route geometry; 200 mm conceptual pitch. Family-envelope touch only; phase assignment, terminal ports, busduct and conductor are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022GIS-T01-CT-TO-TR-01-HV\u0022,\u0022phase\u0022:\u0022C\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022GIS-T01-CT\u0022,\u0022to_equipment_mark\u0022:\u0022TR-01-B-HV-3\u0022,\u0022route_radius_mm\u0022:75,\u0022route_vertices_m\u0022:[[19,19.944,1.178],[19,19.944,2.55],[19,30.1,2.55],[33.45,30.1,2.55],[33.45,30.1,5.55],[33.45,35.9,5.55]]};"
+    },
+    {
+      "audit_record_status": "API_GEOMETRY_EXTRACTED",
+      "evidence_source": "REVIT_API_GEOMETRY_AUDIT",
+      "representation_role": "GEOMETRIC_PHASE_ROUTE_ONLY",
+      "edge_id": "GIS-T02-CT-TO-TR-02-HV",
+      "phase": "A",
+      "phase_label_basis": "GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED",
+      "element_id": 357855,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575df",
+      "mark": "GIS-TR02-HV-PH-A-ROUTE",
+      "revit_element_class": "DirectShape",
+      "from_equipment_mark": "GIS-T02-CT",
+      "from_equipment_match_count": 1,
+      "from_equipment_element_id": 357823,
+      "from_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575bf",
+      "from_endpoint_gap_mm": 0,
+      "to_equipment_mark": "TR-02-B-HV-1",
+      "to_equipment_match_count": 1,
+      "to_equipment_element_id": 357923,
+      "to_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057623",
+      "to_endpoint_gap_mm": 0,
+      "endpoint_gap_basis": "Closest distance from route centerline endpoint to get_BoundingBox(null) of the exact FamilyInstance; this is an equipment-envelope measurement, not a terminal-port or connector test.",
+      "endpoint_tolerance_mm": 25,
+      "tolerance_basis": "25 mm geometric envelope check for this study model only; not a terminal fit-up allowance or manufacturer tolerance.",
+      "route_radius_mm": 75,
+      "route_vertices_m": [
+        {
+          "x": 20.2,
+          "y": 19.496,
+          "z": 1.178
+        },
+        {
+          "x": 20.2,
+          "y": 19.496,
+          "z": 2.55
+        },
+        {
+          "x": 20.2,
+          "y": 29.299999999999997,
+          "z": 2.55
+        },
+        {
+          "x": 50.05,
+          "y": 29.299999999999997,
+          "z": 2.55
+        },
+        {
+          "x": 50.05,
+          "y": 29.299999999999997,
+          "z": 5.55
+        },
+        {
+          "x": 50.05,
+          "y": 35.9,
+          "z": 5.55
+        }
+      ],
+      "route_vertex_count": 6,
+      "expected_solid_count": 5,
+      "solid_count": 5,
+      "solid_volume_m3": 0.879991557593978,
+      "model_bounds": {
+        "min_m": {
+          "x": 20.125,
+          "y": 19.421,
+          "z": 1.1780000000000004
+        },
+        "max_m": {
+          "x": 50.125,
+          "y": 35.9,
+          "z": 5.625000000000001
+        }
+      },
+      "geometry_exists": true,
+      "electrical_connection_confirmed": false,
+      "terminal_port_identified": false,
+      "native_electrical_system_confirmed": false,
+      "model_geometry": "GEOMETRIC_ENVELOPE_ONLY_NO_ELECTRICAL_CONNECTOR",
+      "comments": "Illustrative 138 kV phase-route geometry; 200 mm conceptual pitch. Family-envelope touch only; phase assignment, terminal ports, busduct and conductor are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022GIS-T02-CT-TO-TR-02-HV\u0022,\u0022phase\u0022:\u0022A\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022GIS-T02-CT\u0022,\u0022to_equipment_mark\u0022:\u0022TR-02-B-HV-1\u0022,\u0022route_radius_mm\u0022:75,\u0022route_vertices_m\u0022:[[20.2,19.496,1.178],[20.2,19.496,2.55],[20.2,29.299999999999997,2.55],[50.05,29.299999999999997,2.55],[50.05,29.299999999999997,5.55],[50.05,35.9,5.55]]};"
+    },
+    {
+      "audit_record_status": "API_GEOMETRY_EXTRACTED",
+      "evidence_source": "REVIT_API_GEOMETRY_AUDIT",
+      "representation_role": "GEOMETRIC_PHASE_ROUTE_ONLY",
+      "edge_id": "GIS-T02-CT-TO-TR-02-HV",
+      "phase": "B",
+      "phase_label_basis": "GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED",
+      "element_id": 357859,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e3",
+      "mark": "GIS-TR02-HV-PH-B-ROUTE",
+      "revit_element_class": "DirectShape",
+      "from_equipment_mark": "GIS-T02-CT",
+      "from_equipment_match_count": 1,
+      "from_equipment_element_id": 357823,
+      "from_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575bf",
+      "from_endpoint_gap_mm": 0,
+      "to_equipment_mark": "TR-02-B-HV-2",
+      "to_equipment_match_count": 1,
+      "to_equipment_element_id": 357925,
+      "to_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057625",
+      "to_endpoint_gap_mm": 0,
+      "endpoint_gap_basis": "Closest distance from route centerline endpoint to get_BoundingBox(null) of the exact FamilyInstance; this is an equipment-envelope measurement, not a terminal-port or connector test.",
+      "endpoint_tolerance_mm": 25,
+      "tolerance_basis": "25 mm geometric envelope check for this study model only; not a terminal fit-up allowance or manufacturer tolerance.",
+      "route_radius_mm": 75,
+      "route_vertices_m": [
+        {
+          "x": 20.4,
+          "y": 19.719999999999995,
+          "z": 1.178
+        },
+        {
+          "x": 20.4,
+          "y": 19.719999999999995,
+          "z": 2.55
+        },
+        {
+          "x": 20.4,
+          "y": 29.6,
+          "z": 2.55
+        },
+        {
+          "x": 51.5,
+          "y": 29.6,
+          "z": 2.55
+        },
+        {
+          "x": 51.5,
+          "y": 29.6,
+          "z": 5.55
+        },
+        {
+          "x": 51.5,
+          "y": 35.9,
+          "z": 5.55
+        }
+      ],
+      "route_vertex_count": 6,
+      "expected_solid_count": 5,
+      "solid_count": 5,
+      "solid_volume_m3": 0.8978257008818437,
+      "model_bounds": {
+        "min_m": {
+          "x": 20.325,
+          "y": 19.644999999999996,
+          "z": 1.1780000000000004
+        },
+        "max_m": {
+          "x": 51.575,
+          "y": 35.9,
+          "z": 5.625000000000001
+        }
+      },
+      "geometry_exists": true,
+      "electrical_connection_confirmed": false,
+      "terminal_port_identified": false,
+      "native_electrical_system_confirmed": false,
+      "model_geometry": "GEOMETRIC_ENVELOPE_ONLY_NO_ELECTRICAL_CONNECTOR",
+      "comments": "Illustrative 138 kV phase-route geometry; 200 mm conceptual pitch. Family-envelope touch only; phase assignment, terminal ports, busduct and conductor are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022GIS-T02-CT-TO-TR-02-HV\u0022,\u0022phase\u0022:\u0022B\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022GIS-T02-CT\u0022,\u0022to_equipment_mark\u0022:\u0022TR-02-B-HV-2\u0022,\u0022route_radius_mm\u0022:75,\u0022route_vertices_m\u0022:[[20.4,19.719999999999995,1.178],[20.4,19.719999999999995,2.55],[20.4,29.6,2.55],[51.5,29.6,2.55],[51.5,29.6,5.55],[51.5,35.9,5.55]]};"
+    },
+    {
+      "audit_record_status": "API_GEOMETRY_EXTRACTED",
+      "evidence_source": "REVIT_API_GEOMETRY_AUDIT",
+      "representation_role": "GEOMETRIC_PHASE_ROUTE_ONLY",
+      "edge_id": "GIS-T02-CT-TO-TR-02-HV",
+      "phase": "C",
+      "phase_label_basis": "GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED",
+      "element_id": 357863,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e7",
+      "mark": "GIS-TR02-HV-PH-C-ROUTE",
+      "revit_element_class": "DirectShape",
+      "from_equipment_mark": "GIS-T02-CT",
+      "from_equipment_match_count": 1,
+      "from_equipment_element_id": 357823,
+      "from_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575bf",
+      "from_endpoint_gap_mm": 0,
+      "to_equipment_mark": "TR-02-B-HV-3",
+      "to_equipment_match_count": 1,
+      "to_equipment_element_id": 357927,
+      "to_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057627",
+      "to_endpoint_gap_mm": 0,
+      "endpoint_gap_basis": "Closest distance from route centerline endpoint to get_BoundingBox(null) of the exact FamilyInstance; this is an equipment-envelope measurement, not a terminal-port or connector test.",
+      "endpoint_tolerance_mm": 25,
+      "tolerance_basis": "25 mm geometric envelope check for this study model only; not a terminal fit-up allowance or manufacturer tolerance.",
+      "route_radius_mm": 75,
+      "route_vertices_m": [
+        {
+          "x": 20.599999999999998,
+          "y": 19.944,
+          "z": 1.178
+        },
+        {
+          "x": 20.599999999999998,
+          "y": 19.944,
+          "z": 2.55
+        },
+        {
+          "x": 20.599999999999998,
+          "y": 29.900000000000002,
+          "z": 2.55
+        },
+        {
+          "x": 52.949999999999996,
+          "y": 29.900000000000002,
+          "z": 2.55
+        },
+        {
+          "x": 52.949999999999996,
+          "y": 29.900000000000002,
+          "z": 5.55
+        },
+        {
+          "x": 52.949999999999996,
+          "y": 35.9,
+          "z": 5.55
+        }
+      ],
+      "route_vertex_count": 6,
+      "expected_solid_count": 5,
+      "solid_count": 5,
+      "solid_volume_m3": 0.915659844169708,
+      "model_bounds": {
+        "min_m": {
+          "x": 20.524999999999995,
+          "y": 19.868999999999996,
+          "z": 1.1780000000000004
+        },
+        "max_m": {
+          "x": 53.025,
+          "y": 35.9,
+          "z": 5.625000000000001
+        }
+      },
+      "geometry_exists": true,
+      "electrical_connection_confirmed": false,
+      "terminal_port_identified": false,
+      "native_electrical_system_confirmed": false,
+      "model_geometry": "GEOMETRIC_ENVELOPE_ONLY_NO_ELECTRICAL_CONNECTOR",
+      "comments": "Illustrative 138 kV phase-route geometry; 200 mm conceptual pitch. Family-envelope touch only; phase assignment, terminal ports, busduct and conductor are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022GIS-T02-CT-TO-TR-02-HV\u0022,\u0022phase\u0022:\u0022C\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022GIS-T02-CT\u0022,\u0022to_equipment_mark\u0022:\u0022TR-02-B-HV-3\u0022,\u0022route_radius_mm\u0022:75,\u0022route_vertices_m\u0022:[[20.599999999999998,19.944,1.178],[20.599999999999998,19.944,2.55],[20.599999999999998,29.900000000000002,2.55],[52.949999999999996,29.900000000000002,2.55],[52.949999999999996,29.900000000000002,5.55],[52.949999999999996,35.9,5.55]]};"
+    },
+    {
+      "audit_record_status": "API_GEOMETRY_EXTRACTED",
+      "evidence_source": "REVIT_API_GEOMETRY_AUDIT",
+      "representation_role": "GEOMETRIC_PHASE_ROUTE_ONLY",
+      "edge_id": "TR-01-MV-ROUTE",
+      "phase": "A",
+      "phase_label_basis": "GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED",
+      "element_id": 357856,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e0",
+      "mark": "TR01-MV-PH-A-ROUTE",
+      "revit_element_class": "DirectShape",
+      "from_equipment_mark": "TR-01-B-MV-1",
+      "from_equipment_match_count": 1,
+      "from_equipment_element_id": 357902,
+      "from_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005760e",
+      "from_endpoint_gap_mm": 5.414335646491964E-13,
+      "to_equipment_mark": "QMT-A-IN",
+      "to_equipment_match_count": 1,
+      "to_equipment_element_id": 357930,
+      "to_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005762a",
+      "to_endpoint_gap_mm": 2.1657342585967854E-12,
+      "endpoint_gap_basis": "Closest distance from route centerline endpoint to get_BoundingBox(null) of the exact FamilyInstance; this is an equipment-envelope measurement, not a terminal-port or connector test.",
+      "endpoint_tolerance_mm": 25,
+      "tolerance_basis": "25 mm geometric envelope check for this study model only; not a terminal fit-up allowance or manufacturer tolerance.",
+      "route_radius_mm": 40,
+      "route_vertices_m": [
+        {
+          "x": 30.95,
+          "y": 33.7,
+          "z": 4.48
+        },
+        {
+          "x": 30.95,
+          "y": 31.5,
+          "z": 4.48
+        },
+        {
+          "x": 30.95,
+          "y": 31.5,
+          "z": 0.55
+        },
+        {
+          "x": 43.1,
+          "y": 25.8,
+          "z": 0.55
+        },
+        {
+          "x": 43.1,
+          "y": 15,
+          "z": 0.55
+        },
+        {
+          "x": 43.76,
+          "y": 14.77,
+          "z": 0.55
+        }
+      ],
+      "route_vertex_count": 6,
+      "expected_solid_count": 5,
+      "solid_count": 5,
+      "solid_volume_m3": 0.15351730707092395,
+      "model_bounds": {
+        "min_m": {
+          "x": 30.91,
+          "y": 14.732227855465148,
+          "z": 0.5099999999999998
+        },
+        "max_m": {
+          "x": 43.77316302006526,
+          "y": 33.700000000000024,
+          "z": 4.5200000000000005
+        }
+      },
+      "geometry_exists": true,
+      "electrical_connection_confirmed": false,
+      "terminal_port_identified": false,
+      "native_electrical_system_confirmed": false,
+      "model_geometry": "GEOMETRIC_ENVELOPE_ONLY_NO_ELECTRICAL_CONNECTOR",
+      "comments": "Illustrative separated 13.8 kV phase-route geometry. Family-envelope touch only; phase assignment, terminal ports, cable/busduct, section and ampacity are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022TR-01-MV-ROUTE\u0022,\u0022phase\u0022:\u0022A\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022TR-01-B-MV-1\u0022,\u0022to_equipment_mark\u0022:\u0022QMT-A-IN\u0022,\u0022route_radius_mm\u0022:40,\u0022route_vertices_m\u0022:[[30.95,33.7,4.48],[30.95,31.5,4.48],[30.95,31.5,0.55],[43.1,25.8,0.55],[43.1,15,0.55],[43.76,14.77,0.55]]};"
+    },
+    {
+      "audit_record_status": "API_GEOMETRY_EXTRACTED",
+      "evidence_source": "REVIT_API_GEOMETRY_AUDIT",
+      "representation_role": "GEOMETRIC_PHASE_ROUTE_ONLY",
+      "edge_id": "TR-01-MV-ROUTE",
+      "phase": "B",
+      "phase_label_basis": "GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED",
+      "element_id": 357860,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e4",
+      "mark": "TR01-MV-PH-B-ROUTE",
+      "revit_element_class": "DirectShape",
+      "from_equipment_mark": "TR-01-B-MV-2",
+      "from_equipment_match_count": 1,
+      "from_equipment_element_id": 357904,
+      "from_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057610",
+      "from_endpoint_gap_mm": 5.414335646491964E-13,
+      "to_equipment_mark": "QMT-A-IN",
+      "to_equipment_match_count": 1,
+      "to_equipment_element_id": 357930,
+      "to_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005762a",
+      "to_endpoint_gap_mm": 2.1657342585967854E-12,
+      "endpoint_gap_basis": "Closest distance from route centerline endpoint to get_BoundingBox(null) of the exact FamilyInstance; this is an equipment-envelope measurement, not a terminal-port or connector test.",
+      "endpoint_tolerance_mm": 25,
+      "tolerance_basis": "25 mm geometric envelope check for this study model only; not a terminal fit-up allowance or manufacturer tolerance.",
+      "route_radius_mm": 40,
+      "route_vertices_m": [
+        {
+          "x": 32,
+          "y": 33.7,
+          "z": 4.48
+        },
+        {
+          "x": 32,
+          "y": 31.5,
+          "z": 4.48
+        },
+        {
+          "x": 32,
+          "y": 31.5,
+          "z": 0.55
+        },
+        {
+          "x": 43.34,
+          "y": 25.8,
+          "z": 0.55
+        },
+        {
+          "x": 43.34,
+          "y": 15,
+          "z": 0.55
+        },
+        {
+          "x": 44,
+          "y": 14.77,
+          "z": 0.55
+        }
+      ],
+      "route_vertex_count": 6,
+      "expected_solid_count": 5,
+      "solid_count": 5,
+      "solid_volume_m3": 0.14991466515919996,
+      "model_bounds": {
+        "min_m": {
+          "x": 31.96,
+          "y": 14.732227855465148,
+          "z": 0.5099999999999998
+        },
+        "max_m": {
+          "x": 44.01316302006526,
+          "y": 33.700000000000024,
+          "z": 4.5200000000000005
+        }
+      },
+      "geometry_exists": true,
+      "electrical_connection_confirmed": false,
+      "terminal_port_identified": false,
+      "native_electrical_system_confirmed": false,
+      "model_geometry": "GEOMETRIC_ENVELOPE_ONLY_NO_ELECTRICAL_CONNECTOR",
+      "comments": "Illustrative separated 13.8 kV phase-route geometry. Family-envelope touch only; phase assignment, terminal ports, cable/busduct, section and ampacity are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022TR-01-MV-ROUTE\u0022,\u0022phase\u0022:\u0022B\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022TR-01-B-MV-2\u0022,\u0022to_equipment_mark\u0022:\u0022QMT-A-IN\u0022,\u0022route_radius_mm\u0022:40,\u0022route_vertices_m\u0022:[[32,33.7,4.48],[32,31.5,4.48],[32,31.5,0.55],[43.34,25.8,0.55],[43.34,15,0.55],[44,14.77,0.55]]};"
+    },
+    {
+      "audit_record_status": "API_GEOMETRY_EXTRACTED",
+      "evidence_source": "REVIT_API_GEOMETRY_AUDIT",
+      "representation_role": "GEOMETRIC_PHASE_ROUTE_ONLY",
+      "edge_id": "TR-01-MV-ROUTE",
+      "phase": "C",
+      "phase_label_basis": "GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED",
+      "element_id": 357864,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e8",
+      "mark": "TR01-MV-PH-C-ROUTE",
+      "revit_element_class": "DirectShape",
+      "from_equipment_mark": "TR-01-B-MV-3",
+      "from_equipment_match_count": 1,
+      "from_equipment_element_id": 357906,
+      "from_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057612",
+      "from_endpoint_gap_mm": 5.414335646491964E-13,
+      "to_equipment_mark": "QMT-A-IN",
+      "to_equipment_match_count": 1,
+      "to_equipment_element_id": 357930,
+      "to_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005762a",
+      "to_endpoint_gap_mm": 2.1657342585967854E-12,
+      "endpoint_gap_basis": "Closest distance from route centerline endpoint to get_BoundingBox(null) of the exact FamilyInstance; this is an equipment-envelope measurement, not a terminal-port or connector test.",
+      "endpoint_tolerance_mm": 25,
+      "tolerance_basis": "25 mm geometric envelope check for this study model only; not a terminal fit-up allowance or manufacturer tolerance.",
+      "route_radius_mm": 40,
+      "route_vertices_m": [
+        {
+          "x": 33.05,
+          "y": 33.7,
+          "z": 4.48
+        },
+        {
+          "x": 33.05,
+          "y": 31.5,
+          "z": 4.48
+        },
+        {
+          "x": 33.05,
+          "y": 31.5,
+          "z": 0.55
+        },
+        {
+          "x": 43.58,
+          "y": 25.8,
+          "z": 0.55
+        },
+        {
+          "x": 43.58,
+          "y": 15,
+          "z": 0.55
+        },
+        {
+          "x": 44.239999999999995,
+          "y": 14.77,
+          "z": 0.55
+        }
+      ],
+      "route_vertex_count": 6,
+      "expected_solid_count": 5,
+      "solid_count": 5,
+      "solid_volume_m3": 0.14636373161183586,
+      "model_bounds": {
+        "min_m": {
+          "x": 33.01,
+          "y": 14.732227855465148,
+          "z": 0.5099999999999997
+        },
+        "max_m": {
+          "x": 44.25316302006525,
+          "y": 33.700000000000024,
+          "z": 4.5200000000000005
+        }
+      },
+      "geometry_exists": true,
+      "electrical_connection_confirmed": false,
+      "terminal_port_identified": false,
+      "native_electrical_system_confirmed": false,
+      "model_geometry": "GEOMETRIC_ENVELOPE_ONLY_NO_ELECTRICAL_CONNECTOR",
+      "comments": "Illustrative separated 13.8 kV phase-route geometry. Family-envelope touch only; phase assignment, terminal ports, cable/busduct, section and ampacity are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022TR-01-MV-ROUTE\u0022,\u0022phase\u0022:\u0022C\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022TR-01-B-MV-3\u0022,\u0022to_equipment_mark\u0022:\u0022QMT-A-IN\u0022,\u0022route_radius_mm\u0022:40,\u0022route_vertices_m\u0022:[[33.05,33.7,4.48],[33.05,31.5,4.48],[33.05,31.5,0.55],[43.58,25.8,0.55],[43.58,15,0.55],[44.239999999999995,14.77,0.55]]};"
+    },
+    {
+      "audit_record_status": "API_GEOMETRY_EXTRACTED",
+      "evidence_source": "REVIT_API_GEOMETRY_AUDIT",
+      "representation_role": "GEOMETRIC_PHASE_ROUTE_ONLY",
+      "edge_id": "TR-02-MV-ROUTE",
+      "phase": "A",
+      "phase_label_basis": "GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED",
+      "element_id": 357857,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e1",
+      "mark": "TR02-MV-PH-A-ROUTE",
+      "revit_element_class": "DirectShape",
+      "from_equipment_mark": "TR-02-B-MV-1",
+      "from_equipment_match_count": 1,
+      "from_equipment_element_id": 357924,
+      "from_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057624",
+      "from_endpoint_gap_mm": 5.414335646491964E-13,
+      "to_equipment_mark": "QMT-B-IN",
+      "to_equipment_match_count": 1,
+      "to_equipment_element_id": 357943,
+      "to_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057637",
+      "to_endpoint_gap_mm": 2.1657342585967854E-12,
+      "endpoint_gap_basis": "Closest distance from route centerline endpoint to get_BoundingBox(null) of the exact FamilyInstance; this is an equipment-envelope measurement, not a terminal-port or connector test.",
+      "endpoint_tolerance_mm": 25,
+      "tolerance_basis": "25 mm geometric envelope check for this study model only; not a terminal fit-up allowance or manufacturer tolerance.",
+      "route_radius_mm": 40,
+      "route_vertices_m": [
+        {
+          "x": 50.45,
+          "y": 33.7,
+          "z": 4.48
+        },
+        {
+          "x": 50.45,
+          "y": 31.5,
+          "z": 4.48
+        },
+        {
+          "x": 50.45,
+          "y": 31.5,
+          "z": 0.55
+        },
+        {
+          "x": 60.72,
+          "y": 25.8,
+          "z": 0.55
+        },
+        {
+          "x": 60.72,
+          "y": 15,
+          "z": 0.55
+        },
+        {
+          "x": 59.559999999999995,
+          "y": 14.77,
+          "z": 0.55
+        }
+      ],
+      "route_vertex_count": 6,
+      "expected_solid_count": 5,
+      "solid_count": 5,
+      "solid_volume_m3": 0.1476277658744707,
+      "model_bounds": {
+        "min_m": {
+          "x": 50.410000000000004,
+          "y": 14.730763817563949,
+          "z": 0.5099999999999999
+        },
+        "max_m": {
+          "x": 60.76,
+          "y": 33.700000000000024,
+          "z": 4.5200000000000005
+        }
+      },
+      "geometry_exists": true,
+      "electrical_connection_confirmed": false,
+      "terminal_port_identified": false,
+      "native_electrical_system_confirmed": false,
+      "model_geometry": "GEOMETRIC_ENVELOPE_ONLY_NO_ELECTRICAL_CONNECTOR",
+      "comments": "Illustrative separated 13.8 kV phase-route geometry. Family-envelope touch only; phase assignment, terminal ports, cable/busduct, section and ampacity are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022TR-02-MV-ROUTE\u0022,\u0022phase\u0022:\u0022A\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022TR-02-B-MV-1\u0022,\u0022to_equipment_mark\u0022:\u0022QMT-B-IN\u0022,\u0022route_radius_mm\u0022:40,\u0022route_vertices_m\u0022:[[50.45,33.7,4.48],[50.45,31.5,4.48],[50.45,31.5,0.55],[60.72,25.8,0.55],[60.72,15,0.55],[59.559999999999995,14.77,0.55]]};"
+    },
+    {
+      "audit_record_status": "API_GEOMETRY_EXTRACTED",
+      "evidence_source": "REVIT_API_GEOMETRY_AUDIT",
+      "representation_role": "GEOMETRIC_PHASE_ROUTE_ONLY",
+      "edge_id": "TR-02-MV-ROUTE",
+      "phase": "B",
+      "phase_label_basis": "GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED",
+      "element_id": 357861,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e5",
+      "mark": "TR02-MV-PH-B-ROUTE",
+      "revit_element_class": "DirectShape",
+      "from_equipment_mark": "TR-02-B-MV-2",
+      "from_equipment_match_count": 1,
+      "from_equipment_element_id": 357926,
+      "from_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057626",
+      "from_endpoint_gap_mm": 5.414335646491964E-13,
+      "to_equipment_mark": "QMT-B-IN",
+      "to_equipment_match_count": 1,
+      "to_equipment_element_id": 357943,
+      "to_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057637",
+      "to_endpoint_gap_mm": 2.1657342585967854E-12,
+      "endpoint_gap_basis": "Closest distance from route centerline endpoint to get_BoundingBox(null) of the exact FamilyInstance; this is an equipment-envelope measurement, not a terminal-port or connector test.",
+      "endpoint_tolerance_mm": 25,
+      "tolerance_basis": "25 mm geometric envelope check for this study model only; not a terminal fit-up allowance or manufacturer tolerance.",
+      "route_radius_mm": 40,
+      "route_vertices_m": [
+        {
+          "x": 51.5,
+          "y": 33.7,
+          "z": 4.48
+        },
+        {
+          "x": 51.5,
+          "y": 31.5,
+          "z": 4.48
+        },
+        {
+          "x": 51.5,
+          "y": 31.5,
+          "z": 0.55
+        },
+        {
+          "x": 60.96,
+          "y": 25.8,
+          "z": 0.55
+        },
+        {
+          "x": 60.96,
+          "y": 15,
+          "z": 0.55
+        },
+        {
+          "x": 59.79999999999999,
+          "y": 14.77,
+          "z": 0.55
+        }
+      ],
+      "route_vertex_count": 6,
+      "expected_solid_count": 5,
+      "solid_count": 5,
+      "solid_volume_m3": 0.14416067984082215,
+      "model_bounds": {
+        "min_m": {
+          "x": 51.46,
+          "y": 14.730763817563949,
+          "z": 0.5100000000000001
+        },
+        "max_m": {
+          "x": 61,
+          "y": 33.700000000000024,
+          "z": 4.5200000000000005
+        }
+      },
+      "geometry_exists": true,
+      "electrical_connection_confirmed": false,
+      "terminal_port_identified": false,
+      "native_electrical_system_confirmed": false,
+      "model_geometry": "GEOMETRIC_ENVELOPE_ONLY_NO_ELECTRICAL_CONNECTOR",
+      "comments": "Illustrative separated 13.8 kV phase-route geometry. Family-envelope touch only; phase assignment, terminal ports, cable/busduct, section and ampacity are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022TR-02-MV-ROUTE\u0022,\u0022phase\u0022:\u0022B\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022TR-02-B-MV-2\u0022,\u0022to_equipment_mark\u0022:\u0022QMT-B-IN\u0022,\u0022route_radius_mm\u0022:40,\u0022route_vertices_m\u0022:[[51.5,33.7,4.48],[51.5,31.5,4.48],[51.5,31.5,0.55],[60.96,25.8,0.55],[60.96,15,0.55],[59.79999999999999,14.77,0.55]]};"
+    },
+    {
+      "audit_record_status": "API_GEOMETRY_EXTRACTED",
+      "evidence_source": "REVIT_API_GEOMETRY_AUDIT",
+      "representation_role": "GEOMETRIC_PHASE_ROUTE_ONLY",
+      "edge_id": "TR-02-MV-ROUTE",
+      "phase": "C",
+      "phase_label_basis": "GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED",
+      "element_id": 357865,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000575e9",
+      "mark": "TR02-MV-PH-C-ROUTE",
+      "revit_element_class": "DirectShape",
+      "from_equipment_mark": "TR-02-B-MV-3",
+      "from_equipment_match_count": 1,
+      "from_equipment_element_id": 357928,
+      "from_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057628",
+      "from_endpoint_gap_mm": 5.414335646491964E-13,
+      "to_equipment_mark": "QMT-B-IN",
+      "to_equipment_match_count": 1,
+      "to_equipment_element_id": 357943,
+      "to_equipment_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057637",
+      "to_endpoint_gap_mm": 2.1657342585967854E-12,
+      "endpoint_gap_basis": "Closest distance from route centerline endpoint to get_BoundingBox(null) of the exact FamilyInstance; this is an equipment-envelope measurement, not a terminal-port or connector test.",
+      "endpoint_tolerance_mm": 25,
+      "tolerance_basis": "25 mm geometric envelope check for this study model only; not a terminal fit-up allowance or manufacturer tolerance.",
+      "route_radius_mm": 40,
+      "route_vertices_m": [
+        {
+          "x": 52.550000000000004,
+          "y": 33.7,
+          "z": 4.48
+        },
+        {
+          "x": 52.550000000000004,
+          "y": 31.5,
+          "z": 4.48
+        },
+        {
+          "x": 52.550000000000004,
+          "y": 31.5,
+          "z": 0.55
+        },
+        {
+          "x": 61.199999999999996,
+          "y": 25.8,
+          "z": 0.55
+        },
+        {
+          "x": 61.199999999999996,
+          "y": 15,
+          "z": 0.55
+        },
+        {
+          "x": 60.03999999999999,
+          "y": 14.77,
+          "z": 0.55
+        }
+      ],
+      "route_vertex_count": 6,
+      "expected_solid_count": 5,
+      "solid_count": 5,
+      "solid_volume_m3": 0.14077210637880205,
+      "model_bounds": {
+        "min_m": {
+          "x": 52.510000000000005,
+          "y": 14.730763817563949,
+          "z": 0.5100000000000001
+        },
+        "max_m": {
+          "x": 61.239999999999995,
+          "y": 33.700000000000024,
+          "z": 4.5200000000000005
+        }
+      },
+      "geometry_exists": true,
+      "electrical_connection_confirmed": false,
+      "terminal_port_identified": false,
+      "native_electrical_system_confirmed": false,
+      "model_geometry": "GEOMETRIC_ENVELOPE_ONLY_NO_ELECTRICAL_CONNECTOR",
+      "comments": "Illustrative separated 13.8 kV phase-route geometry. Family-envelope touch only; phase assignment, terminal ports, cable/busduct, section and ampacity are not selected. REPRESENTACAO GEOMETRICA; envelope de fam\u00EDlia medido, sem identifica\u00E7\u00E3o de porta, conector MEP, cabo, contato interno ou circuito Revit. GIS_PHASE_ROUTE_JSON={\u0022edge_id\u0022:\u0022TR-02-MV-ROUTE\u0022,\u0022phase\u0022:\u0022C\u0022,\u0022phase_label_basis\u0022:\u0022GEOMETRIC_LANE_LABEL_ONLY_PHASE_ASSIGNMENT_UNVERIFIED\u0022,\u0022from_equipment_mark\u0022:\u0022TR-02-B-MV-3\u0022,\u0022to_equipment_mark\u0022:\u0022QMT-B-IN\u0022,\u0022route_radius_mm\u0022:40,\u0022route_vertices_m\u0022:[[52.550000000000004,33.7,4.48],[52.550000000000004,31.5,4.48],[52.550000000000004,31.5,0.55],[61.199999999999996,25.8,0.55],[61.199999999999996,15,0.55],[60.03999999999999,14.77,0.55]]};"
+    }
+  ],
+  "physical_conductor_details": [],
+  "wall_openings": 4,
+  "route_wall_openings": 4,
+  "route_wall_opening_details": [
+    {
+      "element_id": 357553,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000574b1",
+      "mark": "",
+      "route_reference": "GIS-ROUTE-OPENING-HV-01",
+      "classification_source": "API_BOUNDING_BOX_MATCH",
+      "comments": "",
+      "bounds_min_m": {
+        "x": 18.499999999999996,
+        "y": 26.93075,
+        "z": 2
+      },
+      "bounds_max_m": {
+        "x": 19.63,
+        "y": 27.069250000000004,
+        "z": 3.1
+      }
+    },
+    {
+      "element_id": 357554,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000574b2",
+      "mark": "",
+      "route_reference": "GIS-ROUTE-OPENING-HV-02",
+      "classification_source": "API_BOUNDING_BOX_MATCH",
+      "comments": "",
+      "bounds_min_m": {
+        "x": 20.1,
+        "y": 26.93075,
+        "z": 2
+      },
+      "bounds_max_m": {
+        "x": 21.23,
+        "y": 27.069250000000004,
+        "z": 3.1
+      }
+    },
+    {
+      "element_id": 357560,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000574b8",
+      "mark": "",
+      "route_reference": "GIS-ROUTE-OPENING-MV-01",
+      "classification_source": "API_BOUNDING_BOX_MATCH",
+      "comments": "",
+      "bounds_min_m": {
+        "x": 42.800000000000004,
+        "y": 26.93075,
+        "z": 0.15
+      },
+      "bounds_max_m": {
+        "x": 43.919999999999995,
+        "y": 27.069250000000004,
+        "z": 1.05
+      }
+    },
+    {
+      "element_id": 357561,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-000574b9",
+      "mark": "",
+      "route_reference": "GIS-ROUTE-OPENING-MV-02",
+      "classification_source": "API_BOUNDING_BOX_MATCH",
+      "comments": "",
+      "bounds_min_m": {
+        "x": 60.4,
+        "y": 26.93075,
+        "z": 0.15
+      },
+      "bounds_max_m": {
+        "x": 61.52,
+        "y": 27.069250000000004,
+        "z": 1.05
+      }
+    }
+  ],
+  "unclassified_wall_opening_details": [],
+  "model_curves": 175,
+  "cable_trays": 8,
+  "cable_tray_connectors": 16,
+  "cable_tray_connected_connectors": 8,
+  "cable_tray_elements": [
+    {
+      "element_id": 358022,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057686",
+      "mark": "LEITO-CTRL-SEG-01",
+      "connector_count": 2,
+      "connected_connector_count": 0,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 358023,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057687",
+      "mark": "LEITO-GIS-SEG-01",
+      "connector_count": 2,
+      "connected_connector_count": 0,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 358024,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057688",
+      "mark": "LEITO-MV-A-SEG-01",
+      "connector_count": 2,
+      "connected_connector_count": 1,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 358025,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057689",
+      "mark": "LEITO-MV-A-SEG-02",
+      "connector_count": 2,
+      "connected_connector_count": 2,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 358026,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005768a",
+      "mark": "LEITO-MV-A-SEG-03",
+      "connector_count": 2,
+      "connected_connector_count": 1,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 358027,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005768b",
+      "mark": "LEITO-MV-B-SEG-01",
+      "connector_count": 2,
+      "connected_connector_count": 1,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 358028,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005768c",
+      "mark": "LEITO-MV-B-SEG-02",
+      "connector_count": 2,
+      "connected_connector_count": 2,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    },
+    {
+      "element_id": 358029,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005768d",
+      "mark": "LEITO-MV-B-SEG-03",
+      "connector_count": 2,
+      "connected_connector_count": 1,
+      "comments": "Trecho nativo CableTray conectado apenas a trechos de infraestrutura adjacentes quando registrado. Sem condutores, circuito, preenchimento ou conexao eletrica ao equipamento."
+    }
+  ],
+  "sheets": 14,
+  "views_3d": 4,
+  "view_3d_details": [
+    {
+      "element_id": 358155,
+      "name": "3D-01 - Implantacao BIM geral R20",
+      "scale": 222,
+      "detail_level": "Fine",
+      "display_style": "Shading",
+      "view_template_id": -1,
+      "view_template_name": "",
+      "temporary_hide_isolate_active": false,
+      "hidden_element_count": 3,
+      "visible_element_count": 379,
+      "visible_elements_by_category": {
+        "Abertura em parede reta retangular": 4,
+        "Bandejas de cabos": 8,
+        "Caixas de corte": 6,
+        "C\u00E2meras": 3,
+        "Equipamento el\u00E9trico": 46,
+        "Linhas": 140,
+        "Modelos gen\u00E9ricos": 143,
+        "Paredes": 21,
+        "Pisos": 7
+      },
+      "category_visibility": {
+        "OST_ElectricalEquipment": true,
+        "OST_GenericModel": true,
+        "OST_Walls": true,
+        "OST_Floors": true,
+        "OST_Lines": true
+      },
+      "visibility_audit_error": "",
+      "section_box_active": true,
+      "section_box_min_m": {
+        "x": 2,
+        "y": 2,
+        "z": -0.3
+      },
+      "section_box_max_m": {
+        "x": 70,
+        "y": 54,
+        "z": 7.5
+      },
+      "section_box_center_m": {
+        "x": 35.99999999999999,
+        "y": 28,
+        "z": 3.6
+      },
+      "camera_eye_m": {
+        "x": 132.64831504390332,
+        "y": -68.64831504390335,
+        "z": 66.42140477853717
+      },
+      "forward_direction": {
+        "x": -0.6424925662032355,
+        "y": 0.6424925662032355,
+        "z": -0.4176201680321031
+      },
+      "up_direction": {
+        "x": -0.29530205277576554,
+        "y": 0.29530205277576554,
+        "z": 0.9086217008485094
+      },
+      "camera_orientation_explicitly_saved_by_generator": true
+    },
+    {
+      "element_id": 358166,
+      "name": "3D-02 - Bay GIS-T01 e selecao de barras R20",
+      "scale": 24,
+      "detail_level": "Fine",
+      "display_style": "Shading",
+      "view_template_id": -1,
+      "view_template_name": "",
+      "temporary_hide_isolate_active": false,
+      "hidden_element_count": 3,
+      "visible_element_count": 41,
+      "visible_elements_by_category": {
+        "Caixas de corte": 6,
+        "Equipamento el\u00E9trico": 8,
+        "Modelos gen\u00E9ricos": 25,
+        "Pisos": 1
+      },
+      "category_visibility": {
+        "OST_ElectricalEquipment": true,
+        "OST_GenericModel": true,
+        "OST_Walls": false,
+        "OST_Floors": true,
+        "OST_Lines": true
+      },
+      "visibility_audit_error": "",
+      "section_box_active": true,
+      "section_box_min_m": {
+        "x": 18.2,
+        "y": 16.3,
+        "z": -0.10000000000000002
+      },
+      "section_box_max_m": {
+        "x": 19.4,
+        "y": 21.3,
+        "z": 4.8
+      },
+      "section_box_center_m": {
+        "x": 18.799999999999997,
+        "y": 18.800000000000004,
+        "z": 2.3499999999999996
+      },
+      "camera_eye_m": {
+        "x": 26.78613672390861,
+        "y": 10.813863276091386,
+        "z": 7.540988870540599
+      },
+      "forward_direction": {
+        "x": -0.6424925662032354,
+        "y": 0.6424925662032356,
+        "z": -0.4176201680321031
+      },
+      "up_direction": {
+        "x": -0.2953020527757655,
+        "y": 0.29530205277576554,
+        "z": 0.9086217008485094
+      },
+      "camera_orientation_explicitly_saved_by_generator": true
+    },
+    {
+      "element_id": 358177,
+      "name": "3D-03 - Transformador TR-01 R20",
+      "scale": 56,
+      "detail_level": "Fine",
+      "display_style": "Shading",
+      "view_template_id": -1,
+      "view_template_name": "",
+      "temporary_hide_isolate_active": false,
+      "hidden_element_count": 3,
+      "visible_element_count": 39,
+      "visible_elements_by_category": {
+        "Caixas de corte": 6,
+        "Equipamento el\u00E9trico": 2,
+        "Modelos gen\u00E9ricos": 29,
+        "Pisos": 1
+      },
+      "category_visibility": {
+        "OST_ElectricalEquipment": true,
+        "OST_GenericModel": true,
+        "OST_Walls": false,
+        "OST_Floors": true,
+        "OST_Lines": true
+      },
+      "visibility_audit_error": "",
+      "section_box_active": true,
+      "section_box_min_m": {
+        "x": 27.4,
+        "y": 31.000000000000004,
+        "z": -0.10000000000000002
+      },
+      "section_box_max_m": {
+        "x": 36.8,
+        "y": 38.6,
+        "z": 6.1
+      },
+      "section_box_center_m": {
+        "x": 32.1,
+        "y": 34.8,
+        "z": 3
+      },
+      "camera_eye_m": {
+        "x": 47.37477939117015,
+        "y": 19.525220608829844,
+        "z": 12.928606604260603
+      },
+      "forward_direction": {
+        "x": -0.6424925662032356,
+        "y": 0.6424925662032355,
+        "z": -0.4176201680321031
+      },
+      "up_direction": {
+        "x": -0.29530205277576554,
+        "y": 0.29530205277576554,
+        "z": 0.9086217008485094
+      },
+      "camera_orientation_explicitly_saved_by_generator": true
+    },
+    {
+      "element_id": 358188,
+      "name": "3D-04 - Cubiculos secao A MT R20",
+      "scale": 28,
+      "detail_level": "Fine",
+      "display_style": "Shading",
+      "view_template_id": -1,
+      "view_template_name": "",
+      "temporary_hide_isolate_active": false,
+      "hidden_element_count": 3,
+      "visible_element_count": 21,
+      "visible_elements_by_category": {
+        "Bandejas de cabos": 2,
+        "Caixas de corte": 6,
+        "Equipamento el\u00E9trico": 7,
+        "Modelos gen\u00E9ricos": 4,
+        "Pisos": 1
+      },
+      "category_visibility": {
+        "OST_ElectricalEquipment": true,
+        "OST_GenericModel": true,
+        "OST_Walls": false,
+        "OST_Floors": true,
+        "OST_Lines": true
+      },
+      "visibility_audit_error": "",
+      "section_box_active": true,
+      "section_box_min_m": {
+        "x": 43.2,
+        "y": 13,
+        "z": -0.10000000000000002
+      },
+      "section_box_max_m": {
+        "x": 49.8,
+        "y": 15.2,
+        "z": 3.3
+      },
+      "section_box_center_m": {
+        "x": 46.5,
+        "y": 14.100000000000001,
+        "z": 1.5999999999999999
+      },
+      "camera_eye_m": {
+        "x": 55.20636695719835,
+        "y": 5.393633042801655,
+        "z": 7.259138522178924
+      },
+      "forward_direction": {
+        "x": -0.6424925662032356,
+        "y": 0.6424925662032354,
+        "z": -0.41762016803210306
+      },
+      "up_direction": {
+        "x": -0.29530205277576554,
+        "y": 0.29530205277576543,
+        "z": 0.9086217008485094
+      },
+      "camera_orientation_explicitly_saved_by_generator": true
+    }
+  ],
+  "mep_connectors": 25,
+  "mep_connectors_isconnected_true": 2,
+  "mep_connectors_without_physical_status": 1,
+  "mep_connector_details": [
+    {
+      "element_id": 357956,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057644",
+      "mark": "QAC-01",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "PowerCircuit",
+      "description": "Porta de entrada CA do sistema auxiliar QAC-01 a UPS-01; sistema logico; sem fio fisico 3D.",
+      "is_connected": true,
+      "external_allrefs": 1,
+      "allrefs": [
+        "358152:End:DomainElectrical"
+      ]
+    },
+    {
+      "element_id": 357956,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057644",
+      "mark": "QAC-01",
+      "connector_id": "50000",
+      "domain": "DomainUndefined",
+      "connector_type": "Logical",
+      "system_type": "NOT_APPLICABLE",
+      "description": "",
+      "is_connected": false,
+      "external_allrefs": 1,
+      "allrefs": [
+        "357963:Logical:DomainUndefined"
+      ]
+    },
+    {
+      "element_id": 357907,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057613",
+      "mark": "TR-01-CTRL",
+      "connector_id": "2",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "PowerCircuit",
+      "description": "GIS_AUX_AC_HEATER_220V: carga separada de aquecedor de gabinete, 220 Vca fase-neutro (hip\u00F3tese 380Y/220 V); 150 W e FP 0.90 s\u00E3o hip\u00F3teses, sem dados reais do fabricante.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357907,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057613",
+      "mark": "TR-01-CTRL",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "Controls",
+      "description": "GIS_CONTROL_DC_125V: interface de alimenta\u00E7\u00E3o de controle 125 Vcc; rela\u00E7\u00E3o com QCC-01, carga, prote\u00E7\u00E3o e circuito Revit n\u00E3o implementados.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357929,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057629",
+      "mark": "TR-02-CTRL",
+      "connector_id": "2",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "PowerCircuit",
+      "description": "GIS_AUX_AC_HEATER_220V: carga separada de aquecedor de gabinete, 220 Vca fase-neutro (hip\u00F3tese 380Y/220 V); 150 W e FP 0.90 s\u00E3o hip\u00F3teses, sem dados reais do fabricante.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357929,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057629",
+      "mark": "TR-02-CTRL",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "Controls",
+      "description": "GIS_CONTROL_DC_125V: interface de alimenta\u00E7\u00E3o de controle 125 Vcc; rela\u00E7\u00E3o com QCC-01, carga, prote\u00E7\u00E3o e circuito Revit n\u00E3o implementados.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357947,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005763b",
+      "mark": "P-L01",
+      "connector_id": "2",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "PowerCircuit",
+      "description": "GIS_AUX_AC_HEATER_220V: carga separada de aquecedor de gabinete, 220 Vca fase-neutro (hip\u00F3tese 380Y/220 V); 150 W e FP 0.90 s\u00E3o hip\u00F3teses, sem dados reais do fabricante.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357947,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005763b",
+      "mark": "P-L01",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "Controls",
+      "description": "GIS_CONTROL_DC_125V: interface de alimenta\u00E7\u00E3o de controle 125 Vcc; rela\u00E7\u00E3o com QCC-01, carga, prote\u00E7\u00E3o e circuito Revit n\u00E3o implementados.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357948,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005763c",
+      "mark": "P-L02",
+      "connector_id": "2",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "PowerCircuit",
+      "description": "GIS_AUX_AC_HEATER_220V: carga separada de aquecedor de gabinete, 220 Vca fase-neutro (hip\u00F3tese 380Y/220 V); 150 W e FP 0.90 s\u00E3o hip\u00F3teses, sem dados reais do fabricante.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357948,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005763c",
+      "mark": "P-L02",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "Controls",
+      "description": "GIS_CONTROL_DC_125V: interface de alimenta\u00E7\u00E3o de controle 125 Vcc; rela\u00E7\u00E3o com QCC-01, carga, prote\u00E7\u00E3o e circuito Revit n\u00E3o implementados.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357949,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005763d",
+      "mark": "P-BUS",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "Controls",
+      "description": "GIS_CONTROL_DC_125V: interface de alimenta\u00E7\u00E3o de controle 125 Vcc; rela\u00E7\u00E3o com QCC-01, carga, prote\u00E7\u00E3o e circuito Revit n\u00E3o implementados.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357949,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005763d",
+      "mark": "P-BUS",
+      "connector_id": "2",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "PowerCircuit",
+      "description": "GIS_AUX_AC_HEATER_220V: carga separada de aquecedor de gabinete, 220 Vca fase-neutro (hip\u00F3tese 380Y/220 V); 150 W e FP 0.90 s\u00E3o hip\u00F3teses, sem dados reais do fabricante.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357950,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005763e",
+      "mark": "P-TR21-A",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "Controls",
+      "description": "GIS_CONTROL_DC_125V: interface de alimenta\u00E7\u00E3o de controle 125 Vcc; rela\u00E7\u00E3o com QCC-01, carga, prote\u00E7\u00E3o e circuito Revit n\u00E3o implementados.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357950,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005763e",
+      "mark": "P-TR21-A",
+      "connector_id": "2",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "PowerCircuit",
+      "description": "GIS_AUX_AC_HEATER_220V: carga separada de aquecedor de gabinete, 220 Vca fase-neutro (hip\u00F3tese 380Y/220 V); 150 W e FP 0.90 s\u00E3o hip\u00F3teses, sem dados reais do fabricante.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357951,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005763f",
+      "mark": "P-TR21-B",
+      "connector_id": "2",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "PowerCircuit",
+      "description": "GIS_AUX_AC_HEATER_220V: carga separada de aquecedor de gabinete, 220 Vca fase-neutro (hip\u00F3tese 380Y/220 V); 150 W e FP 0.90 s\u00E3o hip\u00F3teses, sem dados reais do fabricante.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357951,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005763f",
+      "mark": "P-TR21-B",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "Controls",
+      "description": "GIS_CONTROL_DC_125V: interface de alimenta\u00E7\u00E3o de controle 125 Vcc; rela\u00E7\u00E3o com QCC-01, carga, prote\u00E7\u00E3o e circuito Revit n\u00E3o implementados.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357952,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057640",
+      "mark": "P-TR22-A",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "Controls",
+      "description": "GIS_CONTROL_DC_125V: interface de alimenta\u00E7\u00E3o de controle 125 Vcc; rela\u00E7\u00E3o com QCC-01, carga, prote\u00E7\u00E3o e circuito Revit n\u00E3o implementados.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357952,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057640",
+      "mark": "P-TR22-A",
+      "connector_id": "2",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "PowerCircuit",
+      "description": "GIS_AUX_AC_HEATER_220V: carga separada de aquecedor de gabinete, 220 Vca fase-neutro (hip\u00F3tese 380Y/220 V); 150 W e FP 0.90 s\u00E3o hip\u00F3teses, sem dados reais do fabricante.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357953,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057641",
+      "mark": "P-TR22-B",
+      "connector_id": "2",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "PowerCircuit",
+      "description": "GIS_AUX_AC_HEATER_220V: carga separada de aquecedor de gabinete, 220 Vca fase-neutro (hip\u00F3tese 380Y/220 V); 150 W e FP 0.90 s\u00E3o hip\u00F3teses, sem dados reais do fabricante.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357953,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057641",
+      "mark": "P-TR22-B",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "Controls",
+      "description": "GIS_CONTROL_DC_125V: interface de alimenta\u00E7\u00E3o de controle 125 Vcc; rela\u00E7\u00E3o com QCC-01, carga, prote\u00E7\u00E3o e circuito Revit n\u00E3o implementados.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357954,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057642",
+      "mark": "P-BC",
+      "connector_id": "2",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "PowerCircuit",
+      "description": "GIS_AUX_AC_HEATER_220V: carga separada de aquecedor de gabinete, 220 Vca fase-neutro (hip\u00F3tese 380Y/220 V); 150 W e FP 0.90 s\u00E3o hip\u00F3teses, sem dados reais do fabricante.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357954,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057642",
+      "mark": "P-BC",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "Controls",
+      "description": "GIS_CONTROL_DC_125V: interface de alimenta\u00E7\u00E3o de controle 125 Vcc; rela\u00E7\u00E3o com QCC-01, carga, prote\u00E7\u00E3o e circuito Revit n\u00E3o implementados.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357955,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057643",
+      "mark": "P-SCADA",
+      "connector_id": "2",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "PowerCircuit",
+      "description": "GIS_AUX_AC_HEATER_220V: carga separada de aquecedor de gabinete, 220 Vca fase-neutro (hip\u00F3tese 380Y/220 V); 150 W e FP 0.90 s\u00E3o hip\u00F3teses, sem dados reais do fabricante.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357955,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057643",
+      "mark": "P-SCADA",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "Controls",
+      "description": "GIS_CONTROL_DC_125V: interface de alimenta\u00E7\u00E3o de controle 125 Vcc; rela\u00E7\u00E3o com QCC-01, carga, prote\u00E7\u00E3o e circuito Revit n\u00E3o implementados.",
+      "is_connected": false,
+      "external_allrefs": 0,
+      "allrefs": []
+    },
+    {
+      "element_id": 357958,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057646",
+      "mark": "UPS-01",
+      "connector_id": "1",
+      "domain": "DomainElectrical",
+      "connector_type": "End",
+      "system_type": "PowerCircuit",
+      "description": "Porta de entrada CA do sistema auxiliar QAC-01 a UPS-01; sistema logico; sem fio fisico 3D.",
+      "is_connected": true,
+      "external_allrefs": 2,
+      "allrefs": [
+        "357963:Logical:DomainUndefined",
+        "358152:End:DomainElectrical"
+      ]
+    }
+  ],
+  "electrical_systems": 1,
+  "electrical_system_terminal_elements": 1,
+  "electrical_system_details": [
+    {
+      "revit_element_id": 357963,
+      "revit_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005764b",
+      "system_id": "AUX-UPS-01",
+      "revit_load_name": "UPS_STUDY, 220 V/380 V, Tr\u00EAs Fase, 4 Fia\u00E7\u00E3o, Ips\u00EDlon",
+      "revit_circuit_number": "1,3,5",
+      "circuit_number": "1,3,5",
+      "load_name_confirmed": false,
+      "revit_class": "ElectricalSystem",
+      "system_type": "PowerCircuit",
+      "terminal_elements": [
+        {
+          "element_id": 357958,
+          "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057646",
+          "mark": "UPS-01"
+        }
+      ],
+      "wire_2d_view_specific_confirmed": true,
+      "three_dimensional_cable_modeled": false,
+      "physical_endpoint_connectors_isconnected_true": 2,
+      "selected_panel_name": "AUX_PANEL_380VAC_STUDY, 220 V/380 V, Tr\u00EAs Fase, 4 Fia\u00E7\u00E3o, Ips\u00EDlon",
+      "selected_panel_type_name": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_element": {
+        "element_id": 357956,
+        "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057644",
+        "mark": "QAC-01",
+        "family": "GIS_AuxiliaryPanelAC",
+        "type": "AUX_PANEL_380VAC_STUDY"
+      },
+      "assumed_voltage_V": null,
+      "assumed_true_load_W": null,
+      "assumed_power_factor": null,
+      "assumed_apparent_power_VA": null,
+      "model_voltage_V": 380,
+      "model_true_load_W": 0,
+      "model_apparent_power_VA": 0,
+      "model_apparent_current_A": 0,
+      "model_power_factor": 1,
+      "native_membership_confirmed": true,
+      "panel_assignment_confirmed": true,
+      "terminal_membership_confirmed": true,
+      "load_calculation_confirmed": false,
+      "classification": "ELECTRICAL_SYSTEM_AND_VIEW_SPECIFIC_2D_WIRE"
+    }
+  ],
+  "auxiliary_circuit_feeders": [
+    {
+      "system_id": "AUX-AC-P-L01",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357956,
+      "panel_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057644",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "",
+      "terminal_mark": "P-L01",
+      "terminal_element_id": 357947,
+      "terminal_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005763b",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW e FP 0.90 sao premissas agregadas; neste modelo a alocacao como aquecedores de painel e hipotese, nao carga de IED. Quantidade e placa dos aquecedores permanecem pendentes.",
+      "revit_voltage_V": null,
+      "revit_true_load_W": null,
+      "revit_apparent_power_VA": null,
+      "revit_apparent_current_A": null,
+      "revit_power_factor": null,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-L01; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-P-L02",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357956,
+      "panel_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057644",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "",
+      "terminal_mark": "P-L02",
+      "terminal_element_id": 357948,
+      "terminal_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005763c",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW e FP 0.90 sao premissas agregadas; neste modelo a alocacao como aquecedores de painel e hipotese, nao carga de IED. Quantidade e placa dos aquecedores permanecem pendentes.",
+      "revit_voltage_V": null,
+      "revit_true_load_W": null,
+      "revit_apparent_power_VA": null,
+      "revit_apparent_current_A": null,
+      "revit_power_factor": null,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-L02; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-P-BUS",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357956,
+      "panel_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057644",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "",
+      "terminal_mark": "P-BUS",
+      "terminal_element_id": 357949,
+      "terminal_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005763d",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW e FP 0.90 sao premissas agregadas; neste modelo a alocacao como aquecedores de painel e hipotese, nao carga de IED. Quantidade e placa dos aquecedores permanecem pendentes.",
+      "revit_voltage_V": null,
+      "revit_true_load_W": null,
+      "revit_apparent_power_VA": null,
+      "revit_apparent_current_A": null,
+      "revit_power_factor": null,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-BUS; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-P-TR21-A",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357956,
+      "panel_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057644",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "",
+      "terminal_mark": "P-TR21-A",
+      "terminal_element_id": 357950,
+      "terminal_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005763e",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW e FP 0.90 sao premissas agregadas; neste modelo a alocacao como aquecedores de painel e hipotese, nao carga de IED. Quantidade e placa dos aquecedores permanecem pendentes.",
+      "revit_voltage_V": null,
+      "revit_true_load_W": null,
+      "revit_apparent_power_VA": null,
+      "revit_apparent_current_A": null,
+      "revit_power_factor": null,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-TR21-A; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-P-TR21-B",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357956,
+      "panel_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057644",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "",
+      "terminal_mark": "P-TR21-B",
+      "terminal_element_id": 357951,
+      "terminal_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-0005763f",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW e FP 0.90 sao premissas agregadas; neste modelo a alocacao como aquecedores de painel e hipotese, nao carga de IED. Quantidade e placa dos aquecedores permanecem pendentes.",
+      "revit_voltage_V": null,
+      "revit_true_load_W": null,
+      "revit_apparent_power_VA": null,
+      "revit_apparent_current_A": null,
+      "revit_power_factor": null,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-TR21-B; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-P-TR22-A",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357956,
+      "panel_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057644",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "",
+      "terminal_mark": "P-TR22-A",
+      "terminal_element_id": 357952,
+      "terminal_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057640",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW e FP 0.90 sao premissas agregadas; neste modelo a alocacao como aquecedores de painel e hipotese, nao carga de IED. Quantidade e placa dos aquecedores permanecem pendentes.",
+      "revit_voltage_V": null,
+      "revit_true_load_W": null,
+      "revit_apparent_power_VA": null,
+      "revit_apparent_current_A": null,
+      "revit_power_factor": null,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-TR22-A; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-P-TR22-B",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357956,
+      "panel_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057644",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "",
+      "terminal_mark": "P-TR22-B",
+      "terminal_element_id": 357953,
+      "terminal_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057641",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW e FP 0.90 sao premissas agregadas; neste modelo a alocacao como aquecedores de painel e hipotese, nao carga de IED. Quantidade e placa dos aquecedores permanecem pendentes.",
+      "revit_voltage_V": null,
+      "revit_true_load_W": null,
+      "revit_apparent_power_VA": null,
+      "revit_apparent_current_A": null,
+      "revit_power_factor": null,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-TR22-B; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-P-BC",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357956,
+      "panel_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057644",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "",
+      "terminal_mark": "P-BC",
+      "terminal_element_id": 357954,
+      "terminal_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057642",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW e FP 0.90 sao premissas agregadas; neste modelo a alocacao como aquecedores de painel e hipotese, nao carga de IED. Quantidade e placa dos aquecedores permanecem pendentes.",
+      "revit_voltage_V": null,
+      "revit_true_load_W": null,
+      "revit_apparent_power_VA": null,
+      "revit_apparent_current_A": null,
+      "revit_power_factor": null,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-BC; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-P-SCADA",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357956,
+      "panel_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057644",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "",
+      "terminal_mark": "P-SCADA",
+      "terminal_element_id": 357955,
+      "terminal_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057643",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW e FP 0.90 sao premissas agregadas; neste modelo a alocacao como aquecedores de painel e hipotese, nao carga de IED. Quantidade e placa dos aquecedores permanecem pendentes.",
+      "revit_voltage_V": null,
+      "revit_true_load_W": null,
+      "revit_apparent_power_VA": null,
+      "revit_apparent_current_A": null,
+      "revit_power_factor": null,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para P-SCADA; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-TR-01-CTRL",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357956,
+      "panel_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057644",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "",
+      "terminal_mark": "TR-01-CTRL",
+      "terminal_element_id": 357907,
+      "terminal_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057613",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW e FP 0.90 sao premissas agregadas; neste modelo a alocacao como aquecedores de painel e hipotese, nao carga de IED. Quantidade e placa dos aquecedores permanecem pendentes.",
+      "revit_voltage_V": null,
+      "revit_true_load_W": null,
+      "revit_apparent_power_VA": null,
+      "revit_apparent_current_A": null,
+      "revit_power_factor": null,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para TR-01-CTRL; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    },
+    {
+      "system_id": "AUX-AC-TR-02-CTRL",
+      "revit_element_id": null,
+      "revit_unique_id": "",
+      "revit_circuit_number": "",
+      "revit_load_name": "",
+      "revit_load_name_confirmed": false,
+      "source_panel_mark": "QAC-01",
+      "panel_element_id": 357956,
+      "panel_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057644",
+      "panel_type": "AUX_PANEL_380VAC_STUDY",
+      "selected_panel_name": "",
+      "terminal_mark": "TR-02-CTRL",
+      "terminal_element_id": 357929,
+      "terminal_unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057629",
+      "terminal_type": "PROTECTION_PANEL_125VDC_STUDY",
+      "system_type": "PowerCircuit",
+      "assumed_phases": 1,
+      "assumed_poles": 1,
+      "assumed_voltage_V": 220,
+      "assumed_true_load_W": 150,
+      "assumed_power_factor": 0.9,
+      "assumed_apparent_power_VA": 166.66666666666666,
+      "assumed_current_A": 0.7575757575757576,
+      "voltage_connection_assumption": "220 Vca fase-neutro derivado de 380Y/220 V; hipotese",
+      "source_assumption": "R8 AUX-AC-06: 11 x 0.15 kW e FP 0.90 sao premissas agregadas; neste modelo a alocacao como aquecedores de painel e hipotese, nao carga de IED. Quantidade e placa dos aquecedores permanecem pendentes.",
+      "revit_voltage_V": null,
+      "revit_true_load_W": null,
+      "revit_apparent_power_VA": null,
+      "revit_apparent_current_A": null,
+      "revit_power_factor": null,
+      "revit_load_calculation_confirmed": false,
+      "native_membership_confirmed": false,
+      "panel_assignment_confirmed": false,
+      "terminal_membership_confirmed": false,
+      "three_dimensional_cable_modeled": false,
+      "wire_2d_modeled": false,
+      "classification": "NOT_CREATED",
+      "status": "ATTEMPT_FAILED_ROLLED_BACK",
+      "failure": "InvalidOperationException: API nao confirmou PowerCircuit, painel, terminal, LoadName e carga modelada para TR-02-CTRL; V=220 P=0 W S=0 VA FP=1 I=0 A"
+    }
+  ],
+  "electrical_wire_2d_elements": 1,
+  "electrical_wire_2d_connectors": 2,
+  "electrical_wire_2d_connected_connectors": 2,
+  "electrical_wire_2d_details": [
+    {
+      "element_id": 358152,
+      "unique_id": "49b70e22-936d-4421-8cd6-6a936c7e98a4-00057708",
+      "mark": "AUX-UPS-01-WIRE",
+      "owner_view_id": 358142,
+      "owner_view": "E-06 - Servicos auxiliares e controle R20",
+      "wiring_type": "Chamfer",
+      "vertex_count": 4,
+      "connector_count": 2,
+      "connected_connector_count": 2,
+      "external_allrefs": [
+        "357958:UPS-01",
+        "357956:QAC-01"
+      ],
+      "comments": "Fio eletrico nativo Revit 2D, visivel somente no plano E-06 e conectado aos conectores QAC-01/UPS-01. Representacao grafica de circuito auxiliar; nao e cabo 3D, nao dimensiona condutor e nao prova origem/alimentacao completa."
+    }
+  ],
+  "electrical_equipment_without_mep_connectors": 33,
+  "instances_missing_required_identity_metadata": 0,
+  "document_warnings": [],
+  "family_type_counts": {
+    "GIS_AuxiliaryPanelAC | AUX_PANEL_380VAC_STUDY": 1,
+    "GIS_AuxiliaryPanelDC | AUX_PANEL_125VDC_STUDY": 1,
+    "GIS_BatteryRack | BATTERY_RACK_125VDC_STUDY": 1,
+    "GIS_BayFrame | GIS_BAY_F35_145KV_DIGITAL_SF6_BAY_ENVELOPE": 5,
+    "GIS_BuildingRoof_Control | ROOF_CONTROL_22M_EST": 1,
+    "GIS_BuildingRoof_GIS | ROOF_GIS_31M_EST": 1,
+    "GIS_BuildingRoof_MV | ROOF_MV_23M_EST": 1,
+    "GIS_BusModule | GIS_BUS_F35_145KV_VARIANT_REFERENCE": 10,
+    "GIS_CableTrench | CABLE_TRENCH_STUDY": 47,
+    "GIS_CircuitBreaker | GIS_CB_145KV_STUDY": 5,
+    "GIS_CurrentTransformer | GIS_CT_145KV_STUDY": 5,
+    "GIS_Disconnector | GIS_DS_145KV_STUDY": 10,
+    "GIS_EarthingSwitch | GIS_ES_145KV_STUDY": 5,
+    "GIS_MV_BusCoupler | MV_TIE_17K5_STUDY": 1,
+    "GIS_MV_Cubicle | MV_UNIGEAR_ZS1_17K5_2KA_REFERENCE": 14,
+    "GIS_MVBusModule | MV_BUS_17K5_STUDY": 2,
+    "GIS_OilContainment | OIL_CONTAINMENT_STUDY": 2,
+    "GIS_ProtectionPanel | PROTECTION_PANEL_125VDC_STUDY": 11,
+    "GIS_Termination | GIS_TERMINATION_145KV_STUDY": 2,
+    "GIS_Transformer_Base | TR_BASE_STUDY": 2,
+    "GIS_Transformer_BushingHV | TR_BUSHING_HV_STUDY": 6,
+    "GIS_Transformer_BushingMV | TR_BUSHING_MV_STUDY": 6,
+    "GIS_Transformer_Fan | TR_FAN_STUDY": 12,
+    "GIS_Transformer_Radiator | TR_RADIATOR_STUDY": 12,
+    "GIS_Transformer_Tank | TR_40MVA_DAX_EA40_REFERENCE": 2,
+    "GIS_UPS_Cabinet | UPS_STUDY": 1,
+    "GIS_VoltageTransformer | GIS_VT_145KV_STUDY": 2
+  }
+}
