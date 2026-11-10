@@ -2,7 +2,7 @@
 
 - Revisão: 0 | Data: 2026-11-07 | Estado: PREMISSA DE ESTUDO - NAO E PROJETO EXECUTIVO
 - Base: trifásica equilibrada; tensões linha-linha; MVA/kV resulta em kA.
-- Entrada explícita: [base-de-projeto.json](base-de-projeto.json).
+- Entrada explícita: [base-de-projeto-fonte.json](base-de-projeto-fonte.json).
 - `E-01/circuito` identifica o tag no unifilar; `Marca(s) BIM` contém o crosswalk para os valores do parâmetro Revit `Mark`.
 - O crosswalk de marcas Revit é auditado separadamente contra o CSV nativo informado na execução; presença de marca e identidade ElementId/UniqueId não comprovam conectividade elétrica.
 
@@ -10,7 +10,7 @@
 
 | ID | E-01/circuito | Marca(s) BIM | Grandeza | Entradas | Método | Resultado | Unidade | Origem/estado |
 |---|---|---|---|---|---:|---|---|---|
-| BP-01 | A-F01, A-F02, A-F03, A-F04, A-F05, B-F01, B-F02, B-F03, B-F04, B-F05 | QMT-A-F01, QMT-A-F02, QMT-A-F03, QMT-A-F04, QMT-A-F05, QMT-B-F01, QMT-B-F02, QMT-B-F03, QMT-B-F04, QMT-B-F05 | Potência aparente total | P=56 MW; FP=0.95 | `S=P/FP` | 58,947 | MVA | Premissa de estudo em base-de-projeto.json (CALCULATED_FROM_STUDY_ASSUMPTIONS) |
+| BP-01 | A-F01, A-F02, A-F03, A-F04, A-F05, B-F01, B-F02, B-F03, B-F04, B-F05 | QMT-A-F01, QMT-A-F02, QMT-A-F03, QMT-A-F04, QMT-A-F05, QMT-B-F01, QMT-B-F02, QMT-B-F03, QMT-B-F04, QMT-B-F05 | Potência aparente total | P=56 MW; FP=0.95 | `S=P/FP` | 58,947 | MVA | Premissa de estudo em base-de-projeto-fonte.json (CALCULATED_FROM_STUDY_ASSUMPTIONS) |
 | BP-02 | A-F01, A-F02, A-F03, A-F04, A-F05, B-F01, B-F02, B-F03, B-F04, B-F05 | QMT-A-F01, QMT-A-F02, QMT-A-F03, QMT-A-F04, QMT-A-F05, QMT-B-F01, QMT-B-F02, QMT-B-F03, QMT-B-F04, QMT-B-F05 | Potência reativa total | S=58.947368 MVA; P=56 MW | `Q=sqrt(S^2-P^2)` | 18,406 | MVAr | Premissa de estudo em base-de-projeto.json (CALCULATED_FROM_STUDY_ASSUMPTIONS) |
 | BP-03 | GIS-L01, GIS-L02 | GIS-L01-ENV, GIS-L01-52, GIS-L01-89A, GIS-L01-89B, GIS-L01-89G, GIS-L01-CT, GIS-L01-VT, GIS-L01-TERM, GIS-L02-ENV, GIS-L02-52, GIS-L02-89A, GIS-L02-89B, GIS-L02-89G, GIS-L02-CT, GIS-L02-VT, GIS-L02-TERM | Corrente de carga no sistema 138 kV | S=58.947368 MVA; VLL=138 kV | `I=S/(sqrt(3)*VLL)` | 0,247 | kA | Premissa de estudo em base-de-projeto.json (CALCULATED_FROM_STUDY_ASSUMPTIONS) |
 | BP-04 | QMT-A-IN, QMT-B-IN, BUS-MV-A, BUS-MV-B, A-F01, A-F02, A-F03, A-F04, A-F05, B-F01, B-F02, B-F03, B-F04, B-F05 | QMT-A-IN, QMT-B-IN, BUS-MV-A, BUS-MV-B, QMT-A-F01, QMT-A-F02, QMT-A-F03, QMT-A-F04, QMT-A-F05, QMT-B-F01, QMT-B-F02, QMT-B-F03, QMT-B-F04, QMT-B-F05 | Corrente de carga no sistema 13,8 kV | S=58.947368 MVA; VLL=13.8 kV | `I=S/(sqrt(3)*VLL)` | 2,466 | kA | Premissa de estudo em base-de-projeto.json (CALCULATED_FROM_STUDY_ASSUMPTIONS) |
