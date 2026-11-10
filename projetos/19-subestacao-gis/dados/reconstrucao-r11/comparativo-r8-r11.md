@@ -21,7 +21,7 @@ Data da extração final: 07/11/2026. R8 permanece preservada como baseline. Est
 | Avisos de documento Revit | não registrado no JSON R8 | 0 | O esquema R8 não inclui esse campo; não se compara como zero. |
 | Instâncias sem metadados de identidade | 0 | 0 | Conferidos no CSV de instâncias por revisão. |
 
-**Fontes:** [auditoria R8](auditoria-modelo-r8.json), [auditoria R11](auditoria-modelo-r11.json), [quantitativos R11](quantitativos-modelo.csv) e [conectividade por equipamento](conectividade-equipamentos-r11.csv).
+**Fontes:** [auditoria R8](../reconstrucao-r8/auditoria-modelo-r8.json), [auditoria R11](auditoria-modelo-r11.json), [quantitativos R11](quantitativos-modelo.csv) e [conectividade por equipamento](conectividade-equipamentos-r11.csv).
 
 ## Conectividade: o que existe e o que falta
 
