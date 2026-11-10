@@ -6,7 +6,7 @@ Estado: fotografia histórica feita antes da reconstrução R8. Os números e es
 
 ## Base inspecionada
 
-- Repositório: branch `codex/portfolio-expansion-2026-11-07`, commit `aa7e4945c6965ae577c200f6ebbe5efb3f9107ce`.
+- Repositório: branch `desenvolvimento/expansao-portfolio` (nome atual; à época da auditoria era `codex/portfolio-expansion-2026-11-07`), commit `aa7e4945c6965ae577c200f6ebbe5efb3f9107ce`.
 - RVT aberto diretamente no Revit 2027.3, com a vista `BIM-01 - Axonometria - Subestação de alta tensão GIS`.
 - PDF existente: oito páginas A3 paisagem, 268.133 bytes, criado em 2026-11-07 às 03:37 (hora de Brasília).
 - Quantitativo existente: 55 linhas de elementos do projeto — 23 em `Equipamento elétrico` e 32 em `Modelos genéricos` — conforme `dados/quantitativos-modelo.csv`.
